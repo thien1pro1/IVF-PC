@@ -10,7 +10,7 @@
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="{{asset('public/frontend/css/style-starter.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/style-starter.css')}}">
   </head>
   <body>
 <!--w3l-header-->
@@ -183,10 +183,10 @@
 </section>
 
 <!-- jQuery and Bootstrap JS -->
-<script src="{{asset('public/frontend/js/jquery-3.3.1.min.js')}}"></script>
+<script src="{{asset('frontend/js/jquery-3.3.1.min.js')}}"></script>
 
 <!-- Template JavaScript -->
-<script src="{{asset('public/frontend/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{asset('frontend/js/jquery.magnific-popup.min.js')}}"></script>
 <script>
   $(document).ready(function () {
     $('.popup-with-zoom-anim').magnificPopup({
@@ -223,7 +223,7 @@
   });
 </script>
 
-<script src="{{asset('public/frontend/js/owl.carousel.js')}}"></script>
+<script src="{{asset('frontend/js/owl.carousel.js')}}"></script>
 
 <!-- script for carousel1 -->
 <script>
@@ -305,7 +305,7 @@
 </script>
 <!-- disable body scroll which navbar is in active -->
 
-<script src="{{asset('public/frontend/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
 
 </body>
 
