@@ -16,9 +16,7 @@ class StaffController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function setRole(){
-        $user->givePermissionTo('edit articles'); 
-    }
+
     public function index()
     {
         $position = Position::all();

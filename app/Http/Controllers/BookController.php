@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Book;
 
 class BookController extends Controller
 {
@@ -13,7 +14,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        $book = Book::orderBy('email','ASC')->get();
+        return view('admin.client.index')->with(compact('book'));
     }
 
     /**
@@ -34,7 +36,24 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $book = new Book();
+        $book->wife_name = $request->wife_name;
+        $book->hus_name = $request->hus_name;
+        $book->wife_birthday = $request->wife_birthday;
+        $book->hus_birthday = $request->hus_birthday;
+        $book->phone = $request->phone;
+        $book->email = $request->email;
+
+        
+        $book->message = $request->message;
+        $book->register_date = $request->register_date;
+        $book->register_time = $request->register_time;
+        $book->status = 0;
+
+// code here
+
+        $book->save();
+        return redirect()->back()->with('status','Đặt lịch thành công');
     }
 
     /**
