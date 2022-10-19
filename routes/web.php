@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\PositionController;
+use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -67,12 +68,16 @@ Route::resource('client/book',BookController::class);
 // ]);
 Route::resource('admin/categogy',CategogyController::class);
 Route::resource('admin/post',PostController::class);
-Route::resource('admin/client',UserController::class);
+
 Route::resource('admin/staff',StaffController::class);
 Route::resource('admin/admin',UserController::class);
 Route::resource('admin/service',ServiceController::class);
-Route::resource('admin/client/book',BookController::class);
+Route::resource('admin/client',BookController::class);
 Route::resource('admin/position',PositionController::class);
+
+
+Route::resource('admin/room',RoomController::class);
+
 
 
 Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.dashboard');

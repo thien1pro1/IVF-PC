@@ -14,33 +14,37 @@
             <th scope="col">id</th>
             <th scope="col">Tên vợ</th>
             <th scope="col">Tên chồng</th>
-            <th scope="col">Tên chồng</th>
+
             <th scope="col">Trạng thái</th>
             <th scope="col">Quản lý</th>
             
           </tr>
         </thead>
-        @foreach($alldanhmuc as $danhmuc)
+        @foreach($books as $book)
         <tbody>
           <tr>
-            <th scope="row">{{$danhmuc->id}}</th>
-            <td>{{$danhmuc->categogyName}}</td>
-            <td>{{$danhmuc->short_Desc}}</td>
+            <th scope="row">{{$book->id}}</th>
+            <td>{{$book->wife_name}}</td>
+            <td>{{$book->hus_name}}</td>
             <td>
-              @if($danhmuc->status==1)
-                <span class="text text-success">kích hoạt</span>
+              @if($book->status==1)
+                <span class="text text-success">Đã duyệt</span>
+              @elseif($book->status==0)
+                <span class="text text-primary">Chờ duyệt</span>
+                @elseif($book->status==2)
+                <span class="text text-muted">Đã khám</span>
               @else
-                <span class="text text-danger">Không kích hoạt</span>
+                <span class="text text-danger">Đã hủy</span>
               @endif
 
             </td>
 
             <td>
-              <a href="{{route('categogy.edit',[$danhmuc->id])}}" class="btn btn-primary" style="float:right">Sửa</a>
-              <form action="{{route('categogy.destroy',[$danhmuc->id])}}" method="POST">
+              <a href="{{route('book.edit',[$book->id])}}" class="btn btn-primary" style="float:right">Duyệt</a>
+              <form action="{{route('book.destroy',[$book->id])}}" method="POST">
                 @method('DELETE')
                 @csrf
-                <button onclick="return confirm('Bạn muốn xóa danh mục {{$danhmuc->categogyName}}?')" class="btn btn-danger">Xóa</button>
+                <button onclick="return confirm('Bạn muốn xóa lượt khám này?')" class="btn btn-danger">Xóa</button>
                 
               </form>
             </td>
