@@ -15,13 +15,13 @@ class Post extends Model
         'short_Desc',
         'content',
         'image',
-        'categogy_id',
-        'views',
-        'name'
+        'categogy_id'
+       
     ];
     protected $primarykey = 'id';
-    protected $table = 'categogy';
-    // public function categogy(){
-    //     return $this->belongsTo('App\Models\Categogy','categogy_id');
-    // }
+    protected $table = 'posts';
+   
+    public function category(){
+        return $this->belongsTo('App\Models\Categogy','categogy_id');
+    }
 }

@@ -98,63 +98,44 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                         @csrf
         <div class="row mb-1">
 
-          <div class="col-md-4 mb-4">
+          <div class="col-md-6 mb-4">
             <label for="inputtextname" class="form-label">Họ và tên vợ</label>
             <input type="text" name="wife_name" id="inputtextname"
               placeholder="Nhập họ tên vợ..." required="">
           </div>
-
-          <div class="col-md-4 mb-4">
-            <label for="inputtextnumber"
-              class="form-label">Họ và tên chồng</label>
-            <input type="text" name="hus_name" 
-            placeholder="Nhập họ tên chồng..." required="">
-          </div>
-
-          <div class="col-md-4 mb-4">
-            <label for="inputtextnumber"
-              class="form-label">Số điện thoại vợ/chồng</label>
-            <input type="phone" name="phone" id="inputtextnumber"
-              placeholder="Nhập số điện thoại..." required="">
-          </div>
-          <div class="col-md-4 mb-4">
-            <label for="inputtextnumber"
-              class="form-label">email</label>
-            <input type="email" name="email" id="inputtextnumber"
-              placeholder="Nhập email" required="">
-          </div>
-
           <div class="col-md-6 mb-4">
             <label for="inputtextnumber" class="form-label">Ngày tháng năm sinh vợ</label>
             <input type="date" name="wife_birthday" id="dateofbirth" required="">
           </div>
 
           <div class="col-md-6 mb-4">
+            <label for="inputtextnumber"
+              class="form-label">Họ và tên chồng</label>
+            <input type="text" name="hus_name" 
+            placeholder="Nhập họ tên chồng..." required="">
+          </div>
+          <div class="col-md-6 mb-4">
             <label for="inputtextnumber" class="form-label">Ngày tháng năm sinh chồng</label>
             <input type="date" name="hus_birthday" id="dateofbirth" required="">
           </div>
 
-        </div>
+          <div class="col-md-6 mb-4">
+            <label for="inputtextnumber"
+              class="form-label">Số điện thoại vợ/chồng</label>
+            <input type="phone" name="phone" id="inputtextnumber"
+              placeholder="Nhập số điện thoại..." required="">
+          </div>
+          <div class="col-md-6 mb-4">
+            <label for="inputtextnumber"
+              class="form-label">email</label>
+            <input type="email" name="email" id="inputtextnumber"
+              placeholder="Nhập email" required="">
+          </div>
 
 
 
-          
 
-         <!--  <div class="col-md-6 mb-4">
-            <label for="inputtextnumber" class="form-label">Select Doctor</label>
-            <select class="form-select" aria-label="Default select example"
-              name="w3lDoctor">
-              <option selected>Select</option>
-              <option value="Doctor">Dr. John Doe</option>
-              <option value="Doctor">Dr. Martin Ker</option>
-              <option value="Doctor">Dr. Alexander</option>
-              <option value="Doctor">Dr. Eliz Wilson</option>
-              <option value="Other">Other</option>
-            </select>
-          </div> -->
-        </div>
 
-        <div class="row">
           <div class="col-md-6 mb-4">
             <label for="inputtextnumber" class="form-label">Tôi muốn đăng kí đến khám vào ngày</label>
             <input type="date" name="register_date" id="dateofbirth" required="">
@@ -183,6 +164,26 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         <div class="text-end">
           <button type="submit" name="datlich" class="btn btn-style mt-sm-3">Đăng ký hẹn khám</button>
         </div>
+
+
+
+          
+
+         <!--  <div class="col-md-6 mb-4">
+            <label for="inputtextnumber" class="form-label">Select Doctor</label>
+            <select class="form-select" aria-label="Default select example"
+              name="w3lDoctor">
+              <option selected>Select</option>
+              <option value="Doctor">Dr. John Doe</option>
+              <option value="Doctor">Dr. Martin Ker</option>
+              <option value="Doctor">Dr. Alexander</option>
+              <option value="Doctor">Dr. Eliz Wilson</option>
+              <option value="Other">Other</option>
+            </select>
+          </div> -->
+        </div>
+
+
 
       </form>
 

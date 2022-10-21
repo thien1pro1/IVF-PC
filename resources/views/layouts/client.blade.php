@@ -1,312 +1,310 @@
+ 
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IVF</title>
+    <!-- google font -->
+    <link href="//fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
+    <link href="//fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <title>Bệnh Viện Quốc Tế Phương Châu</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
-    <!-- Template CSS -->
-    <link rel="stylesheet" href="{{asset('frontend/css/style-starter.css')}}">
-  </head>
-  <body>
-<!--w3l-header-->
-
-<header class="w3l-header-nav">
-    <!--/nav-->
-    <nav class="navbar navbar-expand-lg navbar-light fill px-lg-0 py-0 px-3">
+</head>
+<body>
+     <!-- header -->
+    <header id="site-header" class="fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Phương Châu</a>
-            <!-- if logo is image enable this   
-                        <a class="navbar-brand" href="#index.html">
-                            <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-                        </a> -->
-            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="fa icon-expand fa-bars"></span>
-                <span class="fa icon-close fa-times"></span>
-            </button>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="{{url('/')}}">
+                    <i ></i>IVF PHƯƠNG CHÂU
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav ms-auto me-2 my-2 my-lg-0 navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{url('/client/home')}}">Trang chủ</a>
+                        </li>
+                           <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="{{url('/client/about')}}" id="navbarScrollingDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Về chúng tôi <i class="fas fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                 <li>
+                                    <a class="dropdown-item" href="{{url('/client/about')}}">Câu chuyện về Khoa Hiếm Muộn IVF Phương Châu</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{url('/client/about')}}">Thông điệp từ nhà sáng lập</a>
+                                </li>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{url('/client/home')}}">Trang chủ</a>
-                    </li>
-                    <li class="nav-item @@about__active">
-                        <a class="nav-link" href="{{url('/client/about')}}">Về chúng tôi</a>
-                    </li>
-                    <li class="nav-item @@services__active">
-                        <a class="nav-link" href="{{url('/client/service')}}">Chuyên khoa</a>
-                    </li>
-                    <li class="nav-item @@contact__active">
-                        <a class="nav-link" href="{{url('/client/contact')}}">Thông tin</a>
-                    </li>
-                    <li class="nav-item @@contact__active">
-            <a class="nav-link" href="contact.html">Hướng dẫn</a>
-          </li>
-                    <li class="nav-item @@contact__active">
-            <a class="nav-link" href="contact.html">Tuyển dụng</a>
-          </li>
-                </ul>
-                <!--/search-right-->
-                <div class="search-right">
-                    <a href="#search" title="search"><span class="fa fa-search" aria-hidden="true"></span></a>
-                    <!-- search popup -->
-                    <div id="search" class="pop-overlay">
-                        <div class="popup">
+                                  <li>
+                                    <a class="dropdown-item" href="{{url('/client/home')}}">Hệ thống tập đoàn y tế Phương Châu</a>
+                                </li>
 
-                            <form action="#" method="post" class="search-box">
-                                <input type="search" placeholder="Saerch your Keyword" name="search" required="required"
-                                    autofocus="">
-                                <button type="submit" class="btn"><span class="fa fa-search" aria-hidden="true"></span></button>
-                            </form>
+                                  <li>
+                                    <a class="dropdown-item" href="{{url('/client/home')}}">Sứ mệnh - Tầm nhìn - Giá trị cốt lõi - Slogan Mẹ Tròn Con Vuông</a>
+                                </li>
 
-                        </div>
-                        <a class="close" href="#close">×</a>
-                    </div>
-                    <!-- /search popup -->
+                                  <li>
+                                    <a class="dropdown-item" href="{{url('/client/home')}}">Sơ đồ tổ chức</a>
+                                </li>
+
+                                  <li>
+                                    <a class="dropdown-item" href="{{url('/client/home')}}">Trách nhiệm với xã hội của Phương Châu</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                          <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Hướng dẫn <i class="fas fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                 <li>
+                                    <a class="dropdown-item" href="{{url('/ve-chung-toi')}}">Câu chuyện về Khoa Hiếm Muộn IVF Phương Châu</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{url('/ve-chung-toi')}}">Thông điệp từ nhà sáng lập</a>
+                                </li>
+
+                                  <li>
+                                    <a class="dropdown-item" href="{{url('/ve-chung-toi')}}">Hệ thống tập đoàn y tế Phương Châu</a>
+                                </li>
+
+                                  <li>
+                                    <a class="dropdown-item" href="{{url('/ve-chung-toi')}}">Sứ mệnh - Tầm nhìn - Giá trị cốt lõi - Slogan Mẹ Tròn Con Vuông</a>
+                                </li>
+
+                                  <li>
+                                    <a class="dropdown-item" href="{{url('/ve-chung-toi')}}">Sơ đồ tổ chức</a>
+                                </li>
+
+                                  <li>
+                                    <a class="dropdown-item" href="{{url('/ve-chung-toi')}}">Trách nhiệm với xã hội của Phương Châu</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Thông tin <i class="fas fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <li>
+
+                            </ul>
+                        </li>
+                       <!--  <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li> -->
+                    </ul>
+                    <form action="error.html" method="GET" class="d-flex search-header">
+                        <input class="form-control" type="search" placeholder="Bạn muốn tìm..." aria-label="Search"
+                            required>
+                        <button class="btn btn-style" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
                 </div>
-                
-                    <!-- Right Side Of Navbar -->
-
-</header>
-<!-- //w3l-header -->
-
+                <!-- toggle switch for light and dark theme -->
+                <div class="cont-ser-position">
+                    <nav class="navigation">
+                        <div class="theme-switch-wrapper">
+                            <label class="theme-switch" for="checkbox">
+                                <input type="checkbox" id="checkbox">
+                                <div class="mode-container">
+                                    <i class="gg-sun"></i>
+                                    <i class="gg-moon"></i>
+                                </div>
+                            </label>
+                        </div>
+                    </nav>
+                </div>
+                <!-- //toggle switch for light and dark theme -->
+            </nav>
+        </div>
+    </header>
+    <!-- //header -->
 
      @yield('content')
 
-
-     <!--  //Fun facts section -->
-<section class="w3l-footer-29-main">
-  <div class="footer-29 py-5">
-    <div class="container py-lg-4">
-      <div class="row footer-top-29">
-        <div class="footer-list-29 col-lg-4">
-          <h6 class="footer-title-29">About Company</h6>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat, repellat. Accusantium quos ea doloribus?
-            A sed beatae sapiente commodi nam ipsum dolor set. </p>
-          <div class="main-social-footer-29 mt-4">
-            <a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a>
-            <a href="#twitter" class="twitter"><span class="fa fa-twitter"></span></a>
-            <a href="#instagram" class="instagram"><span class="fa fa-instagram"></span></a>
-            <a href="#linkedin" class="linkedin"><span class="fa fa-linkedin"></span></a>
-          </div>
+    <!-- footer -->
+     <!-- footer -->
+    <footer class="w3l-footer-29-main">
+        <div class="footer-29 pt-5 pb-4">
+            <div class="container pt-md-4">
+                <div class="row footer-top-29">
+                    <div class="col-md-5 footer-list-29 pe-xl-5">
+                        <h6 class="footer-title-29">Contact Info </h6>
+                        <p class="mb-2 pe-xl-5">Address : 300 Nguyễn Văn Cừ nối dài, P. Xuân Khánh, Q. Ninh Kiều, TP. Cần Thơ
+                        </p>
+                        <p class="mb-2">Phone Number : <a href="tel:+1(21) 234 4567">1900 5454 66</a></p>
+                        <p class="mb-2">Email : <a href="mailto:phoanghoc.work@gmail.com">info@phuongchau.com</a></p>
+                    </div>
+                    <div class="col-md-2 col-4 footer-list-29 mt-md-0 mt-4">
+                        <ul>
+                            <h6 class="footer-title-29">About</h6>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="about.html">Special Offers</a></li>
+                            <li><a href="about.html">Orthodontics</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-4 ps-lg-5 ps-md-4 footer-list-29 mt-md-0 mt-4">
+                        <ul>
+                            <h6 class="footer-title-29">Explore</h6>
+                            <li><a href="blog.html">Blog Posts</a></li>
+                            <li><a href="#privacy">Privacy policy</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#license">License & uses</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-4 footer-list-29 mt-md-0 mt-4">
+                        <ul>
+                            <h6 class="footer-title-29">Dentition</h6>
+                            <li><a href="#doctor">Dr. John Doe</a></li>
+                            <li><a href="#doctor">Dr. Martin Ker</a></li>
+                            <li><a href="#doctor">Dr. Alexander</a></li>
+                            <li><a href="#doctor">Dr. Eliz Wilson</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- copyright -->
+                <p class="copy-footer-29 text-center pt-lg-2 mt-5 pb-2">© 2022 Dentition. All rights reserved. Design by
+                    <a href="#" target="_blank">
+                        Hoc</a></p>
+                <!-- //copyright -->
+            </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-8 footer-list-29 footer-1 mt-lg-0 mt-5">
-          <h6 class="footer-title-29">Contact Us</h6>
-          <ul>
-            <li>
-              <p><span class="fa fa-map-marker"></span> Interior Home decors, #32841 block, #221DRS Home Furniture
-                business, UK.</p>
-            </li>
-            <li><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span> +(21)-255-999-8888</a></li>
-            <li><a href="mailto:interiors@mail.com" class="mail"><span class="fa fa-envelope-open-o"></span>
-                interiors@mail.com</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-6 col-sm-4 footer-list-29 footer-2 mt-lg-0 mt-5">
+    </footer>
+    <!-- //footer -->
+    <!-- //footer -->
 
-          <ul>
-            <h6 class="footer-title-29">Useful Links</h6>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Interiors</a></li>
-            <li><a href="#blog"> Blog posts</a></li>
-            <li><a href="contact.html">Contact us</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-md-6 footer-list-29 footer-3 mt-lg-0 mt-5">
-          <h6 class="footer-title-29">Latest from blog</h6>
-          <div class="footer-post mb-4">
-            <a href="#blog-single">Helping you and your house become better acquainted.</a>
-            <p class="small"><span class="fa fa-clock-o"></span> March 9, 2020</p>
-          </div>
-          <div class="footer-post">
-            <a href="#blog-single">Creating quality urban lifestyles..</a>
-            <p class="small"><span class="fa fa-clock-o"></span> March 9, 2020</p>
-          </div>
+    <!-- Js scripts -->
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+    </button>
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
 
-        </div>
-        <div class="col-lg-12 footer-list-29 footer-4 mt-5">
-          <div class="column1 align-self">
-            <h6 class="footer-title-29 mb-1">Subscribe to our Newsletter </h6>
-            <p>Enter your email and receive the latest news from us.</p>
-          </div>
-          <div class="column1">
-            <form action="#" class="subscribe" method="post">
-              <input type="email" name="email" placeholder="Your Email Address" required="">
-              <button><span class="fa fa-envelope-o"></span></button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="w3l-footer-29-main w3l-copyright">
-  <div class="container">
-    <div class="bottom-copies">
-      <p class="copy-footer-29 text-center">© 2022 PHUONG CHAU All rights reserved. Design by <a
-          href="https://w3layouts.com/" target="_blank">
-          Hoang Hoc - T</a></p>
-    </div>
-  </div>
-
-  <!-- move top -->
-  <button onclick="topFunction()" id="movetop" title="Go to top">
-    &#10548;
-  </button>
-  <script>
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function () {
-      scrollFunction()
-    };
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("movetop").style.display = "block";
-      } else {
-        document.getElementById("movetop").style.display = "none";
-      }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-  </script>
-  <!-- /move top -->
-</section>
-
-<!-- jQuery and Bootstrap JS -->
-<script src="{{asset('frontend/js/jquery-3.3.1.min.js')}}"></script>
-
-<!-- Template JavaScript -->
-<script src="{{asset('frontend/js/jquery.magnific-popup.min.js')}}"></script>
-<script>
-  $(document).ready(function () {
-    $('.popup-with-zoom-anim').magnificPopup({
-      type: 'inline',
-
-      fixedContentPos: false,
-      fixedBgPos: true,
-
-      overflowY: 'auto',
-
-      closeBtnInside: true,
-      preloader: false,
-
-      midClick: true,
-      removalDelay: 300,
-      mainClass: 'my-mfp-zoom-in'
-    });
-
-    $('.popup-with-move-anim').magnificPopup({
-      type: 'inline',
-
-      fixedContentPos: false,
-      fixedBgPos: true,
-
-      overflowY: 'auto',
-
-      closeBtnInside: true,
-      preloader: false,
-
-      midClick: true,
-      removalDelay: 300,
-      mainClass: 'my-mfp-slide-bottom'
-    });
-  });
-</script>
-
-<script src="{{asset('frontend/js/owl.carousel.js')}}"></script>
-
-<!-- script for carousel1 -->
-<script>
-  $(document).ready(function () {
-    $('.owl-one').owlCarousel({
-      loop: false,
-      margin: 0,
-      nav: false,
-      responsiveClass: true,
-      autoplay: false,
-      autoplayTimeout: 5000,
-      autoplaySpeed: 1000,
-      autoplayHoverPause: false,
-      responsive: {
-        0: {
-          items: 1,
-          nav: false
-        },
-        480: {
-          items: 1,
-          nav: false
-        },
-        667: {
-          items: 1,
-          nav: true
-        },
-        1000: {
-          items: 1,
-          nav: true
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
         }
-      }
-    })
-  })
-</script>
-<!-- //script -->
-<!-- script for owlcarousel -->
-<script>
-  $(document).ready(function () {
-    $('.owl-testimonial').owlCarousel({
-      loop: true,
-      margin: 0,
-      nav: true,
-      responsiveClass: true,
-      autoplay: false,
-      autoplayTimeout: 5000,
-      autoplaySpeed: 1000,
-      autoplayHoverPause: false,
-      responsive: {
-        0: {
-          items: 1,
-          nav: false
-        },
-        480: {
-          items: 1,
-          nav: false
-        },
-        667: {
-          items: 1,
-          nav: true
-        },
-        1000: {
-          items: 1,
-          nav: true
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         }
-      }
-    })
-  })
-</script>
-<!-- //script for owlcarousel -->
+    </script>
+    <!-- //move top -->
 
+    <!-- common jquery plugin -->
+    <script src="{{asset('frontend/js/jquery-3.3.1.min.js')}}"></script>
+    <!-- //common jquery plugin -->
 
-<!-- disable body scroll which navbar is in active -->
-<script>
-  $(function () {
-    $('.navbar-toggler').click(function () {
-      $('body').toggleClass('noscroll');
-    })
-  });
-</script>
-<!-- disable body scroll which navbar is in active -->
+    <!-- for services carousel slider -->
+    <script src="{{asset('frontend/js/owl.carousel.js')}}"></script>
+    <script>
+        $(document).ready(function () {
+            $('.owl-three').owlCarousel({
+                loop: true,
+                stagePadding: 20,
+                margin: 20,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplaySpeed: 1000,
+                autoplayHoverPause: false,
+                nav: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    991: {
+                        items: 3
+                    },
+                    1200: {
+                        items: 4
+                    }
+                }
+            })
+        })
+    </script>
+    <!-- //for services carousel slider -->
 
-<script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
+    <!-- theme switch js (light and dark)-->
+    <script src="{{asset('frontend/js/theme-change.js')}}"></script>
+    <!-- //theme switch js (light and dark)-->
 
+    <!-- MENU-JS -->
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+    <!-- //MENU-JS -->
+
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+    <!-- //disable body scroll which navbar is in active -->
+
+    <!-- bootstrap -->
+    <script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
+    <!-- //bootstrap -->
+    <!-- //Js scripts -->
 </body>
 
 </html>

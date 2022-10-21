@@ -81,6 +81,16 @@
             <label for="c10">Phòng khám</label>
            
             <select class="form-control custom-select" id="c11"  name="room_id" > 
+
+                {{-- @foreach ($room_e as $r)
+                @if ($r->id==$edit->room_id)
+                    <option  selected value="{{$edit->room_id}}" >Phòng {{$edit->room_id}}</option>
+                @else
+                <option  value="{{$r->id}}" >{{$r->name}}</option>
+
+                @endif
+                    
+                @endforeach --}}
                 @foreach ($room as $r)
                 @if ($r->id==$edit->room_id)
                     <option  selected value="{{$edit->room_id}}" >Phòng {{$edit->room_id}}</option>

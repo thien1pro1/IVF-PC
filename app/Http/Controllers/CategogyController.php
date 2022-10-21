@@ -40,21 +40,21 @@ class CategogyController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate(
-            [
-                'categogyName'=>'required|unique:categogy|max:255',
-                'short_Desc' =>'required|max:255',
-                'status'     =>'required'
-            ],
-            [
-                'categogyName.required'=>'Vui lòng nhập tên danh mục',
-                'short_Desc.required' =>'Nhập mo tả!',
-            ]
-        );
+        // $data = $request->validate(
+        //     [
+        //         'categogyName'=>'required|unique:categogy|max:255',
+        //         'short_Desc' =>'required|max:255',
+        //         'status'     =>'required'
+        //     ],
+        //     [
+        //         'categogyName.required'=>'Vui lòng nhập tên danh mục',
+        //         'short_Desc.required' =>'Nhập mo tả!',
+        //     ]
+        // );
         $categogy = new Categogy();
-        $categogy->categogyName = $data['categogyName'];
-        $categogy->short_Desc = $data['short_Desc'];
-        $categogy->status = $data['status'];
+        $categogy->categogyName = $request->categogyName;
+        $categogy->short_Desc = $request->short_Desc;
+        $categogy->status = $request->status;
         $categogy->save();
         return redirect()->back()->with('status','Thêm danh mục thành công');
 
@@ -109,7 +109,7 @@ class CategogyController extends Controller
         $categogy->short_Desc = $data['short_Desc'];
         $categogy->status = $data['status'];
         $categogy->save();
-        return redirect()->back()->with('status','Cập nhập danh mục thành công');
+        return redirect('/admin/categogy')->with('status','Cập nhập danh mục thành công');
     }
 
     /**

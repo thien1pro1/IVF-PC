@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Categogy;
+use Storage;
+use File;
 class PostController extends Controller
 {
     /**
@@ -18,8 +20,9 @@ class PostController extends Controller
         // $all_post = Post::all();
 
  
-        $allPost = Post::orderBy('id','DESC')->get();
-        return view('admin.post.index')->with(compact('allPost'));
+        $allPost = Post::get();
+        $category = Categogy::all();
+        return view('admin.post.index')->with(compact('allPost','category'));
     }
 
     /**
@@ -49,7 +52,7 @@ class PostController extends Controller
         $post->views = $request->views;
         $post->short_desc = $request->short_desc;
         $post->content = $request->content;
-        $post->category_id = $request->category_id;
+        $post->categogy_id = $request->categogy_id;
         if($request['image']){
             $image = $request['image'];
             $ext = $image->getClientOriginalExtension();
@@ -85,8 +88,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {   
-        $editbaiviet = Post::find($id);
-        return view('admin.categogy.edit')->with(compact('editbaiviet'));
+        $edit = Post::find($id);
+        return view('admin.post.edit')->with(compact('edit'));
     }
 
     /**
@@ -114,6 +117,7 @@ class PostController extends Controller
             $post->image = $name;
 
         }
+        $post->categogy_id = $request->categogy_id;
 
         $post->save();
         return redirect()->back()->with('status','Cập nhập danh mục thành công');

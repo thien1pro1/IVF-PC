@@ -39,7 +39,7 @@ class PositionController extends Controller
     {
         $position = new Position();
         $position->name = $request->name;
-        
+        $position->salary = $request->salary;
         $position->save();
         return redirect()->route('position.index')->with('success','Thêm chuc vu thành công');
     }
@@ -63,8 +63,8 @@ class PositionController extends Controller
      */
     public function edit($id)
     {
-        $editchucvu = Position::find($id);
-        return view('admin.categogy.edit')->with(compact('editchucvu'));
+        $edit = Position::find($id);
+        return view('admin.position.edit')->with(compact('edit'));
     }
 
     /**
@@ -79,6 +79,7 @@ class PositionController extends Controller
         $data = $request->all();
         $pos = Position::find($id);
         $pos->name = $data['name'];
+        $pos->name = $data['salary'];
         $pos->save();
 
 

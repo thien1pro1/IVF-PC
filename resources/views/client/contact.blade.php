@@ -1,68 +1,327 @@
-
 @extends('layouts.client')
 @section('content')
-<!-- //w3l-header -->
-<section class="w3l-about-breadcrumb">
-    <div class="breadcrumb-bg breadcrumb-bg-contact py-5">
-        <div class="container py-lg-5 py-md-3">
-            <h2 class="title">Liên hệ</h2>
+
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/wp.w3layouts.com\/dentition\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.0.2"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://wp.w3layouts.com/dentition/wp-includes/css/dist/block-library/style.min.css?ver=6.0.2' media='all' />
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='w3layouts-style-css'  href='https://wp.w3layouts.com/dentition/wp-content/themes/dentition/style.css?ver=1.0.0' media='all' />
+<link rel='stylesheet' id='fm-frontend-css'  href='https://wp.w3layouts.com/dentition/wp-content/plugins/tlp-food-menu/assets/css/foodmenu.min.css?ver=4.0.0' media='all' />
+<link rel='stylesheet' id='recent-posts-widget-with-thumbnails-public-style-css'  href='https://wp.w3layouts.com/dentition/wp-content/plugins/recent-posts-widget-with-thumbnails/public.css?ver=7.1.1' media='all' />
+<link rel="https://api.w.org/" href="https://wp.w3layouts.com/dentition/wp-json/" /><link rel="alternate" type="application/json" href="https://wp.w3layouts.com/dentition/wp-json/wp/v2/pages/16" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://wp.w3layouts.com/dentition/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://wp.w3layouts.com/dentition/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 6.0.2" />
+<link rel="canonical" href="https://wp.w3layouts.com/dentition/contact-page/" />
+<link rel='shortlink' href='https://wp.w3layouts.com/dentition/?p=16' />
+<link rel="alternate" type="application/json+oembed" href="https://wp.w3layouts.com/dentition/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwp.w3layouts.com%2Fdentition%2Fcontact-page%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://wp.w3layouts.com/dentition/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwp.w3layouts.com%2Fdentition%2Fcontact-page%2F&#038;format=xml" />
+</head>
+
+<body id="top-gap-fixed-header" class="page-template page-template-page-templates page-template-template-contactpage page-template-page-templatestemplate-contactpage-php page page-id-16 no-sidebar">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>	
+	
+<!-- inner banner -->
+<section class="inner-banner py-5">
+    <style>
+        .inner-banner {
+            background-image: url(https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/images/banner4.jpg);
+        }
+    </style>
+    <div class="w3l-breadcrumb py-lg-5">
+        <div class="container pt-4 pb-sm-4 ContactPageBanner">
+                                    <h4 class="inner-text-title font-weight-bold pt-sm-5 pt-4">
+                Contact Us</h4>
+            
+                                    <ul class="breadcrumbs-custom-path AllBreadcrumbs">
+                <a href="https://wp.w3layouts.com/dentition" rel="nofollow">Home</a>&nbsp;&nbsp;&#187;&nbsp;&nbsp;Contact page            </ul>
+                    </div>
+    </div>
+</section>
+<!-- //inner banner -->
+
+
+
+
+
+<!-- contact section -->
+<section class="w3l-contact-11 py-5" id="contact">
+    <div class="container py-md-5 py-4 ContactPageFull">
+
+
+        <section>
+                    </section>
+
+                        <h3 class="title-style text-center mb-5">
+            <span>Contact </span>
+            Us</h3>
+
+        <div class="row text-center mb-5 pb-lg-5 pb-sm-4">
+
+                                    <div class="col-lg-3 col-sm-6 contact-info">
+                <i class="fas fa-map-marked-alt"></i>
+                <h4>Location</h4>
+                <p>London, 235 Terry, 10001</p>
+            </div>
+            
+                                    <div class="col-lg-3 col-sm-6 contact-info mt-md-0 mt-4">
+                <i class="fas fa-headset"></i>
+                <h4>Phone</h4>
+                <p><a
+                        href="tel:+44 987 654 321">+44 987 654 321</a>
+                </p>
+            </div>
+            
+                                    <div class="col-lg-3 col-sm-6 contact-info mt-lg-0 mt-4">
+                <i class="fas fa-envelope-open-text"></i>
+                <h4>Email</h4>
+                <p><a href="mailto:mail@example.com"
+                        class="email">mail@example.com</a>
+                </p>
+            </div>
+            
+                                    <div class="col-lg-3 col-sm-6 contact-info mt-lg-0 mt-4">
+                <i class="fas fa-user-clock"></i>
+                <h4>Working Hours</h4>
+                <p>24 Hours</p>
+            </div>
+            
         </div>
-    </div>
-</section>
-<section class="w3l-breadcrumb">
-    <div class="container">
-        <ul class="breadcrumbs-custom-path">
-            <li><a href="#url">Trang chủ</a></li>
-            <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Liên hệ</li>
-        </ul>
-    </div>
-</section>
-<!-- contact-form 2 -->
-<section class="w3l-contact-2 py-5">
-    <div class="contact-infubd section-gap py-lg-5 py-md-4">
-        <div class="container">
-            <div class="contact-grids d-grid">
-                <div class="contact-left">
-                    <h4>Liên hệ</h4>
-                    <h6>Mọi góp ý của bạn chính là một phần cho sự hoàn thiện của chúng tôi</h6>
-                    <div class="hours">
-                        <h6 class="info mt-3">Email:</h6>
-                        <p> <a href="mailto:info@example.com">
-                            phuongchauvietnam@gmail.com</a></p>
-                        <h6 class="info mt-3">Địa chỉ</h6>
-                        <p> Bệnh viện QT Phuong Châu 01, Nguyễn Văn Cừ, An Khánh, Ninh Kiều, TPCT </p>
-                        <p> Bệnh viện QT Phuong Châu 02, Phú Lợi, P2, TP Sóc Trăng, Sóc Trăng </p>
-                        <p> Bệnh viện QT Phuong Châu 03, Nguyễn Sinh Trắc, P2, TP Sa Đét, Đồng Tháp </p>
-                        <h6 class="info mt-3">Contact:</h6>
-                        <p class="margin-top"><a href="tel:+(121-345-6789">0939 002 933</a></p>
+        
+        <section>
+                    </section>
+
+
+        <section>
+                    </section>
+
+                        <div class="form-inner-cont mx-auto ContactPageForm" style="max-width:800px">
+            
+            <form action="" method="post" class="signin-form">
+                <div class="row align-form-map">
+                    <div class="col-sm-6 form-input">
+                        <input type="text" name="w3lName" id="w3lName"
+                            placeholder="Name" />
+                    </div>
+                    <div class="col-sm-6 form-input">
+                        <input type="email" name="w3lSender" id="w3lSender"
+                            placeholder="Email" required="" />
+                    </div>
+                    <div class="col-sm-6 form-input">
+                        <input type="text" name="w3lSubect"
+                            placeholder="Subject" class="contact-input">
+                    </div>
+                    <div class="col-sm-6 form-input">
+                        <input type="number" name="w3lPhone" placeholder="Phone Number" class="contact-input">
                     </div>
                 </div>
-                <div class="contact-right">
-                    <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="signin-form">
-                        <div class="input-grids">
-                            <input type="text" name="w3lName" id="w3lName" placeholder="Tên*"
-                                class="contact-input" />
-                            <input type="email" name="w3lSender" id="w3lSender" placeholder="Email của bạn*"
-                                class="contact-input" required="" />
-                            <input type="text" name="w3lSubect" id="w3lSubect" placeholder="Nghề nghiệp*"
-                                class="contact-input" />
-                        </div>
-                        <div class="form-input">
-                            <textarea name="w3lMessage" id="w3lMessage" placeholder="Vấn đề của bạn*"
-                                required=""></textarea>
-                        </div>
-                        <button class="btn btn-style btn-primary submit">Send Message</button>
-                    </form>
+                <div class="form-input">
+                    <textarea placeholder="Message"
+                        name="w3lMessage" id="w3lMessage" required=""></textarea>
                 </div>
-
-            </div>
+                <div class="submit text-right">
+                    <button type="submit" class="btn btn-style">Submit Message</button>
+                </div>
+            </form>
         </div>
+        
+        <section>
+                    </section>
+
+    </div>
 </section>
-<!-- /contact-form-2 -->
-<div class="map-iframe">
+
+
+
+
+
+<!-- Contact Map section -->
+
+<section>
+    </section>
+
+<div class="map ContactPageMap text-center">
     <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317718.69319292053!2d-0.3817765050863085!3d51.528307984912544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C+UK!5e0!3m2!1sen!2spl!4v1562654563739!5m2!1sen!2spl"
-        width="100%" height="400" frameborder="0" style="border: 0px; pointer-events: none;"
-        allowfullscreen=""></iframe>
+        width="100%" height="400" frameborder="0" style="border: 0px;" allowfullscreen=""></iframe>
 </div>
+
+<section>
+    </section>
+
+<!-- //Contact Map section -->
+
+
+
+<!-- move top -->
+<button onclick="topFunction()" id="movetop" title="Go to top">
+  <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+</button>
+<script>
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function () {
+    scrollFunction()
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("movetop").style.display = "block";
+    } else {
+      document.getElementById("movetop").style.display = "none";
+    }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+<!-- //move top -->
+
+<!-- common jquery plugin -->
+<script src="https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/js/jquery-3.3.1.min.js"></script>
+<!-- //common jquery plugin -->
+
+<!-- banner slider -->
+<script src="https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/js/jquery.min.js"></script>
+<script src="https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/js/modernizr-2.6.2.min.js"></script>
+<script src="https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/js/jquery.zoomslider.min.js"></script>
+<!-- //banner slider -->
+
+<!-- for services carousel slider -->
+<script src="https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/js/owl.carousel.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.owl-three').owlCarousel({
+      loop: true,
+      stagePadding: 20,
+      margin: 20,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      autoplaySpeed: 1000,
+      autoplayHoverPause: false,
+      nav: false,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 2
+        },
+        991: {
+          items: 3
+        },
+        1200: {
+          items: 4
+        }
+      }
+    })
+  })
+</script>
+<!-- //for services carousel slider -->
+
+    <!-- script for testimonials -->
+    <script>
+        $(document).ready(function () {
+            $('.owl-testimonial').owlCarousel({
+                loop: true,
+                margin: 0,
+                nav: true,
+                responsiveClass: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplaySpeed: 1000,
+                autoplayHoverPause: false,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false
+                    },
+                    480: {
+                        items: 1,
+                        nav: false
+                    },
+                    667: {
+                        items: 1,
+                        nav: true
+                    },
+                    1000: {
+                        items: 1,
+                        nav: true
+                    }
+                }
+            })
+        })
+    </script>
+    <!-- //script for testimonials -->
+
+    
+<!-- counter for stats -->
+<script src="https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/js/counter.js"></script>
+<!-- //counter for stats -->
+
+<!-- theme switch js (light and dark)-->
+<script src="https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/js/theme-change.js"></script>
+<!-- //theme switch js (light and dark)-->
+
+<!-- MENU-JS -->
+<script>
+  $(window).on("scroll", function () {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 80) {
+      $("#site-header").addClass("nav-fixed");
+    } else {
+      $("#site-header").removeClass("nav-fixed");
+    }
+  });
+
+  //Main navigation Active Class Add Remove
+  $(".navbar-toggler").on("click", function () {
+    $("header").toggleClass("active");
+  });
+  $(document).on("ready", function () {
+    if ($(window).width() > 991) {
+      $("header").removeClass("active");
+    }
+    $(window).on("resize", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+    });
+  });
+</script>
+<!-- //MENU-JS -->
+
+<!-- disable body scroll which navbar is in active -->
+<script>
+  $(function () {
+    $('.navbar-toggler').click(function () {
+      $('body').toggleClass('noscroll');
+    })
+  });
+</script>
+<!-- //disable body scroll which navbar is in active -->
+
+
+<!-- Cache served by breeze CACHE - Last modified: Mon, 10 Oct 2022 06:48:03 GMT -->
 @endsection

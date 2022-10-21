@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Position extends Model
 {
     use HasFactory;
-        public $timestamp = false;
     protected $fillable = [
         'name',
+        'salary'
 
     ];
     protected $primarykey = 'id';
-    protected $table = 'position';
+    protected $table = 'positions';
 }

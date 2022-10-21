@@ -92,7 +92,13 @@ class BookController extends Controller
     {
         $edit = Book::find($id);
         $room = Room::all();
- 
+        // $room1 =  DB::table('rooms')->empty();
+        
+        // $kq2 = DB::table('books')->where('register_date',$edit->register_date)->where('register_time',$edit->register_time)
+        // ->whereNotNull('room_id')->get();
+        // $room_e = DB::table('rooms')->whereNotIn('id',$kq2->room_id);
+
+        // DD($kq2->room_id);
         return view('admin.client.edit')->with(compact('edit','room'));
     }
 

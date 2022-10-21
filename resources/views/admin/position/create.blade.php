@@ -44,6 +44,11 @@
           <input type="text" class="form-control" id="exampleInputEmail1" value="{{old('name')}}" name="name">
           
         </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Lương</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" value="{{old('salary')}}" name="salary">
+            
+          </div>
  
 
 

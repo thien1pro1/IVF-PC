@@ -13,6 +13,7 @@
           <tr>
             <th scope="col">id</th>
             <th scope="col">Chức vụ</th>
+            <th scope="col">Lương</th>
 
             <th scope="col">Quản lý</th>
             
@@ -23,6 +24,7 @@
           <tr>
             <th scope="row">{{$position->id}}</th>
             <td>{{$position->name}}</td>
+            <td>{{$position->salary}}</td>
 
 
             <td>

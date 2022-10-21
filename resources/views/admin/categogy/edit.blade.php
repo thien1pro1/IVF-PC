@@ -38,21 +38,26 @@
 
 
     <form method="POST" action="{{route('categogy.update',[$editdanhmuc->id])}}">
+        @method('PUT')
         @csrf
         <div class="form-group">
           <label for="exampleInputEmail1">Tên danh mục</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" name="categogyName" values="{{$editdanhmuc->categogyName}}" placeholder="...">
+          <input type="text" class="form-control" id="exampleInputEmail1" name="categogyName" value="{{$editdanhmuc->categogyName}}" placeholder="...">
           
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Mô tả</label>
-          <input type="text" class="form-control" id="exampleInputPassword1" values="{{$editdanhmuc->short_Desc}}" placeholder="..." name="short_Desc" >
+          <input type="text" class="form-control" id="exampleInputPassword1" value="{{$editdanhmuc->short_Desc}}" placeholder="..." name="short_Desc" >
         </div>
         <div class="form-group">
             <select class="custom-select" name="status">
             	@if($editdanhmuc->status==1)
-                <option value="1" >kích hoạt</option>
+                <option selected value="1" >kích hoạt</option>
+                <option value="2" >Không kích hoạt</option>
+
                 @else
+                <option value="1" >Kích hoạt</option>
+
                 <option value="2" >Không kích hoạt</option>
     			@endif
               </select>

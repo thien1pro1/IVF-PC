@@ -15,6 +15,25 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="{{asset('ckeditor/ckeditor.js')}}"></script>
+  <script type="text/javascript">
+    CKEDITOR.replace('content', {
+filebrowserBrowseUrl : '/public/uploads',
+filebrowserUploadUrl : '/public/uploads',
+filebrowserImageBrowseUrl : '//public/uploads',
+filebrowserImageUploadUrl : '//public/uploads',
+filebrowserWindowWidth  : 800,
+filebrowserWindowHeight : 500
+});
+    $(document).ready(function(){
+     CKEDITOR.replace('ckeditor_shortdesc');
+     CKEDITOR.replace('ckeditor_desc');
+
+ });
+
+ </script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <head>
   <meta charset="utf-8" />
@@ -49,7 +68,7 @@
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100 h-100" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link  active" href="">
+          <a class="nav-link  active" href="{{route('admin.dashboard')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>

@@ -26,7 +26,7 @@
             <td>{{$staff->email}}</td>
             <td>{{$staff->name}}</td>
             <td>
-              {{$staff->position}}
+              {{$staff->position->name}}
             </td>
 
             <td>

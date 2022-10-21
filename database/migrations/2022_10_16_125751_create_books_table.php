@@ -26,7 +26,7 @@ class CreateBooksTable extends Migration
             $table->date('register_date');
             $table->time('register_time');
             $table->bigInteger('room_id')->nullable();
-            $table->tinyInteger('status')->default(1);
+            $table->tinyInteger('status')->default(0);
             $table->longText('message')->nullable();
             $table->text('result')->nullable();
 
