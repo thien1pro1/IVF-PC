@@ -46,7 +46,7 @@ class StaffController extends Controller
     {   $staff = new User();
         $staff->name = $request->name;
         $staff->email = $request->email;
-
+        $staff->position_id= $request->position_id;
         $staff->save();
         return redirect()->back()->with('status','Thêm Nhân viên thành công');
     }

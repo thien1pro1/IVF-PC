@@ -7,7 +7,7 @@ use App\Models\Book;
 use App\Models\Room;
 use Illuminate\Support\Facades\DB;
 
-use function PHPUnit\Framework\isEmpty;
+// use function PHPUnit\Framework\isEmpty;
 
 class BookController extends Controller
 {
@@ -19,7 +19,7 @@ class BookController extends Controller
     
     public function index()
     {
-        $books = Book::orderBy('email','ASC')->get();
+        $books = Book::orderBy('status','ASC')->orderBy('register_date','ASC')->orderBy('register_time','ASC')->get();
         return view('admin.client.index')->with(compact('books'));
     }
 
@@ -44,7 +44,12 @@ class BookController extends Controller
     public function store(Request $request)
     {   
         $kq1 = Room::count();
-        $kq2 = DB::table('books')->where('register_date',$request->register_date)->where('register_time',$request->register_time)->whereNotNull('room_id')->count();
+
+
+        $kq2 = DB::table('books')->where('register_date',$request->register_date)
+                                 ->where('register_time',$request->register_time)
+                                 ->whereNotNull('room_id')->count();
+        
 
         
         $book = new Book();
@@ -60,14 +65,22 @@ class BookController extends Controller
         $book->register_date = $request->register_date;
         $book->register_time = $request->register_time;
         $book->status = 0;
+        // foreach($rooms_e as $r){
+        //     $kq3 = DB::table('books')->where('register_date',$request->register_date)
+        //                          ->where('register_time',$request->register_time)
+        //                          ->where('room_id',$r->id)->count();
+        //     if($kq3==0){
+        //         $book->room_id = $r->id;
+        //         $book->save();
+        //         return redirect()->back()->with('status','Đặt lịch thành công');
+        //     }
+        // }
         
         if($kq1>$kq2){
             $book->save();
             return redirect()->back()->with('status','Đặt lịch thành công');
         }
-        // $book->status = 1;
-        // $book->save();
-        // return redirect()->back()->with('status','Đặt lịch thành công');
+
         return redirect()->back()->with('status','Giờ đó đã hết phòng!');
     }
 
@@ -112,8 +125,12 @@ class BookController extends Controller
     public function update(Request $request, $id)
     {
         
-        // $kq1 = DB::table('books')->where('register_date',$request->register_date)->where('register_time',$request->register_time)->where('room_id',$request->room_id)->count();
-        $kq2 = DB::table('books')->where('register_date',$request->register_date)->where('register_time',$request->register_time)->where('room_id',$request->room_id)->get();
+        // $kq1 = DB::table('books')->where('register_date',$request->register_date)
+        //->where('register_time',$request->register_time)->where('room_id',$request->room_id)->count();
+        $rooms_e = Room::get();
+        $kq2 = DB::table('books')->where('register_date',$request->register_date)
+                                 ->where('register_time',$request->register_time)
+                                 ->where('room_id',$request->room_id)->get();
 
         $book = Book::find($id);
 
@@ -128,17 +145,20 @@ class BookController extends Controller
         $book->message = $request->message;
         $book->register_date = $request->register_date;
         $book->register_time = $request->register_time;
-        $book->status = $request->status;
-        $book->room_id = $request->room_id;
-
-        if(isEmpty($kq2)||(!isEmpty($kq2)&&$kq2->id==$id)){
-            
-            $book->save();
-            return redirect()->route('book.index')->with('success','Cập nhật đặt lịch thành công');
-
-
+        $book->status = 1;
+        foreach($rooms_e as $r){
+            $kq3 = DB::table('books')->where('register_date',$request->register_date)
+                                 ->where('register_time',$request->register_time)
+                                 ->where('room_id',$r->id)->count();
+            if($kq3==0){
+                $book->room_id = $r->id;
+                $book->save();
+                return redirect()->back()->with('status','Đặt lịch thành công');
+            }
         }
-        return redirect()->route('book.index')->with('success','Phòng đó đã dc đặt');
+        
+
+        return redirect()->back()->with('status','Giờ đó đã hết phòng!');
     }
 
     /**
@@ -148,8 +168,16 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
+    { 
         Book::find($id)->delete();
         return redirect()->back()->with('status','Xoá lượt khám thành công');
+    }
+
+    public function cancel($id){
+        $book = Book::find($id);
+        $book->status = 3;
+        $book->room_id = null;
+        $book->save();
+        return redirect()->route('book.index')->with('status','Hủy lịch khám thành công!');
     }
 }

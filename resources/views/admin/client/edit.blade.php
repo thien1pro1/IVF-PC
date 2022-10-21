@@ -52,7 +52,7 @@
         <div class="form-group col-6" style="float: right">
             <label for="c3">Ngày sinh chồng</label>
             <input type="date" class="form-control" id="c3" name="hus_birthday" value="{{$edit->hus_birthday}}"  >
-          </div>
+        </div>
         <div class="form-group col-6">
             <label for="c4">Ngày sinh vợ</label>
             <input type="date" class="form-control" id="c4" value="{{$edit->wife_birthday}}"  name="wife_birthday" >
@@ -76,32 +76,6 @@
         <div class="form-group ">
             <label for="c9">Ghi chú</label>
             <textarea rows="5" resize="none" type="date" class="form-control" id="c9" value="{{$edit->message}}"  name="message" ></textarea>
-        </div>
-        <div class="form-group">
-            <label for="c10">Phòng khám</label>
-           
-            <select class="form-control custom-select" id="c11"  name="room_id" > 
-
-                {{-- @foreach ($room_e as $r)
-                @if ($r->id==$edit->room_id)
-                    <option  selected value="{{$edit->room_id}}" >Phòng {{$edit->room_id}}</option>
-                @else
-                <option  value="{{$r->id}}" >{{$r->name}}</option>
-
-                @endif
-                    
-                @endforeach --}}
-                @foreach ($room as $r)
-                @if ($r->id==$edit->room_id)
-                    <option  selected value="{{$edit->room_id}}" >Phòng {{$edit->room_id}}</option>
-                @else
-                <option  value="{{$r->id}}" >{{$r->name}}</option>
-
-                @endif
-                    
-                @endforeach
-
-            </select>
         </div>
         <div class="form-group">
             <label for="c11">Trạng thái</label>
@@ -134,19 +108,12 @@
             <label for="c12">Kết quả</label>
             <input type="text" class="form-control" id="c12" value="{{$edit->result}}"  name="result" >
         </div>
-
-        {{-- <div class="form-group">
-            <select class="custom-select" name="status">
-            	@if($editdanhmuc->status==1)
-                <option value="1" >kích hoạt</option>
-                @else
-                <option value="2" >Không kích hoạt</option>
-    			@endif
-              </select>
-              
-          </div> --}}
-
-        <button type="submit" name="addbook" class="btn btn-primary">Lưu</button>
-      </form>
+     <button type="submit" name="addbook" class="btn btn-primary">Lưu</button>
+    </form>
+    <form method="POST" action="{{route('book.cancel',[$edit->id])}}">
+        @method('PUT')
+        @csrf
+        <button type="submit" name="cancelbook" class="btn btn-primary">Hủy</button>
+    </form>
 </div>
 @endsection

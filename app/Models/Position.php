@@ -15,4 +15,8 @@ class Position extends Model
     ];
     protected $primarykey = 'id';
     protected $table = 'positions';
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }

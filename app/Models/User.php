@@ -22,7 +22,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'position',
+        'position_id',
         'password'
     ];
 
@@ -48,7 +48,7 @@ class User extends Authenticatable
     
         protected $table = 'users';
     public function position(){
-        return $this->belongsTo('App\Models\Position','position');
+        return $this->belongsTo(Position::class);
     }
 
 }

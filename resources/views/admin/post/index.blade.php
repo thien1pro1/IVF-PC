@@ -293,7 +293,7 @@
       <img alt="Image placeholder" src="../../../assets/img/team-4.jpg">
       </a>
       </div>
-      </div>
+      </div>   
       </div>
       </div>
       </div>

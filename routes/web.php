@@ -78,6 +78,7 @@ Route::resource('admin/position',PositionController::class);
 
 Route::resource('admin/room',RoomController::class);
 
+Route::put('/admin/client/edit/cancel/{id}', [App\Http\Controllers\BookController::class, 'cancel'])->name('book.cancel');
 
 
 Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.dashboard');

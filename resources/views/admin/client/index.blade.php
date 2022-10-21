@@ -14,18 +14,24 @@
             <th scope="col">id</th>
             <th scope="col">Tên vợ</th>
             <th scope="col">Tên chồng</th>
-
+            <th scope="col">Phòng</th>
             <th scope="col">Trạng thái</th>
             <th scope="col">Quản lý</th>
             
           </tr>
         </thead>
+        {{-- @dd($books); --}}
         @foreach($books as $book)
         <tbody>
           <tr>
             <th scope="row">{{$book->id}}</th>
             <td>{{$book->wife_name}}</td>
             <td>{{$book->hus_name}}</td>
+            @if($book->room_id != null)
+            <td>{{$book->room->name}}</td>
+            @else
+            <td></td>
+            @endif
             <td>
               @if($book->status==1)
                 <span class="text text-success">Đã duyệt</span>
@@ -40,13 +46,11 @@
             </td>
 
             <td>
+              @if($book->status==0 || $book->status==1)
               <a href="{{route('book.edit',[$book->id])}}" class="btn btn-primary" style="float:right">Duyệt</a>
-              <form action="{{route('book.destroy',[$book->id])}}" method="POST">
-                @method('DELETE')
-                @csrf
-                <button onclick="return confirm('Bạn muốn xóa lượt khám này?')" class="btn btn-danger">Xóa</button>
-                
-              </form>
+              @else
+
+              @endif
             </td>
           </tr>
           @endforeach

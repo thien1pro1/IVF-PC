@@ -25,9 +25,11 @@
             <th scope="row">{{$staff->id}}</th>
             <td>{{$staff->email}}</td>
             <td>{{$staff->name}}</td>
-            <td>
-              {{$staff->position->name}}
-            </td>
+            @if($staff->position_id != null)
+            <td>{{$staff->position->name}}</td>
+            @else
+            <td></td>
+            @endif
 
             <td>
               <a href="{{route('staff.edit',[$staff->id])}}" class="btn btn-primary" style="float:right">Sửa</a>
