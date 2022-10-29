@@ -19,7 +19,7 @@
 }
 </style>
 <div class="container">
-    <h2>Cập nhập danh mục</h2>
+    <h2>Cập nhập Chức vụ</h2>
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -37,29 +37,34 @@
     @endif
 
 
-    <form method="POST" action="{{route('categogy.update',[$editdanhmuc->id])}}">
+    <form method="POST" action="{{route('staff.update',[$edit->id])}}">
+        @method('PUT')
         @csrf
         <div class="form-group">
-          <label for="exampleInputEmail1">Tên danh mục</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" name="categogyName" values="{{$editdanhmuc->categogyName}}" placeholder="...">
+          <label for="exampleInputEmail1">Tài khoản</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="email" value="{{$edit->email}}" >
           
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Mô tả</label>
-          <input type="text" class="form-control" id="exampleInputPassword1" values="{{$editdanhmuc->short_Desc}}" placeholder="..." name="short_Desc" >
-        </div>
-        <div class="form-group">
-            <select class="custom-select" name="status">
-            	@if($editdanhmuc->status==1)
-                <option value="1" >kích hoạt</option>
-                @else
-                <option value="2" >Không kích hoạt</option>
-    			@endif
-              </select>
+            <label for="exampleInputEmail1">Tên</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" name="name" value="{{$edit->name}}" >
+            
+          </div>
+          <div class="form-group">
+            <select class="custom-select" name="position_id">
+                @foreach($position as $p)
+                    @if($edit->position_id == $p->id)
+                    <option selected value="{{$edit->position->name}}"></option>
+                    @else
+                    <option value="{{$edit->position->name}}"></option>
+                    @endif
+                @endforeach
+
+            </select>
               
           </div>
 
-        <button type="submit" name="addCategogy" class="btn btn-primary">Thêm</button>
+        <button type="submit" name="addStaff" class="btn btn-primary">Lưu</button>
       </form>
 </div>
 @endsection

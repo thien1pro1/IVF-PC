@@ -115,5 +115,9 @@
         @csrf
         <button type="submit" name="cancelbook" class="btn btn-primary">Hủy</button>
     </form>
+    <a href="{{route('book.confirmEmail',[$edit->id])}}">
+        Mail xác nhận
+    </a>
+    
 </div>
 @endsection

@@ -15,7 +15,10 @@
             <th scope="col">Tên vợ</th>
             <th scope="col">Tên chồng</th>
             <th scope="col">Phòng</th>
+            <th>Code
+            </th>
             <th scope="col">Trạng thái</th>
+
             <th scope="col">Quản lý</th>
             
           </tr>
@@ -32,6 +35,16 @@
             @else
             <td></td>
             @endif
+            @php
+              $barcode = new Picqer\Barcode\BarcodeGeneratorHTML();
+            @endphp
+            
+            <td>
+              {!! $barcode->getBarcode($book->id,$barcode::TYPE_CODE_128,3,30); !!}
+              {{-- <div>{!! DNS1D::getBarcodeHTML($book->id, 'POSTNET') !!}</div></br>
+              <div>{!! DNS2D::getBarcodeHTML($book->id, 'QRCODE') !!}</div></br --}}
+
+            </td>
             <td>
               @if($book->status==1)
                 <span class="text text-success">Đã duyệt</span>

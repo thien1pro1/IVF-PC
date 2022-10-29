@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CategogyController;
 use App\Http\Controllers\PostController;
@@ -11,6 +11,7 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Auth;
+use App\Mail\ConfirmEmail;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,6 +75,8 @@ Route::resource('admin/admin',UserController::class);
 Route::resource('admin/service',ServiceController::class);
 Route::resource('admin/client',BookController::class);
 Route::resource('admin/position',PositionController::class);
+Route::get('send-confirmEmail/{id}', [BookController::class, 'confirmEmail'])->name('book.confirmEmail');
+Route::get('send-barcodeEmail/{id}', [BookController::class, 'barcodeEmail']);
 
 
 Route::resource('admin/room',RoomController::class);

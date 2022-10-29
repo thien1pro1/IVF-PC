@@ -1,11 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Models\Book;
 use App\Models\Room;
 use Illuminate\Support\Facades\DB;
+
+use App\Mail\BarcodeEmail;
+use App\Mail\ConfirmEmail;
+use Exception;
+use Illuminate\Mail\Mailer;
+use Illuminate\Support\Facades\Mail as FacadesMail;
+use PhpParser\Node\Stmt\TryCatch;
 
 // use function PHPUnit\Framework\isEmpty;
 
@@ -179,5 +186,33 @@ class BookController extends Controller
         $book->room_id = null;
         $book->save();
         return redirect()->route('book.index')->with('status','Hủy lịch khám thành công!');
+    }
+    
+    public function confirmEmail($id){
+        $book = Book::find($id);
+        $data = [
+            'subject' => 'Mail xác nhận khám bệnh',
+            'body'    => 'Quý khách vui lòng xác nhận'
+        ];
+
+            Mail::to($book->email)->send(new ConfirmEmail($data));
+            return response()->json(['Great check your mail box!']);
+
+    }
+
+
+    
+    public function barcodeEmail($id){
+        $book = Book::find($id);
+        $data = [
+            'subject' => 'Mail xác nhận khám bệnh',
+            'body'    => 'Quý khách vui lòng xác nhận'
+        ];
+        try{
+            Mail::to($book->email)->send(new BarcodeEmail($data));
+            return response()->json(['Great check your mail box!']);
+        }catch (Exception $th){
+            return response()->json(['Maybe you no connect!']);
+        }
     }
 }

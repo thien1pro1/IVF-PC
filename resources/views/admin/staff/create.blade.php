@@ -51,12 +51,10 @@
         <div class="form-group">
             <label for="status">Chức vụ</label>
             <select id="status" class="custom-select" name="position_id">
-                @foreach($pos)
-                <option value="1" >Bác sĩ</option>
-                <option value="2" >Y Tá</option>
-                <option value="3" >Bảo vệ</option>
-                <option value="4" >Nhân viên marketing</option>
-    
+                @foreach($position as $p)
+                <option value="{{$p->id}}=" >{{$p->name}}</option>
+
+                @endforeach
               </select>
               
           </div>

@@ -33,7 +33,9 @@ class StaffController extends Controller
      */
     public function create()
     {
-        return view('admin.staff.create');
+        $position = Position::all();
+
+        return view('admin.staff.create')->with(compact('position'));
     }
 
     /**
@@ -70,7 +72,10 @@ class StaffController extends Controller
      */
     public function edit($id)
     {
-        //
+        $edit = User::find($id);
+        
+        dd($edit->email);
+        return view('admin.client.edit')->with(compact('edit'));
     }
 
     /**
