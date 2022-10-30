@@ -11,7 +11,7 @@ class BarcodeEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    private $data = [];
+    public $data ;
     /**
      * Create a new message instance.
      *
@@ -31,7 +31,7 @@ class BarcodeEmail extends Mailable
     {
         return $this->from('thien1pro1@gmail.com','Bệnh viện Quốc tế Phương Châu')
         ->subject($this->data['subject'])
-        ->view('emails.index')
-        ->with('maildata');
+        ->view('emails.barcodeEmail');
+
     }
 }

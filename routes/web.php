@@ -7,6 +7,8 @@ use App\Http\Controllers\CategogyController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\BookStaffController;
+
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\RoomController;
@@ -74,9 +76,11 @@ Route::resource('admin/staff',StaffController::class);
 Route::resource('admin/admin',UserController::class);
 Route::resource('admin/service',ServiceController::class);
 Route::resource('admin/client',BookController::class);
+Route::resource('admin/bookStaff',BookStaffController::class);
+
 Route::resource('admin/position',PositionController::class);
 Route::get('send-confirmEmail/{id}', [BookController::class, 'confirmEmail'])->name('book.confirmEmail');
-Route::get('send-barcodeEmail/{id}', [BookController::class, 'barcodeEmail']);
+Route::get('send-barcodeEmail/{id}', [BookController::class, 'barcodeEmail'])->name('book.barcodeEmail');;
 
 
 Route::resource('admin/room',RoomController::class);

@@ -42,40 +42,40 @@
         @csrf
         <div class="form-group col-6" style="float: right">
           <label for="c1">Tên Chồng</label>
-          <input type="text" class="form-control" id="c1" name="hus_name" value="{{$edit->hus_name}}" >
+          <input type="text" class="form-control" id="c1" readonly name="hus_name" value="{{$edit->hus_name}}" >
           
         </div>
         <div class="form-group col-6">
           <label for="c2">Tên vợ</label>
-          <input type="text" class="form-control" id="c2" name="wife_name" value="{{$edit->wife_name}}" >
+          <input type="text" class="form-control" id="c2" readonly name="wife_name" value="{{$edit->wife_name}}" >
         </div>
         <div class="form-group col-6" style="float: right">
             <label for="c3">Ngày sinh chồng</label>
-            <input type="date" class="form-control" id="c3" name="hus_birthday" value="{{$edit->hus_birthday}}"  >
+            <input type="date" class="form-control" id="c3" readonly name="hus_birthday" value="{{$edit->hus_birthday}}"  >
         </div>
         <div class="form-group col-6">
             <label for="c4">Ngày sinh vợ</label>
-            <input type="date" class="form-control" id="c4" value="{{$edit->wife_birthday}}"  name="wife_birthday" >
+            <input type="date" class="form-control" id="c4" readonly value="{{$edit->wife_birthday}}"  name="wife_birthday" >
         </div>
         <div class="form-group col-6" style="float: right">
             <label for="c5">Email</label>
-            <input type="email" class="form-control" id="c5" value="{{$edit->email}}"  name="email" >
+            <input type="email" class="form-control" id="c5" readonly value="{{$edit->email}}"  name="email" >
         </div>
         <div class="form-group col-6">
             <label for="c6">Số điện thoại</label>
-            <input type="text" class="form-control" id="c6" value="{{$edit->phone}}"  name="phone" >
+            <input type="text" class="form-control" id="c6" readonly value="{{$edit->phone}}"  name="phone" >
         </div>
         <div class="form-group col-6" style="float: right">
             <label for="c7">Ngày Khám</label>
-            <input type="date" class="form-control" id="c7" value="{{$edit->register_date}}"  name="register_date" >
+            <input type="date" class="form-control" id="c7" readonly value="{{$edit->register_date}}"  name="register_date" >
         </div>
         <div class="form-group col-6">
             <label for="c8">Giờ khám</label>
-            <input type="time" class="form-control" id="c8" value="{{$edit->register_time}}"  name="register_time" >
+            <input type="time" class="form-control" id="c8" readonly value="{{$edit->register_time}}"  name="register_time" >
         </div>
         <div class="form-group ">
             <label for="c9">Ghi chú</label>
-            <textarea rows="5" resize="none" type="date" class="form-control" id="c9" value="{{$edit->message}}"  name="message" ></textarea>
+            <textarea rows="5" resize="none" type="date" readonly class="form-control" id="c9" value="{{$edit->message}}"  name="message" ></textarea>
         </div>
         <div class="form-group">
             <label for="c11">Trạng thái</label>
@@ -106,6 +106,7 @@
         </div>
         <div class="form-group">
             <label for="c12">Kết quả</label>
+            <textarea class="form-control" id="c12" value="{{$edit->result}}"  name="result" ></textarea>
             <input type="text" class="form-control" id="c12" value="{{$edit->result}}"  name="result" >
         </div>
      <button type="submit" name="addbook" class="btn btn-primary">Lưu</button>

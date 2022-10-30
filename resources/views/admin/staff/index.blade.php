@@ -25,8 +25,11 @@
             <th scope="row">{{$staff->id}}</th>
             <td>{{$staff->email}}</td>
             <td>{{$staff->name}}</td>
-            @if($staff->position_id != null)
+            @if($staff->position_id==0)
+            <td>Admin</td>
+            @elseif($staff->position_id != null)
             <td>{{$staff->position->name}}</td>
+            
             @else
             <td></td>
             @endif

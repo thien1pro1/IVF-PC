@@ -9,14 +9,16 @@ use Illuminate\Support\Facades\DB;
 
 use App\Mail\BarcodeEmail;
 use App\Mail\ConfirmEmail;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Mail\Mailer;
 use Illuminate\Support\Facades\Mail as FacadesMail;
 use PhpParser\Node\Stmt\TryCatch;
 
+
 // use function PHPUnit\Framework\isEmpty;
 
-class BookController extends Controller
+class BookStaffController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,8 +28,16 @@ class BookController extends Controller
     
     public function index()
     {
-        $books = Book::orderBy('status','ASC')->orderBy('register_date','ASC')->orderBy('register_time','ASC')->get();
-        return view('admin.client.index')->with(compact('books'));
+        $today = Carbon::today();
+    
+
+        $a = $today->toDateString();
+        // $boo = Book::where('register_date',$a);
+        $books = Book::orderBy('status','ASC')->where('register_date',$a)->orderBy('register_date','ASC')->orderBy('register_time','ASC')->get();
+
+        // dd(!empty($boo));
+
+        return view('admin.bookStaff.index')->with(compact('books'));
     }
 
     /**
@@ -38,8 +48,6 @@ class BookController extends Controller
     public function create()
     {
        
-        
-        return view('client.book');
     }
 
     /**
@@ -50,45 +58,7 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {   
-        $kq1 = Room::count();
 
-
-        $kq2 = DB::table('books')->where('register_date',$request->register_date)
-                                 ->where('register_time',$request->register_time)
-                                 ->whereNotNull('room_id')->count();
-        
-
-        
-        $book = new Book();
-        $book->wife_name = $request->wife_name;
-        $book->hus_name = $request->hus_name;
-        $book->wife_birthday = $request->wife_birthday;
-        $book->hus_birthday = $request->hus_birthday;
-        $book->phone = $request->phone;
-        $book->email = $request->email;
-
-        
-        $book->message = $request->message;
-        $book->register_date = $request->register_date;
-        $book->register_time = $request->register_time;
-        $book->status = 0;
-        // foreach($rooms_e as $r){
-        //     $kq3 = DB::table('books')->where('register_date',$request->register_date)
-        //                          ->where('register_time',$request->register_time)
-        //                          ->where('room_id',$r->id)->count();
-        //     if($kq3==0){
-        //         $book->room_id = $r->id;
-        //         $book->save();
-        //         return redirect()->back()->with('status','Đặt lịch thành công');
-        //     }
-        // }
-        
-        if($kq1>$kq2){
-            $book->save();
-            return redirect()->back()->with('status','Đặt lịch thành công');
-        }
-
-        return redirect()->back()->with('status','Giờ đó đã hết phòng!');
     }
 
     /**
@@ -119,7 +89,7 @@ class BookController extends Controller
         // $room_e = DB::table('rooms')->whereNotIn('id',$kq2->room_id);
 
         // DD($kq2->room_id);
-        return view('admin.client.edit')->with(compact('edit','room'));
+        return view('admin.bookStaff.edit')->with(compact('edit','room'));
     }
 
     /**
