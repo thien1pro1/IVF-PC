@@ -205,7 +205,7 @@ class BookController extends Controller
     public function barcodeEmail($id){
         $book = Book::find($id);
         $body = 'Anh '.$book->hus_name.' Và chị '.$book->wife_name.
-                ' sẽ khám vào '.$book->regiser_time.
+                ' sẽ khám vào '.$book->register_time.
                 ' Ngày' .$book->regiser_date.
                 ' tại Phòng '.$book->room_id;
         $data = [
