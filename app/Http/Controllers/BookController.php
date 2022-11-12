@@ -208,7 +208,11 @@ class BookController extends Controller
         $email = $book->email;
         $body = 'Anh '.$book->hus_name.' Và chị '.$book->wife_name.
                 ' sẽ khám vào '.$book->register_time.
+<<<<<<< HEAD
                 ' Ngày' .$book->register_date.
+=======
+                ' Ngày' .$book->regiser_date.
+>>>>>>> 01078c49b692f1ee744e92b4aafed5eb145c3f19
                 ' tại Phòng '.$book->room_id;
         $data = [
             'subject' => 'Mail thông báo khám bệnh',

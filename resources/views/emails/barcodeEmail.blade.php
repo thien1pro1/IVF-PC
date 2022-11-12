@@ -22,9 +22,7 @@
               <img src="{{ $message->embed($xx) }}" style="width:300px; height:100px;">
 
 
-              {{-- {!! $barcode->getBarcode($book->id,$barcode::TYPE_CODE_128,3,30); !!} --}}
-              {{-- <div>{!! DNS1D::getBarcodeHTML($book->id, 'POSTNET') !!}</div></br>
-              <div>{!! DNS2D::getBarcodeHTML($book->id, 'QRCODE') !!}</div></br --}}
+            
 
             </td>
     </tr>

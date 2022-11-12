@@ -40,7 +40,7 @@
                             <a class="nav-link" aria-current="page" href="{{url('/client/home')}}">Trang chủ</a>
                         </li>
                            <li class="nav-item dropdown active">
-                            <a class="nav-link dropdown-toggle" href="{{url('/client/about')}}" id="navbarScrollingDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="" id="navbarScrollingDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Về chúng tôi <i class="fas fa-angle-down"></i>
                             </a>
