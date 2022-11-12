@@ -77,48 +77,21 @@
             <label for="c9">Ghi chú</label>
             <textarea rows="5" resize="none" type="date" readonly class="form-control" id="c9" value="{{$edit->message}}"  name="message" ></textarea>
         </div>
-        <div class="form-group">
-            <label for="c11">Trạng thái</label>
-            <select class="form-control custom-select" id="c11"  name="status" > 
-                @if ($edit->status==0)
-                    <option class="text text-primary" selected value="0" >Chờ xác nhận</option>
-                    <option class="text text-success" value="1" >Đã xác nhận</option>
-                    <option class="text text-muted" value="2" >Đã Khám</option>  
-                    <option class="text text-danger" value="3" >Đã hủy</option> 
-                @elseif($edit->status==1)
-                    <option class="text text-primary" value="0" >Chờ xác nhận</option>
-                    <option class="text text-success" selected value="1" >Đã xác nhận</option>
-                    <option class="text text-muted" value="2" >Đã Khám</option>  
-                    <option class="text text-danger" value="3" >Đã hủy</option> 
-                @elseif($edit->status==2)
-                    <option class="text text-primary" value="0" >Chờ xác nhận</option>
-                    <option class="text text-success" value="1" >Đã xác nhận</option>
-                    <option class="text text-muted" selected value="2" >Đã Khám</option>  
-                    <option class="text text-danger" value="3" >Đã hủy</option> 
-                @else
-                    <option class="text text-primary" value="0" >Chờ xác nhận</option>
-                    <option class="text text-success" selected value="1" >Đã xác nhận</option>
-                    <option class="text text-muted" value="2" >Đã Khám</option>  
-                    <option class="text text-danger" selected value="3" >Đã hủy</option> 
-                @endif   
-                  
-            </select>
-        </div>
+
         <div class="form-group">
             <label for="c12">Kết quả</label>
             <textarea class="form-control" id="c12" value="{{$edit->result}}"  name="result" ></textarea>
-            <input type="text" class="form-control" id="c12" value="{{$edit->result}}"  name="result" >
         </div>
-     <button type="submit" name="addbook" class="btn btn-primary">Lưu</button>
+     <button style="float: left; margin:5px;" type="submit" name="addbook" class="btn btn-primary">Lưu</button>
     </form>
     <form method="POST" action="{{route('book.cancel',[$edit->id])}}">
         @method('PUT')
         @csrf
-        <button type="submit" name="cancelbook" class="btn btn-primary">Hủy</button>
+        <button style="float: left; margin:5px;" type="submit" name="cancelbook" class="btn btn-primary">Hủy</button>
     </form>
-    <a href="{{route('book.barcodeEmail',[$edit->id])}}">
-        Mail xác nhận
-    </a>
+    {{-- <a href="{{route('book.barcodeEmail',[$edit->id])}}"> --}}
+        <button style="float: left; margin:5px;" href="{{route('book.barcodeEmail',[$edit->id])}}" type="submit" name="cccccc" class="btn btn-primary">Mail</button>
+    {{-- </a> --}}
     
 </div>
 @endsection

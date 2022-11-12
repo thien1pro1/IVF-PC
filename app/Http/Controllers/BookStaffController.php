@@ -122,7 +122,7 @@ class BookStaffController extends Controller
         $book->message = $request->message;
         $book->register_date = $request->register_date;
         $book->register_time = $request->register_time;
-        $book->status = 1;
+        $book->status = 2;
         foreach($rooms_e as $r){
             $kq3 = DB::table('books')->where('register_date',$request->register_date)
                                  ->where('register_time',$request->register_time)

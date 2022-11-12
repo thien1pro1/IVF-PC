@@ -62,7 +62,7 @@
             </td>
 
             <td>
-              @if($book->status==0 || $book->status==1)
+              @if($book->status<=2)
               <a href="{{route('book.edit',[$book->id])}}" class="btn btn-primary" style="float:right">Duyệt</a>
               @else
 

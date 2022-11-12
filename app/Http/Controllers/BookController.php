@@ -84,6 +84,7 @@ class BookController extends Controller
         // }
         
         if($kq1>$kq2){
+            
             $book->save();
             return redirect()->back()->with('status','Đặt lịch thành công');
         }
@@ -204,18 +205,41 @@ class BookController extends Controller
     
     public function barcodeEmail($id){
         $book = Book::find($id);
+        $email = $book->email;
         $body = 'Anh '.$book->hus_name.' Và chị '.$book->wife_name.
-                ' sẽ khám vào '.$book->regiser_time.
-                ' Ngày' .$book->regiser_date.
+                ' sẽ khám vào '.$book->register_time.
+                ' Ngày' .$book->register_date.
                 ' tại Phòng '.$book->room_id;
         $data = [
             'subject' => 'Mail thông báo khám bệnh',
             'body'    => $body,
-            'id'      => $id
+            'id'      => $id,
+            'email'   => $email
         ];
         
             Mail::to($book->email)->send(new BarcodeEmail($data));
             return response()->json(['Great check your mail box!']);
         
+    }
+
+    public function history(Request $request){
+        $email = $request->query('email');
+        $books = Book::where('email',$email)->orderBy('register_date')->get();
+
+        return view('client.history',[
+            'email'=>$email
+        ])->with(compact('books'));
+
+    }
+
+    public function detailHistory(Request $request){
+        $id = $request->query('id');
+        $email = $request->query('email');
+        $book = Book::where('id',$id)->first;
+
+        return view('client.detailHistory',[
+            'id'=>$id
+        ])->with(compact('book'));
+
     }
 }

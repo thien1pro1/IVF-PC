@@ -11,7 +11,8 @@ class Room extends Model
     use HasFactory;
     public $timestamp = false;
     protected $fillable = [
-        'name'
+        'name',
+        'user_id'
     ];
     protected $primarykey = 'id';
 

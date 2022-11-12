@@ -56,6 +56,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/client/home',function(){
     return view('client.home');
 });
+Route::get('/error',function(){
+    return view('layouts.error');
+});
 Route::get('/client/about',function(){
     return view('client.about');
 });
@@ -86,6 +89,10 @@ Route::get('send-barcodeEmail/{id}', [BookController::class, 'barcodeEmail'])->n
 Route::resource('admin/room',RoomController::class);
 
 Route::put('/admin/client/edit/cancel/{id}', [App\Http\Controllers\BookController::class, 'cancel'])->name('book.cancel');
+Route::get('/client/history', [BookController::class, 'history'])->name('book.history');
+
+Route::get('/client/detailHistory', [BookController::class, 'detailHistory'])->name('book.detailHistory');
+
 
 
 Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.dashboard');
