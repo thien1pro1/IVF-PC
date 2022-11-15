@@ -13,12 +13,12 @@ class CreateRoomsTable extends Migration
      */
     public function up()
     {
-        Schema::create('rooms', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('user_id')->nullable();
-            $table->timestamps();
-        });
+        // Schema::create('rooms', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('name');
+        //     $table->string('user_id')->nullable();
+        //     $table->timestamps();
+        // });
     }
 
     /**

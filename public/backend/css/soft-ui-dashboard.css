@@ -22857,7 +22857,14 @@ hr.horizontal.gray-light {
   margin: 0;
 }
 
+<<<<<<< HEAD
 
+=======
+/* .table td,
+.table th {
+  white-space: nowrap;
+} */
+>>>>>>> cbb107d0b976a22d9a00399b5f28e9dd3adfa15c
 
 .table.align-items-center td,
 .table.align-items-center th {

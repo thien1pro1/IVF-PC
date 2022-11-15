@@ -7,7 +7,10 @@
         </div>
         
     @endif
-    
+    <div class="form-group col-6" style="float: right">
+      <label for="c3">Ngày</label>
+      <input type="date" class="form-control" id="c3" name="hus_birthday" value="{{$edit->hus_birthday}}"  >
+  </div>
     <table class="table table-striped table-bordered">
         <thead>
           <tr>

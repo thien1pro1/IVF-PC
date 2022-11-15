@@ -209,9 +209,16 @@ class BookController extends Controller
         $body = 'Anh '.$book->hus_name.' Và chị '.$book->wife_name.
                 ' sẽ khám vào '.$book->register_time.
 
+
                 ' Ngày' .$book->register_date.
 
                 ' Ngày' .$book->regiser_date.
+
+                ' Ngày' .$book->register_date.
+
+                ' Ngày' .$book->regiser_date.
+
+
                 ' tại Phòng '.$book->room_id;
         $data = [
             'subject' => 'Mail thông báo khám bệnh',
@@ -238,7 +245,7 @@ class BookController extends Controller
     public function detailHistory(Request $request){
         $id = $request->query('id');
         $email = $request->query('email');
-        $book = Book::where('id',$id)->first;
+        $book = Book::where('id',$id)->first();
 
         return view('client.detailHistory',[
             'id'=>$id
