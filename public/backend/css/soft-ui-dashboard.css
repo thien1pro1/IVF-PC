@@ -18738,8 +18738,8 @@ fieldset:disabled .btn {
 }
 
 .avatar-sm {
-  width: 36px !important;
-  height: 36px !important;
+  width: 100px !important;
+  height: 100px !important;
   font-size: 0.875rem;
 }
 
@@ -22857,10 +22857,7 @@ hr.horizontal.gray-light {
   margin: 0;
 }
 
-.table td,
-.table th {
-  white-space: nowrap;
-}
+
 
 .table.align-items-center td,
 .table.align-items-center th {

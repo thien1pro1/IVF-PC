@@ -22857,10 +22857,7 @@ hr.horizontal.gray-light {
   margin: 0;
 }
 
-.table td,
-.table th {
-  white-space: nowrap;
-}
+
 
 .table.align-items-center td,
 .table.align-items-center th {
