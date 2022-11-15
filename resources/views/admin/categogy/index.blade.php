@@ -8,45 +8,73 @@
         
     @endif
     <a class="btn btn-success  " href="{{route('categogy.create')}}">Thêm danh mục</a>
-    <table class="table table-striped table-bordered">
-        <thead>
-          <tr>
-            <th scope="col">id</th>
-            <th scope="col">Tên danh mục</th>
-            <th scope="col">Mô tả</th>
-            <th scope="col">Trạng thái</th>
-            <th scope="col">Quản lý</th>
-            
-          </tr>
-        </thead>
-        @foreach($alldanhmuc as $danhmuc)
-        <tbody>
-          <tr>
-            <th scope="row">{{$danhmuc->id}}</th>
-            <td>{{$danhmuc->categogyName}}</td>
-            <td>{{$danhmuc->short_Desc}}</td>
-            <td>
-              @if($danhmuc->status==1)
-                <span class="text text-success">kích hoạt</span>
-              @else
-                <span class="text text-danger">Không kích hoạt</span>
-              @endif
+   
 
-            </td>
 
-            <td>
-              <a href="{{route('categogy.edit',[$danhmuc->id])}}" class="btn btn-primary" style="float:right">Sửa</a>
-              <form action="{{route('categogy.destroy',[$danhmuc->id])}}" method="POST">
+
+ <div class="card">
+      <div class="table-responsive">
+        <table class="table align-items-center mb-0">
+          <thead>
+            <tr>
+              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">#</th>
+              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tên danh mục</th>
+              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Mô tả</th>
+
+              
+              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Quản lí</th>
+              <th class="text-secondary opacity-7"></th>
+            </tr>
+          </thead>
+        
+          <tbody>
+               @foreach($alldanhmuc as $danhmuc)
+
+
+         
+            <tr>
+              <td>
+                <div class="d-flex px-2 py-1">
+                
+                  <div class="d-flex flex-column justify-content-center">
+                    <h6 class="mb-0 text-xs">{{$danhmuc->id}}</h6>
+                    <!-- <p class="text-xs text-secondary mb-0">john@creative-tim.com</p> -->
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="text-xs font-weight-bold mb-0">{{$danhmuc->categogyName}}</p>
+                  
+              </td>
+               <td>
+               
+                <p class="text-xs text-secondary mb-0">{{$danhmuc->short_Desc}}</p>
+              </td>
+             
+              
+              <td class="align-middle">
+
+                <a  href="{{route('categogy.edit',[$danhmuc->id])}}" class="btn btn-light">Sửa</a>
+
+
+                <form action="{{route('categogy.destroy',[$danhmuc->id])}}" method="POST">
                 @method('DELETE')
                 @csrf
                 <button onclick="return confirm('Bạn muốn xóa danh mục {{$danhmuc->categogyName}}?')" class="btn btn-danger">Xóa</button>
                 
               </form>
-            </td>
-          </tr>
-          @endforeach
-          
-        </tbody>
-      </table>
-</div>
-@endsection
+
+
+              </td>
+            </tr>
+
+            @endforeach
+
+
+       
+    
+           
+          </tbody>
+        </table>
+      </div>
+      @endsection
