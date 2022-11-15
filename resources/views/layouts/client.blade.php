@@ -96,7 +96,7 @@
                                 </li>
 
                                   <li>
-                                    <a class="dropdown-item" href="{{url('/ve-chung-toi')}}">Trách nhiệm với xã hội của Phương Châu</a>
+                                    <a class="dropdown-item" href="{{url('/ve-chung-toi')}}">Hồ sơ bệnh án</a>
                                 </li>
 
                             </ul>

@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Constants\BookingStatus;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Models\Book;
 use App\Models\Room;
 use Illuminate\Support\Facades\DB;
-
+use App\Mail\SendFinishEmail;
 use App\Mail\BarcodeEmail;
 use App\Mail\ConfirmEmail;
 use App\Models\File;
@@ -106,7 +108,7 @@ class BookStaffController extends Controller
 
         $a = $today->toDateString();
         $book = Book::find($id);
-        $book->status = 2;
+        $book->status = BookingStatus::$FINISHED;
         foreach($request->x_file as $file){
             $filename = 'sa'.$id.'Of'.$book->email;
             $file->storeAs('public/sa_file/'.$filename,$filename);
@@ -119,7 +121,7 @@ class BookStaffController extends Controller
         }
         $book->result = $request->result;
         $book->save();
-        
+        $this->SendFinishEmail($id);
         $books = Book::orderBy('status','ASC')->where('register_date',$a)->orderBy('register_date','ASC')->orderBy('register_time','ASC')->get();
 
         return view('admin.bookStaff.index')->with('status','Hoàn tất khám!')->with(compact('books'));
@@ -136,10 +138,79 @@ class BookStaffController extends Controller
         Book::find($id)->delete();
         return redirect()->back()->with('status','Xoá lượt khám thành công');
     }
+    private function SendFinishEmail($id){
+
+            $book = Book::find($id);
+            $email = $book->email;
+            
+            $body = 'Anh '.$book->hus_name.' Và chị '.$book->wife_name.
+                    '  khám vào '.$book->register_time.
+    
+    
+                    ' Ngày' .$book->register_date.
+    
+                    ' tại Phòng '.$book->room_id;
+            $data = [
+                'subject' => 'Mail kết quả khám vào ngày '.$book->register_date,
+                'body'    => $body,
+                'id'      => $id,
+                'result'  => $book->result,
+                'notify'  => 'Kết quả xét nghiệm được lưu trữ tại bệnh viện',
+                'email'   => $email
+            ];
+            
+                Mail::to($book->email)->send(new SendFinishEmail($data));
+                // return response()->json(['Great check your mail box!']);
+            
+        
+    }
+    // public function FinishEmail(Request $request){
+    //     if(!empty($request->id)){
+    //         $book = Book::find($request->id);
+    //         $email = $book->email;
+            
+    //         $body = 'Anh '.$book->hus_name.' Và chị '.$book->wife_name.
+    //                 '  khám vào '.$book->register_time.
+    
+    
+    //                 ' Ngày' .$book->register_date.
+    
+    //                 ' tại Phòng '.$book->room_id;
+    //         $data = [
+    //             'subject' => 'Mail kết quả khám vào ngày '.$book->register_date,
+    //             'body'    => $body,
+    //             'id'      => $request->id,
+    //             'result'  => $book->result,
+    //             'notify'  => 'Kết quả xét nghiệm được lưu trữ tại bệnh viện',
+    //             'email'   => $email
+    //         ];
+            
+    //             Mail::to($book->email)->send(new FinishEmail($data));
+    //             // return response()->json(['Great check your mail box!']);
+            
+    //     }
+    //     elseif(!empty($request->email)&&!empty($request->phone)){
+
+    //             $book = Book::where('email',$request->email)->where('phone',$request->phone)->get();
+                
+    //             $body = 'Hồ sơ khám sức khỏe';
+    //             $data = [
+    //                 'subject' => 'Tra cứu lịch sử khám',
+    //                 'body'    => $body,
+    //                 'id'      => $request->id,
+    //                 'phone'  => $book->phone,
+    //                 'email'   => $book->email
+    //             ];
+                
+    //                 Mail::to($book->email)->send(new FinishEmail($data));
+    //                 // return response()->json(['Great check your mail box!']);
+    //     }
+        
+    // }
 
     public function cancel($id){
         $book = Book::find($id);
-        $book->status = 3;
+        $book->status = BookingStatus::$CANCELED;
         $book->room_id = null;
         $book->save();
         return redirect()->route('book.index')->with('status','Hủy lịch khám thành công!');

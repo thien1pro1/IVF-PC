@@ -90,6 +90,7 @@ Route::resource('admin/room',RoomController::class);
 
 Route::put('/admin/client/edit/cancel/{id}', [App\Http\Controllers\BookController::class, 'cancel'])->name('book.cancel');
 Route::get('/client/history', [BookController::class, 'history'])->name('book.history');
+Route::get('/book/confirm', [BookController::class, 'confirm'])->name('book.confirm');
 
 Route::get('/client/detailHistory', [BookController::class, 'detailHistory'])->name('book.detailHistory');
 

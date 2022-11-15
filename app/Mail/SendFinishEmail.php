@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ConfirmEmail extends Mailable
+class SendFinishEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -31,6 +31,6 @@ class ConfirmEmail extends Mailable
     {
         return $this->from('thien1pro1@gmail.com','Bệnh viện Quốc tế Phương Châu')
         ->subject($this->data['subject'])
-        ->view('emails.confirmEmail');
+        ->view('emails.sendFinishEmail');
     }
 }

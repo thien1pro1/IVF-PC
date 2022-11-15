@@ -22857,19 +22857,11 @@ hr.horizontal.gray-light {
   margin: 0;
 }
 
-<<<<<<< HEAD
-
-=======
 /* .table td,
 .table th {
   white-space: nowrap;
 } */
->>>>>>> cbb107d0b976a22d9a00399b5f28e9dd3adfa15c
 
-.table.align-items-center td,
-.table.align-items-center th {
-  vertical-align: middle;
-}
 
 .table tbody tr:last-child td {
   border-width: 0;
@@ -24138,11 +24130,12 @@ span.flatpickr-weekday {
   float: left;
 }
 
-.flatpickr-time .numInputWrapper span.arrowUp:after {
-  border-bottom-color: #393939;
-}
-
-.flatpickr-time .numInputWrapper span.arrowDown:after {
+.flatpickr-time .numInputWrapper 
+/* .table td,
+.table th {
+  white-space: nowrap;
+} */
+atpickr-time .numInputWrapper span.arrowDown:after {
   border-top-color: #393939;
 }
 
