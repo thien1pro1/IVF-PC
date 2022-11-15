@@ -37,7 +37,7 @@
     @endif
 
 
-    <form method="POST" action="{{route('book.update',[$edit->id])}}">
+    <form method="POST" action="{{route('bookStaff.update',[$edit->id])}}" enctype="multipart/form-data">
         @method('PUT')
         @csrf
         <div class="form-group col-6" style="float: right">
@@ -77,7 +77,13 @@
             <label for="c9">Ghi chú</label>
             <textarea rows="5" resize="none" type="date" readonly class="form-control" id="c9" value="{{$edit->message}}"  name="message" ></textarea>
         </div>
+        <div class="form-group ">
+            <label for="fi">Hình ảnh siêu âm</label>
+            <input type="file" class="form-control" id="fi"  name="x_file[]" multiple>
+        </div>
 
+
+        
         <div class="form-group">
             <label for="c12">Kết quả</label>
             <textarea class="form-control" id="c12" value="{{$edit->result}}"  name="result" ></textarea>

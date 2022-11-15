@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\Mail\BarcodeEmail;
 use App\Mail\ConfirmEmail;
+use App\Models\File;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Mail\Mailer;
@@ -101,41 +102,27 @@ class BookStaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        // $kq1 = DB::table('books')->where('register_date',$request->register_date)
-        //->where('register_time',$request->register_time)->where('room_id',$request->room_id)->count();
-        $rooms_e = Room::get();
-        $kq2 = DB::table('books')->where('register_date',$request->register_date)
-                                 ->where('register_time',$request->register_time)
-                                 ->where('room_id',$request->room_id)->get();
+        $today = Carbon::today();
 
+        $a = $today->toDateString();
         $book = Book::find($id);
-
-        $book->wife_name = $request->wife_name;
-        $book->hus_name = $request->hus_name;
-        $book->wife_birthday = $request->wife_birthday;
-        $book->hus_birthday = $request->hus_birthday;
-        $book->phone = $request->phone;
-        $book->email = $request->email;
-
-        
-        $book->message = $request->message;
-        $book->register_date = $request->register_date;
-        $book->register_time = $request->register_time;
         $book->status = 2;
-        foreach($rooms_e as $r){
-            $kq3 = DB::table('books')->where('register_date',$request->register_date)
-                                 ->where('register_time',$request->register_time)
-                                 ->where('room_id',$r->id)->count();
-            if($kq3==0){
-                $book->room_id = $r->id;
-                $book->save();
-                return redirect()->back()->with('status','Đặt lịch thành công');
-            }
+        foreach($request->x_file as $file){
+            $filename = 'sa'.$id.'Of'.$book->email;
+            $file->storeAs('public/sa_file/'.$filename,$filename);
+            $fileModel = new File();
+            $fileModel->name = $filename;
+            $fileModel->book_id = $id;
+            $fileModel->type = 'sa';
+            $fileModel->location = 'storage/sa_file/'.$filename;
+            $fileModel->save();
         }
+        $book->result = $request->result;
+        $book->save();
         
+        $books = Book::orderBy('status','ASC')->where('register_date',$a)->orderBy('register_date','ASC')->orderBy('register_time','ASC')->get();
 
-        return redirect()->back()->with('status','Giờ đó đã hết phòng!');
+        return view('admin.bookStaff.index')->with('status','Hoàn tất khám!')->with(compact('books'));
     }
 
     /**
