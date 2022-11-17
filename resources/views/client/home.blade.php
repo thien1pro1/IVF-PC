@@ -1,12 +1,16 @@
 
 @extends('layouts.client')
+
 @section('content')
+
 <!-- banner section -->
     <section class="w3l-main-slider" id="home">
         <div class="banner-content">
             <div id="demo-1">
                 <div class="demo-inner-content">
                     <div class="container">
+
+        
                         <div class="banner-info">
                             <p class="mb-1">Hạnh phúc của IVF Phương Châu</p>
                             <h3>MONG ƯỚC GẦN HƠN</h3>

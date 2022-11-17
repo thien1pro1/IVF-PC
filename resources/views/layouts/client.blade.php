@@ -1,4 +1,3 @@
- 
 <!doctype html>
 <html lang="en">
 
@@ -107,10 +106,21 @@
                                 Thông tin <i class="fas fa-angle-down"></i>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                <li>
-
+                             
+                                
+                                @foreach($all_category_client as $cate)
+                                    <li>
+                                        {{-- @php
+                                        var_dump($cate);
+                                        return;
+                                @endphp  --}}
+                                            
+                                        <a class="dropdown-item" href="pdf">{{$cate->categogyName}}</a>
+                                    </li>
+                                @endforeach
+                                
                             </ul>
-                        </li>
+
                        <!--  <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact</a>
                         </li> -->
@@ -140,7 +150,12 @@
         </div>
     </header>
     <!-- //header -->
+{{-- @foreach($all_category_client as $cate)
+<li>
 
+    {{$cate->categoryName}}
+</li>
+@endforeach --}}
      @yield('content')
 
     <!-- footer -->

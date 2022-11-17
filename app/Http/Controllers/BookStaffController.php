@@ -13,8 +13,13 @@ use App\Mail\BarcodeEmail;
 use App\Mail\ConfirmEmail;
 use App\Models\File;
 use Carbon\Carbon;
+// use PDF;
 use Exception;
 use Illuminate\Mail\Mailer;
+use Illuminate\Support\Facades\App;
+use Barryvdh\DomPDF\Facade\Pdf;
+
+
 use Illuminate\Support\Facades\Mail as FacadesMail;
 use PhpParser\Node\Stmt\TryCatch;
 
@@ -36,7 +41,7 @@ class BookStaffController extends Controller
 
         $a = $today->toDateString();
         // $boo = Book::where('register_date',$a);
-        $books = Book::orderBy('status','ASC')->where('register_date',$a)->orderBy('register_date','ASC')->orderBy('register_time','ASC')->get();
+        $books = Book::orderBy('status','ASC')->where('status','>=',0)->where('register_date',$a)->orderBy('register_date','ASC')->orderBy('register_time','ASC')->get();
 
         // dd(!empty($boo));
 
@@ -244,6 +249,25 @@ class BookStaffController extends Controller
         
             Mail::to($book->email)->send(new BarcodeEmail($data));
             return response()->json(['Great check your mail box!']);
+        
+
+    }
+    public function viewBookPDF($id){
+        // $pdf = App::make('dompdf.wrapper');
+        // $pdf->loadHTML('<h1>hello thien1pro1@gmail.com</h1>');
+        // return $pdf->stream();
+        $book = Book::find($id);
+        $pdf = Pdf::loadView('admin.bookStaff.pdf', $book);
+        return $pdf->download('book'.$id.'.pdf');
+        
+    }
+    public function downloadBookPDF($id){
+        // $pdf = App::make('dompdf.wrapper');
+        // $pdf->loadHTML('<h1>hello thien1pro1@gmail.com</h1>');
+        // return $pdf->stream();
+        $book = Book::find($id);
+        $pdf = Pdf::loadView('admin.bookStaff.pdf', $book);
+        return $pdf->download('book'.$id.'.pdf');
         
     }
 }

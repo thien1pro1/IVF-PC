@@ -83,6 +83,7 @@ class BookController extends Controller
         $book->register_date = $request->register_date;
         $book->register_time = $request->register_time;
         $book->status = BookingStatus::$WAITING;
+        $book->status = -1;
 
         
         if($kq1>$kq2){

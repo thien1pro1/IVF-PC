@@ -52,7 +52,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-
+Route::get('pdf',[BookStaffController::class, 'viewBookPDF'])->name('viewBookPDF');
 Route::get('/client/home',function(){
     return view('client.home');
 });

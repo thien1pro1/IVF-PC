@@ -1,6 +1,9 @@
 @extends('layouts.client')
 @section('content')
-
+@foreach ($categogies as $cate)
+<h1>{{$cate->categogyName}}</h1>
+    
+@endforeach
 {{-- <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">

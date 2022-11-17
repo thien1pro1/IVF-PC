@@ -95,9 +95,15 @@
         @csrf
         <button style="float: left; margin:5px;" type="submit" name="cancelbook" class="btn btn-primary">Hủy</button>
     </form>
-    {{-- <a href="{{route('book.barcodeEmail',[$edit->id])}}"> --}}
+
+    <form method="POST" >
+        @method('PUT')
+        @csrf
+        <button style="float: left; margin:5px;" type="submit" name="cancelbook" class="btn btn-primary">Hủy</button>
+    </form>
+    {{-- <a href="{{route('book.barcodeEmail',[$edit->id])}}"> 
         <button style="float: left; margin:5px;" href="{{route('book.barcodeEmail',[$edit->id])}}" type="submit" name="cccccc" class="btn btn-primary">Mail</button>
-    {{-- </a> --}}
+     </a> --}}
     
 </div>
 @endsection
