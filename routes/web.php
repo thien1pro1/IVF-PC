@@ -8,9 +8,12 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\BookStaffController;
-
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\PositionController;
+use App\Http\Controllers\MedicineController;
+
+
 use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Auth;
 use App\Mail\ConfirmEmail;
@@ -56,6 +59,10 @@ Route::get('pdf',[BookStaffController::class, 'viewBookPDF'])->name('viewBookPDF
 Route::get('/client/home',function(){
     return view('client.home');
 });
+Route::get('/client/category',[PageController::class,'categoryPage'])->name('page.category');
+Route::get('/client/post',[PageController::class,'postPage']);
+
+
 Route::get('/error',function(){
     return view('layouts.error');
 });
@@ -80,6 +87,7 @@ Route::resource('admin/admin',UserController::class);
 Route::resource('admin/service',ServiceController::class);
 Route::resource('admin/client',BookController::class);
 Route::resource('admin/bookStaff',BookStaffController::class);
+Route::resource('admin/medicine',MedicineController::class);
 
 Route::resource('admin/position',PositionController::class);
 Route::get('send-confirmEmail/{id}', [BookController::class, 'confirmEmail'])->name('book.confirmEmail');

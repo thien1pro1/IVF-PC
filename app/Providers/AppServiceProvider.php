@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->all_category_client = Categogy::get();
         // foreach($this->all_category_client as $cate){
-        //     dd($cate);
+        //     dd($cate->id);
         // }
         view()->composer('layouts.client', function($view) {
             $view->with(['all_category_client' => $this->all_category_client]);

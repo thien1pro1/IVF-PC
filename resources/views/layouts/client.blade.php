@@ -111,11 +111,11 @@
                                 @foreach($all_category_client as $cate)
                                     <li>
                                         {{-- @php
-                                        var_dump($cate);
+                                        var_dump($cate)->id;
                                         return;
                                 @endphp  --}}
                                             
-                                        <a class="dropdown-item" href="pdf">{{$cate->categogyName}}</a>
+                                        <a class="dropdown-item" href="{{route('page.category',[$cate->id])}}">{{$cate->categogyName}}</a>
                                     </li>
                                 @endforeach
                                 

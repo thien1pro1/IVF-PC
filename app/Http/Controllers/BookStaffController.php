@@ -166,9 +166,29 @@ class BookStaffController extends Controller
             
                 Mail::to($book->email)->send(new SendFinishEmail($data));
                 // return response()->json(['Great check your mail box!']);
-            
-        
     }
+
+    public function RequireHistoryEmail(Request $request){
+
+        $book = Book::where('email',$request->email)->where('phone',$request->phone)->orderBy('register_date','ASC');
+        $email='error';
+        if(!empty($book)){
+            $email = $request->email;
+        }
+        return redirect()->back()->with('status','Thông tin tra cứu của bạn không khớp');
+        
+        
+        $body = '';
+        $data = [
+            'subject' => 'Mail kết quả khám vào ngày '.$book->register_date,
+            'body'    => $body,
+            'notify'  => 'Kết quả xét nghiệm được lưu trữ tại bệnh viện',
+            'email'   => $email
+        ];
+        
+            Mail::to($book->email)->send(new SendFinishEmail($data));
+            // return response()->json(['Great check your mail box!']);
+}
     // public function FinishEmail(Request $request){
     //     if(!empty($request->id)){
     //         $book = Book::find($request->id);
@@ -229,7 +249,7 @@ class BookStaffController extends Controller
         ];
 
             Mail::to($book->email)->send(new ConfirmEmail($data));
-            return response()->json(['Great check your mail box!']);
+            // return response()->json(['Great check your mail box!']);
 
     }
 
@@ -248,7 +268,7 @@ class BookStaffController extends Controller
         ];
         
             Mail::to($book->email)->send(new BarcodeEmail($data));
-            return response()->json(['Great check your mail box!']);
+            // return response()->json(['Great check your mail box!']);
         
 
     }
