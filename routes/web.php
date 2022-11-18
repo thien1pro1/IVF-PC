@@ -59,8 +59,8 @@ Route::get('pdf',[BookStaffController::class, 'viewBookPDF'])->name('viewBookPDF
 Route::get('/client/home',function(){
     return view('client.home');
 });
-Route::get('/client/category',[PageController::class,'categoryPage'])->name('page.category');
-Route::get('/client/post',[PageController::class,'postPage']);
+Route::get('/client/category/{id}',[PageController::class,'categoryPage'])->name('page.category');
+Route::get('/client/post/{id}',[PageController::class,'postPage'])->name('page.post');
 
 
 Route::get('/error',function(){

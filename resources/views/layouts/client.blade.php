@@ -114,8 +114,13 @@
                                         var_dump($cate)->id;
                                         return;
                                 @endphp  --}}
-                                            
-                                        <a class="dropdown-item" href="{{route('page.category',[$cate->id])}}">{{$cate->categogyName}}</a>
+                                    <form method="GET" action="{{route('page.category',[$cate->id])}}">
+                                        @csrf
+                                        <button class="dropdown-item" type="submit">{{$cate->categogyName}}</button>
+                                        
+                                        {{-- <a class="dropdown-item" href="{{route('page.category',[$cate->id])}}">{{$cate->categogyName}}</a> --}}
+                                    </form>
+                                        
                                     </li>
                                 @endforeach
                                 
