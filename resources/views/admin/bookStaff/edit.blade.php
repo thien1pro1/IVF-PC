@@ -81,6 +81,11 @@
             <label for="fi">Hình ảnh siêu âm</label>
             <input type="file" class="form-control" id="fi"  name="x_file[]" multiple>
         </div>
+        <div class="form-group ">
+            <label  for="fi">Thêm đơn thuốc</label><br>
+            <a  href="{{route('viewBookPDF',[$edit->id])}}" class="btn btn-redlight">Thêm</a>
+            <input type="file" class="form-control" id="fi"  name="medicines">
+        </div>
 
 
         

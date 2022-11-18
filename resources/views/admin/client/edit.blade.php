@@ -108,16 +108,22 @@
             <label for="c12">Kết quả</label>
             <input type="text" class="form-control" id="c12" value="{{$edit->result}}"  name="result" >
         </div>
-     <button type="submit" name="addbook" class="btn btn-primary">Lưu</button>
-    </form>
-    <form method="POST" action="{{route('book.cancel',[$edit->id])}}">
+     <button style="float:left margin-right:10px" type="submit" name="addbook" class="btn btn-success">Lưu</button>
+     {{-- <form  method="POST" action="{{route('book.cancel',[$edit->id])}}">
         @method('PUT')
         @csrf
-        <button type="submit" name="cancelbook" class="btn btn-primary">Hủy</button>
+        <button type="submit" name="cancelbook" class="btn btn-danger">Hủy</button>
+    </form> --}}
     </form>
-    <a href="{{route('book.barcodeEmail',[$edit->id])}}">
+    <form style="float:left margin-right:10px" method="POST" action="{{route('book.cancel',[$edit->id])}}">
+        @method('PUT')
+        @csrf
+        <button  type="submit" name="cancelbook" class="btn btn-danger">Hủy</button>
+    </form>
+    <a class="btn btn-light" href="{{route('book.barcodeEmail',[$edit->id])}}">
         Mail xác nhận
     </a>
+    
     
 </div>
 @endsection

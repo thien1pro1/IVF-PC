@@ -277,7 +277,9 @@ class BookStaffController extends Controller
         // $pdf->loadHTML('<h1>hello thien1pro1@gmail.com</h1>');
         // return $pdf->stream();
         $book = Book::find($id);
-        $pdf = Pdf::loadView('admin.bookStaff.pdf', $book);
+
+        $pdf = Pdf::loadView('admin.bookStaff.pdf');
+        dd($pdf);
         return $pdf->download('book'.$id.'.pdf');
         
     }

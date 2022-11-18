@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2022 at 05:16 PM
+-- Generation Time: Nov 18, 2022 at 05:42 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -51,10 +51,10 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `wife_name`, `hus_name`, `phone`, `email`, `wife_birthday`, `hus_birthday`, `register_date`, `register_time`, `room_id`, `status`, `message`, `result`, `created_at`, `updated_at`, `user_id`) VALUES
-(1, 'Tiểu kiều', 'Chu Du', '0987654321', 'chudu@gmail.com', '2022-10-17', '2022-10-17', '2022-10-17', '07:00:00', 2, 1, NULL, NULL, '2022-10-17 01:50:31', '2022-10-18 10:24:17', 1),
+(1, 'Tiểu kiều', 'Chu Du', '0987654321', 'chudu@gmail.com', '2022-10-17', '2022-10-17', '2022-11-18', '07:00:00', 2, 1, NULL, NULL, '2022-10-17 01:50:31', '2022-10-18 10:24:17', 1),
 (2, 'Kim Yến', 'Hoàng Học', '0987567435', 'hoc@gmail.com', '2000-06-07', '2000-02-24', '2022-10-21', '07:30:00', NULL, 0, 'Tôi bị yếu', NULL, '2022-10-20 11:29:11', '2022-10-20 11:29:11', 0),
 (3, 'Trần Mai Phương', 'Đặng Nhật Nam', '9078456784', 'nam@gmail.com', '2022-10-04', '2022-10-19', '2022-10-04', '08:30:00', NULL, 0, NULL, NULL, '2022-10-20 11:32:29', '2022-10-20 11:32:29', 0),
-(4, 'Nguyễn Ngọc Trân', 'Thiên', '0585253470', 'thien1pro1@gmail.com', '2022-09-26', '2022-09-28', '2022-09-28', '10:00:00', NULL, 0, NULL, NULL, '2022-10-20 22:01:04', '2022-10-20 22:01:04', 0),
+(4, 'Nguyễn Ngọc Trân', 'Thiên', '0585253470', 'thien1pro1@gmail.com', '2022-09-26', '2022-09-28', '2022-09-28', '10:00:00', 1, 1, NULL, NULL, '2022-10-20 22:01:04', '2022-11-17 19:57:10', 0),
 (5, 'Trần Bích Chi', 'Châu Thuận Thiên', '0354677900', 'chi@gmail.com', '2022-10-21', '2022-10-21', '2022-10-20', '07:00:00', 3, 2, NULL, NULL, '2022-10-20 22:01:46', '2022-10-20 23:51:57', 1),
 (6, 'Phan Thị Trúc Linh', 'Trần Phát', '0678234567', 'phat@gmail.com', '2022-10-21', '2022-10-21', '2022-10-21', '07:00:00', 3, 3, NULL, NULL, '2022-10-20 22:02:33', '2022-10-20 22:04:26', 0),
 (7, 'a', 'b', '0987654321', 'a@gmail.com', '2022-10-14', '2022-09-30', '2022-10-30', '07:00:00', NULL, 3, 'cc', NULL, '2022-10-21 05:12:37', '2022-10-21 06:07:19', 0),
@@ -158,18 +158,6 @@ INSERT INTO `files` (`id`, `name`, `type`, `book_id`, `location`, `created_at`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `flights`
---
-
-CREATE TABLE `flights` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `medicines`
 --
 
@@ -222,7 +210,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (20, '2022_11_14_142208_create_files_table', 6),
 (21, '2022_11_16_064258_create_flights_table', 7),
 (23, '2022_11_16_162410_add_user_id_to_books_table', 7),
-(24, '2022_11_16_064354_create_medicines_table', 8);
+(24, '2022_11_16_064354_create_medicines_table', 8),
+(25, '2022_11_18_043448_add_avatar_to_users_table', 9);
 
 -- --------------------------------------------------------
 
@@ -422,16 +411,17 @@ CREATE TABLE `users` (
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `position_id`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Nguyễn Đăng Thiên', 'thien1pro1@gmail.com', NULL, 0, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', 'fJvaDpb3DSAyQn12XV1MQUOpurVKTu5aFxCNPl310cBK77YxfibpSneAp8rv', '2022-10-06 09:51:23', '2022-10-06 09:51:23'),
-(2, 'Phạm ho', 'hoc@gmail.com', NULL, 1, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', NULL, '2022-10-07 09:33:54', '2022-10-07 09:33:54');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `position_id`, `password`, `remember_token`, `created_at`, `updated_at`, `avatar`) VALUES
+(1, 'Nguyễn Đăng Thiên', 'thien1pro1@gmail.com', NULL, 0, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', 'fJvaDpb3DSAyQn12XV1MQUOpurVKTu5aFxCNPl310cBK77YxfibpSneAp8rv', '2022-10-06 09:51:23', '2022-10-06 09:51:23', ''),
+(2, 'Phạm ho', 'hoc@gmail.com', NULL, 1, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', NULL, '2022-10-07 09:33:54', '2022-10-07 09:33:54', '');
 
 --
 -- Indexes for dumped tables
@@ -460,12 +450,6 @@ ALTER TABLE `failed_jobs`
 -- Indexes for table `files`
 --
 ALTER TABLE `files`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `flights`
---
-ALTER TABLE `flights`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -589,12 +573,6 @@ ALTER TABLE `files`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `flights`
---
-ALTER TABLE `flights`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `medicines`
 --
 ALTER TABLE `medicines`
@@ -604,7 +582,7 @@ ALTER TABLE `medicines`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `permissions`
