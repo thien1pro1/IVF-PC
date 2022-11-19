@@ -74,4 +74,7 @@ class BillController extends Controller
         return $pdf->download('billOf'.$id.'.pdf');
         
     }
+    public function deleteBill($id){
+        
+    }
 }

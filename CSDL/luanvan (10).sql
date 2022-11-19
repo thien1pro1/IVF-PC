@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2022 at 11:53 AM
+-- Generation Time: Nov 20, 2022 at 12:36 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -36,6 +36,17 @@ CREATE TABLE `bills` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `bills`
+--
+
+INSERT INTO `bills` (`id`, `book_id`, `user_id`, `total`, `created_at`, `updated_at`) VALUES
+(1, 26, 1, 0, '2022-11-19 11:29:14', '2022-11-19 11:29:14'),
+(2, 26, 1, 0, '2022-11-19 11:29:29', '2022-11-19 11:29:29'),
+(3, 26, 1, 0, '2022-11-19 11:32:03', '2022-11-19 11:32:03'),
+(4, 28, 1, 188100, '2022-11-19 12:09:55', '2022-11-19 12:09:55'),
+(5, 1, 1, 80000, '2022-11-19 15:20:07', '2022-11-19 15:20:07');
+
 -- --------------------------------------------------------
 
 --
@@ -45,8 +56,23 @@ CREATE TABLE `bills` (
 CREATE TABLE `bill_medicines` (
   `bill_id` int(11) NOT NULL,
   `medicine_id` int(11) NOT NULL,
-  `amount` int(11) NOT NULL
+  `amount` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bill_medicines`
+--
+
+INSERT INTO `bill_medicines` (`bill_id`, `medicine_id`, `amount`) VALUES
+(2, 1, NULL),
+(3, 1, 1),
+(3, 2, 2),
+(3, 3, 1),
+(4, 2, 3),
+(4, 7, 3),
+(4, 13, 6),
+(5, 4, 1),
+(5, 13, 2);
 
 -- --------------------------------------------------------
 
@@ -206,7 +232,25 @@ CREATE TABLE `medicines` (
 INSERT INTO `medicines` (`id`, `name`, `type`, `price`, `amount`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'Vitamin C vien', '4', 23000, 1000, 0, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
 (2, 'Vitamin D vien', '4', 23000, 1000, 0, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
-(3, 'Vitamin E vien', '4', 23000, 1000, 0, '2022-11-17 10:11:17', '2022-11-17 10:11:17');
+(3, 'Vitamin E vien', '4', 23000, 1000, 0, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(4, 'Plizertin', '1', 50000, 1000, 0, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(5, 'Plizertin - 2x', '1', 50000, 1000, 0, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(6, 'Plizertin - 3x', '1', 50000, 1000, 0, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(7, 'Hiperon Extra M2', '2', 1700, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(8, 'Gluvenron ', '2', 3000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(9, 'Paracetamon ', '2', 3000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(10, 'Paradon ', '2', 3000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(11, 'Ademi ', '2', 3000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(12, 'Nước muối kháng sinh', '3', 15000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(13, 'Oxigen 90% 500ml', '3', 15000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(14, 'Thuốc đỏ', '3', 15000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(15, 'Băng gạt y tế', '5', 15000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(16, 'Chỉ y tế', '5', 15000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(17, 'Thuốc tê', '5', 15000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(18, 'Thuốc mê', '5', 15000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(19, 'Túi zip', '5', 15000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(20, 'Que gỗ y tế 100pcs', '5', 15000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(21, 'Etozin', '2', 12000, 3000, 0, '2022-11-19 16:05:54', '2022-11-19 16:05:54');
 
 -- --------------------------------------------------------
 
@@ -242,7 +286,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (24, '2022_11_16_064354_create_medicines_table', 8),
 (25, '2022_11_18_043448_add_avatar_to_users_table', 9),
 (28, '2022_11_19_063432_create_bills_table', 10),
-(29, '2022_11_19_063559_create_bill_medicines_table', 11);
+(29, '2022_11_19_063559_create_bill__medicines_table', 11);
 
 -- --------------------------------------------------------
 
@@ -451,7 +495,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `position_id`, `password`, `remember_token`, `created_at`, `updated_at`, `avatar`) VALUES
-(1, 'Nguyễn Đăng Thiên', 'thien1pro1@gmail.com', NULL, 0, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', 'u3b0t3aagO5IVw03XjR1hawnmdEMAxbHu8DAaBuNepHf5YjVC1XG1RHTrjxj', '2022-10-06 09:51:23', '2022-10-06 09:51:23', ''),
+(1, 'Nguyễn Đăng Thiên', 'thien1pro1@gmail.com', NULL, 0, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', 'w7hrp2iVx3HGh8C5vv0hSS08hEdolHOZbWZmwJ8syMDMubIoonrhZStlvbI1', '2022-10-06 09:51:23', '2022-10-06 09:51:23', ''),
 (2, 'Phạm ho', 'hoc@gmail.com', NULL, 1, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', NULL, '2022-10-07 09:33:54', '2022-10-07 09:33:54', '');
 
 --
@@ -589,7 +633,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bills`
 --
 ALTER TABLE `bills`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `books`
@@ -619,7 +663,7 @@ ALTER TABLE `files`
 -- AUTO_INCREMENT for table `medicines`
 --
 ALTER TABLE `medicines`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `migrations`
