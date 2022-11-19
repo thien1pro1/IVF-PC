@@ -1,2 +1,5 @@
-{{-- {{$book->hus_name}} --}}
+{{-- @extends('layouts.admin')
+@section('content') --}}
+{{$book->hus_name}}
 hello
+{{-- @endsection --}}

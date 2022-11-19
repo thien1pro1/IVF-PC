@@ -278,8 +278,7 @@ class BookStaffController extends Controller
         // return $pdf->stream();
         $book = Book::find($id);
 
-        $pdf = Pdf::loadView('admin.bookStaff.pdf');
-        dd($pdf);
+        $pdf = Pdf::loadView('admin.bookStaff.pdf',['book'=>$book]);
         return $pdf->download('book'.$id.'.pdf');
         
     }
