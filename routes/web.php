@@ -53,6 +53,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //     return view('admin.management_staff');
 // });
 
+Route::get('admin/bookStaff/bill/{id}',[BillController::class, 'viewBillPDF'])->name('viewBillPDF');
 
 
 
@@ -60,6 +61,7 @@ Route::get('pdf/{id}',[BookStaffController::class, 'viewBookPDF'])->name('viewBo
 Route::get('/client/home', [PageController::class,'home']);
 Route::get('/client/category/{id}',[PageController::class,'categoryPage'])->name('page.category');
 Route::get('/client/post/{id}',[PageController::class,'postPage'])->name('page.post');
+Route::post('admin/add-bill/',[BillController::class, 'addBill'])->name('addBill');
 
 
 

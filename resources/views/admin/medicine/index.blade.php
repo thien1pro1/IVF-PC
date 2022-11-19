@@ -7,7 +7,7 @@
         </div>
         
     @endif
-    <a class="btn btn-success  " href="{{route('medicine.create')}}">Thêm danh mục</a>
+    <a class="btn btn-success  " href="{{route('medicine.create')}}">Thêm dược phẩm</a>
    
 
 

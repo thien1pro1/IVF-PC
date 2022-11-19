@@ -53,7 +53,9 @@ class MedicineController extends Controller
         $medicine = new Medicine();
         $medicine->name = $request->name;
         $medicine->type = $request->type;
+        $medicine->price = $request->price;
         $medicine->amount = $request->amount;
+        $medicine->status = 0;
         $medicine->save();
         return redirect()->back()->with('status','Thêm danh mục thành công');
 

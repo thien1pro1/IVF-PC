@@ -50,5 +50,9 @@ class User extends Authenticatable
     public function position(){
         return $this->belongsTo(Position::class);
     }
+    public function bills()
+    {
+        return $this->hasMany(Bill::class);
+    }
 
 }

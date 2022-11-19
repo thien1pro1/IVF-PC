@@ -49,8 +49,19 @@
           
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Loại dược phẩm</label>
-          <input type="text" class="form-control" id="exampleInputPassword1" value="{{old('type')}}"  name="type" >
+          <label for="status">Phân loại</label>
+          <select id="status" class="custom-select" name="type">
+              <option value="1" >Thuốc đặc trị</option>
+              <option value="2" >Thuốc hiệu trị</option>
+              <option value="3" >Kháng sinh</option>
+
+              <option value="4" >Vitamin</option>
+
+              <option value="5" >Dụng cụ y tế</option>
+
+  
+            </select>
+            
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Đơn giá</label>
@@ -60,21 +71,7 @@
             <label for="exampleInputPassword1">Số lượng</label>
             <input type="number" class="form-control" id="exampleInputPassword1" value="{{old('amount')}}"  name="amount" >
           </div>
-        <div class="form-group">
-            <label for="status">Trạng thái</label>
-            <select id="status" class="custom-select" name="status">
-                <option value="1" >Thuốc đặc trị</option>
-                <option value="2" >Thuốc hiệu trị</option>
-                <option value="3" >Kháng sinh</option>
 
-                <option value="4" >Vitamin</option>
-
-                <option value="5" >Dụng cụ y tế</option>
-
-    
-              </select>
-              
-          </div>
 
         <button type="submit" name="addmedicine" class="btn btn-primary">Thêm</button>
       </form>

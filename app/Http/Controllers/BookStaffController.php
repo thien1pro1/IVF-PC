@@ -116,12 +116,22 @@ class BookStaffController extends Controller
         $book->status = BookingStatus::$FINISHED;
         foreach($request->x_file as $file){
             $filename = 'sa'.$id.'Of'.$book->email;
-            $file->storeAs('public/sa_file/'.$filename,$filename);
+            $file->storeAs('public/sa_file/',$filename);
             $fileModel = new File();
             $fileModel->name = $filename;
             $fileModel->book_id = $id;
             $fileModel->type = 'sa';
             $fileModel->location = 'storage/sa_file/'.$filename;
+            $fileModel->save();
+        }
+        foreach($request->bills as $bill){
+            $filename = 'bill'.$id;
+            $file->storeAs('public/bill/',$filename);
+            $fileModel = new File();
+            $fileModel->name = $filename;
+            $fileModel->book_id = $id;
+            $fileModel->type = 'bill';
+            $fileModel->location = 'storage/bill/'.$filename;
             $fileModel->save();
         }
         $book->result = $request->result;

@@ -27,6 +27,6 @@ class CreateBillMedicinesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bill__medicines');
+        Schema::dropIfExists('bill_medicines');
     }
 }

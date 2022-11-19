@@ -242,7 +242,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (24, '2022_11_16_064354_create_medicines_table', 8),
 (25, '2022_11_18_043448_add_avatar_to_users_table', 9),
 (28, '2022_11_19_063432_create_bills_table', 10),
-(29, '2022_11_19_063559_create_bill__medicines_table', 11);
+(29, '2022_11_19_063559_create_bill_medicines_table', 11);
 
 -- --------------------------------------------------------
 

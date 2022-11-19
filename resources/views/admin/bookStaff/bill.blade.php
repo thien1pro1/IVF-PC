@@ -26,39 +26,43 @@ use App\Http\Constants\TypeMedicine;
     <button onclick="medicineToBill()">Thêm</button>
 
 
-
+@php
+     $user_id= Auth::user()->id;
+@endphp
 </div>
 <div class="container">
-    <table class="table align-items-center justify-content-center mb-0">
+    <form method= "POST" action="{{route('addBill',['user'=>$user_id,'book'=>$book->id])}}">
+        @csrf
+
+    <table id="medicineTable" class="table align-items-center justify-content-center mb-0">
         <thead>
             <tr>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                    Tên Thuốc</th>
+                    STT</th>
                 <th
                     class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                    Loại</th>
+                    Tên thuốc</th>
                 <th
                     class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                     Số lượng</th>
-                <th></th>
+                <th>
+                    Xóa
+                </th>
             </tr>
         </thead>
-        <tbody id="row_medicine">
-            <tr>
-                <td>
-                    <span class="text-xs font-weight-bold">aaaa</span>
-                </td>
-                <td>
-                    <span class="text-xs font-weight-bold">aaaa</span>
-                </td>
-                <td>
-                    <input type="number" >
-                </td>
-            </tr>
-        </tbody>
+        
     </table>
+    <button type="submit">Xuất đơn thuốc</button>
+
+</form>
+
+
+    
+
+
 </div>
 <script>
+    var index = 0;
     async function getMedicines(){
         
         var typeMedicine = document.getElementById("typeMedicine").value;
@@ -83,32 +87,38 @@ use App\Http\Constants\TypeMedicine;
         });
     }
 
-    async function medicineToBill(){
-        
-        var idMedicine = document.getElementById("nameMedicine").value;
-        var row_medicine = document.getElementById("row_medicine");
-        row_medicine.add(tr);
-        tr.add(li).add()
 
 
-        // const response = await fetch('http://127.0.0.1:8000/api/admin/medicine-to-bill/' +idMedicine, {
-        //         method: 'GET',
-        //         headers: {
-        //         'Content-Type': 'application/json'
-        //         }
-        //     });
-        // const medicine = await response.json(); //extract JSON from the http response
-        // var nameMedicine = document.getElementById("nameMedicine");
-        // // nameMedicine.innerHTML = '';
-        // medicine.forEach(medicine => {
-        //     let idMedicine = medicine.id;
-        //     let name = medicine.name;
-        //     let nameMedicine = document.getElementById("nameMedicine");
-        //     var option = document.createElement("ul");
-        //     ul.value = idMedicine;
-        //     ul.text = name;
-        //     nameMedicine.add(option);
-        // });
+     function medicineToBill(){
+        let idMedicine = document.getElementById("nameMedicine").value;
+        // let nameMedicine = document.getElementById("nameMedicine").innerHTML;
+
+        var e = document.getElementById("nameMedicine");
+        var text = e.options[e.selectedIndex].text;
+        let a = index + 1;
+        var medicineTable = document.getElementById("medicineTable");
+        var row = medicineTable.insertRow(index+1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        cell1.innerHTML = "<span class='text-xs font-weight-bold' >"
+            +a+"</span><input type='hidden' name='id[]' class='text-xs font-weight-bold' value='"+idMedicine+"''>";
+        cell2.innerHTML = "<span class='text-xs font-weight-bold' >"
+            +text+"</span>";
+        cell3.innerHTML = "<input type='number' name='amount[]' class='text-xs font-weight-bold' value='1''>";
+        index++;
+        cell4.innerHTML="<button onclick='deleteMedicine()'>Xóa</button>";
     }
+
+    function deleteMedicine() {
+        if(index>0){
+            document.getElementById("medicineTable").deleteRow(index);
+
+        }
+
+}
+
 </script>
 @endsection

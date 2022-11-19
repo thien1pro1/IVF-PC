@@ -20,7 +20,7 @@
 }
 </style>
 <div class="container">
-    <h2>Cập nhập danh mục</h2>
+    <h2>Cập nhập dược phẩm</h2>
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -43,67 +43,66 @@
         @csrf
         <div class="form-group">
           <label for="exampleInputEmail1">Tên thuốc</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" name="medicineName" value="{{$edit->name }}" placeholder="...">
+          <input type="text" class="form-control" id="exampleInputEmail1" name="name" value="{{$edit->name }}" >
           
         </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Loại</label>
-          <input type="text" class="form-control" id="exampleInputPassword1" value="{{$edit->type}}" placeholder="..." name="short_Desc" >
-        </div>
+        {{-- @php
+        use App\Http\Constants\TypeMedicine;
+     
+    @endphp
+            <div class="form-group">
+                <label for="exampleInputPassword1">Phân loại</label>
+                <select class="custom-select" name="type">
+
+                    @if($edit->status==TypeMedicine::$ThuocDatTri)
+                    <option selected value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc đặc trị</option>
+                    <option value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc Hiệu trị</option>
+                    <option value="{{TypeMedicine::$Khánginh}}" >Kháng sinh</option>
+                    <option value="{{TypeMedicine::$Vitamin}}" >Vitamin</option>
+                    <option value="{{TypeMedicine::$DungCuYTe}}" >Dụng cụ y tế</option>
+    
+                    @elseif($edit->status==TypeMedicine::$ThuocHieuTri)
+                    <option value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc đặc trị</option>
+                    <option selected value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc Hiệu trị</option>
+                    <option value="{{TypeMedicine::$Khánginh}}" >Kháng sinh</option>
+                    <option value="{{TypeMedicine::$Vitamin}}" >Vitamin</option>
+                    <option value="{{TypeMedicine::$DungCuYTe}}" >Dụng cụ y tế</option>
+    
+                    @elseif($edit->status==TypeMedicine::$KhangSinh)
+                    <option value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc đặc trị</option>
+                    <option value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc Hiệu trị</option>
+                    <option selected value="{{TypeMedicine::$Khánginh}}" >Kháng sinh</option>
+                    <option value="{{TypeMedicine::$Vitamin}}" >Vitamin</option>
+                    <option value="{{TypeMedicine::$DungCuYTe}}" >Dụng cụ y tế</option>
+    
+                    @elseif($edit->status==TypeMedicine::$Vitamins)
+                    <option value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc đặc trị</option>
+                    <option value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc Hiệu trị</option>
+                    <option value="{{TypeMedicine::$Khánginh}}" >Kháng sinh</option>
+                    <option selected value="{{TypeMedicine::$Vitamin}}" >Vitamin</option>
+                    <option value="{{TypeMedicine::$DungCuYTe}}" >Dụng cụ y tế</option>
+                    
+                    @elseif($edit->status==TypeMedicine::$DungCuYTe)
+                    <option value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc đặc trị</option>
+                    <option value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc Hiệu trị</option>
+                    <option value="{{TypeMedicine::$Khánginh}}" >Kháng sinh</option>
+                    <option value="{{TypeMedicine::$Vitamin}}" >Vitamin</option>
+                    <option selected value="{{TypeMedicine::$DungCuYTe}}" >Dụng cụ y tế</option>
+                    @endif
+                  </select>
+                  
+              </div> --}}
+    
         <div class="form-group">
             <label for="exampleInputPassword1">Đơn giá</label>
             <input type="number" class="form-control" id="exampleInputPassword1" value="{{$edit->price}}"  name="price" >
           </div>
           <div class="form-group">
-            
+            <label for="exampleInputPassword1">Số lượng</label>
+
             <input type="number" class="form-control" id="exampleInputPassword1" value="{{$edit->amount}}"  name="amount" >
           </div>
-          @php
-    use App\Http\Constants\TypeMedicine;
- 
-@endphp
-        {{-- <div class="form-group">
-            <label for="exampleInputPassword1">Trạng thái</label>
-            <select class="custom-select" name="status">
-            	@if($edit->status==TypeMedicine::$ThuocDatTri)
-                <option selected value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc đặc trị</option>
-                <option value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc Hiệu trị</option>
-                <option value="{{TypeMedicine::$Khánginh}}" >Kháng sinh</option>
-                <option value="{{TypeMedicine::$Vitamin}}" >Vitamin</option>
-                <option value="{{TypeMedicine::$DungCuYTe}}" >Dụng cụ y tế</option>
-
-                @elseif($edit->status==TypeMedicine::$ThuocHieuTri)
-                <option value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc đặc trị</option>
-                <option selected value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc Hiệu trị</option>
-                <option value="{{TypeMedicine::$Khánginh}}" >Kháng sinh</option>
-                <option value="{{TypeMedicine::$Vitamin}}" >Vitamin</option>
-                <option value="{{TypeMedicine::$DungCuYTe}}" >Dụng cụ y tế</option>
-
-                @elseif($edit->status==TypeMedicine::$KhangSinh)
-                <option value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc đặc trị</option>
-                <option value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc Hiệu trị</option>
-                <option selected value="{{TypeMedicine::$Khánginh}}" >Kháng sinh</option>
-                <option value="{{TypeMedicine::$Vitamin}}" >Vitamin</option>
-                <option value="{{TypeMedicine::$DungCuYTe}}" >Dụng cụ y tế</option>
-
-                @elseif($edit->status==TypeMedicine::$Vitamins)
-                <option value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc đặc trị</option>
-                <option value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc Hiệu trị</option>
-                <option value="{{TypeMedicine::$Khánginh}}" >Kháng sinh</option>
-                <option selected value="{{TypeMedicine::$Vitamin}}" >Vitamin</option>
-                <option value="{{TypeMedicine::$DungCuYTe}}" >Dụng cụ y tế</option>
-    			
-                @elseif($edit->status==TypeMedicine::$DungCuYTe)
-                <option value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc đặc trị</option>
-                <option value="{{TypeMedicine::$ThuocDatTri}}" >Thuốc Hiệu trị</option>
-                <option value="{{TypeMedicine::$Khánginh}}" >Kháng sinh</option>
-                <option value="{{TypeMedicine::$Vitamin}}" >Vitamin</option>
-                <option selected value="{{TypeMedicine::$DungCuYTe}}" >Dụng cụ y tế</option>
-    			@endif
-              </select>
-              
-          </div> --}}
-
+         
         <button type="submit" name="addmedicine" class="btn btn-primary">Thêm</button>
       </form>
 </div>
