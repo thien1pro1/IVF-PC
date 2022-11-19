@@ -45,26 +45,26 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                                  <li>
-                                    <a class="dropdown-item" href="{{url('/client/about')}}">Câu chuyện về Khoa Hiếm Muộn IVF Phương Châu</a>
+                                    <a class="dropdown-item" href="{{url('/client/post/5?_token=VtJ6VduKDxar5uDtMk1yK0HAK0wC7YDNy0iZ4fWz')}}">Câu chuyện về Khoa Hiếm Muộn IVF Phương Châu</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="{{url('/client/about')}}">Thông điệp từ nhà sáng lập</a>
+                                    <a class="dropdown-item" href="{{url('/client/post/6?_token=VtJ6VduKDxar5uDtMk1yK0HAK0wC7YDNy0iZ4fWz')}}">Thông điệp từ nhà sáng lập</a>
                                 </li>
 
                                   <li>
-                                    <a class="dropdown-item" href="{{url('/client/home')}}">Hệ thống tập đoàn y tế Phương Châu</a>
+                                    <a class="dropdown-item" href="{{url('/client/post/7?_token=VtJ6VduKDxar5uDtMk1yK0HAK0wC7YDNy0iZ4fWz')}}">Hệ thống tập đoàn y tế Phương Châu</a>
                                 </li>
 
                                   <li>
-                                    <a class="dropdown-item" href="{{url('/client/home')}}">Sứ mệnh - Tầm nhìn - Giá trị cốt lõi - Slogan Mẹ Tròn Con Vuông</a>
+                                    <a class="dropdown-item" href="{{url('/client/post/8?_token=VtJ6VduKDxar5uDtMk1yK0HAK0wC7YDNy0iZ4fWz')}}">Sứ mệnh - Tầm nhìn - Giá trị cốt lõi - Slogan Mẹ Tròn Con Vuông</a>
                                 </li>
 
                                   <li>
-                                    <a class="dropdown-item" href="{{url('/client/home')}}">Sơ đồ tổ chức</a>
+                                    <a class="dropdown-item" href="{{url('/client/post/9?_token=VtJ6VduKDxar5uDtMk1yK0HAK0wC7YDNy0iZ4fWz')}}">Sơ đồ tổ chức</a>
                                 </li>
 
                                   <li>
-                                    <a class="dropdown-item" href="{{url('/client/home')}}">Trách nhiệm với xã hội của Phương Châu</a>
+                                    <a class="dropdown-item" href="{{url('/client/post/10?_token=VtJ6VduKDxar5uDtMk1yK0HAK0wC7YDNy0iZ4fWz')}}">Trách nhiệm với xã hội của Phương Châu</a>
                                 </li>
 
                             </ul>

@@ -37,29 +37,50 @@
     @endif
 
 
-    <form method="POST" action="{{route('categogy.update',[$editdanhmuc->id])}}">
-        @csrf
-        <div class="form-group">
-          <label for="exampleInputEmail1">Tên danh mục</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" name="categogyName" values="{{$editdanhmuc->categogyName}}" placeholder="...">
-          
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Mô tả</label>
-          <input type="text" class="form-control" id="exampleInputPassword1" values="{{$editdanhmuc->short_Desc}}" placeholder="..." name="short_Desc" >
-        </div>
-        <div class="form-group">
-            <select class="custom-select" name="status">
-            	@if($editdanhmuc->status==1)
-                <option value="1" >kích hoạt</option>
-                @else
-                <option value="2" >Không kích hoạt</option>
-    			@endif
-              </select>
-              
-          </div>
 
-        <button type="submit" name="addCategogy" class="btn btn-primary">Thêm</button>
-      </form>
-</div>
+
+
+
+
+<form autocomplete="off" method="POST" action="{{route('post.update',[$edit->id])}}" enctype="multipart/form-data">
+                        @method('PUT')
+                        @csrf
+                        <div class="form-group">
+                            <label for="title">Tiêu đề bài viết</label>
+                            <input type="text" value="{{$edit->title}}" class="form-control" name="title">
+
+                             <label for="title">Lượt xem</label>
+                            <input type="text" value="{{$edit->views}}" class="form-control" name="views">
+
+                            <!-- <label for="title">Lượt xem tháng</label>
+                            <input type="text" value="{{$edit->viewsm}}" class="form-control" name="viewsm">
+ -->
+
+
+                            <label for="title">Hình ảnh</label>
+                            <input type="file"class="form-control" name="image">
+                            <p><img width="200px" src="{{asset('/uploads/'.$edit->image)}}"></p>
+
+
+                            <label for="title">Mô tả ngắn</label>
+                            <textarea name="short_desc" id="ckeditor_shortdesc" rows="5" class="form-control" style="resize: none;">  {{$edit->short_Desc}}  </textarea>
+
+                            <label for="title">Nội dung </label>
+                            <textarea name="content" id="ckeditor_desc"  rows="5" class="form-control" style="resize: none;"> {{$edit->content}}   </textarea>
+
+                            <label for="title">Danh mục bài viết </label>
+                            <select name="categogy_id" class="form-control">
+                                 @foreach($category as $key => $cate)
+                                <option  {{$cate->id==$edit->category_id ?  'selected' : ''}} value="{{$cate->id}}">{{$cate->categogyName}}</option>
+                                @endforeach
+
+                               
+                            </select>
+
+
+
+
+                            <input type="submit" name="capnhatdanhmuc" class="btn btn-primary mt-2" value="Cập nhật bài viết">
+                        </div>
+                    </form>
 @endsection

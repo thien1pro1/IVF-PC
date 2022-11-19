@@ -26,4 +26,14 @@ class PageController extends Controller
         
         return view('client.post')->with(compact('post'));
     }
+
+    public function home(){
+         $posts = Post::where('categogy_id',2)->get();
+        // $medicines = Medicine::get();
+        // $doctor = User::where('position_id',2)->get();
+
+        return view('client.home')->with(compact('posts'));
+    }
+
+
 }

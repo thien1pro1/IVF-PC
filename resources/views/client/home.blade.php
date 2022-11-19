@@ -33,7 +33,7 @@
                     <p class="mb-3">Cách nay gần 10 năm, Khoa Hiếm Muộn (IVF) Phương Châu ra đời trong bối cảnh BVQT Phương Châu trở thành BV tư nhân đầu tiên tại ĐBSCL được công nhận là cơ sở có đủ điều kiện thực hiện kỹ thuật Thụ tinh trong ống nghiệm vào tháng 6/2011
                     </p>
                     <p>IVF Phương Châu đã được trang bị cơ sở vật chất thuộc loại hiện đại bậc nhất Việt Nam và khu vực Đông Nam Á, trong đó có:</p>
-                    <a href="about.html" class="btn btn-style btn-style-2 mt-lg-5 mt-4">Xem thêm</a>
+                    <a href="{{url('/client/post/5?_token=VtJ6VduKDxar5uDtMk1yK0HAK0wC7YDNy0iZ4fWz')}}" class="btn btn-style btn-style-2 mt-lg-5 mt-4">Xem thêm</a>
                 </div>
                 <div class="col-md-5 text-md-center mt-md-0 mt-5">
                     <div class="counter">
@@ -177,89 +177,24 @@
             <h3 class="title-style text-center mb-5">Kiến thức  <span>Y Khoa</span></h3>
             <div class="inner-sec-w3layouts mt-md-5 mt-4">
                 <div class="owl-three owl-carousel owl-theme">
+                    @foreach ($posts as $post)
                     <div class="item">
                         <div class="content-left-sec">
                             <a class="blog-link d-block zoom-image" href="#url"><img src="{{asset('public/frontend/images/s1.jpg')}}"
                                     class="img-fluid scale-image" alt=""></a>
                             <div class="blog-info">
                                 <a href="#url">
-                                    <h4 class="mb-0">Sedation Dentistry</h4>
+                                    <h4 class="mb-0">{{$post->title}}</h4>
                                 </a>
-                                <p>Donec luctus rhoncus dignissim. Integer blandit mattis arcu, id orci.</p>
+                                <p>{{$post->short_Desc}}</p>
                                 <a href="services.html" class="btn btn-style-primary">Learn More<i
                                         class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="content-left-sec">
-                            <a class="blog-link d-block zoom-image" href="#url"><img src="{{asset('public/frontend/images/s2.jpg')}}"
-                                    class="img-fluid scale-image" alt=""></a>
-                            <div class="blog-info">
-                                <a href="#url">
-                                    <h4 class="mb-0">Child’s Dental Care</h4>
-                                </a>
-                                <p>Donec luctus rhoncus dignissim. Integer blandit mattis arcu, id orci.</p>
-                                <a href="services.html" class="btn btn-style-primary">Learn More<i
-                                        class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="content-left-sec">
-                            <a class="blog-link d-block zoom-image" href="#url"><img src="{{asset('public/frontend/images/s3.jpg')}}"
-                                    class="img-fluid scale-image" alt=""></a>
-                            <div class="blog-info">
-                                <a href="#url">
-                                    <h4 class="mb-0">Family Dental Care</h4>
-                                </a>
-                                <p>Donec luctus rhoncus dignissim. Integer blandit mattis arcu, id orci.</p>
-                                <a href="services.html" class="btn btn-style-primary">Learn More<i
-                                        class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="content-left-sec">
-                            <a class="blog-link d-block zoom-image" href="#url"><img src="{{asset('public/frontend/images/s4.jpg')}}"
-                                    class="img-fluid scale-image" alt=""></a>
-                            <div class="blog-info">
-                                <a href="#url">
-                                    <h4 class="mb-0">Cosmetic Dentistry</h4>
-                                </a>
-                                <p>Donec luctus rhoncus dignissim. Integer blandit mattis arcu, id orci.</p>
-                                <a href="services.html" class="btn btn-style-primary">Learn More<i
-                                        class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="content-left-sec">
-                            <a class="blog-link d-block zoom-image" href="#url"><img src="{{asset('public/frontend/images/s5.jpg')}}"
-                                    class="img-fluid scale-image" alt=""></a>
-                            <div class="blog-info">
-                                <a href="#url">
-                                    <h4 class="mb-0">Cleaning with Air Flow</h4>
-                                </a>
-                                <p>Donec luctus rhoncus dignissim. Integer blandit mattis arcu, id orci.</p>
-                                <a href="services.html" class="btn btn-style-primary">Learn More<i
-                                        class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="content-left-sec">
-                            <a class="blog-link d-block zoom-image" href="#url"><img src="{{asset('public/frontend/images/s7.jpg')}}"
-                                    class="img-fluid scale-image" alt=""></a>
-                            <div class="blog-info">
-                                <a href="#url">
-                                    <h4 class="mb-0">Complete Whitening</h4>
-                                </a>
-                                <p>Donec luctus rhoncus dignissim. Integer blandit mattis arcu, id orci.</p>
-                                <a href="services.html" class="btn btn-style-primary">Learn More<i
-                                        class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
+
+                    @endforeach
+                    
                     </div>
                 </div>
             </div>

@@ -77,7 +77,10 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($Post);
+
+        $category = Categogy::all();
+        return view('admin.post.create')->with(compact('category','post'));
     }
 
     /**
@@ -89,7 +92,8 @@ class PostController extends Controller
     public function edit($id)
     {   
         $edit = Post::find($id);
-        return view('admin.post.edit')->with(compact('edit'));
+        $category = Categogy::all();
+        return view('admin.post.edit')->with(compact('category','edit'));
     }
 
     /**
@@ -115,7 +119,7 @@ class PostController extends Controller
             $name = time().'_'.$image->getClientOriginalName();
             Storage::disk('public')->put($name,File::get($image));
             $post->image = $name;
-
+ 
         }
         $post->categogy_id = $request->categogy_id;
 

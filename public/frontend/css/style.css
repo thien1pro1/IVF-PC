@@ -19296,7 +19296,7 @@ p.sub-title {
   overflow: hidden;
   /* to bound the empty top space created by inner element's top margin */
   width: 100%;
-  background-color: #999;
+  background: url(../images/page11.jpg) repeat;
   min-height: 800px;
   display: flex;
   align-items: center;
