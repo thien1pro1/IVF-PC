@@ -83,7 +83,7 @@
         </div>
         <div class="form-group ">
             <label  for="fi">Thêm đơn thuốc</label><br>
-            <a  href="{{route('viewBookPDF',[$edit->id])}}" class="btn btn-redlight">Thêm</a>
+            <a  href="{{route('bill',[$edit->id])}}" class="btn btn-redlight">Thêm</a>
             <input type="file" class="form-control" id="fi"  name="medicines">
         </div>
 

@@ -13,7 +13,7 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\MedicineController;
 
-
+use App\Http\Controllers\BillController;
 use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Auth;
 use App\Mail\ConfirmEmail;
@@ -28,6 +28,7 @@ use App\Mail\ConfirmEmail;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('admin/bill/{id}',[BillController::class, 'index'])->name('bill');
 
 Route::get('/', function () {
     return view('welcome');
