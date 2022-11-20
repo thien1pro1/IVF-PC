@@ -20,6 +20,7 @@
 
 </head>
 <body>
+
      <!-- header -->
 
     <header id="site-header" class="fixed-top">
@@ -255,8 +256,8 @@
       </h3>
 
       
-      <form autocomplete="off" method="POST" action="{{route('book.store')}}" enctype="multipart/form-data">
-        @method('POST')
+      <form  method="GET" action="{{route('sendHistory')}}" >
+        @method('GET')
                         @csrf
         <div class="row mb-1">
 
@@ -307,7 +308,7 @@
 
 
 
-<!-- Modal -->
+<!-- Modal cau hoi -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -394,7 +395,7 @@
     </div>
   </div>
 </div>
-    <script>
+    {{-- <script>
       var chatbox = document.getElementById('fb-customer-chat');
       chatbox.setAttribute("page_id", "102855539327882");
       chatbox.setAttribute("attribution", "biz_inbox");
@@ -416,7 +417,7 @@
         js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
-    </script>
+    </script> --}}
     </footer>
     <!-- //footer -->
     <!-- //footer -->

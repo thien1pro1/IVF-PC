@@ -55,7 +55,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('admin/bookStaff/bill/{id}',[BillController::class, 'viewBillPDF'])->name('viewBillPDF');
 
-
+Route::get('client/send-history/',[BookController::class, 'sendHistory'])->name('sendHistory');
 
 Route::get('pdf/{id}',[BookStaffController::class, 'viewBookPDF'])->name('viewBookPDF');
 Route::get('/client/home', [PageController::class,'home']);

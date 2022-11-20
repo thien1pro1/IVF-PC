@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2022 at 12:36 AM
+-- Generation Time: Nov 20, 2022 at 05:11 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -20,6 +20,40 @@ SET time_zone = "+00:00";
 --
 -- Database: `luanvan`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `answers`
+--
+
+CREATE TABLE `answers` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ask_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `asks`
+--
+
+CREATE TABLE `asks` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `years` int(11) NOT NULL,
+  `gender` int(11) NOT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'IVF',
+  `content` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -45,7 +79,8 @@ INSERT INTO `bills` (`id`, `book_id`, `user_id`, `total`, `created_at`, `updated
 (2, 26, 1, 0, '2022-11-19 11:29:29', '2022-11-19 11:29:29'),
 (3, 26, 1, 0, '2022-11-19 11:32:03', '2022-11-19 11:32:03'),
 (4, 28, 1, 188100, '2022-11-19 12:09:55', '2022-11-19 12:09:55'),
-(5, 1, 1, 80000, '2022-11-19 15:20:07', '2022-11-19 15:20:07');
+(5, 1, 1, 80000, '2022-11-19 15:20:07', '2022-11-19 15:20:07'),
+(6, 19, 1, 18000, '2022-11-20 06:59:46', '2022-11-20 06:59:46');
 
 -- --------------------------------------------------------
 
@@ -72,7 +107,9 @@ INSERT INTO `bill_medicines` (`bill_id`, `medicine_id`, `amount`) VALUES
 (4, 7, 3),
 (4, 13, 6),
 (5, 4, 1),
-(5, 13, 2);
+(5, 13, 2),
+(6, 10, 1),
+(6, 14, 1);
 
 -- --------------------------------------------------------
 
@@ -286,7 +323,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (24, '2022_11_16_064354_create_medicines_table', 8),
 (25, '2022_11_18_043448_add_avatar_to_users_table', 9),
 (28, '2022_11_19_063432_create_bills_table', 10),
-(29, '2022_11_19_063559_create_bill__medicines_table', 11);
+(29, '2022_11_19_063559_create_bill__medicines_table', 11),
+(30, '2022_11_20_130958_create_asks_table', 12),
+(31, '2022_11_20_131549_create_answers_table', 13);
 
 -- --------------------------------------------------------
 
@@ -503,6 +542,18 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `position_id`, 
 --
 
 --
+-- Indexes for table `answers`
+--
+ALTER TABLE `answers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `asks`
+--
+ALTER TABLE `asks`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `bills`
 --
 ALTER TABLE `bills`
@@ -630,10 +681,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `answers`
+--
+ALTER TABLE `answers`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `asks`
+--
+ALTER TABLE `asks`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `bills`
 --
 ALTER TABLE `bills`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `books`
@@ -669,7 +732,7 @@ ALTER TABLE `medicines`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `permissions`

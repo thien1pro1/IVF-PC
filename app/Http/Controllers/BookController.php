@@ -270,6 +270,7 @@ class BookController extends Controller
     public function sendHistory(Request $request){
         $email = $request->query('email');
         $phone = $request->query('phone');
+        
         $bookT = Book::where('email',$email)->where('phone',$phone)->get();
         if(!empty($bookT)){
             $body = "";
@@ -278,8 +279,7 @@ class BookController extends Controller
                 'body'    => $body,
                 'email'   => $email
             ];
-            
-            Mail::to($email)->send(new sendHistory($data));
+            Mail::to($email)->send(new SendHistory($data));
             return redirect()->back()->with('status','Kết quả đã được gửi đến mail của bạn');
 
         }
