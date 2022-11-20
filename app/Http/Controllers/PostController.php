@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Categogy;
-use Storage;
-use File;
+// use Storage;
+// use File;
 class PostController extends Controller
 {
     /**
@@ -77,7 +79,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($Post);
+        $post = Post::find($id);
 
         $category = Categogy::all();
         return view('admin.post.create')->with(compact('category','post'));

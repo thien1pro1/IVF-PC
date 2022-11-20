@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\DB;
 use App\Mail\BarcodeEmail;
 use App\Mail\ConfirmEmail;
 use App\Mail\FinishEmail;
+use App\Mail\sendHistory;
+
 
 use Exception;
 use Illuminate\Mail\Mailer;
@@ -265,6 +267,28 @@ class BookController extends Controller
     //     }
         
     // }
+    public function sendHistory(Request $request){
+        $email = $request->query('email');
+        $phone = $request->query('phone');
+        $bookT = Book::where('email',$email)->where('phone',$phone)->get();
+        if(!empty($bookT)){
+            $body = "";
+            $data = [
+                'subject' => 'Lịch sử khám chữa bệnh',
+                'body'    => $body,
+                'email'   => $email
+            ];
+            
+            Mail::to($email)->send(new sendHistory($data));
+            return redirect()->back()->with('status','Kết quả đã được gửi đến mail của bạn');
+
+        }
+        else{
+            return redirect()->back()->with('status','Không có kết quả ứng với thông tin bạn nhập');
+        }
+
+        
+    }
 
 
     

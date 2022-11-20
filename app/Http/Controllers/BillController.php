@@ -11,6 +11,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\Medicine;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BillController extends Controller
 {
@@ -44,13 +45,11 @@ class BillController extends Controller
         $bill->total = $total;
         $book = Book::find($b);
         $book->bill()->save($bill);
-        
-        // dd($bill->id);
-            $medicines = Medicine::find($request->id);
-            // dd($medicine);
-            foreach($medicines as $key => $medicine){
-                $bill->medicines()->attach($medicine, ['amount' => $request->amount[$key]]);
-            }
+        $medicines = Medicine::find($request->id);
+        foreach($medicines as $key => $medicine){
+            $bill->medicines()->attach($medicine, ['amount' => $request->amount[$key]]);
+        }
+        $this->viewBillPDF($b);
     }
 
     public function viewBillPDF($id){
@@ -59,22 +58,21 @@ class BillController extends Controller
         foreach($bill as $b){
             $billID= $b->id;
             break;
-
         }
-        // $medicines = $bill->medicines();
         $bill = Bill::find($billID);
         $details = Bill_Medicine::where('bill_id',$billID)->get();
-        
-        // foreach($details as $detail){
-        //     return 'so luong '.$detail->amount;
-        // }
-
+ 
         
         $pdf = Pdf::loadView('admin.bookStaff.pdf',['book'=>$book,'details'=>$details,'bill'=>$bill]);
-        return $pdf->download('billOf'.$id.'.pdf');
-        
+        $content = $pdf->download()->getOriginalContent();
+        Storage::put('public/medicine_file/bill'.$id.'.pdf',$content);
     }
     public function deleteBill($id){
+        $bill = Bill::find($id)->delete();
+        $bill_medicines = Bill_Medicine::where('bill_id',$id)->get();
+        foreach($bill_medicines as $bm){
+            $bm->delete();
+        }
         
     }
 }
