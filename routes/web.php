@@ -63,6 +63,8 @@ Route::get('/client/category/{id}',[PageController::class,'categoryPage'])->name
 Route::get('/client/post/{id}',[PageController::class,'postPage'])->name('page.post');
 Route::post('admin/add-bill/',[BillController::class, 'addBill'])->name('addBill');
 
+Route::get('/client/search', [PageController::class,'timkiem'])->name('page.post');
+
 
 
 Route::get('/error',function(){

@@ -21,6 +21,7 @@
 </head>
 <body>
      <!-- header -->
+
     <header id="site-header" class="fixed-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
@@ -36,8 +37,16 @@
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav ms-auto me-2 my-2 my-lg-0 navbar-nav-scroll">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/client/home')}}">Trang chủ</a>
+                            <a class="nav-link" aria-current="page" href="{{url('/client/home')}}">Home</a>
                         </li>
+                        <!-- Button trigger modal -->
+
+                         <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" aria-current="page"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">HỎI ĐÁP BÁC SĨ</a>
+                        </li>
+
+
+
                            <li class="nav-item dropdown active">
                             <a class="nav-link dropdown-toggle" href="" id="navbarScrollingDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -76,8 +85,12 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                                  <li>
-                                    <a class="dropdown-item" href="{{url('/ve-chung-toi')}}">Câu chuyện về Khoa Hiếm Muộn IVF Phương Châu</a>
+                                    <a data-bs-toggle="modal"  data-bs-target="#staticBackdrop" class="dropdown-item" href="{{url('/ve-chung-toi')}}">Tra cứu hồ sơ và lịch sử khám</a>
                                 </li>
+
+
+                                   <!-- Button trigger modal -->
+
                                 <li>
                                     <a class="dropdown-item" href="{{url('/ve-chung-toi')}}">Thông điệp từ nhà sáng lập</a>
                                 </li>
@@ -130,12 +143,13 @@
                             <a class="nav-link" href="contact.html">Contact</a>
                         </li> -->
                     </ul>
-                    <form action="error.html" method="GET" class="d-flex search-header">
-                        <input class="form-control" type="search" placeholder="Bạn muốn tìm..." aria-label="Search"
+                    <form action="{{('/client/search')}}" method="GET" class="d-flex search-header">
+                        <input name="keywords" class="form-control" type="search" placeholder="Bạn muốn tìm..." aria-label="Search"
                             required>
-                        <button class="btn btn-style" type="submit"><i class="fas fa-search"></i></button>
+                        <button name="timkiem" class="btn btn-style" type="submit"><i class="fas fa-search"></i></button>
                     </form>
                 </div>
+
                 <!-- toggle switch for light and dark theme -->
                 <div class="cont-ser-position">
                     <nav class="navigation">
@@ -165,6 +179,7 @@
 
     <!-- footer -->
      <!-- footer -->
+
     <footer class="w3l-footer-29-main">
         <div class="footer-29 pt-5 pb-4">
             <div class="container pt-md-4">
@@ -178,8 +193,8 @@
                     </div>
                     <div class="col-md-2 col-4 footer-list-29 mt-md-0 mt-4">
                         <ul>
-                            <h6 class="footer-title-29">About</h6>
-                            <li><a href="services.html">Services</a></li>
+                            <h6 class="footer-title-29">Trang</h6>
+                            <li><a href="services.html">Dịch vụ</a></li>
                             <li><a href="about.html">Special Offers</a></li>
                             <li><a href="about.html">Orthodontics</a></li>
                             <li><a href="about.html">About Us</a></li>
@@ -196,11 +211,11 @@
                     </div>
                     <div class="col-lg-2 col-md-2 col-4 footer-list-29 mt-md-0 mt-4">
                         <ul>
-                            <h6 class="footer-title-29">Dentition</h6>
-                            <li><a href="#doctor">Dr. John Doe</a></li>
-                            <li><a href="#doctor">Dr. Martin Ker</a></li>
-                            <li><a href="#doctor">Dr. Alexander</a></li>
-                            <li><a href="#doctor">Dr. Eliz Wilson</a></li>
+                            <h6 class="footer-title-29">Bác sĩ</h6>
+                            <li><a href="#doctor">BS. Võ Huỳnh Tiến</a></li>
+                            <li><a href="#doctor">BS. CKII. Dư Huỳnh Hồng Ngọc</a></li>
+                            <li><a href="#doctor">BS. Quách Văn Thanh</a></li>
+                            <li><a href="#doctor">BS. Phạm Hoàng Học</a></li>
                         </ul>
                     </div>
                 </div>
@@ -211,6 +226,197 @@
                 <!-- //copyright -->
             </div>
         </div>
+
+        <!-- Messenger Plugin chat Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Plugin chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+
+
+
+
+<!-- Modal tra cuu ho so benh an -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+   
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <section class="w3l-content-sec py-5">
+  <div class="container py-md-5 py-4 AppointmentPageAppointmentForm">
+    <div class="form-content ml-sm-left mx-auto">
+      <h3 class="title-style text-center mb-5">
+        <span>Tra cứu</span> Hồ sơ & Lịch sử khám
+      </h3>
+
+      
+      <form autocomplete="off" method="POST" action="{{route('book.store')}}" enctype="multipart/form-data">
+        @method('POST')
+                        @csrf
+        <div class="row mb-1">
+
+       
+
+          
+
+          <div class="col-md-12 mb-4">
+            <label for="inputtextnumber"
+              class="form-label">Số điện thoại</label>
+            <input type="phone" name="phone" id="inputtextnumber"
+              placeholder="Nhập số điện thoại..." required="">
+          </div>
+          <div class="col-md-12 mb-4">
+            <label for="inputtextnumber"
+              class="form-label">Email</label>
+            <input type="email" name="email" id="inputtextnumber"
+              placeholder="Nhập email" required="">
+          </div>
+
+
+
+        </div>
+        <div class="text-end">
+          <button type="submit" name="datlich" class="btn btn-style mt-sm-3">Tra cứu</button>
+        </div>
+        </div>
+
+
+
+      </form>
+
+    </div>
+  </div>
+</section>
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+         
+<section class="w3l-content-sec py-5">
+  <div class="container py-md-5 py-4 AppointmentPageAppointmentForm">
+    <div class="form-content ml-sm-left mx-auto">
+      <h3 class="title-style text-center mb-5">
+        Hỏi đáp Bác sĩ <span>IVF PC</span>
+      </h3>
+
+      
+      <form autocomplete="off" method="POST" action="{{route('book.store')}}" enctype="multipart/form-data">
+        @method('POST')
+                        @csrf
+        <div class="row mb-1">
+
+          <div class="col-md-12 mb-4">
+            <label for="inputtextname" class="form-label">Họ và tên</label>
+            <input type="text" name="wife_name" id="inputtextname"
+              placeholder="Nhập họ tên vợ..." required="">
+          </div>
+          <div class="col-md-12 mb-4">
+            <label for="inputtextnumber" class="form-label">Ngày tháng năm sinh</label>
+            <input type="date" name="wife_birthday" id="dateofbirth" required="">
+          </div>
+
+          
+
+          <div class="col-md-12 mb-4">
+            <label for="inputtextnumber"
+              class="form-label">Số điện thoại</label>
+            <input type="phone" name="phone" id="inputtextnumber"
+              placeholder="Nhập số điện thoại..." required="">
+          </div>
+          <div class="col-md-12 mb-4">
+            <label for="inputtextnumber"
+              class="form-label">Email</label>
+            <input type="email" name="email" id="inputtextnumber"
+              placeholder="Nhập email" required="">
+          </div>
+
+
+
+
+
+        
+
+       
+
+          <div  class="col-md-12 mb-12">
+            <label for="inputtextname" class="form-label">Câu hỏi dành cho bác sĩ</label>
+            <textarea  rows="5" style= "width: 100%;border: 2px solid var(--border-color-light) ;    border-radius: 4px; " type="text" name="content" id="inputtextname"
+              placeholder="Nhập thông tin cần ghi chú..." required=""></textarea>
+          </div>
+
+
+        </div>
+        <div class="text-end">
+          <button type="submit" name="datlich" class="btn btn-style mt-sm-3">Gửi câu hỏi</button>
+        </div>
+
+
+
+          
+
+      
+        </div>
+
+
+
+      </form>
+
+    </div>
+  </div>
+</section>
+
+
+     
+    
+    </div>
+  </div>
+</div>
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "102855539327882");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v15.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
     </footer>
     <!-- //footer -->
     <!-- //footer -->

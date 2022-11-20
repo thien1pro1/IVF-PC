@@ -69,10 +69,10 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
   <div class="w3l-breadcrumb py-lg-5">
     <div class="container pt-4 pb-sm-4 AppointmentFormBanner">
                   <h4 class="inner-text-title font-weight-bold pt-sm-5 pt-4">
-        Appointment      </h4>
+        Đặt lịch hẹn khám      </h4>
       
                   <ul class="breadcrumbs-custom-path AllBreadcrumbs">
-        <a href="https://wp.w3layouts.com/dentition" rel="nofollow">Home</a>&nbsp;&nbsp;&#187;&nbsp;&nbsp;Appointment page      </ul>
+        <a href="https://wp.w3layouts.com/dentition" rel="nofollow">Home</a>&nbsp;&nbsp;&#187;&nbsp;&nbsp;Trang đặt lịch hẹn khám     </ul>
           </div>
   </div>
 </section>

@@ -36,4 +36,15 @@ class PageController extends Controller
     }
 
 
+
+     public function timkiem(){
+        $keywords = $_GET['keywords'];
+        $category_post = Post::with('category')->where('title','LIKE','%'.$keywords.'%')->orwhere('short_Desc','title','LIKE','%'.$keywords.'%')->get();
+
+        $category = Categogy::all();
+    
+        return view('client.search')->with(compact('category','category_post','keywords'));
+    } 
+
+
 }
