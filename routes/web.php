@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AskController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\ServiceController;
@@ -58,7 +59,7 @@ Route::get('admin/bookStaff/bill/{id}',[BillController::class, 'viewBillPDF'])->
 Route::get('client/send-history/',[BookController::class, 'sendHistory'])->name('sendHistory');
 
 Route::get('pdf/{id}',[BookStaffController::class, 'viewBookPDF'])->name('viewBookPDF');
-Route::get('/client/home', [PageController::class,'home']);
+Route::get('/client/home', [PageController::class,'home'])->name('page.home');
 Route::get('/client/category/{id}',[PageController::class,'categoryPage'])->name('page.category');
 Route::get('/client/post/{id}',[PageController::class,'postPage'])->name('page.post');
 Route::post('admin/add-bill/',[BillController::class, 'addBill'])->name('addBill');
@@ -89,6 +90,8 @@ Route::resource('admin/post',PostController::class);
 Route::resource('admin/staff',StaffController::class);
 Route::resource('admin/admin',UserController::class);
 Route::resource('admin/service',ServiceController::class);
+Route::resource('client/ask',AskController::class);
+
 Route::resource('admin/client',BookController::class);
 Route::resource('admin/bookStaff',BookStaffController::class);
 Route::resource('admin/medicine',MedicineController::class);

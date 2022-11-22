@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2022 at 05:11 PM
+-- Generation Time: Nov 22, 2022 at 10:57 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -51,6 +51,7 @@ CREATE TABLE `asks` (
   `gender` int(11) NOT NULL,
   `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'IVF',
   `content` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -80,7 +81,9 @@ INSERT INTO `bills` (`id`, `book_id`, `user_id`, `total`, `created_at`, `updated
 (3, 26, 1, 0, '2022-11-19 11:32:03', '2022-11-19 11:32:03'),
 (4, 28, 1, 188100, '2022-11-19 12:09:55', '2022-11-19 12:09:55'),
 (5, 1, 1, 80000, '2022-11-19 15:20:07', '2022-11-19 15:20:07'),
-(6, 19, 1, 18000, '2022-11-20 06:59:46', '2022-11-20 06:59:46');
+(6, 19, 1, 18000, '2022-11-20 06:59:46', '2022-11-20 06:59:46'),
+(14, 32, 1, 103000, '2022-11-21 08:40:18', '2022-11-21 08:40:18'),
+(15, 32, 1, 29000, '2022-11-21 09:05:23', '2022-11-21 09:05:23');
 
 -- --------------------------------------------------------
 
@@ -109,7 +112,29 @@ INSERT INTO `bill_medicines` (`bill_id`, `medicine_id`, `amount`) VALUES
 (5, 4, 1),
 (5, 13, 2),
 (6, 10, 1),
-(6, 14, 1);
+(6, 14, 1),
+(7, 1, 1),
+(7, 9, 3),
+(7, 13, 1),
+(8, 1, 1),
+(8, 9, 3),
+(8, 13, 1),
+(9, 5, 1),
+(9, 9, 1),
+(10, 9, 1),
+(10, 14, 4),
+(11, 3, 4),
+(11, 9, -1),
+(11, 14, 2),
+(12, 4, 60),
+(13, 5, 1),
+(13, 12, 2),
+(14, 3, 1),
+(14, 5, 1),
+(14, 18, 2),
+(15, 3, 1),
+(15, 9, 1),
+(15, 10, 1);
 
 -- --------------------------------------------------------
 
@@ -171,7 +196,8 @@ INSERT INTO `books` (`id`, `wife_name`, `hus_name`, `phone`, `email`, `wife_birt
 (28, 'xuan vip', 'Cuong pro', '1234567890', 'thien1pro1@gmail.com', '2022-11-15', '2022-11-15', '2022-11-19', '10:30:00', 1, 1, NULL, NULL, '2022-11-15 08:47:31', '2022-11-15 10:24:10', 1),
 (29, 'Trần thanh Nhi', 'Nguyễn Đăng Thiên', '0585253470', 'thien1pro1@gmail.com', '2022-11-16', '2022-11-16', '2022-11-16', '10:30:00', NULL, -1, 'Tôi cần chăm sóc', NULL, '2022-11-16 07:58:05', '2022-11-16 07:58:05', 0),
 (30, 'Trần Thanh Nhi', 'Nguyễn Đăng Thiên', '0585253470', 'thien1pro1@gmail.com', '2022-11-16', '2022-11-16', '2022-11-16', '10:30:00', NULL, 0, 'oke', NULL, '2022-11-16 08:04:00', '2022-11-16 08:04:00', 0),
-(31, 'Nguyễn Thị Tú Hảo', 'Nguyễn Đăng Thiên', '0678987654', 'thien1pro1@gmail.com', '2022-11-16', '2022-11-16', '2022-11-16', '07:00:00', NULL, 2, 'yeah', 'Do thiêu Glucozo, Bổ sung tinh bột', '2022-11-16 08:06:43', '2022-11-16 08:20:55', 1);
+(31, 'Nguyễn Thị Tú Hảo', 'Nguyễn Đăng Thiên', '0678987654', 'thien1pro1@gmail.com', '2022-11-16', '2022-11-16', '2022-11-16', '07:00:00', NULL, 2, 'yeah', 'Do thiêu Glucozo, Bổ sung tinh bột', '2022-11-16 08:06:43', '2022-11-16 08:20:55', 1),
+(32, 'Lâm Khánh Vy', 'hà Hữu Sĩ', '0987564325', 'thien1pro1@gmail.com', '1996-11-08', '1993-11-15', '2022-11-21', '15:00:00', NULL, 1, 'Kiểm tra y tế', NULL, '2022-11-06 08:27:01', '2022-11-06 08:27:01', 1);
 
 -- --------------------------------------------------------
 
@@ -696,13 +722,13 @@ ALTER TABLE `asks`
 -- AUTO_INCREMENT for table `bills`
 --
 ALTER TABLE `bills`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `categogies`
