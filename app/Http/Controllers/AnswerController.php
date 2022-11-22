@@ -28,7 +28,7 @@ class AnswerController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -70,7 +70,10 @@ class AnswerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ask = Ask::find($id);
+
+        return view('admin.ask_answer.answer')->with(compact('ask'));
+
     }
 
     /**
@@ -99,11 +102,13 @@ class AnswerController extends Controller
     public function answerEmail($id){
         $ask = Ask::find($id);
         $email = $ask->email;
+        
         $askContent = $ask->content;
 
         $answers = Answer::where('ask_id',$id)->get();
         foreach($answers as $answer){
             $answerContent = $answer->content;
+            $user = $answer->user;
             break;
         }
 
@@ -112,6 +117,7 @@ class AnswerController extends Controller
             'subject' => 'Bác sĩ tư vấn',
             'askContent'    => $askContent,
             'answerContent'    => $answerContent,
+            'user'   => $user,
             'email'   => $email
         ];
         

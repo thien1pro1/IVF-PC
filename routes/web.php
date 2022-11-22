@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\AskController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
@@ -91,6 +92,7 @@ Route::resource('admin/staff',StaffController::class);
 Route::resource('admin/admin',UserController::class);
 Route::resource('admin/service',ServiceController::class);
 Route::resource('client/ask',AskController::class);
+Route::resource('admin/ask_answer',AnswerController::class);
 
 Route::resource('admin/client',BookController::class);
 Route::resource('admin/bookStaff',BookStaffController::class);

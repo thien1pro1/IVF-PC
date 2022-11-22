@@ -336,7 +336,7 @@
           </div>
           <div class="col-md-12 mb-4">
             <label for="inputtextnumber" class="form-label">Năm sinh</label>
-            <input type="date" name="years" id="dateofbirth" required="">
+            <input type="text" name="years" id="dateofbirth" required="">
           </div>
           <div class="col-md-12 mb-4">
             <label for="inputtextnumber"

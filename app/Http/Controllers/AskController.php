@@ -14,7 +14,9 @@ class AskController extends Controller
      */
     public function index()
     {
-        //
+        $asks = Ask::all();
+        return view('admin.ask_answer.index')->with(compact('asks'));
+
     }
 
     /**
