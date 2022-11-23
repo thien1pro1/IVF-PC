@@ -708,7 +708,7 @@ table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: under
     <tr>
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 60px;font-family:'Open Sans',sans-serif;" align="left">
         
-        {{$data['answerContent']}}
+        {!!($data['answerContent'])!!}
 
       </td>
     </tr>

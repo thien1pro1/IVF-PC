@@ -31,7 +31,7 @@ class AnswerEmail extends Mailable
     {
         return $this->from('thien1pro1@gmail.com','Bệnh viện Quốc tế Phương Châu')
         ->subject($this->data['subject'])
-        ->view('emails.answerEmail');
+        ->view('emails.sendAnswer');
 
     }
 }

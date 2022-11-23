@@ -44,6 +44,7 @@ class AnswerController extends Controller
         $answer->ask_id = $request->ask_id;
         $answer->content = $request->content;
         Ask::find($request->ask_id)->update(['status' => 1]);
+        $this->answerEmail($request->ask_id);
         $answer->save();
         return redirect()->back()->with('status','Cám ơn bạn đặt câu hỏi. Bác sĩ sẽ trả lời qua mail của bạn');
 
