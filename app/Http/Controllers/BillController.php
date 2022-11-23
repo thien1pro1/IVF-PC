@@ -9,6 +9,7 @@ use Illuminate\Http\Response;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 use App\Models\Medicine;
+use App\Models\Room;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -50,6 +51,11 @@ class BillController extends Controller
             $bill->medicines()->attach($medicine, ['amount' => $request->amount[$key]]);
         }
         $this->viewBillPDF($b);
+
+        $edit = Book::find($b);
+        $room = Room::all();
+
+        return view('admin.bookStaff.edit')->with(compact('edit','room'));
     }
 
     public function viewBillPDF($id){
@@ -68,11 +74,18 @@ class BillController extends Controller
         Storage::put('public/medicine_file/bill'.$id.'.pdf',$content);
     }
     public function deleteBill($id){
-        $bill = Bill::find($id)->delete();
-        $bill_medicines = Bill_Medicine::where('bill_id',$id)->get();
-        foreach($bill_medicines as $bm){
-            $bm->delete();
+        //$id is book id
+        $bills = Bill::where('book_id',$id)->get();
+        foreach($bills as $bill){
+            $billId = $bill->id;
+            $bill->delete();
+            $bill_medicines = Bill_Medicine::where('bill_id',$billId)->delete();
+            // foreach($bill_medicines as $bm){
+            //     $bm->delete();
+            // }
         }
+        return redirect()->back()->with('status','Cám ơn bạn đặt câu hỏi. Bác sĩ sẽ trả lời qua mail của bạn');
+
         
     }
 }

@@ -26,7 +26,7 @@
     <header id="site-header" class="fixed-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="{{url('/')}}">
+                <a class="navbar-brand" href="{{url('/client/home')}}">
                     <i ></i>IVF PHƯƠNG CHÂU
                 </a>
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
@@ -324,19 +324,28 @@
       </h3>
 
       
-      <form autocomplete="off" method="POST" action="{{route('book.store')}}" enctype="multipart/form-data">
+      <form autocomplete="off" method="POST" action="{{route('ask.store')}}" enctype="multipart/form-data">
         @method('POST')
                         @csrf
         <div class="row mb-1">
 
           <div class="col-md-12 mb-4">
             <label for="inputtextname" class="form-label">Họ và tên</label>
-            <input type="text" name="wife_name" id="inputtextname"
-              placeholder="Nhập họ tên vợ..." required="">
+            <input type="text" name="name" id="inputtextname"
+               required="">
           </div>
           <div class="col-md-12 mb-4">
-            <label for="inputtextnumber" class="form-label">Ngày tháng năm sinh</label>
-            <input type="date" name="wife_birthday" id="dateofbirth" required="">
+            <label for="inputtextnumber" class="form-label">Năm sinh</label>
+            <input type="text" name="years" id="dateofbirth" required="">
+          </div>
+          <div class="col-md-12 mb-4">
+            <label for="inputtextnumber"
+              class="form-label">Giới tính</label>
+              <select name="gender">
+                <option value="0">Nam</option>
+                <option value="1">Nữ</option>
+
+              </select>
           </div>
 
           
@@ -365,7 +374,7 @@
           <div  class="col-md-12 mb-12">
             <label for="inputtextname" class="form-label">Câu hỏi dành cho bác sĩ</label>
             <textarea  rows="5" style= "width: 100%;border: 2px solid var(--border-color-light) ;    border-radius: 4px; " type="text" name="content" id="inputtextname"
-              placeholder="Nhập thông tin cần ghi chú..." required=""></textarea>
+               required=""></textarea>
           </div>
 
 

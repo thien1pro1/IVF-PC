@@ -1,36 +1,59 @@
 @extends('layouts.admin')
 @section('content')
-<div class="container">
-      @if(session('status'))
-        <div class="alert alert-success" role="alert">
-            {{session('status')}}
-        </div>
-        
-    @endif
-    
-    <table class="table table-striped table-bordered">
-        <thead>
-          <tr>
-            <th scope="col">Giờ</th>
-            <th scope="col">Tên vợ</th>
-            <th scope="col">Tên chồng</th>
-            <th scope="col">Phòng</th>
-            <th>Code
-            </th>
-            <th scope="col">Trạng thái</th>
+@php
+use App\Http\Constants\BookingStatus;
 
-            <th scope="col">Quản lý</th>
-            
-          </tr>
-        </thead>
-        <tbody>
-        {{-- @dd($books); --}}
-        @php
 use App\Http\Constants\BookingTime;
 
 $time = BookingTime::$bookingTime ;
 
 @endphp
+    <div class="container">
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-header pb-0">
+                        <h4>Lịch khám</h4>
+                    </div>
+                    <div class="card-body px-0 pt-0 pb-2">
+                        <div class="table-responsive p-0">
+                            <table class="table align-items-center justify-content-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Giờ</th>
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Họ tên chồng</th>
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Họ tên vợ</th>
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Phòng khám</th>
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Barcode</th>
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Trạng thái</th>
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                            Quản lý</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+
+
+                                  
         @foreach ($time as $t)
         @php
           $cx = 0;
@@ -94,9 +117,12 @@ $time = BookingTime::$bookingTime ;
           </tr>
           @endif
         @endforeach
-        
-          
-        </tbody>
-      </table>
-</div>
-@endsection
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endsection

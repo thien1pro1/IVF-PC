@@ -3,12 +3,19 @@
 @php
 use App\Http\Constants\TypeMedicine;
 @endphp
+<div class="form-content ml-sm-left mx-auto">
+<div class="row mb-1">
 
-<h3>Thêm đơn thuốc</h3><br>
-<div class = "container">
-    <select id="typeMedicine" onchange="getMedicines()">
-        <option value="">Chọn loại thuốc</option>
-        <option value="{{TypeMedicine::$ThuocDacTri}}">Thuốc đặc trị</option>
+            
+
+
+              <div class="col-md-4 mb-4">
+            <label for="inputtextnumber"
+              class="form-label">Thêm đơn thuốc</label>
+            <select style="padding: 10px; margin-top: 10px;" class="form-select" aria-label="Default select example"
+              name="w3lServices" id="typeMedicine" onchange="getMedicines()">
+              <option selected>Chọn loại thuốc</option>
+              <option value="{{TypeMedicine::$ThuocDacTri}}">Thuốc đặc trị</option>
         <option value="{{TypeMedicine::$ThuocHieuTri}}">Thuốc hiệu trị</option>
 
         <option value="{{TypeMedicine::$KhangSinh}}">Kháng sinh</option>
@@ -17,19 +24,36 @@ use App\Http\Constants\TypeMedicine;
 
         <option value="{{TypeMedicine::$DungCuYTe}}">Dụng cụ y tế</option>
 
-    </select>
-    
+            </select>
+          </div>
+          <div class="col-md-4 mb-4">
+            <label for="inputtextnumber"
+              class="form-label">Thêm thuốc</label>
 
-    <select id="nameMedicine" >
-        <option value="">Chọn thuốc</option>
-    </select>
-    <button onclick="medicineToBill()">Thêm</button>
+            <select style="padding: 10px; margin-top: 10px;" class="form-select" aria-label="Default select example"
+              name="w3lServices" id="nameMedicine" onchange="getMedicines()">
+              <option selected>Chọn thuốc</option>
+              
+            </select>
+          </div>
+        
+
+
+               <div class="col-md-4 mb-4">
+                            <label for="inputtextnumber"
+              class="form-label"></label><br>
+          <button onclick="medicineToBill()" class="btn btn-style mt-sm-3">Thêm</button>
+        </div>
+    </div>
+</div>
 
 
 @php
      $user_id= Auth::user()->id;
 @endphp
-</div>
+          </div>
+
+
 <div class="container">
     <form method= "POST" action="{{route('addBill',['user'=>$user_id,'book'=>$book->id])}}">
         @csrf
@@ -42,17 +66,26 @@ use App\Http\Constants\TypeMedicine;
                 <th
                     class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                     Tên thuốc</th>
-                <th
-                    class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                <th style="margin-left: 100px;" 
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder  opacity-7 ps-2">
                     Số lượng</th>
-                <th>
-                    Xóa
-                </th>
+
+
+
+               <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                    Xóa</th>
             </tr>
         </thead>
         
     </table>
-    <button type="submit">Xuất đơn thuốc</button>
+    
+
+    <div class="col-md-4 mb-4">
+                            <label for="inputtextnumber"
+              class="form-label"></label><br>
+          <button type="submit" class="btn btn-style mt-sm-3">Xuất đơn thuốc</button>
+        </div>
 
 </form>
 
@@ -107,9 +140,15 @@ use App\Http\Constants\TypeMedicine;
             +a+"</span><input type='hidden' name='id[]' class='text-xs font-weight-bold' value='"+idMedicine+"''>";
         cell2.innerHTML = "<span class='text-xs font-weight-bold' >"
             +text+"</span>";
-        cell3.innerHTML = "<input type='number' name='amount[]' class='text-xs font-weight-bold' value='1''>";
+        cell3.innerHTML = "<input style='border: 2px solid gray ;    border-radius: 4px; ' type='number' name='amount[]' id='inputtextnumber' value='1''>";
+
+        
+
+
         index++;
-        cell4.innerHTML="<button onclick='deleteMedicine()'>Xóa</button>";
+        cell4.innerHTML="<button class='btn btn-style mt-sm-3' onclick='deleteMedicine()'>Xóa</button>";
+
+        
     }
 
     function deleteMedicine() {

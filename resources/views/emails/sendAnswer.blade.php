@@ -661,7 +661,7 @@ table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: under
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 30px;font-family:'Open Sans',sans-serif;" align="left">
         
   <h1 class="v-line-height v-font-size" style="margin: 0px; color: #ba372a; line-height: 100%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: 'Playfair Display',serif; font-size: 45px;">
-    <p><strong>Lịch sử khám bệnh</strong></p>
+    <p><strong>Tư vấn sức khỏe</strong></p>
   </h1>
 
       </td>
@@ -695,7 +695,7 @@ table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: under
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 60px;font-family:'Open Sans',sans-serif;" align="left">
         
   <div class="v-line-height" style="line-height: 160%; text-align: center; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 160%;">Kết quả lịch sử khám bệnh của bạn</p>
+    <p style="font-size: 14px; line-height: 160%;">Tư vấn từ bác sĩ {{$data['user']}}</p>
   </div>
 
       </td>
@@ -708,14 +708,7 @@ table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: under
     <tr>
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 60px;font-family:'Open Sans',sans-serif;" align="left">
         
-  <!--[if mso]><style>.v-button {background: transparent !important;}</style><![endif]-->
-<div align="center">
-  <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.unlayer.com" style="height:42px; v-text-anchor:middle; width:284px;" arcsize="71.5%"  strokecolor="#cec8b2" strokeweight="3px" fillcolor="#d36be2"><w:anchorlock/><center style="color:#FFFFFF;font-family:'Open Sans',sans-serif;"><![endif]-->  
-    <a href="{{route('book.history',['email'=>$data['email']])}}" target="_blank" class="v-button v-size-width" style="box-sizing: border-box;display: inline-block;font-family:'Open Sans',sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #d36be2; border-radius: 30px;-webkit-border-radius: 30px; -moz-border-radius: 30px; width:50%; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;border-top-width: 3px; border-top-style: solid; border-top-color: #cec8b2; border-left-width: 3px; border-left-style: solid; border-left-color: #cec8b2; border-right-width: 3px; border-right-style: solid; border-right-color: #cec8b2; border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #cec8b2;">
-      <span class="v-line-height v-padding" style="display:block;padding:10px 20px;line-height:120%;"><strong><span style="font-size: 18px; line-height: 21.6px;">Tra cứu</span></strong></span>
-    </a>
-  <!--[if mso]></center></v:roundrect><![endif]-->
-</div>
+        {!!($data['answerContent'])!!}
 
       </td>
     </tr>

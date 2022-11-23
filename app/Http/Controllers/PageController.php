@@ -22,7 +22,7 @@ class PageController extends Controller
     //     return view('client.category')->with(compact('category','posts'));
     // }
     public function postPage($id){
-        $post = Post::find($id);
+        $post = Post::find($id); 
         
         return view('client.post')->with(compact('post'));
     }
@@ -37,7 +37,7 @@ class PageController extends Controller
 
 
 
-     public function timkiem(){
+    public function timkiem(){
         $keywords = $_GET['keywords'];
         $category_post = Post::with('category')->where('title','LIKE','%'.$keywords.'%')->orwhere('short_Desc','title','LIKE','%'.$keywords.'%')->get();
 

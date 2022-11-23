@@ -7,6 +7,7 @@ use App\Models\Book;
 use App\Models\Room;
 use App\Models\Categogy;
 use App\Models\Position;
+use App\Models\Post;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -40,4 +41,8 @@ class HomeController extends Controller
 
         return view('admin.dashboard')->with(compact('waiting_book','books','accept_book','finish_book','cancel_book'));
     }
+
+
+
+     
 }

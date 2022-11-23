@@ -105,7 +105,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         <div class="col-sm-6">
           <div class="card-body blog-details align-self pl-sm-0">
            
-              <a href="{{route('page.post',[$post->id])}}" rel="bookmark" class="blog-desc">{{$post->title}}</a>           
+              <a href="{{route('page.post',[$post->id])}}" rel="bookmark" class="blog-desc">{{$post->title}}</a>            
 
              <p>{!!$post->short_Desc!!}</p> 
 
