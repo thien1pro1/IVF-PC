@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Service;
+use App\Models\FeedBack;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
-class ServiceController extends Controller
+class AdminFeedBackController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::all();
-        return view('admin.service.index')->with(compact('services'));
+        $posts = Post::all();
+        $feedbacks = FeedBack::all();
+        return view('admin.feedback.index')->with(compact('feedbacks', 'posts'));
     }
 
     /**
@@ -25,7 +27,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('admin.service.create');
+        //
     }
 
     /**
@@ -36,10 +38,7 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        $service = new Service();
-        $service->name = $request->name;
-        $service->save();
-        return redirect()->back()->with('status','Thêm dịch vụ thành công');
+        //
     }
 
     /**
@@ -61,8 +60,7 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        $edit = Service::find($id);
-        return view('admin.service.edit')->with(compact('edit'));
+        //
     }
 
     /**
@@ -74,14 +72,7 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $service = Service::find($id);
-        $service->name = $request->name;
-        $service->status = $request->status;
-
-        $service->save();
-        $services = Service::all();
-        return redirect('/admin/service')->with(compact('services'))->with('status','Cập nhập dịch vụ thành công');
-
+        //
     }
 
     /**
@@ -92,7 +83,6 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        Service::find($id)->delete();
-        return redirect()->back()->with('status','Xoá dịch vụ thành công');
+        //
     }
 }

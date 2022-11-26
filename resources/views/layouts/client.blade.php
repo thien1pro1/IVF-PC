@@ -93,7 +93,7 @@
                                    <!-- Button trigger modal -->
 
                                 <li>
-                                    <a class="dropdown-item" href="{{url('/ve-chung-toi')}}">Thông điệp từ nhà sáng lập</a>
+                                    <a class="dropdown-item" href="{{route('page.service')}}">Dịch vụ</a>
                                 </li>
 
                                   <li>
@@ -139,10 +139,9 @@
                                 @endforeach
                                 
                             </ul>
+                        </li>
 
-                       <!--  <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li> -->
+                    
                     </ul>
                     <form action="{{('/client/search')}}" method="GET" class="d-flex search-header">
                         <input name="keywords" class="form-control" type="search" placeholder="Bạn muốn tìm..." aria-label="Search"

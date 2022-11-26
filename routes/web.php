@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminFeedBackController;
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\AskController;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +17,7 @@ use App\Http\Controllers\PositionController;
 use App\Http\Controllers\MedicineController;
 
 use App\Http\Controllers\BillController;
+use App\Http\Controllers\FeedBackController;
 use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Auth;
 use App\Mail\ConfirmEmail;
@@ -68,6 +70,7 @@ Route::post('admin/add-bill/',[BillController::class, 'addBill'])->name('addBill
 
 Route::get('/client/search', [PageController::class,'timkiem'])->name('page.search');
 
+Route::get('/client/service', [PageController::class,'servicePage'])->name('page.service');
 
 
 
@@ -77,9 +80,7 @@ Route::get('/error',function(){
 Route::get('/client/about',function(){
     return view('client.about');
 });
-Route::get('/client/service',function(){
-    return view('client.service');
-});
+
 Route::get('/client/contact',function(){
     return view('client.contact');
 });
@@ -91,6 +92,10 @@ Route::resource('admin/categogy',CategogyController::class);
 Route::resource('admin/post',PostController::class);
 
 Route::resource('admin/staff',StaffController::class);
+Route::resource('client/post/feedback',FeedBackController::class);
+Route::resource('admin/admin-feedback',AdminFeedBackController::class);
+
+
 Route::resource('admin/admin',UserController::class);
 Route::resource('admin/service',ServiceController::class);
 Route::resource('client/ask',AskController::class);

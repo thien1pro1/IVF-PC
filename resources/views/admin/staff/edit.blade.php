@@ -19,7 +19,7 @@
 }
 </style>
 <div class="container">
-    <h2>Cập nhập Chức vụ</h2>
+    <h2>Cập nhập Nhân viên</h2>
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -53,10 +53,11 @@
           <div class="form-group">
             <select class="custom-select" name="position_id">
                 @foreach($position as $p)
+
                     @if($edit->position_id == $p->id)
-                    <option selected value="{{$edit->position->name}}"></option>
+                    <option selected value="{{$p->id}}">{{$p->name}}</option>
                     @else
-                    <option value="{{$edit->position->name}}"></option>
+                    <option value="{{$p->id}}">{{$p->name}}</option>
                     @endif
                 @endforeach
 

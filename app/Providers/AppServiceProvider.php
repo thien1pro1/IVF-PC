@@ -18,6 +18,8 @@ class AppServiceProvider extends ServiceProvider
     public $all_medicine;
     public $all_doctor;
     public $all_post;
+    public $all_service;
+
 
 
     /**
@@ -37,11 +39,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->all_category_client = Categogy::get();
-
+        $this->all_category_client = Categogy::where('id','!=','0')->get();
+        $this->all_service = Categogy::where('id','0')->get();
         view()->composer('layouts.client', function($view) {
             $view->with([
-                'all_category_client' => $this->all_category_client
+                'all_category_client' => $this->all_category_client,
+                'all_service' => $this->all_service
             ]);
         });
       

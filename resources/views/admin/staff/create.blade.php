@@ -37,7 +37,7 @@
     @endif
 
 
-    <form method="POST" action="{{route('staff.store')}}">
+    <form method="POST" action="{{route('staff.store')}}" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
           <label for="exampleInputEmail1">Email</label>
@@ -51,12 +51,17 @@
         <div class="form-group">
             <label for="status">Chức vụ</label>
             <select id="status" class="custom-select" name="position_id">
-                @foreach($position as $p)
-                <option value="{{$p->id}}=" >{{$p->name}}</option>
+                @foreach($positions as $p)
+                <option value="{{$p->id}}" >{{$p->name}}</option>
 
                 @endforeach
               </select>
               
+          </div>
+          <div class="form-group">
+            <label for="title">Hình ảnh</label>
+            <input type="file"class="form-control" name="image">
+            
           </div>
 
         <button type="submit" name="addStaff" class="btn btn-primary">Thêm</button>

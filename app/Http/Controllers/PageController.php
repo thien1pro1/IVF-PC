@@ -46,5 +46,10 @@ class PageController extends Controller
         return view('client.search')->with(compact('category','category_post','keywords'));
     } 
 
+    public function servicePage(){
+        $service = Post::where('categogy_id',0);
+        return view('client.service');
+    }
+
 
 }

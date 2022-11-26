@@ -354,18 +354,20 @@ RIGHT SIDEBAR TOGGLE SECTION
 
                     <div class="reply mt-5 pt-lg-5" id="reply">
                         <h3 class="title-left py-3">Để lại phản hồi</h3>
-                        <form action="#" method="POST">
+                        <form action="{{route('feedback.store')}} " method="POST">
+                          @csrf
+                          <input type="hidden" name="post_id" value="{{$post->id}}">
                             <div class="form-group reply">
                                 <textarea class="form-control" placeholder="Phản hồi của bạn"
-                                    id="exampleFormControlTextarea1" rows="4"></textarea>
+                                    id="exampleFormControlTextarea1" rows="4" name = "content"></textarea>
                                 <div class="input-grids row mt-sm-4 mt-3">
 
                                     <div class="form-group col-lg-6 mb-sm-4 mb-3">
-                                        <input type="text" name="Name" class="form-control" placeholder="Tên của bạn*"
+                                        <input type="text" name="name" class="form-control" placeholder="Tên của bạn*"
                                             required="">
                                     </div>
                                     <div class="form-group col-lg-6 mb-sm-4 mb-3">
-                                        <input type="email" name="Email" class="form-control" placeholder="Email*"
+                                        <input type="email" name="email" class="form-control" placeholder="Email*"
                                             required="">
                                     </div>
                                 </div>

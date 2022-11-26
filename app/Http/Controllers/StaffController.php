@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Position;
 use DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class StaffController extends Controller
 {
@@ -33,9 +35,9 @@ class StaffController extends Controller
      */
     public function create()
     {
-        $position = Position::all();
+        $positions = Position::all();
 
-        return view('admin.staff.create')->with(compact('position'));
+        return view('admin.staff.create')->with(compact('positions'));
     }
 
     /**
@@ -48,7 +50,19 @@ class StaffController extends Controller
     {   $staff = new User();
         $staff->name = $request->name;
         $staff->email = $request->email;
-        $staff->position_id= $request->position_id;
+        $staff->position_id = $request->position_id;
+
+        if($request['image']){
+            $image = $request['image'];
+            $ext = $image->getClientOriginalExtension();
+
+            $name = time().'_'.$image->getClientOriginalName();
+            Storage::disk('public')->put($name,File::get($image));
+            $staff->image = $name;
+ 
+        }
+        
+      
         $staff->save();
         return redirect()->back()->with('status','Thêm Nhân viên thành công');
     }
@@ -73,9 +87,8 @@ class StaffController extends Controller
     public function edit($id)
     {
         $edit = User::find($id);
-        
-        dd($edit->email);
-        return view('admin.client.edit')->with(compact('edit'));
+        $position = Position::all();
+        return view('admin.staff.edit')->with(compact('edit','position'));
     }
 
     /**
@@ -87,7 +100,27 @@ class StaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $staff = User::find($id);
+        $staff->name = $request->name;
+        $staff->email = $request->email;
+        $staff->position_id = $request->position_id;
+
+        if($request['image']){
+            $image = $request['image'];
+            $ext = $image->getClientOriginalExtension();
+
+            $name = time().'_'.$image->getClientOriginalName();
+            Storage::disk('public')->put($name,File::get($image));
+            $staff->image = $name;
+ 
+        }
+        
+      
+        $staff->save();
+        return redirect()->back()->with('status','Thêm Nhân viên thành công');
+    
+
     }
 
     /**

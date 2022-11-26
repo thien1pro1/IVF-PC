@@ -100,7 +100,7 @@
                             <i class="fas fa-tooth"></i>
                         </div>
                         <div class="about-content">
-                            <h5 class="mb-3"><a href="about.html">General Dentistry</a></h5>
+                            <h5 class="mb-3"><a href="about.html">Đánh giá sức khỏe sinh sản tiền hôn nhân</a></h5>
                             <p>show lên 6 dịch vụ là 6 trang bài viết</p>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                             <i class="fas fa-wheelchair"></i>
                         </div>
                         <div class="about-content">
-                            <h5 class="mb-3"><a href="about.html">Urgent Surgery</a></h5>
+                            <h5 class="mb-3"><a href="about.html">Xét nghiệm tinh dịch đồ - Semen Analysis</a></h5>
                             <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque
                                 laudan.</p>
                         </div>
@@ -123,7 +123,7 @@
                             <i class="fas fa-user-md"></i>
                         </div>
                         <div class="about-content">
-                            <h5 class="mb-3"><a href="about.html">Dental Implants</a></h5>
+                            <h5 class="mb-3"><a href="about.html"> Bơm tinh trùng vào buồng tử cung (IUI)</a></h5>
                             <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque
                                 laudan.</p>
                         </div>
@@ -135,7 +135,7 @@
                             <i class="fas fa-teeth-open"></i>
                         </div>
                         <div class="about-content">
-                            <h5 class="mb-3"><a href="about.html">Tooth Whitening</a></h5>
+                            <h5 class="mb-3"><a href="about.html">Hỗ trợ phôi thoát màng – Assisted Hatching (AH)</a></h5>
                             <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque
                                 laudan.</p>
                         </div>
@@ -147,7 +147,7 @@
                             <i class="fas fa-crutch"></i>
                         </div>
                         <div class="about-content">
-                            <h5 class="mb-3"><a href="about.html">Prosthesis</a></h5>
+                            <h5 class="mb-3"><a href="about.html">Phẫu thuật lấy tinh trùng từ tinh hoàn (mào tinh) – PESA</a></h5>
                             <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque
                                 laudan.</p>
                         </div>
@@ -159,14 +159,14 @@
                             <i class="fas fa-teeth"></i>
                         </div>
                         <div class="about-content">
-                            <h5 class="mb-3"><a href="about.html">Dental Braces</a></h5>
+                            <h5 class="mb-3"><a href="about.html">Hỗ trợ phôi thoát màng – Assisted Hatching (AH)</a></h5>
                             <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque
                                 laudan.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <a href="services.html" class="btn btn-style mt-5">Xem thêm</a>
+            <a href="{{route('page.service')}}" class="btn btn-style mt-5">Xem thêm</a>
         </div>
     </section>
     <!-- //home block 2 -->
@@ -438,6 +438,10 @@
         </div>
     </section>
     <!-- //call section -->
+<!-- Messenger Plugin chat Code -->
+<div id="fb-root"></div>
+
+<!-- Your Plugin chat code -->
 
 
     

@@ -19,7 +19,7 @@
 }
 </style>
 <div class="container">
-    <h2>Cập nhập danh mục</h2>
+    <h2>Cập nhập dịch vụ</h2>
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -37,28 +37,26 @@
     @endif
 
 
-    <form method="POST" action="{{route('categogy.update',[$editdanhmuc->id])}}">
+    <form method="POST" action="{{route('service.update',[$edit->id])}}">
         @method('PUT')
         @csrf
         <div class="form-group">
-          <label for="exampleInputEmail1">Tên danh mục</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" name="categogyName" value="{{$editdanhmuc->categogyName}}" placeholder="...">
+          <label for="exampleInputEmail1">Tên dịch vụ</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="name" value="{{$edit->name}}">
           
         </div>
+
         <div class="form-group">
-          <label for="exampleInputPassword1">Mô tả</label>
-          <input type="text" class="form-control" id="exampleInputPassword1" value="{{$editdanhmuc->short_Desc}}" placeholder="..." name="short_Desc" >
-        </div>
-        <div class="form-group">
+            <label for="exampleInputPassword1">Trạng thái</label>
             <select class="custom-select" name="status">
-            	@if($editdanhmuc->status==1)
-                <option selected value="1" >kích hoạt</option>
-                <option value="2" >Không kích hoạt</option>
+            	@if($edit->status==1)
+                <option selected value="1" >Khả dụng</option>
+                <option value="2" >Không Khả dụng</option>
 
                 @else
-                <option value="1" >Kích hoạt</option>
+                <option value="1" >Khả dụng</option>
 
-                <option value="2" >Không kích hoạt</option>
+                <option value="2" >Không Khả dụng</option>
     			@endif
               </select>
               

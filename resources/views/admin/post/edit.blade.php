@@ -19,7 +19,7 @@
 }
 </style>
 <div class="container">
-    <h2>Cập nhập danh mục</h2>
+    <h2>Cập nhập bài viết</h2>
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
