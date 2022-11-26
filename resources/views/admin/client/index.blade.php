@@ -33,7 +33,11 @@
 
                         <form action="{{ route('searchBook') }}" method="GET" class="d-flex search-header">
 
+<<<<<<< HEAD
                             <input style="height: 50px ;width: 400px; margin-right: 10px; margin-left: 10px;" name="search"
+=======
+                            <input style= "height: 50px ;margin-left:  10px;width: 400px; margin-right: 10px;" name="search"
+>>>>>>> 3a1d47d0e0f1808b7f7132d986562878186ddd4f
                                 class="form-control" type="search" placeholder="Bạn muốn tìm..." aria-label="Search"
                                 required>
 

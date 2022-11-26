@@ -66,6 +66,12 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
       background-image: url(https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/images/banner4.jpg);
     }
   </style>
+       @if(session('status'))
+        <div class="alert alert-success" role="alert">
+            {{session('status')}}
+        </div>
+        
+    @endif
   <div class="w3l-breadcrumb py-lg-5">
     <div class="container pt-4 pb-sm-4 AppointmentFormBanner">
                   <h4 class="inner-text-title font-weight-bold pt-sm-5 pt-4">

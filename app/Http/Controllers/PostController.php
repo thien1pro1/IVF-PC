@@ -35,7 +35,7 @@ class PostController extends Controller
     public function create()
     {
         // $user = Auth::user();    
-        $categogy = Categogy::all();
+        $categogy = Categogy::where('id','!=','0')->get();
         return view('admin.post.create')->with(compact('categogy'));
    
     }

@@ -44,8 +44,7 @@ class FeedBackController extends Controller
         $feedback->status = 0;
         $feedback->save();
         $post = Post::find($request->post_id)->title;
-        dd($post);
-        return redirect()->back()->with('status','Cám ơn phần hồi của bạn!');
+        return redirect()->back()->with('status','Cám ơn phản hồi của bạn!');
 
 
     }

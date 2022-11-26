@@ -353,18 +353,22 @@ filebrowserWindowHeight : 500
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-            <div class="input-group">
+            <!-- <div class="input-group">
               <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
               <input type="text" class="form-control" placeholder="Type here...">
-            </div>
+            </div> -->
           </div>
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
-                <i class="fa fa-user me-sm-1"></i>
+
+              
+             
+                <i>
+                  <img style="width: 35px ; border-radius: 5px ;height: 35px;" src="{{asset('uploads/'.Auth::user()->image)}}" >
+                </i>
                 <span class="d-sm-inline d-none"></span>
-                                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown"  class="nav-link dropdown-toggle d-sm-inline d-none" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            <li style="margin-top: 5px;" class="nav-item dropdown">
+                                <a  id="navbarDropdown"  class="nav-link dropdown-toggle d-sm-inline d-none" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                   {{ Auth::user()->name }}
                                 </a>
 
@@ -378,7 +382,7 @@ filebrowserWindowHeight : 500
                            
                                 </div>
                             </li>
-              </a>
+              
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">

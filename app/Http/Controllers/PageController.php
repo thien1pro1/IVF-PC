@@ -29,10 +29,12 @@ class PageController extends Controller
 
     public function home(){
          $posts = Post::where('categogy_id',2)->get();
+
+         $services = Post::where('categogy_id',0)->limit(6)->get();
         // $medicines = Medicine::get();
         // $doctor = User::where('position_id',2)->get();
 
-        return view('client.home')->with(compact('posts'));
+        return view('client.home')->with(compact('posts','services'));
     }
 
 
