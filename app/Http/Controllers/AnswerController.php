@@ -44,8 +44,9 @@ class AnswerController extends Controller
         $answer->ask_id = $request->ask_id;
         $answer->content = $request->content;
         Ask::find($request->ask_id)->update(['status' => 1]);
-        $this->answerEmail($request->ask_id);
         $answer->save();
+        $this->answerEmail($request->ask_id);
+
         return redirect()->back()->with('status','Cám ơn bạn đặt câu hỏi. Bác sĩ sẽ trả lời qua mail của bạn');
 
 
@@ -101,13 +102,17 @@ class AnswerController extends Controller
     }
 
     public function answerEmail($id){
+       
         $ask = Ask::find($id);
+        
         $email = $ask->email;
         
         $askContent = $ask->content;
 
-        $answers = Answer::where('ask_id',$id)->get();
+        $answers = Answer::where('ask_id',$id)->first()->get();
+        
         foreach($answers as $answer){
+            
             $answerContent = $answer->content;
             $user = $answer->user;
             break;
