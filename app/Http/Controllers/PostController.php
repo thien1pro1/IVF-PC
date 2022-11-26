@@ -114,7 +114,7 @@ class PostController extends Controller
         $post->short_desc = $data['short_desc'];
         $post->content = $data['content'];
         if($request['image']){
-            unlink('public/uploads/'.$post->image);
+            unlink('uploads/'.$post->image);
             $image = $request['image'];
             $ext = $image->getClientOriginalExtension();
 

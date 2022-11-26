@@ -37,7 +37,7 @@
     @endif
 
 
-    <form method="POST" action="{{route('staff.update',[$edit->id])}}">
+    <form method="POST" action="{{route('staff.update',[$edit->id])}}" enctype="multipart/form-data">
         @method('PUT')
         @csrf
         <div class="form-group">
@@ -48,6 +48,12 @@
         <div class="form-group">
             <label for="exampleInputEmail1">Tên</label>
             <input type="text" class="form-control" id="exampleInputEmail1" name="name" value="{{$edit->name}}" >
+            
+          </div>
+          <div class="form-group">
+            <label for="title">Hình ảnh</label>
+            <input type="file"class="form-control" name="image">
+            <p><img width="200px" src="{{asset('/uploads/'.$edit->image)}}"></p>
             
           </div>
           <div class="form-group">

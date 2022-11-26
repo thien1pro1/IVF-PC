@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2022 at 10:57 AM
+-- Generation Time: Nov 26, 2022 at 08:09 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -36,6 +36,14 @@ CREATE TABLE `answers` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `answers`
+--
+
+INSERT INTO `answers` (`id`, `user`, `ask_id`, `content`, `created_at`, `updated_at`) VALUES
+(2, 'Nguyễn Đăng Thiên', '1', '<p>Chào anh. Hiện tại vấn đề của anh là chứng đau lwung thường niên, anh có thể đến bệnh viện để kiểm tra sức khỏe</p>', '2022-11-22 23:51:05', '2022-11-22 23:51:05'),
+(6, 'Nguyễn Đăng Thiên', '1', '<p>f</p>', '2022-11-23 00:01:19', '2022-11-23 00:01:19');
+
 -- --------------------------------------------------------
 
 --
@@ -48,13 +56,20 @@ CREATE TABLE `asks` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `years` int(11) NOT NULL,
-  `gender` int(11) NOT NULL,
+  `gender` int(11) NOT NULL DEFAULT 0,
   `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'IVF',
   `content` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` int(11) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `asks`
+--
+
+INSERT INTO `asks` (`id`, `name`, `email`, `phone`, `years`, `gender`, `type`, `content`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Lê Phú Cường', 'thien1pro1@gmail.com', '8484848484', 2000, 0, 'IVF', 'Xin chào bác sĩ. Tôi bị đau vùng lưng, trên xương chậu. Khi sáng dậy thì không sao nữa, Xin hỏi vậy là sao thưa bác sĩ?', 1, '2022-11-22 09:16:02', '2022-11-22 10:20:26');
 
 -- --------------------------------------------------------
 
@@ -83,7 +98,20 @@ INSERT INTO `bills` (`id`, `book_id`, `user_id`, `total`, `created_at`, `updated
 (5, 1, 1, 80000, '2022-11-19 15:20:07', '2022-11-19 15:20:07'),
 (6, 19, 1, 18000, '2022-11-20 06:59:46', '2022-11-20 06:59:46'),
 (14, 32, 1, 103000, '2022-11-21 08:40:18', '2022-11-21 08:40:18'),
-(15, 32, 1, 29000, '2022-11-21 09:05:23', '2022-11-21 09:05:23');
+(15, 32, 1, 29000, '2022-11-21 09:05:23', '2022-11-21 09:05:23'),
+(16, 34, 1, 3400, '2022-11-24 05:08:25', '2022-11-24 05:08:25'),
+(17, 34, 1, 50000, '2022-11-24 05:08:44', '2022-11-24 05:08:44'),
+(18, 34, 1, 200000, '2022-11-24 05:11:44', '2022-11-24 05:11:44'),
+(19, 34, 1, 5100, '2022-11-24 05:12:01', '2022-11-24 05:12:01'),
+(20, 34, 1, 100000, '2022-11-24 05:13:34', '2022-11-24 05:13:34'),
+(21, 34, 1, 3400, '2022-11-24 05:14:18', '2022-11-24 05:14:18'),
+(22, 34, 1, 6800, '2022-11-24 05:17:29', '2022-11-24 05:17:29'),
+(23, 34, 1, 1700, '2022-11-24 05:17:38', '2022-11-24 05:17:38'),
+(24, 34, 1, 6800, '2022-11-24 05:18:03', '2022-11-24 05:18:03'),
+(25, 34, 1, 3400, '2022-11-24 05:18:39', '2022-11-24 05:18:39'),
+(26, 34, 1, 3400, '2022-11-24 05:19:10', '2022-11-24 05:19:10'),
+(27, 34, 1, 450000, '2022-11-24 05:19:20', '2022-11-24 05:19:20'),
+(28, 34, 1, 450000, '2022-11-24 05:20:04', '2022-11-24 05:20:04');
 
 -- --------------------------------------------------------
 
@@ -134,7 +162,20 @@ INSERT INTO `bill_medicines` (`bill_id`, `medicine_id`, `amount`) VALUES
 (14, 18, 2),
 (15, 3, 1),
 (15, 9, 1),
-(15, 10, 1);
+(15, 10, 1),
+(16, 7, 1),
+(17, 4, 1),
+(18, 4, 1),
+(19, 7, 1),
+(20, 4, 1),
+(21, 7, 1),
+(22, 7, 1),
+(23, 7, 1),
+(24, 7, 1),
+(25, 7, 1),
+(26, 7, 1),
+(27, 4, 1),
+(28, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -191,13 +232,15 @@ INSERT INTO `books` (`id`, `wife_name`, `hus_name`, `phone`, `email`, `wife_birt
 (23, 'vo123', 'chong123', '6666777788', 'thien1pro1@gmail.com', '2022-11-15', '2022-11-15', '2022-11-20', '07:00:00', NULL, 0, 'Toi muốn phòng vip', NULL, '2022-11-15 07:45:38', '2022-11-15 07:45:38', 0),
 (24, 'vo123', 'chong123', '6666777788', 'thien1pro1@gmail.com', '2022-11-15', '2022-11-15', '2022-11-20', '07:00:00', NULL, 0, 'Toi muốn phòng vip', NULL, '2022-11-15 07:45:50', '2022-11-15 07:45:50', 0),
 (25, 'vo123', 'chong123', '6666777788', 'thien1pro1@gmail.com', '2022-11-15', '2022-11-15', '2022-11-20', '07:00:00', NULL, 0, 'Toi muốn phòng vip', NULL, '2022-11-15 07:48:17', '2022-11-15 07:48:17', 0),
-(26, 'vo a', 'chong b', '5645678901', 'thien1pro1@gmail.com', '2022-11-15', '2022-11-15', '2022-11-19', '07:00:00', NULL, 0, 'hello', NULL, '2022-11-15 07:50:14', '2022-11-15 07:50:14', 0),
+(26, 'vo a', 'chong b', '5645678901', 'thien1pro1@gmail.com', '2022-11-15', '2022-11-15', '2022-11-19', '07:00:00', 1, 1, NULL, NULL, '2022-11-15 07:50:14', '2022-11-23 00:32:52', 0),
 (27, 'xuan', 'cuong', '1234567890', 'thien1pro1@gmail.com', '2022-11-15', '2022-11-15', '2022-11-19', '07:00:00', NULL, 2, 'ff', 'gghghgh', '2022-11-15 07:53:14', '2022-11-15 10:26:34', 1),
 (28, 'xuan vip', 'Cuong pro', '1234567890', 'thien1pro1@gmail.com', '2022-11-15', '2022-11-15', '2022-11-19', '10:30:00', 1, 1, NULL, NULL, '2022-11-15 08:47:31', '2022-11-15 10:24:10', 1),
 (29, 'Trần thanh Nhi', 'Nguyễn Đăng Thiên', '0585253470', 'thien1pro1@gmail.com', '2022-11-16', '2022-11-16', '2022-11-16', '10:30:00', NULL, -1, 'Tôi cần chăm sóc', NULL, '2022-11-16 07:58:05', '2022-11-16 07:58:05', 0),
 (30, 'Trần Thanh Nhi', 'Nguyễn Đăng Thiên', '0585253470', 'thien1pro1@gmail.com', '2022-11-16', '2022-11-16', '2022-11-16', '10:30:00', NULL, 0, 'oke', NULL, '2022-11-16 08:04:00', '2022-11-16 08:04:00', 0),
 (31, 'Nguyễn Thị Tú Hảo', 'Nguyễn Đăng Thiên', '0678987654', 'thien1pro1@gmail.com', '2022-11-16', '2022-11-16', '2022-11-16', '07:00:00', NULL, 2, 'yeah', 'Do thiêu Glucozo, Bổ sung tinh bột', '2022-11-16 08:06:43', '2022-11-16 08:20:55', 1),
-(32, 'Lâm Khánh Vy', 'hà Hữu Sĩ', '0987564325', 'thien1pro1@gmail.com', '1996-11-08', '1993-11-15', '2022-11-21', '15:00:00', NULL, 1, 'Kiểm tra y tế', NULL, '2022-11-06 08:27:01', '2022-11-06 08:27:01', 1);
+(32, 'Lâm Khánh Vy', 'hà Hữu Sĩ', '0987564325', 'thien1pro1@gmail.com', '1996-11-08', '1993-11-15', '2022-11-21', '15:00:00', NULL, 1, 'Kiểm tra y tế', NULL, '2022-11-06 08:27:01', '2022-11-06 08:27:01', 1),
+(33, 'Trần Mai Phương', 'Đặng Nhật Nam', '9078456784', 'thien1pro1@gmail.com', '2022-10-04', '2022-10-19', '2022-11-23', '09:30:00', 1, 1, NULL, NULL, '2022-10-20 11:32:29', '2022-11-23 00:30:03', 0),
+(34, 'Phan Triệu Vy', 'Tôn Văn Nghị ', '0987556935', 'thien1pro1@gmail.com', '1996-03-08', '1993-07-15', '2022-11-24', '15:00:00', NULL, 1, 'Tôi cần dịch vụ hỗ trợ sinh ', NULL, '2022-11-06 08:27:01', '2022-11-06 08:27:01', 1);
 
 -- --------------------------------------------------------
 
@@ -219,7 +262,8 @@ CREATE TABLE `categogies` (
 --
 
 INSERT INTO `categogies` (`id`, `categogyName`, `short_Desc`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Đảm bảo sức khỏe sau sinh', 'các chế độ ăn, tập luyện và hồi phục sau sinh cho mẹ 1', 1, NULL, '2022-10-20 21:34:14'),
+(0, 'Dịch vụ', 'Dịch vụ của BVQT PHương Châu', 1, '2022-10-20 21:37:53', '2022-10-20 21:39:42'),
+(1, 'Đảm bảo sức khỏe sau sinh', 'các chế độ ăn, tập luyện và hồi phục sau sinh cho mẹ 2', 2, NULL, '2022-11-25 20:47:57'),
 (2, 'Chế độ dinh dưỡng', 'Các loại thức ăn giàu đạm', 1, '2022-10-20 21:37:53', '2022-10-20 21:39:42');
 
 -- --------------------------------------------------------
@@ -237,6 +281,34 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedbacks`
+--
+
+CREATE TABLE `feedbacks` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'thien1pro1@gmail.com',
+  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 0,
+  `post_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `feedbacks`
+--
+
+INSERT INTO `feedbacks` (`id`, `name`, `email`, `content`, `status`, `post_id`, `created_at`, `updated_at`) VALUES
+(1, 'Nguyễn Đăng Thiên', 'thien@gmail.com', 'heloku', 0, 2, '2022-11-25 19:49:36', '2022-11-25 19:49:36'),
+(2, 'Nguyễn Đăng Thiên', 'thien@gmail.com', 'heloku', 0, 2, '2022-11-25 19:50:50', '2022-11-25 19:50:50'),
+(3, 'Nguyễn Đăng Thiên', 'thien@gmail.com', 'heloku', 0, 2, '2022-11-25 19:50:58', '2022-11-25 19:50:58'),
+(4, 'Nguyễn Đăng Thiên', 'thien@gmail.com', 'heloku', 0, 2, '2022-11-25 19:51:17', '2022-11-25 19:51:17'),
+(5, 'Nguyễn Đăng Thiên', 'thien1pro1@gmail.com', 'Dr. Marie mang dịch vụ đến với nữ công nhân trong khuôn khổ dự án hợp tác với MSI.\r\n\r\nHiện tại, khi Việt Nam đã bước vào giai đoạn phục hồi sau đại dịch, Dr. Marie cùng MSI Reproductive Choices nỗ lực mở rộng hệ thống cơ sở chăm sóc sức khỏe sinh sản, nhằm đem đến sự hỗ trợ kịp thời cho mọi đối tượng trong xã hội. Qua những kinh nghiệm trải qua khó khăn trong thời điểm đại dịch, Dr. Marie cũng đã xây dựng được các phương án đối phó rủi ro, giúp hệ thống linh hoạt hơn khi chịu tác động tiêu cực từ môi trường bên ngoài.\r\n\r\nHành trình của Dr. Marie là hành trình không ngừng nỗ lực mang đến niềm tin, điểm tựa cho hàng triệu phụ nữ Việt Nam. Không có điều gì là dễ dàng, Dr. Marie luôn sẵn sàng với mọi thử thách để thay đổi tư duy của xã hội, để SKSS và KHHGĐ trở thành lĩnh vực được ưu tiên hơn nữa trong tương lai.\r\n\r\nTìm kiếm sự chăm sóc sức khỏe sinh sản toàn diện tại', 0, 2, '2022-11-25 20:19:29', '2022-11-25 20:19:29');
 
 -- --------------------------------------------------------
 
@@ -297,19 +369,19 @@ INSERT INTO `medicines` (`id`, `name`, `type`, `price`, `amount`, `status`, `cre
 (2, 'Vitamin D vien', '4', 23000, 1000, 0, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
 (3, 'Vitamin E vien', '4', 23000, 1000, 0, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
 (4, 'Plizertin', '1', 50000, 1000, 0, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
-(5, 'Plizertin - 2x', '1', 50000, 1000, 0, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
-(6, 'Plizertin - 3x', '1', 50000, 1000, 0, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
-(7, 'Hiperon Extra M2', '2', 1700, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(5, 'Plizertin - 2x', '1', 50000, 2500, 0, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(6, 'Plizertin - 3x', '1', 50000, 3256, 0, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(7, 'Hiperon Extra M2', '2', 1700, 10000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
 (8, 'Gluvenron ', '2', 3000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
 (9, 'Paracetamon ', '2', 3000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
 (10, 'Paradon ', '2', 3000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
 (11, 'Ademi ', '2', 3000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
 (12, 'Nước muối kháng sinh', '3', 15000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
 (13, 'Oxigen 90% 500ml', '3', 15000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
-(14, 'Thuốc đỏ', '3', 15000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(14, 'Thuốc đỏ', '3', 15000, 5000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
 (15, 'Băng gạt y tế', '5', 15000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
 (16, 'Chỉ y tế', '5', 15000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
-(17, 'Thuốc tê', '5', 15000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
+(17, 'Thuốc tê', '5', 15000, 2567, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
 (18, 'Thuốc mê', '5', 15000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
 (19, 'Túi zip', '5', 15000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
 (20, 'Que gỗ y tế 100pcs', '5', 15000, 1000, 1, '2022-11-17 10:11:17', '2022-11-17 10:11:17'),
@@ -351,7 +423,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (28, '2022_11_19_063432_create_bills_table', 10),
 (29, '2022_11_19_063559_create_bill__medicines_table', 11),
 (30, '2022_11_20_130958_create_asks_table', 12),
-(31, '2022_11_20_131549_create_answers_table', 13);
+(31, '2022_11_20_131549_create_answers_table', 13),
+(32, '2022_11_26_022151_feedback_migration', 14);
 
 -- --------------------------------------------------------
 
@@ -440,10 +513,12 @@ CREATE TABLE `positions` (
 --
 
 INSERT INTO `positions` (`id`, `name`, `salary`, `created_at`, `updated_at`) VALUES
+(0, 'Admin', 6000000, '2022-11-26 05:38:34', '2022-11-26 05:38:34'),
 (1, 'Giám đốc', 6000000, '2022-10-20 20:30:13', '2022-10-20 20:30:13'),
 (2, 'Bác Sĩ', 6000000, '2022-10-20 20:30:21', '2022-10-20 20:30:21'),
 (3, 'Y tá', 6000000, '2022-10-20 20:40:43', '2022-10-20 20:40:43'),
-(4, 'Nhân viên marketing', 6000000, '2022-10-20 20:40:59', '2022-10-20 20:40:59');
+(4, 'Nhân viên marketing', 6000000, '2022-10-20 20:40:59', '2022-10-20 20:40:59'),
+(6, 'bảo vệ', 6000000, '2022-11-26 05:38:34', '2022-11-26 05:38:34');
 
 -- --------------------------------------------------------
 
@@ -460,7 +535,7 @@ CREATE TABLE `posts` (
   `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `categogy_id` tinyint(4) NOT NULL,
-  `views` tinyint(4) NOT NULL,
+  `views` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'thien',
   `status` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -470,8 +545,9 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `created_at`, `updated_at`, `title`, `short_Desc`, `content`, `image`, `categogy_id`, `views`, `name`, `status`) VALUES
-(1, '2022-10-21 03:13:52', '2022-10-21 03:13:52', 'Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt', '<h2>(Dân trí) - Trong suốt 3 thập kỷ, Dr.Marie là người bạn đồng hành đáng tin cậy của nhiều thế hệ phụ nữ Việt nhờ những nỗ lực trong việc hỗ trợ chăm sóc sức khỏe sinh sản và kế hoạch hóa gia đình.</h2>', '<p><strong>Thực trạng vấn đề chăm sóc sức khỏe sinh sản tại Việt Nam</strong></p>\r\n\r\n<p>Tại Việt Nam, sức khỏe sinh sản (SKSS) và kế hoạch hóa gia đình là một vấn đề ngày càng được chú trọng và quan tâm. Đặc biệt về mặt quyền lợi của người phụ nữ trong việc sinh con, được chăm sóc toàn diện về thể chất lẫn tinh thần trong thời gian thai kỳ.</p>\r\n\r\n<p><img alt=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 1\" src=\"https://icdn.dantri.com.vn/thumb_w/770/2022/05/15/drmariedocx-1652570929241.png\" title=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 1\" /></p>\r\n\r\n<p>Dr.Marie đặt quyền lợi của phụ nữ lên hàng đầu.</p>\r\n\r\n<p>Chính vì đó, đã có nhiều đơn vị tại Việt Nam đã nỗ lực không ngừng để bảo vệ sức khỏe, tinh thần của phụ nữ Việt Nam, một trong số đó là Dr. Marie - Cơ sở chăm sóc sức khỏe sinh sản &amp; Kế hoạch hóa Gia đình theo tiêu chuẩn Anh Quốc tại Việt Nam. Được thành lập từ năm 1994, Dr.Marie là thương hiệu do MSI Reproductive Choices đăng ký bảo hộ toàn cầu, vận hành theo tiêu chuẩn quốc tế dưới sự giám sát kỹ thuật và đào tạo liên tục của MSI tại Việt Nam.</p>\r\n\r\n<p>MSI Reproductive Choices (MSI) là một tổ chức phi chính phủ quốc tế, ra đời năm 1976 tại London, Vương quốc Anh, chuyên cung cấp dịch vụ chăm sóc sức khỏe sinh sản và kế hoạch hóa gia đình tại 37 quốc gia trên toàn thế giới. Hệ thống MSI trên toàn cầu bao gồm: 620 điểm cung ứng, 52.000 điểm hỗ trợ lưu động, 4.100 phòng khám nhượng quyền xã hội và hơn 11.700 nhân viên.</p>\r\n\r\n<p><img alt=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 2\" src=\"https://icdn.dantri.com.vn/thumb_w/770/2022/05/15/drmariedocx-1652570929555.png\" title=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 2\" /></p>\r\n\r\n<p>Dr.Marie sở hữu hệ thống trang thiết bị hiện đại tiêu chuẩn quốc tế.</p>\r\n\r\n<p>Những năm qua nhờ nhận được nguồn lực từ tổ chức quốc tế MSI, Dr. Marie hỗ trợ chăm sóc điều trị các vấn đề về sức khỏe sinh sản bằng chất lượng điều trị tiêu chuẩn quốc tế, hệ thống trang thiết bị hiện đại, đội ngũ bác sĩ, chuyên gia trình độ cao và giàu kinh nghiệm. Mỗi năm, Dr. Marie trợ giúp chăm sóc sức khỏe toàn diện cho hơn 50.000 phụ nữ Việt mọi độ tuổi thông qua hệ thống 12 cơ sở tại 9 tỉnh, thành phố.</p>\r\n\r\n<p><strong>Luôn đề cao trách nhiệm xã hội</strong></p>\r\n\r\n<p>Trong quá trình 28 năm phát triển, Dr. Marie đã không ngừng mở rộng quy mô, hoàn thiện và đa dạng hóa các quy trình hoạt động để hiện thực hóa các mục tiêu nhân đạo của mình. Đó chính là việc đem đến cho phụ nữ Việt Nam sự chăm sóc toàn diện nhất, góp phần xây dựng một thế hệ sau khỏe mạnh và tiến bộ hơn. Bằng những nỗ lực không ngừng nghỉ, Dr. Marie cam kết đảm bảo quyền lợi cho phụ nữ để sinh con theo lựa chọn, và tuyệt đối sẽ ko thỏa hiệp về các tiêu chuẩn an toàn tối thiểu.</p>\r\n\r\n<p><img alt=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 3\" src=\"https://icdn.dantri.com.vn/thumb_w/770/2022/05/15/drmariedocx-1652570929751.png\" title=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 3\" /></p>\r\n\r\n<p>Dr.Marie đào tạo cho các nữ hộ sinh địa phương trong dự án MSLadies.</p>\r\n\r\n<p>Thời gian qua, do tác động của đại dịch Covid-19, hệ thống y tế tại Việt Nam trở nên quá tải, dẫn tới việc người dân gặp nhiều khó khăn hơn khi muốn tiếp cận các dịch vụ y tế cần thiết, nhất là đối với phụ nữ khi dịch vụ chăm sóc sức khỏe sinh sản không được ưu tiên trong giai đoạn này.</p>\r\n\r\n<p>Không đầu hàng nghịch cảnh, Dr. Marie đã nỗ lực đảm bảo các cơ sở chăm sóc sức khỏe, sinh sản được vận hành liên tục thông qua việc đẩy mạnh các phương thức liên lạc trực tuyến, tối giản quy trình hỗ trợ đảm bảo công tác phòng dịch được đặt lên hàng đầu. Nhờ những cố gắng này, nhiều phụ nữ Việt Nam ở mọi lứa tuổi đã được thăm khám Sản phụ khoa, Tầm soát Ung thư cổ tử cung và thực hiện các biện pháp Chăm sóc sức khỏe sinh sản đầy đủ và kịp thời ngay cả trong mùa dịch.</p>\r\n\r\n<p><img alt=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 4\" src=\"https://icdn.dantri.com.vn/thumb_w/770/2022/05/15/drmariedocx-1652570929905.png\" title=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 4\" /></p>\r\n\r\n<p>Dr. Marie mang dịch vụ đến với nữ công nhân trong khuôn khổ dự án hợp tác với MSI.</p>\r\n\r\n<p>Hiện tại, khi Việt Nam đã bước vào giai đoạn phục hồi sau đại dịch, Dr.&nbsp;Marie&nbsp;cùng MSI Reproductive Choices nỗ lực mở rộng hệ thống cơ sở chăm sóc sức khỏe sinh sản, nhằm đem đến sự hỗ trợ kịp thời cho mọi đối tượng trong xã hội. Qua những kinh nghiệm trải qua khó khăn trong thời điểm đại dịch, Dr. Marie cũng đã xây dựng được các phương án đối phó rủi ro, giúp hệ thống linh hoạt hơn khi chịu tác động tiêu cực từ môi trường bên ngoài.</p>\r\n\r\n<p>Hành trình của Dr. Marie là hành trình không ngừng nỗ lực mang đến niềm tin, điểm tựa cho hàng triệu phụ nữ Việt Nam. Không có điều gì là dễ dàng, Dr. Marie luôn sẵn sàng với mọi thử thách để thay đổi tư duy của xã hội, để SKSS và KHHGĐ trở thành lĩnh vực được ưu tiên hơn nữa trong tương lai.</p>\r\n\r\n<p>Tìm kiếm sự chăm sóc sức khỏe sinh sản toàn diện tại:</p>', '1666347232_about1.jpg', 1, 2, 'thien', 0),
-(2, '2022-10-21 03:18:09', '2022-10-21 03:18:09', 'Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt', 'Trong suốt 3 thập kỷ, Dr.Marie là người bạn đồng hành đáng tin cậy của nhiều thế hệ phụ nữ Việt nhờ những nỗ lực trong việc hỗ trợ chăm sóc sức khỏe sinh sản và kế hoạch hóa gia đình', '<p><strong>Thực trạng vấn đề chăm sóc sức khỏe sinh sản tại Việt Nam</strong></p>\r\n\r\n<p>Tại Việt Nam, sức khỏe sinh sản (SKSS) và kế hoạch hóa gia đình là một vấn đề ngày càng được chú trọng và quan tâm. Đặc biệt về mặt quyền lợi của người phụ nữ trong việc sinh con, được chăm sóc toàn diện về thể chất lẫn tinh thần trong thời gian thai kỳ.</p>\r\n\r\n<p><img alt=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 1\" src=\"https://icdn.dantri.com.vn/thumb_w/770/2022/05/15/drmariedocx-1652570929241.png\" title=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 1\" /></p>\r\n\r\n<p>Dr.Marie đặt quyền lợi của phụ nữ lên hàng đầu.</p>\r\n\r\n<p>Chính vì đó, đã có nhiều đơn vị tại Việt Nam đã nỗ lực không ngừng để bảo vệ sức khỏe, tinh thần của phụ nữ Việt Nam, một trong số đó là Dr. Marie - Cơ sở chăm sóc sức khỏe sinh sản &amp; Kế hoạch hóa Gia đình theo tiêu chuẩn Anh Quốc tại Việt Nam. Được thành lập từ năm 1994, Dr.Marie là thương hiệu do MSI Reproductive Choices đăng ký bảo hộ toàn cầu, vận hành theo tiêu chuẩn quốc tế dưới sự giám sát kỹ thuật và đào tạo liên tục của MSI tại Việt Nam.</p>\r\n\r\n<p>MSI Reproductive Choices (MSI) là một tổ chức phi chính phủ quốc tế, ra đời năm 1976 tại London, Vương quốc Anh, chuyên cung cấp dịch vụ chăm sóc sức khỏe sinh sản và kế hoạch hóa gia đình tại 37 quốc gia trên toàn thế giới. Hệ thống MSI trên toàn cầu bao gồm: 620 điểm cung ứng, 52.000 điểm hỗ trợ lưu động, 4.100 phòng khám nhượng quyền xã hội và hơn 11.700 nhân viên.</p>\r\n\r\n<p><img alt=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 2\" src=\"https://icdn.dantri.com.vn/thumb_w/770/2022/05/15/drmariedocx-1652570929555.png\" title=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 2\" /></p>\r\n\r\n<p>Dr.Marie sở hữu hệ thống trang thiết bị hiện đại tiêu chuẩn quốc tế.</p>\r\n\r\n<p>Những năm qua nhờ nhận được nguồn lực từ tổ chức quốc tế MSI, Dr. Marie hỗ trợ chăm sóc điều trị các vấn đề về sức khỏe sinh sản bằng chất lượng điều trị tiêu chuẩn quốc tế, hệ thống trang thiết bị hiện đại, đội ngũ bác sĩ, chuyên gia trình độ cao và giàu kinh nghiệm. Mỗi năm, Dr. Marie trợ giúp chăm sóc sức khỏe toàn diện cho hơn 50.000 phụ nữ Việt mọi độ tuổi thông qua hệ thống 12 cơ sở tại 9 tỉnh, thành phố.</p>\r\n\r\n<p><strong>Luôn đề cao trách nhiệm xã hội</strong></p>\r\n\r\n<p>Trong quá trình 28 năm phát triển, Dr. Marie đã không ngừng mở rộng quy mô, hoàn thiện và đa dạng hóa các quy trình hoạt động để hiện thực hóa các mục tiêu nhân đạo của mình. Đó chính là việc đem đến cho phụ nữ Việt Nam sự chăm sóc toàn diện nhất, góp phần xây dựng một thế hệ sau khỏe mạnh và tiến bộ hơn. Bằng những nỗ lực không ngừng nghỉ, Dr. Marie cam kết đảm bảo quyền lợi cho phụ nữ để sinh con theo lựa chọn, và tuyệt đối sẽ ko thỏa hiệp về các tiêu chuẩn an toàn tối thiểu.</p>\r\n\r\n<p><img alt=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 3\" src=\"https://icdn.dantri.com.vn/thumb_w/770/2022/05/15/drmariedocx-1652570929751.png\" title=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 3\" /></p>\r\n\r\n<p>Dr.Marie đào tạo cho các nữ hộ sinh địa phương trong dự án MSLadies.</p>\r\n\r\n<p>Thời gian qua, do tác động của đại dịch Covid-19, hệ thống y tế tại Việt Nam trở nên quá tải, dẫn tới việc người dân gặp nhiều khó khăn hơn khi muốn tiếp cận các dịch vụ y tế cần thiết, nhất là đối với phụ nữ khi dịch vụ chăm sóc sức khỏe sinh sản không được ưu tiên trong giai đoạn này.</p>\r\n\r\n<p>Không đầu hàng nghịch cảnh, Dr. Marie đã nỗ lực đảm bảo các cơ sở chăm sóc sức khỏe, sinh sản được vận hành liên tục thông qua việc đẩy mạnh các phương thức liên lạc trực tuyến, tối giản quy trình hỗ trợ đảm bảo công tác phòng dịch được đặt lên hàng đầu. Nhờ những cố gắng này, nhiều phụ nữ Việt Nam ở mọi lứa tuổi đã được thăm khám Sản phụ khoa, Tầm soát Ung thư cổ tử cung và thực hiện các biện pháp Chăm sóc sức khỏe sinh sản đầy đủ và kịp thời ngay cả trong mùa dịch.</p>\r\n\r\n<p><img alt=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 4\" src=\"https://icdn.dantri.com.vn/thumb_w/770/2022/05/15/drmariedocx-1652570929905.png\" title=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 4\" /></p>\r\n\r\n<p>Dr. Marie mang dịch vụ đến với nữ công nhân trong khuôn khổ dự án hợp tác với MSI.</p>\r\n\r\n<p>Hiện tại, khi Việt Nam đã bước vào giai đoạn phục hồi sau đại dịch, Dr.&nbsp;Marie&nbsp;cùng MSI Reproductive Choices nỗ lực mở rộng hệ thống cơ sở chăm sóc sức khỏe sinh sản, nhằm đem đến sự hỗ trợ kịp thời cho mọi đối tượng trong xã hội. Qua những kinh nghiệm trải qua khó khăn trong thời điểm đại dịch, Dr. Marie cũng đã xây dựng được các phương án đối phó rủi ro, giúp hệ thống linh hoạt hơn khi chịu tác động tiêu cực từ môi trường bên ngoài.</p>\r\n\r\n<p>Hành trình của Dr. Marie là hành trình không ngừng nỗ lực mang đến niềm tin, điểm tựa cho hàng triệu phụ nữ Việt Nam. Không có điều gì là dễ dàng, Dr. Marie luôn sẵn sàng với mọi thử thách để thay đổi tư duy của xã hội, để SKSS và KHHGĐ trở thành lĩnh vực được ưu tiên hơn nữa trong tương lai.</p>\r\n\r\n<p>Tìm kiếm sự chăm sóc sức khỏe sinh sản toàn diện tại:</p>', '1666347489_Screenshot 2022-10-21 171610.png', 1, 45, 'thien', 0);
+(1, '2022-10-21 03:13:52', '2022-11-25 23:51:30', 'Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt', '<h2>(Dân trí) - Trong suốt 3 thập kỷ, Dr.Marie là người bạn đồng hành đáng tin cậy của nhiều thế hệ phụ nữ Việt nhờ những nỗ lực trong việc hỗ trợ chăm sóc sức khỏe sinh sản và kế hoạch hóa gia đình.</h2>', '<p><strong>Thực trạng vấn đề chăm sóc sức khỏe sinh sản tại Việt Nam</strong></p>\r\n\r\n<p>Tại Việt Nam, sức khỏe sinh sản (SKSS) và kế hoạch hóa gia đình là một vấn đề ngày càng được chú trọng và quan tâm. Đặc biệt về mặt quyền lợi của người phụ nữ trong việc sinh con, được chăm sóc toàn diện về thể chất lẫn tinh thần trong thời gian thai kỳ.</p>\r\n\r\n<p><img alt=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 1\" src=\"https://icdn.dantri.com.vn/thumb_w/770/2022/05/15/drmariedocx-1652570929241.png\" title=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 1\" /></p>\r\n\r\n<p>Dr.Marie đặt quyền lợi của phụ nữ lên hàng đầu.</p>\r\n\r\n<p>Chính vì đó, đã có nhiều đơn vị tại Việt Nam đã nỗ lực không ngừng để bảo vệ sức khỏe, tinh thần của phụ nữ Việt Nam, một trong số đó là Dr. Marie - Cơ sở chăm sóc sức khỏe sinh sản &amp; Kế hoạch hóa Gia đình theo tiêu chuẩn Anh Quốc tại Việt Nam. Được thành lập từ năm 1994, Dr.Marie là thương hiệu do MSI Reproductive Choices đăng ký bảo hộ toàn cầu, vận hành theo tiêu chuẩn quốc tế dưới sự giám sát kỹ thuật và đào tạo liên tục của MSI tại Việt Nam.</p>\r\n\r\n<p>MSI Reproductive Choices (MSI) là một tổ chức phi chính phủ quốc tế, ra đời năm 1976 tại London, Vương quốc Anh, chuyên cung cấp dịch vụ chăm sóc sức khỏe sinh sản và kế hoạch hóa gia đình tại 37 quốc gia trên toàn thế giới. Hệ thống MSI trên toàn cầu bao gồm: 620 điểm cung ứng, 52.000 điểm hỗ trợ lưu động, 4.100 phòng khám nhượng quyền xã hội và hơn 11.700 nhân viên.</p>\r\n\r\n<p><img alt=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 2\" src=\"https://icdn.dantri.com.vn/thumb_w/770/2022/05/15/drmariedocx-1652570929555.png\" title=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 2\" /></p>\r\n\r\n<p>Dr.Marie sở hữu hệ thống trang thiết bị hiện đại tiêu chuẩn quốc tế.</p>\r\n\r\n<p>Những năm qua nhờ nhận được nguồn lực từ tổ chức quốc tế MSI, Dr. Marie hỗ trợ chăm sóc điều trị các vấn đề về sức khỏe sinh sản bằng chất lượng điều trị tiêu chuẩn quốc tế, hệ thống trang thiết bị hiện đại, đội ngũ bác sĩ, chuyên gia trình độ cao và giàu kinh nghiệm. Mỗi năm, Dr. Marie trợ giúp chăm sóc sức khỏe toàn diện cho hơn 50.000 phụ nữ Việt mọi độ tuổi thông qua hệ thống 12 cơ sở tại 9 tỉnh, thành phố.</p>\r\n\r\n<p><strong>Luôn đề cao trách nhiệm xã hội</strong></p>\r\n\r\n<p>Trong quá trình 28 năm phát triển, Dr. Marie đã không ngừng mở rộng quy mô, hoàn thiện và đa dạng hóa các quy trình hoạt động để hiện thực hóa các mục tiêu nhân đạo của mình. Đó chính là việc đem đến cho phụ nữ Việt Nam sự chăm sóc toàn diện nhất, góp phần xây dựng một thế hệ sau khỏe mạnh và tiến bộ hơn. Bằng những nỗ lực không ngừng nghỉ, Dr. Marie cam kết đảm bảo quyền lợi cho phụ nữ để sinh con theo lựa chọn, và tuyệt đối sẽ ko thỏa hiệp về các tiêu chuẩn an toàn tối thiểu.</p>\r\n\r\n<p><img alt=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 3\" src=\"https://icdn.dantri.com.vn/thumb_w/770/2022/05/15/drmariedocx-1652570929751.png\" title=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 3\" /></p>\r\n\r\n<p>Dr.Marie đào tạo cho các nữ hộ sinh địa phương trong dự án MSLadies.</p>\r\n\r\n<p>Thời gian qua, do tác động của đại dịch Covid-19, hệ thống y tế tại Việt Nam trở nên quá tải, dẫn tới việc người dân gặp nhiều khó khăn hơn khi muốn tiếp cận các dịch vụ y tế cần thiết, nhất là đối với phụ nữ khi dịch vụ chăm sóc sức khỏe sinh sản không được ưu tiên trong giai đoạn này.</p>\r\n\r\n<p>Không đầu hàng nghịch cảnh, Dr. Marie đã nỗ lực đảm bảo các cơ sở chăm sóc sức khỏe, sinh sản được vận hành liên tục thông qua việc đẩy mạnh các phương thức liên lạc trực tuyến, tối giản quy trình hỗ trợ đảm bảo công tác phòng dịch được đặt lên hàng đầu. Nhờ những cố gắng này, nhiều phụ nữ Việt Nam ở mọi lứa tuổi đã được thăm khám Sản phụ khoa, Tầm soát Ung thư cổ tử cung và thực hiện các biện pháp Chăm sóc sức khỏe sinh sản đầy đủ và kịp thời ngay cả trong mùa dịch.</p>\r\n\r\n<p><img alt=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 4\" src=\"https://icdn.dantri.com.vn/thumb_w/770/2022/05/15/drmariedocx-1652570929905.png\" title=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 4\" /></p>\r\n\r\n<p>Dr. Marie mang dịch vụ đến với nữ công nhân trong khuôn khổ dự án hợp tác với MSI.</p>\r\n\r\n<p>Hiện tại, khi Việt Nam đã bước vào giai đoạn phục hồi sau đại dịch, Dr.&nbsp;Marie&nbsp;cùng MSI Reproductive Choices nỗ lực mở rộng hệ thống cơ sở chăm sóc sức khỏe sinh sản, nhằm đem đến sự hỗ trợ kịp thời cho mọi đối tượng trong xã hội. Qua những kinh nghiệm trải qua khó khăn trong thời điểm đại dịch, Dr. Marie cũng đã xây dựng được các phương án đối phó rủi ro, giúp hệ thống linh hoạt hơn khi chịu tác động tiêu cực từ môi trường bên ngoài.</p>\r\n\r\n<p>Hành trình của Dr. Marie là hành trình không ngừng nỗ lực mang đến niềm tin, điểm tựa cho hàng triệu phụ nữ Việt Nam. Không có điều gì là dễ dàng, Dr. Marie luôn sẵn sàng với mọi thử thách để thay đổi tư duy của xã hội, để SKSS và KHHGĐ trở thành lĩnh vực được ưu tiên hơn nữa trong tương lai.</p>\r\n\r\n<p>Tìm kiếm sự chăm sóc sức khỏe sinh sản toàn diện tại:</p>', '1666347232_about1.jpg', 0, 2, 'thien', 0),
+(2, '2022-10-21 03:18:09', '2022-10-21 03:18:09', 'Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt', 'Trong suốt 3 thập kỷ, Dr.Marie là người bạn đồng hành đáng tin cậy của nhiều thế hệ phụ nữ Việt nhờ những nỗ lực trong việc hỗ trợ chăm sóc sức khỏe sinh sản và kế hoạch hóa gia đình', '<p><strong>Thực trạng vấn đề chăm sóc sức khỏe sinh sản tại Việt Nam</strong></p>\r\n\r\n<p>Tại Việt Nam, sức khỏe sinh sản (SKSS) và kế hoạch hóa gia đình là một vấn đề ngày càng được chú trọng và quan tâm. Đặc biệt về mặt quyền lợi của người phụ nữ trong việc sinh con, được chăm sóc toàn diện về thể chất lẫn tinh thần trong thời gian thai kỳ.</p>\r\n\r\n<p><img alt=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 1\" src=\"https://icdn.dantri.com.vn/thumb_w/770/2022/05/15/drmariedocx-1652570929241.png\" title=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 1\" /></p>\r\n\r\n<p>Dr.Marie đặt quyền lợi của phụ nữ lên hàng đầu.</p>\r\n\r\n<p>Chính vì đó, đã có nhiều đơn vị tại Việt Nam đã nỗ lực không ngừng để bảo vệ sức khỏe, tinh thần của phụ nữ Việt Nam, một trong số đó là Dr. Marie - Cơ sở chăm sóc sức khỏe sinh sản &amp; Kế hoạch hóa Gia đình theo tiêu chuẩn Anh Quốc tại Việt Nam. Được thành lập từ năm 1994, Dr.Marie là thương hiệu do MSI Reproductive Choices đăng ký bảo hộ toàn cầu, vận hành theo tiêu chuẩn quốc tế dưới sự giám sát kỹ thuật và đào tạo liên tục của MSI tại Việt Nam.</p>\r\n\r\n<p>MSI Reproductive Choices (MSI) là một tổ chức phi chính phủ quốc tế, ra đời năm 1976 tại London, Vương quốc Anh, chuyên cung cấp dịch vụ chăm sóc sức khỏe sinh sản và kế hoạch hóa gia đình tại 37 quốc gia trên toàn thế giới. Hệ thống MSI trên toàn cầu bao gồm: 620 điểm cung ứng, 52.000 điểm hỗ trợ lưu động, 4.100 phòng khám nhượng quyền xã hội và hơn 11.700 nhân viên.</p>\r\n\r\n<p><img alt=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 2\" src=\"https://icdn.dantri.com.vn/thumb_w/770/2022/05/15/drmariedocx-1652570929555.png\" title=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 2\" /></p>\r\n\r\n<p>Dr.Marie sở hữu hệ thống trang thiết bị hiện đại tiêu chuẩn quốc tế.</p>\r\n\r\n<p>Những năm qua nhờ nhận được nguồn lực từ tổ chức quốc tế MSI, Dr. Marie hỗ trợ chăm sóc điều trị các vấn đề về sức khỏe sinh sản bằng chất lượng điều trị tiêu chuẩn quốc tế, hệ thống trang thiết bị hiện đại, đội ngũ bác sĩ, chuyên gia trình độ cao và giàu kinh nghiệm. Mỗi năm, Dr. Marie trợ giúp chăm sóc sức khỏe toàn diện cho hơn 50.000 phụ nữ Việt mọi độ tuổi thông qua hệ thống 12 cơ sở tại 9 tỉnh, thành phố.</p>\r\n\r\n<p><strong>Luôn đề cao trách nhiệm xã hội</strong></p>\r\n\r\n<p>Trong quá trình 28 năm phát triển, Dr. Marie đã không ngừng mở rộng quy mô, hoàn thiện và đa dạng hóa các quy trình hoạt động để hiện thực hóa các mục tiêu nhân đạo của mình. Đó chính là việc đem đến cho phụ nữ Việt Nam sự chăm sóc toàn diện nhất, góp phần xây dựng một thế hệ sau khỏe mạnh và tiến bộ hơn. Bằng những nỗ lực không ngừng nghỉ, Dr. Marie cam kết đảm bảo quyền lợi cho phụ nữ để sinh con theo lựa chọn, và tuyệt đối sẽ ko thỏa hiệp về các tiêu chuẩn an toàn tối thiểu.</p>\r\n\r\n<p><img alt=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 3\" src=\"https://icdn.dantri.com.vn/thumb_w/770/2022/05/15/drmariedocx-1652570929751.png\" title=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 3\" /></p>\r\n\r\n<p>Dr.Marie đào tạo cho các nữ hộ sinh địa phương trong dự án MSLadies.</p>\r\n\r\n<p>Thời gian qua, do tác động của đại dịch Covid-19, hệ thống y tế tại Việt Nam trở nên quá tải, dẫn tới việc người dân gặp nhiều khó khăn hơn khi muốn tiếp cận các dịch vụ y tế cần thiết, nhất là đối với phụ nữ khi dịch vụ chăm sóc sức khỏe sinh sản không được ưu tiên trong giai đoạn này.</p>\r\n\r\n<p>Không đầu hàng nghịch cảnh, Dr. Marie đã nỗ lực đảm bảo các cơ sở chăm sóc sức khỏe, sinh sản được vận hành liên tục thông qua việc đẩy mạnh các phương thức liên lạc trực tuyến, tối giản quy trình hỗ trợ đảm bảo công tác phòng dịch được đặt lên hàng đầu. Nhờ những cố gắng này, nhiều phụ nữ Việt Nam ở mọi lứa tuổi đã được thăm khám Sản phụ khoa, Tầm soát Ung thư cổ tử cung và thực hiện các biện pháp Chăm sóc sức khỏe sinh sản đầy đủ và kịp thời ngay cả trong mùa dịch.</p>\r\n\r\n<p><img alt=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 4\" src=\"https://icdn.dantri.com.vn/thumb_w/770/2022/05/15/drmariedocx-1652570929905.png\" title=\"Dr.Marie và hành trình 28 năm đồng hành cùng sức khỏe sinh sản phụ nữ Việt - 4\" /></p>\r\n\r\n<p>Dr. Marie mang dịch vụ đến với nữ công nhân trong khuôn khổ dự án hợp tác với MSI.</p>\r\n\r\n<p>Hiện tại, khi Việt Nam đã bước vào giai đoạn phục hồi sau đại dịch, Dr.&nbsp;Marie&nbsp;cùng MSI Reproductive Choices nỗ lực mở rộng hệ thống cơ sở chăm sóc sức khỏe sinh sản, nhằm đem đến sự hỗ trợ kịp thời cho mọi đối tượng trong xã hội. Qua những kinh nghiệm trải qua khó khăn trong thời điểm đại dịch, Dr. Marie cũng đã xây dựng được các phương án đối phó rủi ro, giúp hệ thống linh hoạt hơn khi chịu tác động tiêu cực từ môi trường bên ngoài.</p>\r\n\r\n<p>Hành trình của Dr. Marie là hành trình không ngừng nỗ lực mang đến niềm tin, điểm tựa cho hàng triệu phụ nữ Việt Nam. Không có điều gì là dễ dàng, Dr. Marie luôn sẵn sàng với mọi thử thách để thay đổi tư duy của xã hội, để SKSS và KHHGĐ trở thành lĩnh vực được ưu tiên hơn nữa trong tương lai.</p>\r\n\r\n<p>Tìm kiếm sự chăm sóc sức khỏe sinh sản toàn diện tại:</p>', '1666347489_Screenshot 2022-10-21 171610.png', 1, 45, 'thien', 0),
+(3, '2022-11-25 21:55:56', '2022-11-26 00:04:53', 'ggfhsgfd', '<p>ưeartetyruut</p>', '<p>ưesrytrut</p>', '1669446293_khamxong.png', 0, 1312, 'thien', 0);
 
 -- --------------------------------------------------------
 
@@ -536,6 +612,13 @@ CREATE TABLE `services` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Chụp X-Quang 1', 1, '2022-11-25 20:38:49', '2022-11-25 20:49:45');
+
 -- --------------------------------------------------------
 
 --
@@ -546,8 +629,9 @@ CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `position_id` int(11) NOT NULL DEFAULT 1,
+  `position_id` int(11) NOT NULL DEFAULT 2,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -559,9 +643,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `position_id`, `password`, `remember_token`, `created_at`, `updated_at`, `avatar`) VALUES
-(1, 'Nguyễn Đăng Thiên', 'thien1pro1@gmail.com', NULL, 0, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', 'w7hrp2iVx3HGh8C5vv0hSS08hEdolHOZbWZmwJ8syMDMubIoonrhZStlvbI1', '2022-10-06 09:51:23', '2022-10-06 09:51:23', ''),
-(2, 'Phạm ho', 'hoc@gmail.com', NULL, 1, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', NULL, '2022-10-07 09:33:54', '2022-10-07 09:33:54', '');
+INSERT INTO `users` (`id`, `name`, `email`, `image`, `email_verified_at`, `position_id`, `password`, `remember_token`, `created_at`, `updated_at`, `avatar`) VALUES
+(1, 'Nguyễn Đăng Thiên', 'thien1pro1@gmail.com', NULL, NULL, 0, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', 'bB57Ihz4uS3TcNSFMuuU1fepuhcYM91g96Eo0ELf6nLvlcuPAJQ4yOt3fErJ', '2022-10-06 09:51:23', '2022-10-06 09:51:23', ''),
+(2, 'Phạm ho', 'hoc@gmail.com', NULL, NULL, 1, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', NULL, '2022-10-07 09:33:54', '2022-10-07 09:33:54', ''),
+(3, 'Phamj Hoang hc', 'thien1pr@gmail.com', '1669446211_historyKham.png', NULL, 2, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', NULL, '2022-11-25 22:16:05', '2022-11-26 00:03:31', NULL);
 
 --
 -- Indexes for dumped tables
@@ -603,6 +688,12 @@ ALTER TABLE `categogies`
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `feedbacks`
+--
+ALTER TABLE `feedbacks`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `files`
@@ -710,37 +801,43 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `answers`
 --
 ALTER TABLE `answers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `asks`
 --
 ALTER TABLE `asks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `bills`
 --
 ALTER TABLE `bills`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `categogies`
 --
 ALTER TABLE `categogies`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `feedbacks`
+--
+ALTER TABLE `feedbacks`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `files`
@@ -758,7 +855,7 @@ ALTER TABLE `medicines`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -776,13 +873,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `positions`
 --
 ALTER TABLE `positions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -800,13 +897,13 @@ ALTER TABLE `rooms`
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
