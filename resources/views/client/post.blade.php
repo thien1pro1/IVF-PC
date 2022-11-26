@@ -19,6 +19,8 @@
 </head>
 
 <body>
+
+
 <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
 <script>
 (function(){
@@ -219,6 +221,12 @@ RIGHT SIDEBAR TOGGLE SECTION
   </div>
 </section>
 <!-- //inner banner -->
+             @if(session('status'))
+        <div class="alert alert-success" role="alert">
+            {{session('status')}}
+        </div>
+        
+    @endif
 <div class="w3l-homeblock1 py-5">
     <div class="container py-lg-4 py-md-3">
         <!-- block -->
@@ -288,6 +296,8 @@ RIGHT SIDEBAR TOGGLE SECTION
                             </div>
                         </div> -->
                     </div>
+
+
 
                {!!$post->content!!}
 

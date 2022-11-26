@@ -39,7 +39,7 @@ class ServiceController extends Controller
         $service = new Service();
         $service->name = $request->name;
         $service->save();
-        return redirect()->back()->with('status','Thêm dịch vụ thành công');
+        return redirect('/admin/service')->with('status','Thêm dịch vụ thành công');
     }
 
     /**

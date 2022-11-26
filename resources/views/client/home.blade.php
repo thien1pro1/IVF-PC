@@ -90,81 +90,29 @@
     
    
     <!-- home block 2 -->
+
     <section class="about-section text-center pt-lg-5 pb-5">
         <div class="container pt-lg-5 pb-lg-5 pb-4">
             <h3 class="title-style text-center mb-5">CÁC GÓI <span>DỊCH VỤ</span> CỦA CHÚNG TÔI</h3>
             <div class="row justify-content-center">
+                @foreach($services as $key => $service )
                 <div class="col-lg-4 col-md-6">
                     <div class="about-single p-3">
                         <div class="about-icon mb-4">
                             <i class="fas fa-tooth"></i>
                         </div>
                         <div class="about-content">
-                            <h5 class="mb-3"><a href="about.html">Đánh giá sức khỏe sinh sản tiền hôn nhân</a></h5>
-                            <p>show lên 6 dịch vụ là 6 trang bài viết</p>
+                            <h5 class="mb-3"><a href="{{route('page.post',[$service->id])}}">{{$service->title}}</a></h5>
+                            <p>{{substr($service->short_Desc,0,90)}}</p>
+
+
+
+                           
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mt-md-0 mt-3">
-                    <div class="about-single p-3">
-                        <div class="about-icon mb-4">
-                            <i class="fas fa-wheelchair"></i>
-                        </div>
-                        <div class="about-content">
-                            <h5 class="mb-3"><a href="about.html">Xét nghiệm tinh dịch đồ - Semen Analysis</a></h5>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque
-                                laudan.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-lg-0 mt-3">
-                    <div class="about-single p-3">
-                        <div class="about-icon mb-4">
-                            <i class="fas fa-user-md"></i>
-                        </div>
-                        <div class="about-content">
-                            <h5 class="mb-3"><a href="about.html"> Bơm tinh trùng vào buồng tử cung (IUI)</a></h5>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque
-                                laudan.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-4">
-                    <div class="about-single p-3">
-                        <div class="about-icon mb-4">
-                            <i class="fas fa-teeth-open"></i>
-                        </div>
-                        <div class="about-content">
-                            <h5 class="mb-3"><a href="about.html">Hỗ trợ phôi thoát màng – Assisted Hatching (AH)</a></h5>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque
-                                laudan.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-4">
-                    <div class="about-single p-3">
-                        <div class="about-icon mb-4">
-                            <i class="fas fa-crutch"></i>
-                        </div>
-                        <div class="about-content">
-                            <h5 class="mb-3"><a href="about.html">Phẫu thuật lấy tinh trùng từ tinh hoàn (mào tinh) – PESA</a></h5>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque
-                                laudan.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-4">
-                    <div class="about-single p-3">
-                        <div class="about-icon mb-4">
-                            <i class="fas fa-teeth"></i>
-                        </div>
-                        <div class="about-content">
-                            <h5 class="mb-3"><a href="about.html">Hỗ trợ phôi thoát màng – Assisted Hatching (AH)</a></h5>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque
-                                laudan.</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+               
             </div>
             <a href="{{route('page.service')}}" class="btn btn-style mt-5">Xem thêm</a>
         </div>
@@ -431,7 +379,7 @@
                         <li class="phone-sec me-lg-4"><i class="fas fa-phone-volume"></i>
                             <a class="call-style-w3" href="tel:1900 54 54 66">1900 5454 66</a>
                         </li>
-                        <li><a href="{{url('/dat-lich-kham')}}" class="btn btn-style btn-style-2 mt-lg-0 mt-3">ĐẶT LỊCH HẸN KHÁM</a> </li>
+                        <li><a href="{{route('book.create')}}" class="btn btn-style btn-style-2 mt-lg-0 mt-3">ĐẶT LỊCH HẸN KHÁM</a> </li>
                     </ul>
                 </div>
             </div>

@@ -18,7 +18,7 @@
         </div>
         
     @endif
-    <a class="btn btn-success  " href="{{route('service.create')}}">Thêm danh mục</a>
+    <a class="btn btn-success  " href="{{route('service.create')}}">Thêm dịch vụ</a>
    
 
 
