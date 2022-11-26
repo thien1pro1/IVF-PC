@@ -331,7 +331,10 @@ class BookController extends Controller
         $search = $request->query('search');
         $status = $request->query('status');
         $books = Book::when($request->has('status'), function ($query) use ($status) {
-                                     
+                if($status == 9) {
+                    return $query;
+                }
+                else                 
             return $query->where('status', $status);
           })
           ->where(function ($query) use ($search) {

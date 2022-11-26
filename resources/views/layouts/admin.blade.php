@@ -229,7 +229,7 @@ filebrowserWindowHeight : 500
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Quản lý nhân viên </h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{route('admin.index')}}">
+          <a class="nav-link  " href="{{route('profile')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <img width="20px" height="20px" src="{{asset('images/icon/setting.png')}}">
                 <title>settings</title>
@@ -246,7 +246,7 @@ filebrowserWindowHeight : 500
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Admin</span>
+            <span class="nav-link-text ms-1">Thông tin cá nhân</span>
           </a>
         </li>
                 <li class="nav-item">

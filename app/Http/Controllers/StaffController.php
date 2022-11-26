@@ -64,7 +64,7 @@ class StaffController extends Controller
         
       
         $staff->save();
-        return redirect()->back()->with('status','Thêm Nhân viên thành công');
+        return redirect('/admin/staff')->back()->with('status','Thêm Nhân viên thành công');
     }
 
     /**
@@ -118,7 +118,7 @@ class StaffController extends Controller
         
       
         $staff->save();
-        return redirect()->back()->with('status','Thêm Nhân viên thành công');
+        return redirect('/admin/staff')->with('status','Cập nhập Nhân viên '.$request->name.' thành công');
     
 
     }

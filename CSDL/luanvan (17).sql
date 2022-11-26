@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2022 at 08:09 AM
+-- Generation Time: Nov 26, 2022 at 09:47 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -644,9 +644,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `image`, `email_verified_at`, `position_id`, `password`, `remember_token`, `created_at`, `updated_at`, `avatar`) VALUES
-(1, 'Nguyễn Đăng Thiên', 'thien1pro1@gmail.com', NULL, NULL, 0, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', 'bB57Ihz4uS3TcNSFMuuU1fepuhcYM91g96Eo0ELf6nLvlcuPAJQ4yOt3fErJ', '2022-10-06 09:51:23', '2022-10-06 09:51:23', ''),
-(2, 'Phạm ho', 'hoc@gmail.com', NULL, NULL, 1, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', NULL, '2022-10-07 09:33:54', '2022-10-07 09:33:54', ''),
-(3, 'Phamj Hoang hc', 'thien1pr@gmail.com', '1669446211_historyKham.png', NULL, 2, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', NULL, '2022-11-25 22:16:05', '2022-11-26 00:03:31', NULL);
+(1, 'Nguyễn Đăng Thiên', 'thien1pro1@gmail.com', '1669447502_thien.jpg', NULL, 0, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', 'bB57Ihz4uS3TcNSFMuuU1fepuhcYM91g96Eo0ELf6nLvlcuPAJQ4yOt3fErJ', '2022-10-06 09:51:23', '2022-11-26 00:25:02', ''),
+(2, 'Phạm Hoàng Học', 'hoc@gmail.com', '1669448031_hoc.jpg', NULL, 1, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', NULL, '2022-10-07 09:33:54', '2022-11-26 00:33:51', ''),
+(3, 'Lê Phú Cường', 'thien1pr@gmail.com', '1669448179_cuong.jpg', NULL, 2, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', NULL, '2022-11-25 22:16:05', '2022-11-26 00:36:19', NULL);
 
 --
 -- Indexes for dumped tables

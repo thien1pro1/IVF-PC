@@ -21,6 +21,7 @@ use App\Http\Controllers\FeedBackController;
 use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Auth;
 use App\Mail\ConfirmEmail;
+use App\Models\Position;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,9 +55,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::get('/admin/management_customer',function(){
 //     return view('admin.management_customer');
 // });
-// Route::get('/admin/management_staff',function(){
-//     return view('admin.management_staff');
-// });
+Route::get('/admin/profile',function(){
+    $position = Position::all();
+    return view('admin.profile')->with(compact('position'));
+})->name('profile');
 
 Route::get('admin/bookStaff/bill/{id}',[BillController::class, 'viewBillPDF'])->name('viewBillPDF');
 
