@@ -47,216 +47,19 @@
 
 
 
-    <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">
+    {{-- <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">
         <div class="chart">
             <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
         </div>
     </div>
+ --}}
 
-
-    <!DOCTYPE html>
-    <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-        
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>How to Add Google Map in Laravel? - ItSolutionStuff.com</title>
-        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        <style type="text/css">
-            #map {
-              height: 400px;
-            }
-        </style>
-    </head>
-        
-    <body>
-        <div class="container mt-5">
-            <h2>How to Add Google Map in Laravel? - ItSolutionStuff.com</h2>
-            <div id="map"></div>
-        </div>
-      
-        <script type="text/javascript">
-            function initMap() {
-              const myLatLng = { lat: 22.2734719, lng: 70.7512559 };
-              const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 5,
-                center: myLatLng,
-              });
-      
-              new google.maps.Marker({
-                position: myLatLng,
-                map,
-                title: "Hello Rajkot!",
-              });
-            }
-      
-            window.initMap = initMap;
-        </script>
-      
-        <script type="text/javascript"
-            src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap" ></script>
-      
-    </body>
-    </html>
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="row mt-4">
-        <div class="col-lg-7 col-md-12">
-            <div class="card">
-                <div class="card-header pb-0 p-3">
-                    <h6 class="mb-0">Traffic channels</h6>
-                    <div class="d-flex align-items-center">
-                        <span class="badge badge-md badge-dot me-4">
-                            <i class="bg-primary"></i>
-                            <span class="text-dark text-xs">Organic search</span>
-                        </span>
-                        <span class="badge badge-md badge-dot me-4">
-                            <i class="bg-dark"></i>
-                            <span class="text-dark text-xs">Referral</span>
-                        </span>
-                        <span class="badge badge-md badge-dot me-4">
-                            <i class="bg-info"></i>
-                            <span class="text-dark text-xs">Social media</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="card-body p-3">
-                    <div class="chart">
-                        <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-5 col-md-12 mt-4 mt-lg-0">
-            <div class="card h-100">
-                <div class="card-header pb-0 p-3">
-                    <div class="d-flex align-items-center">
-                        <h6 class="mb-0">Referrals</h6>
-                        <button type="button"
-                            class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
-                            data-bs-toggle="tooltip" data-bs-placement="bottom"
-                            title="See which websites are sending traffic to your website">
-                            <i class="fas fa-info"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="card-body p-3">
-                    <div class="row">
-                        <div class="col-lg-5 col-12 text-center">
-                            <div class="chart mt-5">
-                                <canvas id="chart-doughnut" class="chart-canvas" height="200"></canvas>
-                            </div>
-                            <a class="btn btn-sm bg-gradient-secondary mt-4">See all referrals</a>
-                        </div>
-                        <div class="col-lg-7 col-12">
-                            <div class="table-responsive">
-                                <table class="table align-items-center mb-0">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2 py-1">
-                                                    <div>
-                                                        <img src="../../assets/img/small-logos/logo-xd.svg"
-                                                            class="avatar avatar-sm me-2" alt="logo_xd">
-                                                    </div>
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-sm">Adobe</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle text-center text-sm">
-                                                <span class="text-xs font-weight-bold"> 25% </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2 py-1">
-                                                    <div>
-                                                        <img src="../../assets/img/small-logos/logo-atlassian.svg"
-                                                            class="avatar avatar-sm me-2" alt="logo_atlassian">
-                                                    </div>
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-sm">Atlassian</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle text-center text-sm">
-                                                <span class="text-xs font-weight-bold"> 3% </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2 py-1">
-                                                    <div>
-                                                        <img src="../../assets/img/small-logos/logo-slack.svg"
-                                                            class="avatar avatar-sm me-2" alt="logo_slack">
-                                                    </div>
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-sm">Slack</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle text-center text-sm">
-                                                <span class="text-xs font-weight-bold"> 12% </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2 py-1">
-                                                    <div>
-                                                        <img src="../../assets/img/small-logos/logo-spotify.svg"
-                                                            class="avatar avatar-sm me-2" alt="logo_spotify">
-                                                    </div>
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-sm">Spotify</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle text-center text-sm">
-                                                <span class="text-xs font-weight-bold"> 7% </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2 py-1">
-                                                    <div>
-                                                        <img src="../../assets/img/small-logos/logo-jira.svg"
-                                                            class="avatar avatar-sm me-2" alt="logo_jira">
-                                                    </div>
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-sm">Jira</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle text-center text-sm">
-                                                <span class="text-xs font-weight-bold"> 10% </span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="row mt-4">
         <div class="col-sm-6">
             <div class="card h-100">
                 <div class="card-header pb-0 p-3">
                     <div class="d-flex align-items-center">
-                        <h6 class="mb-0">Social</h6>
+                        <h6 class="mb-0">Thuoc</h6>
                         <button type="button"
                             class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
                             data-bs-toggle="tooltip" data-bs-placement="bottom"
@@ -267,24 +70,35 @@
                 </div>
                 <div class="card-body p-3">
                     <ul class="list-group">
+                        @foreach($medicines as $key => $medicine)
                         <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
                             <div class="w-100">
                                 <div class="d-flex align-items-center mb-2">
                                     <a class="btn btn-facebook btn-simple mb-0 p-0" href="javascript:;">
                                         <i class="fab fa-facebook fa-lg"></i>
                                     </a>
-                                    <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">Facebook</span>
-                                    <span class="ms-auto text-sm font-weight-bold">80%</span>
+                                    <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">{{$medicine->name}}</span>
+                                    <span class="ms-auto text-sm font-weight-bold">{{$medicine->amount/100}}%</span>
                                 </div>
                                 <div>
-                                    <div class="progress progress-md">
-                                        <div class="progress-bar bg-gradient-dark w-80" role="progressbar"
+                                    <div class="progress progress-md">  
+                                        @if ($medicine->amount/100 >= 70)
+                                        <div class="progress-bar bg-gradient-success w-{{$medicine->amount/100}}" role="progressbar"
                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @elseif($medicine->amount/100 >= 40)
+                                        <div class="progress-bar bg-gradient-info w-{{$medicine->amount/100}}" role="progressbar"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @else
+                                        <div class="progress-bar bg-gradient-danger w-{{$medicine->amount/100}}" role="progressbar"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @endif
+
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                        @endforeach
+                        {{-- <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
                             <div class="w-100">
                                 <div class="d-flex align-items-center mb-2">
                                     <a class="btn btn-twitter btn-simple mb-0 p-0" href="javascript:;">
@@ -351,7 +165,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
             </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Book;
 use App\Models\Room;
 use App\Models\Categogy;
+use App\Models\Medicine;
 use App\Models\Position;
 use Illuminate\Support\Facades\DB;
 
@@ -18,6 +19,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $medicines = Medicine::orderBy('register_time','ASC')->get();
+        dd($medicines);
         $categogy = Categogy::all();
         $noActive_categogy = Categogy::where('status',1);
         $books = Book::orderBy('email','ASC')->count();
@@ -27,7 +30,7 @@ class DashboardController extends Controller
 
         $cancel_book = Book::orderBy('email','ASC')->where('status',3)->count();
 
-        return view('admin.dashboard')->with(compact('waiting_books','books'));
+        return view('admin.dashboard')->with(compact('waiting_books','books','medicines'));
     }
 
     /**

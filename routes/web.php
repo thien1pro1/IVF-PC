@@ -35,6 +35,7 @@ Route::get('admin/bill/{id}',[BillController::class, 'index'])->name('bill');
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('admin/searchBook',[BookController::class, 'searchBook'])->name('searchBook');
 
 Auth::routes();
 Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

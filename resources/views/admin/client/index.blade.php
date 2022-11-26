@@ -1,11 +1,9 @@
 @extends('layouts.admin')
 @section('content')
-@php
-use App\Http\Constants\BookingStatus;
-
-
-
-@endphp
+    @php
+        use App\Http\Constants\BookingStatus;
+        
+    @endphp
     <div class="container">
         @if (session('status'))
             <div class="alert alert-success" role="alert">
@@ -20,6 +18,27 @@ use App\Http\Constants\BookingStatus;
                     <div class="card-header pb-0">
                         <h4>Danh sách đặt lịch</h4>
                     </div>
+                    <div class="form-group col-12">
+                        <form method="get" action="{{route('searchBook')}}">
+                        <div class="form-group col-4" style="float: right">
+                            <select name ="status" class="form-select form-select-sm">
+                                <option value="{{BookingStatus::$CONFIRMED_EMAIL}}">Chờ duyệt</option>
+                                <option value="{{BookingStatus::$CONFIRMED_STAFF}}">Đã duyệt</option>
+
+                                <option value="{{BookingStatus::$FINISHED}}">Đã khám</option>
+
+                                <option value="{{BookingStatus::$CANCELED}}">Đã hủy</option>
+
+                            </select>
+                        </div>
+                            <div class="form-group col-8">
+                                <input type="text" class="form-control" placeholder="Recipient's username" name="search" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Tim kiem</button>
+                              </div>
+                          </form>
+                        </div>
+                        
+                      </div>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
                             <table class="table align-items-center justify-content-center mb-0">
@@ -48,10 +67,9 @@ use App\Http\Constants\BookingStatus;
                                         <th></th>
                                     </tr>
                                 </thead>
-                                <tbody>
-
+                                <tbody >
                                     @foreach ($books as $book)
-                                        <tr>
+                                        <tr class="tbody">
                                             <td>
                                                 <div class="d-flex px-2">
 
@@ -81,27 +99,9 @@ use App\Http\Constants\BookingStatus;
                                             @endphp
                                             <td>
                                                 <img src="{{ $xx }}">
-
-
-
                                             </td>
 
-
-
-
-                                            <!-- <td class="align-middle text-center">
-    <div class="d-flex align-items-center justify-content-center">
-    <span class="me-2 text-xs font-weight-bold">60%</span>
-    <div>
-    <div class="progress">
-    <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-    </div>
-    </div>
-    </div>
-    </td> -->
-
                                             <td>
-
                                                 @if ($book->status == BookingStatus::$CONFIRMED_EMAIL)
                                                     <span class="text text-success">Chờ duyệt</span>
                                                 @elseif($book->status == BookingStatus::$CONFIRMED_STAFF)
@@ -129,4 +129,43 @@ use App\Http\Constants\BookingStatus;
                 </div>
             </div>
         </div>
+
+
+        <script>
+            function clearBox(id) {
+                const x = document.getElementClassName(id);
+                for(var i =0;i<=100;i++){
+                    x[i].innerHTML = "";
+                    i++;
+                }
+                
+            }
+
+            function showBook(){
+                var search = document.getElementById("search").value;
+        
+        const response = await fetch('http://127.0.0.1:8000/api/admin/searchBook/' +typeMedicine, {
+                method: 'GET',
+                headers: {
+                'Content-Type': 'application/json'
+                }
+            });
+            const books = await response.json();
+            books.forEach(book => {
+                let id = book.id;
+                let register_time = book.register_time;
+                let register_date = book.register_date;
+                let hus_name = book.hus_name;
+                let wife_name = book.wife_name;
+                if(book.room_id!=null){
+                    let room = book.room.name;
+                }
+                else{
+                    let room = "Chưa có phòng";
+                }
+
+            });
+
+            }
+        </script>
     @endsection

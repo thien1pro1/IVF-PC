@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Book;
 use App\Models\Room;
 use App\Models\Categogy;
+use App\Models\Medicine;
 use App\Models\Position;
 use App\Models\Post;
 use Illuminate\Support\Facades\DB;
@@ -29,6 +30,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $medicines = Medicine::orderBy('type','ASC')->get();
         $categogy = Categogy::all();
         $noActive_categogy = Categogy::where('status',1);
         $books = Book::orderBy('email','ASC')->count();
@@ -39,7 +41,7 @@ class HomeController extends Controller
 
         $cancel_book = Book::orderBy('email','ASC')->where('status',3)->count();
 
-        return view('admin.dashboard')->with(compact('waiting_book','books','accept_book','finish_book','cancel_book'));
+        return view('admin.dashboard')->with(compact('waiting_book','books','accept_book','finish_book','cancel_book','medicines'));
     }
 
 

@@ -334,4 +334,24 @@ class BookController extends Controller
         ])->with(compact('book'));
 
     }
+    public function searchBook(Request $request){
+        $search = $request->query('search');
+        $status = $request->query('status');
+        $books = Book::when($request->has('status'), function ($query) use ($status) {
+                                     
+            return $query->where('status', $status);
+          })
+          ->where(function ($query) use ($search) {
+            $query->where('email',$search)
+                    ->orWhere('hus_name', 'LIKE', '%' . $search . '%')
+                    ->orWhere('wife_name', 'LIKE', '%' . $search . '%');
+        })
+                            
+                                             
+                                            
+                                            
+                                            ->orderBy('register_date','ASC')->orderBy('register_time','ASC')->get();
+        return view('admin.client.index')->with(compact('books'));
+
+    }
 }

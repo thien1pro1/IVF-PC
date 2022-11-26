@@ -146,14 +146,16 @@ use App\Http\Constants\TypeMedicine;
 
 
         index++;
-        cell4.innerHTML="<button class='btn btn-style mt-sm-3' onclick='deleteMedicine()'>Xóa</button>";
+        cell4.innerHTML="<button type='button' class='btn btn-style mt-sm-3' onclick=' deleteMedicine()'>Xóa</button>";
 
         
     }
 
     function deleteMedicine() {
+     
         if(index>0){
             document.getElementById("medicineTable").deleteRow(index);
+            index-=1;
 
         }
 
