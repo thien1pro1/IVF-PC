@@ -19984,6 +19984,7 @@ h5.member a {
   border: 1px solid var(--border-color-light);
   border-top: none;
   border-radius: 0 0 8px 8px;
+  height: 300px;
 }
 
 .w3l-index5 .blog-info p {

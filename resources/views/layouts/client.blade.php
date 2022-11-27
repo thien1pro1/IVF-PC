@@ -10,6 +10,7 @@
     <link href="//fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <!-- Template CSS Style link -->
+    
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
     <link href="//fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
@@ -24,6 +25,7 @@
      <!-- header -->
 
     <header id="site-header" class="fixed-top">
+        
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="{{url('/client/home')}}">
@@ -55,26 +57,26 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                                  <li>
-                                    <a class="dropdown-item" href="">Câu chuyện về Khoa Hiếm Muộn IVF Phương Châu</a>
+                                    <a class="dropdown-item" href="{{url('/client/post/9')}}">Câu chuyện về Khoa Hiếm Muộn IVF Phương Châu</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="">Thông điệp từ nhà sáng lập</a>
+                                    <a class="dropdown-item" href="{{url('/client/post/8')}}">Thông điệp từ nhà sáng lập</a>
                                 </li>
 
                                   <li>
-                                    <a class="dropdown-item" href="#">Hệ thống tập đoàn y tế Phương Châu</a>
+                                    <a class="dropdown-item" href="{{url('/client/post/10')}}">Hệ thống tập đoàn y tế Phương Châu</a>
                                 </li>
 
                                   <li>
-                                    <a class="dropdown-item" href="#">Sứ mệnh - Tầm nhìn - Giá trị cốt lõi - Slogan Mẹ Tròn Con Vuông</a>
+                                    <a class="dropdown-item" href="{{url('/client/post/11')}}">Sứ mệnh - Tầm nhìn - Giá trị cốt lõi - Slogan Mẹ Tròn Con Vuông</a>
                                 </li>
 
                                   <li>
-                                    <a class="dropdown-item" href="#">Sơ đồ tổ chức</a>
+                                    <a class="dropdown-item" href="{{url('/client/post/12')}}">Sơ đồ tổ chức</a>
                                 </li>
 
                                   <li>
-                                    <a class="dropdown-item" href="#">Trách nhiệm với xã hội của Phương Châu</a>
+                                    <a class="dropdown-item" href="{{url('/client/post/13')}}">Trách nhiệm với xã hội của Phương Châu</a>
                                 </li>
 
                             </ul>
@@ -96,7 +98,7 @@
                                     <a class="dropdown-item" href="{{route('page.service')}}">Dịch vụ</a>
                                 </li>
 
-                                  <li>
+                                 <!--  <li>
                                     <a class="dropdown-item" href="{{url('/ve-chung-toi')}}">Hệ thống tập đoàn y tế Phương Châu</a>
                                 </li>
 
@@ -110,7 +112,7 @@
 
                                   <li>
                                     <a class="dropdown-item" href="{{url('/ve-chung-toi')}}">Hồ sơ bệnh án</a>
-                                </li>
+                                </li> -->
 
                             </ul>
                         </li>

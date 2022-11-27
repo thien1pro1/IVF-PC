@@ -33,19 +33,19 @@
                     <p class="mb-3">Cách nay gần 10 năm, Khoa Hiếm Muộn (IVF) Phương Châu ra đời trong bối cảnh BVQT Phương Châu trở thành BV tư nhân đầu tiên tại ĐBSCL được công nhận là cơ sở có đủ điều kiện thực hiện kỹ thuật Thụ tinh trong ống nghiệm vào tháng 6/2011
                     </p>
                     <p>IVF Phương Châu đã được trang bị cơ sở vật chất thuộc loại hiện đại bậc nhất Việt Nam và khu vực Đông Nam Á, trong đó có:</p>
-                    <a href="{{url('/client/post/5?_token=VtJ6VduKDxar5uDtMk1yK0HAK0wC7YDNy0iZ4fWz')}}" class="btn btn-style btn-style-2 mt-lg-5 mt-4">Xem thêm</a>
+                    <a href="{{url('/client/post/9')}}" class="btn btn-style btn-style-2 mt-lg-5 mt-4">Xem thêm</a>
                 </div>
                 <div class="col-md-5 text-md-center mt-md-0 mt-5">
                     <div class="counter">
-                        <div class="timer count-title count-number" data-to="6370" data-speed="1500">31500</div>
+                        <div class="timer count-title count-number" data-to="31500" data-speed="1500">31500</div>
                         <p class="count-text mt-sm-2">CẶP GIA ĐÌNH ĐƯỢC TƯ VẤN</p>
                     </div>
                     <div class="counter mt-sm-5 mt-4">
-                        <div class="timer count-title count-number" data-to="36" data-speed="1500">54%</div>
+                        <div class="timer count-title count-number" data-to="54" data-speed="1500">54%</div>
                         <p class="count-text mt-sm-2">TỈ LỆ THỤ THAI THÀNH CÔNG</p>
                     </div>
                     <div class="counter mt-sm-5 mt-4">
-                        <div class="timer count-title count-number" data-to="7600" data-speed="1500">3000</div>
+                        <div class="timer count-title count-number" data-to="3000" data-speed="1500">3000</div>
                         <p class="count-text mt-sm-2">EM BÉ ĐƯỢC CHÀO ĐỜI</p>
                     </div>
                 </div>
@@ -58,31 +58,29 @@
     <!-- home block 1 -->
     <section class="w3l-servicesblock py-5">
         <div class="container py-md-5 py-4">
-            <h3 class="title-style mb-md-5 mb-4"><span>QUY TRÌNH THĂM KHÁM HIẾM MUỘN</span>
+            <h3 class="title-style mb-md-5 mb-4"><span>KHỞI ĐẦU.. CHO MỘT HÀNH TRÌNH LÀM MẸ</span>
                     </h3>
             <div class="row pb-xl-5 align-items-center">
                 <div class="col-lg-6 position-relative home-block-3-left pb-lg-0 pb-5">
                     <div class="position-relative">
-                        <img src="{{asset('public/frontend/images/home1.jpg')}}" alt="" class="img-fluid radius-image">
+                        <img src="{{asset('frontend/images/1.jpg')}}" alt="" class="img-fluid radius-image">
                     </div>
                     <div class="imginfo__box">
-                        <h6 class="imginfo__title">ĐẶT LỊCH TƯ VẤN MIỄN PHÍ</h6>
-                        <p>Nemo enim ipsam oluptatem quia oluptas<br> sit aspernatur aut odit aut fugit. </p>
+                        <h6 class="imginfo__title">TƯ VẤN MIỄN PHÍ  </h6>
+                        <p>Phương Châu xin chào!<br> Chúng tôi sẽ luôn ở đây, bên cạnh và đồng hành <br> cùng thai kỳ của bạn. </p>
                         <a href="tel:http://1900 54 54 66"><i class="fas fa-phone-alt"></i> 1900 54 54 66</a>
+
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-6 offset-xl-1 mt-lg-0 mt-5 pt-lg-0 pt-5">
-                    <h3 class="title-style mb-md-5 mb-4">Bài viết về quy trình thăm khám hiếm muộn
+                    <h3 class="title-style mb-md-5 mb-4">ĐẶC TRƯNG SẢN KHOA PHƯƠNG CHÂU
                     </h3>
-                    <p class="sub-para">"Our clients are our priority, we offer quality dental services with a team of
-                        specialists. More details about our services below".</p>
-                    <p class="mt-4 pt-sm-2">Lorem ipsum viverra feugiat. Pellen tesque libero ut justo,
-                        ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit.</p>
-                    <p class="mt-4 pt-sm-2">Sellen tesque libero ut justo,
-                        ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit.</p>
+                    <p class="sub-para">"Sứ mệnh lớn của Phương Châu là tập trung vào an toàn Sản Khoa theo tiêu chuẩn Nhật Bản, luôn nâng niu và đề cao thiên chức người phụ nữ.".</p>
+                    <p class="mt-4 pt-sm-2">Chúng tôi sẽ luôn ở đây, bên cạnh và đồng hành cùng thai kỳ của bạn. Từ những ngày đầu mang thai, chuyển dạ sinh đến giai đoạn phục hồi sau sinh, mẹ và bé sẽ được chăm sóc sức khỏe toàn diện, chu đáo theo tiêu chuẩn Nhật Bản.</p>
+                    <p class="mt-4 pt-sm-2">Bên cạnh chăm lo về y tế, các gia đình còn được trải nghiệm những dịch vụ và tiện ích đặc trưng chỉ có tại các bệnh viện thuộc Tập đoàn Y tế Phương Châu.</p>
+                        <a href="{{url('/client/post/14')}}" class="btn btn-style mt-5">Xem thêm</a>
                 </div>
+
             </div>
         </div>
     </section>
@@ -99,11 +97,13 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="about-single p-3">
                         <div class="about-icon mb-4">
-                            <i class="fas fa-tooth"></i>
+                          <a href="{{route('page.post',[$service->id])}}">
+                            <img  style=" border-radius: 10px;box-shadow: 5px 5px 5px silver" width="240" height="180" src="{{asset('uploads/'.$service->image)}}" />
+                        </a>
                         </div>
                         <div class="about-content">
                             <h5 class="mb-3"><a href="{{route('page.post',[$service->id])}}">{{$service->title}}</a></h5>
-                            <p>{{substr($service->short_Desc,0,90)}}</p>
+                            <!-- <p>{{substr($service->short_Desc,0,50)}}</p> -->
 
 
 
@@ -125,17 +125,18 @@
             <h3 class="title-style text-center mb-5">Kiến thức  <span>Y Khoa</span></h3>
             <div class="inner-sec-w3layouts mt-md-5 mt-4">
                 <div class="owl-three owl-carousel owl-theme">
-                    @foreach ($posts as $post)
+                    @foreach ($new_post as $post)
                     <div class="item">
                         <div class="content-left-sec">
-                            <a class="blog-link d-block zoom-image" href="#url"><img src="{{asset('public/frontend/images/s1.jpg')}}"
+                            <a style="width: 240px ;height: 180px;" class="blog-link d-block zoom-image" href="{{route('page.post',[$post->id])}}"><img src="{{asset('uploads/'.$post->image)}}"
                                     class="img-fluid scale-image" alt=""></a>
                             <div class="blog-info">
-                                <a href="#url">
+                                <a href="{{route('page.post',[$post->id])}}">
                                     <h4 class="mb-0">{{$post->title}}</h4>
                                 </a>
-                                <p>{{$post->short_Desc}}</p>
-                                <a href="services.html" class="btn btn-style-primary">Learn More<i
+                                <p>{{substr($post->short_Desc,0,100)}}</p>
+                            
+                                <a href="{{route('page.post',[$post->id])}}" class="btn btn-style-primary">Xem thêm<i
                                         class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
@@ -155,13 +156,15 @@
     <!-- team section -->
     <section class="w3l-team py-5">
         <div class="container py-md-5 py-4">
-            <h3 class="title-style text-center mb-5">Thông tin <span>Bác Sĩ</span></h3>
+            <h3 class="title-style text-center mb-5">Đội ngũ <span>Bác Sĩ</span></h3>
             <div class="row text-center">
+
+                @foreach ($doctors as $doctor)
                 <div class="col-lg-3 col-sm-6">
                     <div class="team-block-single">
                         <div class="team-grids">
                             <a href="#team-single">
-                                <img src="{{asset('public/frontend/images/team1.jpg')}}" class="img-fluid" alt="">
+                                <img  src="{{asset('uploads/'.$doctor->image)}}" class="img-fluid" alt="">
                                 <div class="team-info">
                                     <div class="social-icons-section">
                                         <a class="fac" href="#facebook">
@@ -178,149 +181,63 @@
                             </a>
                         </div>
                         <div class="team-bottom-block p-4">
-                            <h5 class="member mb-1"><a href="#team">Olive Yew</a></h5>
-                            <small>Dentist</small>
+                            <h5 class="member mb-1"><a href="#team">{{$doctor->name}}</a></h5>
+                            <small>{{$doctor->position->name}}</small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 mt-sm-0 mt-4">
-                    <div class="team-block-single">
-                        <div class="team-grids">
-                            <a href="#team-single">
-                                <img src="{{asset('public/frontend/images/team2.jpg')}}" class="img-fluid" alt="">
-                                <div class="team-info">
-                                    <div class="social-icons-section">
-                                        <a class="fac" href="#facebook">
-                                            <i class="fab fa-facebook-f"></i>
-                                        </a>
-                                        <a class="twitter mx-2" href="#twitter">
-                                            <i class="fab fa-twitter"></i>
-                                        </a>
-                                        <a class="google" href="#google-plus">
-                                            <i class="fab fa-google-plus-g"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="team-bottom-block p-4">
-                            <h5 class="member mb-1 active"><a href="#team">Aida Joe</a></h5>
-                            <small>Orthodontist</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 mt-lg-0 mt-4">
-                    <div class="team-block-single">
-                        <div class="team-grids">
-                            <a href="#team-single">
-                                <img src="{{asset('public/frontend/images/team3.jpg')}}" class="img-fluid" alt="">
-                                <div class="team-info">
-                                    <div class="social-icons-section">
-                                        <a class="fac" href="#facebook">
-                                            <i class="fab fa-facebook-f"></i>
-                                        </a>
-                                        <a class="twitter mx-2" href="#twitter">
-                                            <i class="fab fa-twitter"></i>
-                                        </a>
-                                        <a class="google" href="#google-plus">
-                                            <i class="fab fa-google-plus-g"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="team-bottom-block p-4">
-                            <h5 class="member mb-1"><a href="#team">Teri Dac</a></h5>
-                            <small>Hygienist</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 mt-lg-0 mt-4">
-                    <div class="team-block-single">
-                        <div class="team-grids">
-                            <a href="#team-single">
-                                <img src="{{asset('public/frontend/images/team4.jpg')}}" class="img-fluid" alt="">
-                                <div class="team-info">
-                                    <div class="social-icons-section">
-                                        <a class="fac" href="#facebook">
-                                            <i class="fab fa-facebook-f"></i>
-                                        </a>
-                                        <a class="twitter mx-2" href="#twitter">
-                                            <i class="fab fa-twitter"></i>
-                                        </a>
-                                        <a class="google" href="#google-plus">
-                                            <i class="fab fa-google-plus-g"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="team-bottom-block p-4">
-                            <h5 class="member mb-1"><a href="#team">Anton Bne</a></h5>
-                            <small>Dentist</small>
-                        </div>
-                    </div>
-                </div>
+              @endforeach
             </div>
         </div>
     </section>
     <!-- //team setion -->
 
-    <!-- blog section -->
-    <div class="w3l-homeblock2 py-5">
-        <div class="container py-md-5 py-4">
-            <h3 class="title-style text-center mb-5">Góc <span>CẢM XÚC VÀ TRẢI NGHIỆM</span> của khách hàng</h3>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="bg-clr-white hover-box">
-                        <div class="row align-items-center">
-                            <div class="col-sm-6 position-relative">
-                                <a href="#blog">
-                                    <img class="img-fluid d-block" src="{{asset('public/frontend/images/blog3.jpg')}}" alt="image">
-                                </a>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="card-body blog-details align-self pl-sm-0">
-                                    <a href="#blog" class="blog-desc">Denists Against Root Canals
-                                    </a>
-                                    <p>Lorem ipsum dolor sit amet consectetur ipsum adipisicing elit.</p>
-                                    <div class="d-flex align-items-center justify-content-between mt-lg-4 mt-5">
-                                        <h5 class="text-blog-e">July 15, 2021</h5>
-                                        <a href="#blog" class="blog-icon-e"><i class="fas fa-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mt-lg-0 mt-4">
-                    <div class="bg-clr-white hover-box">
-                        <div class="row align-items-center">
-                            <div class="col-sm-6 position-relative">
-                                <a href="#blog">
-                                    <img class="img-fluid d-block" src="{{asset('public/frontend/images/blog2.jpg')}}" alt="Card image cap">
-                                </a>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="card-body blog-details align-self pl-sm-0">
-                                    <a href="#blog" class="blog-desc">Treatment with Great Care</a>
-                                    <p>Lorem ipsum dolor sit amet consectetur ipsum adipisicing elit.</p>
-                                    <div class="d-flex align-items-center justify-content-between mt-lg-4 mt-5">
-                                        <h5 class="text-blog-e">July 18, 2021</h5>
-                                        <a href="#blog" class="blog-icon-e"><i class="fas fa-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+<!-- AboutPage Testimonials -->
+
+<section>
+  </section>
+
+<section class="w3l-testimonials pb-5" id="testimonials">
+  <div class="container py-md-5 py-4 AboutPageTestimonials">
+    <h3 class="title-style text-center mb-5">
+      CẢM XÚC VÀ TRẢI NGHIỆM<span> KHÁCH HÀNG</span>
+      </h3>
+    <div class="owl-testimonial owl-carousel owl-theme mx-auto" style="max-width:1000px">
+
+        @foreach ($feedbacks as $feedback)
+      
+
+                  <div class="item">
+        <div class="slider-info">
+          <div class="img-circle">
+            <img
+              src="{{asset('frontend/images/customer.webp')}}"
+              class="img-fluid rounded" alt="client image">
+          </div>
+          <div class="message-info">
+            <span class="fa fa-quote-left mr-2"></span>
+            <div class="message">{{$feedback->content}}</div>
+            <div class="name">
+              Khách hàng "{{$feedback->name}}"</div>
+            <div class="desp ms-2">
+              {{$feedback->updated_at}}</div>
+          </div>
         </div>
+      </div>
+      @endforeach
+        
     </div>
-    <!-- //blog section -->
+  </div>
+</section>
+
+<section>
+  </section>
+
+<!-- //AboutPage Testimonials -->
 
     <!-- skills section -->
-    <section class="w3l-progress pt-5" id="progress">
+    <!-- <section class="w3l-progress pt-5" id="progress">
         <div class="container pt-md-5 pt-4">
             <div class="row align-items-center">
                 <div class="col-lg-6 pe-lg-5">
@@ -363,7 +280,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- //skills section -->
 
     <!-- call section -->
@@ -390,6 +307,232 @@
 <div id="fb-root"></div>
 
 <!-- Your Plugin chat code -->
+
+
+
+<!-- common jquery plugin -->
+<script src="https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/js/jquery-3.3.1.min.js"></script>
+<!-- //common jquery plugin -->
+
+<!-- banner slider -->
+<script src="https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/js/jquery.min.js"></script>
+<script src="https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/js/modernizr-2.6.2.min.js"></script>
+<script src="https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/js/jquery.zoomslider.min.js"></script>
+<!-- //banner slider -->
+
+<!-- for services carousel slider -->
+<script src="https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/js/owl.carousel.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.owl-three').owlCarousel({
+      loop: true,
+      stagePadding: 20,
+      margin: 20,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      autoplaySpeed: 1000,
+      autoplayHoverPause: false,
+      nav: false,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 2
+        },
+        991: {
+          items: 3
+        },
+        1200: {
+          items: 4
+        }
+      }
+    })
+  })
+</script>
+<!-- //for services carousel slider -->
+
+    <!-- script for testimonials -->
+    <script>
+        $(document).ready(function () {
+            $('.owl-testimonial').owlCarousel({
+                loop: true,
+                margin: 0,
+                nav: true,
+                responsiveClass: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplaySpeed: 1000,
+                autoplayHoverPause: false,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false
+                    },
+                    480: {
+                        items: 1,
+                        nav: false
+                    },
+                    667: {
+                        items: 1,
+                        nav: true
+                    },
+                    1000: {
+                        items: 1,
+                        nav: true
+                    }
+                }
+            })
+        })
+    </script>
+    <!-- //script for testimonials -->
+
+    
+<!-- counter for stats -->
+<script >
+    (function ($) {
+    $.fn.countTo = function (options) {
+        options = options || {};
+        
+        return $(this).each(function () {
+            // set options for current element
+            var settings = $.extend({}, $.fn.countTo.defaults, {
+                from:            $(this).data('from'),
+                to:              $(this).data('to'),
+                speed:           $(this).data('speed'),
+                refreshInterval: $(this).data('refresh-interval'),
+                decimals:        $(this).data('decimals')
+            }, options);
+            
+            // how many times to update the value, and how much to increment the value on each update
+            var loops = Math.ceil(settings.speed / settings.refreshInterval),
+                increment = (settings.to - settings.from) / loops;
+            
+            // references & variables that will change with each update
+            var self = this,
+                $self = $(this),
+                loopCount = 0,
+                value = settings.from,
+                data = $self.data('countTo') || {};
+            
+            $self.data('countTo', data);
+            
+            // if an existing interval can be found, clear it first
+            if (data.interval) {
+                clearInterval(data.interval);
+            }
+            data.interval = setInterval(updateTimer, settings.refreshInterval);
+            
+            // initialize the element with the starting value
+            render(value);
+            
+            function updateTimer() {
+                value += increment;
+                loopCount++;
+                
+                render(value);
+                
+                if (typeof(settings.onUpdate) == 'function') {
+                    settings.onUpdate.call(self, value);
+                }
+                
+                if (loopCount >= loops) {
+                    // remove the interval
+                    $self.removeData('countTo');
+                    clearInterval(data.interval);
+                    value = settings.to;
+                    
+                    if (typeof(settings.onComplete) == 'function') {
+                        settings.onComplete.call(self, value);
+                    }
+                }
+            }
+            
+            function render(value) {
+                var formattedValue = settings.formatter.call(self, value, settings);
+                $self.html(formattedValue);
+            }
+        });
+    };
+    
+    $.fn.countTo.defaults = {
+        from: 0,               // the number the element should start at
+        to: 0,                 // the number the element should end at
+        speed: 2000,           // how long it should take to count between the target numbers
+        refreshInterval: 1,  // how often the element should be updated
+        decimals: 0,           // the number of decimal places to show
+        formatter: formatter,  // handler for formatting the value before rendering
+        onUpdate: null,        // callback method for every time the element is updated
+        onComplete: null       // callback method for when the element finishes updating
+    };
+    
+    function formatter(value, settings) {
+        return value.toFixed(settings.decimals);
+    }
+}(jQuery));
+
+jQuery(function ($) {
+  // custom formatting example
+  $('.count-number').data('countToOptions', {
+    formatter: function (value, options) {
+      return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+    }
+  });
+  
+  // start all the timers
+  $('.timer').each(count);  
+  
+  function count(options) {
+    var $this = $(this);
+    options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+    $this.countTo(options);
+  }
+});
+</script>
+<!-- //counter for stats -->
+
+<!-- theme switch js (light and dark)-->
+<script src="https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/js/theme-change.js"></script>
+<!-- //theme switch js (light and dark)-->
+
+<!-- MENU-JS -->
+<script>
+  $(window).on("scroll", function () {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 80) {
+      $("#site-header").addClass("nav-fixed");
+    } else {
+      $("#site-header").removeClass("nav-fixed");
+    }
+  });
+
+  //Main navigation Active Class Add Remove
+  $(".navbar-toggler").on("click", function () {
+    $("header").toggleClass("active");
+  });
+  $(document).on("ready", function () {
+    if ($(window).width() > 991) {
+      $("header").removeClass("active");
+    }
+    $(window).on("resize", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+    });
+  });
+</script>
+<!-- //MENU-JS -->
+
+<!-- disable body scroll which navbar is in active -->
+<script>
+  $(function () {
+    $('.navbar-toggler').click(function () {
+      $('body').toggleClass('noscroll');
+    })
+  });
+</script>
+
 
 
     

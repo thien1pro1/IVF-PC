@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Categogy;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\FeedBack;
+use DB;
 
 class PageController extends Controller
 {
@@ -23,8 +26,20 @@ class PageController extends Controller
     // }
     public function postPage($id){
         $post = Post::find($id); 
+
+        $post2 = Post::with('category')->where('id',$id)->first();
+        foreach ($post2 as $key => $p) {
+           $categogy_id = $post2->categogy_id;
+        }
+
+         $post_related = Post::with('category')->where('categogy_id',$categogy_id)->limit(4)->get();
+         $show_cate = Categogy::orderBy(DB::raw('RAND()'))->limit(3)->get();
+
+
+         
+        $category = Categogy::all();
         
-        return view('client.post')->with(compact('post'));
+        return view('client.post')->with(compact('post','post2','category','post_related','show_cate'));
     }
 
     public function home(){
@@ -32,16 +47,20 @@ class PageController extends Controller
 
          $services = Post::where('categogy_id',0)->limit(6)->get();
         // $medicines = Medicine::get();
-        // $doctor = User::where('position_id',2)->get();
+        $doctors = User::where('position_id',2)->get();
 
-        return view('client.home')->with(compact('posts','services'));
+        $feedbacks = FeedBack::orderBy(DB::raw('RAND()'))->limit(4)->get();
+
+         $new_post = Post::orderBy(DB::raw('RAND()'))->limit(4)->get();
+
+        return view('client.home')->with(compact('posts','services','new_post','doctors','feedbacks'));
     }
 
 
 
     public function timkiem(){
         $keywords = $_GET['keywords'];
-        $category_post = Post::with('category')->where('title','LIKE','%'.$keywords.'%')->orwhere('short_Desc','title','LIKE','%'.$keywords.'%')->get();
+        $category_post = Post::with('category')->where('title','LIKE','%'.$keywords.'%')->orwhere('short_Desc','title','content','LIKE','%'.$keywords.'%')->get();
 
         $category = Categogy::all();
     
@@ -50,8 +69,12 @@ class PageController extends Controller
 
     public function servicePage(){
         $service = Post::where('categogy_id',0);
-        return view('client.service');
+        $doctors = User::where('position_id',2)->get();
+        $services = Post::where('categogy_id',0)->get();
+       
+        return view('client.service')->with(compact('service','doctors','services'));
     }
+
 
 
 }

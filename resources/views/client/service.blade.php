@@ -65,10 +65,10 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
   <div class="w3l-breadcrumb py-lg-5">
     <div class="container pt-4 pb-sm-4 AboutPageBanner">
                   <h4 class="inner-text-title font-weight-bold pt-sm-5 pt-4">
-        About Us</h4>
+        Dịch vụ</h4>
       
                   <ul class="breadcrumbs-custom-path AllBreadcrumbs">
-        <a href="https://wp.w3layouts.com/dentition" rel="nofollow">Home</a>&nbsp;&nbsp;&#187;&nbsp;&nbsp;About page      </ul>
+        <a href="https://wp.w3layouts.com/dentition" rel="nofollow">Home</a>&nbsp;&nbsp;&#187;&nbsp;&nbsp;Dịch vụ      </ul>
           </div>
   </div>
 </section>
@@ -77,7 +77,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
 <!-- AboutPage about section -->
-<section>
+<!-- <section>
   </section>
 
 <section class="w3l-homeblock1 py-5" id="about">
@@ -112,7 +112,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- //AboutPage about section -->
 
@@ -125,131 +125,40 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <section>
   </section>
 
-<section class="w3l-features py-5" id="features">
-  <div class="container py-md-5 py-4 AboutPageFeatures">
-    <h3 class="title-style text-center text-white mb-sm-5 mb-4">
-      Our Awesome      <span>Features</span></h3>
 
-    <div class="row text-center">
+    
+   
+    <!-- home block 2 -->
 
-                  <div class="col-lg-4 col-sm-6">
-        <div class="feature-gd feature-gd-2">
-          <div class="icon">
-            <i
-              class="fas fa-hand-holding-medical"></i>
-          </div>
-          <div class="icon-info">
-            <h5><a
-                href="#url">The Quality of Used Medical Materials</a>
-            </h5>
-            <p> Lorem ipsum dolor sit amet, sed eiusmod
-              temporinit sit.</p>
-            <a href="#url"
-              class="btn btn-style-primary">Learn More<i
-                class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      
-                  <div class="col-lg-4 col-sm-6 mt-sm-0 mt-4">
-        <div class="feature-gd feature-gd-2">
-          <div class="icon">
-            <i
-              class="fas fa-tooth"></i>
-          </div>
-          <div class="icon-info">
-            <h5><a
-                href="#url">Dental Implants-New Teeth in One Day</a>
-            </h5>
-            <p> Lorem ipsum dolor sit amet, sed eiusmod
-              temporinit sit.</p>
-            <a href="#url"
-              class="btn btn-style-primary">Learn More<i
-                class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      
-                  <div class="col-lg-4 col-sm-6 mt-lg-0 mt-sm-5 mt-4">
-        <div class="feature-gd feature-gd-2">
-          <div class="icon">
-            <i
-              class="fas fa-briefcase-medical"></i>
-          </div>
-          <div class="icon-info">
-            <h5><a
-                href="#url">A Full Range of Dental Services</a>
-            </h5>
-            <p>Lorem ipsum dolor sit amet, sed eiusmod
-              temporinit sit.</p>
-            <a href="#url"
-              class="btn btn-style-primary">Learn More<i
-                class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      
-                  <div class="col-lg-4 col-sm-6 mt-sm-5 mt-4">
-        <div class="feature-gd feature-gd-2">
-          <div class="icon">
-            <i
-              class="far fa-money-bill-alt"></i>
-          </div>
-          <div class="icon-info">
-            <h5><a
-                href="#url">Loyalty Discounts of Regular Customers</a>
-            </h5>
-            <p> Lorem ipsum dolor sit amet, sed eiusmod
-              temporinit sit.</p>
-            <a href="#url"
-              class="btn btn-style-primary">Learn More<i
-                class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      
-                  <div class="col-lg-4 col-sm-6 mt-sm-5 mt-4">
-        <div class="feature-gd feature-gd-2">
-          <div class="icon">
-            <i
-              class="fas fa-syringe"></i>
-          </div>
-          <div class="icon-info">
-            <h5><a
-                href="#url">Dental Implants-New Teeth in One Day</a>
-            </h5>
-            <p> Lorem ipsum dolor sit amet, sed eiusmod
-              temporinit sit.</p>
-            <a href="#url"
-              class="btn btn-style-primary">Learn More<i
-                class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      
-                  <div class="col-lg-4 col-sm-6 mt-sm-5 mt-4">
-        <div class="feature-gd feature-gd-2">
-          <div class="icon">
-            <i
-              class="fas fa-teeth-open"></i>
-          </div>
-          <div class="icon-info">
-            <h5><a
-                href="#url">Modern Methods of Teeth Straightening</a>
-            </h5>
-            <p> Lorem ipsum dolor sit amet, sed eiusmod
-              temporinit sit.</p>
-            <a href="#url"
-              class="btn btn-style-primary">Learn More<i
-                class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      
-    </div>
+    <section class="about-section text-center pt-lg-5 pb-5">
+        <div class="container pt-lg-5 pb-lg-5 pb-4">
+            <h3 class="title-style text-center mb-5">CÁC GÓI <span>DỊCH VỤ</span> CỦA CHÚNG TÔI</h3>
+            <div class="row justify-content-center">
+                @foreach($services as $key => $service )
+                <div class="col-lg-4 col-md-6">
+                    <div class="about-single p-3">
+                        <div class="about-icon mb-4">
+                          <a href="{{route('page.post',[$service->id])}}">
+                            <img  style=" border-radius: 10px;box-shadow: 5px 5px 5px silver" width="240" height="180" src="{{asset('uploads/'.$service->image)}}" />
+                        </a>
+                        </div>
+                        <div class="about-content">
+                            <h5 class="mb-3"><a href="{{route('page.post',[$service->id])}}">{{$service->title}}</a></h5>
+                            <!-- <p>{{substr($service->short_Desc,0,50)}}</p> -->
 
-  </div>
-</section>
+
+
+                           
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+               
+         <!--    </div>
+            <a href="{{route('page.service')}}" class="btn btn-style mt-5">Xem thêm</a>
+        </div> -->
+    </section>
+    <!-- //home block 2 -->
 
 <section>
   </section>
@@ -259,168 +168,44 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
 
+ <!-- team section -->
+    <section class="w3l-team py-5">
+        <div class="container py-md-5 py-4">
+            <h3 class="title-style text-center mb-5">Đội ngũ <span>Bác Sĩ</span></h3>
+            <div class="row text-center">
 
-<!-- AboutPage team -->
-
-<section>
-  </section>
-
-<section class="w3l-team py-5">
-  <div class="container py-md-5 py-4 AboutPageTeam">
-    <h3 class="title-style text-center mb-5">
-      Meet Our      <span>Doctors</span></h3>
-    <div class="row text-center">
-
-                  <div class="col-lg-3 col-sm-6">
-        <div class="team-block-single">
-          <div class="team-grids">
-            <a href="#team-single">
-              <img
-                src="https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/images/team1.jpg"
-                class="img-fluid" alt="">
-              <div class="team-info">
-
-                <div class="social-icons-section">
-
-                                                      <a class="fac" href="https://www.facebook.com/w3layouts/">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  
-                                                      <a class="twitter mx-2" href="https://twitter.com/W3layouts">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                  
-                                                      <a class="google"
-                    href="https://w3layouts.com/tag/email-templates/">
-                    <i class="fab fa-google-plus-g"></i>
-                  </a>
-                  
+                @foreach ($doctors as $doctor)
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-block-single">
+                        <div class="team-grids">
+                            <a href="#team-single">
+                                <img  src="{{asset('uploads/'.$doctor->image)}}" class="img-fluid" alt="">
+                                <div class="team-info">
+                                    <div class="social-icons-section">
+                                        <a class="fac" href="#facebook">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                        <a class="twitter mx-2" href="#twitter">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a class="google" href="#google-plus">
+                                            <i class="fab fa-google-plus-g"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="team-bottom-block p-4">
+                            <h5 class="member mb-1"><a href="#team">{{$doctor->name}}</a></h5>
+                            <small>{{$doctor->position->name}}</small>
+                        </div>
+                    </div>
                 </div>
-
-              </div>
-            </a>
-          </div>
-          <div class="team-bottom-block p-4">
-            <h5 class="member mb-1"><a
-                href="#url">Olive Yew</a>
-            </h5>
-            <small>Dentist</small>
-          </div>
+              @endforeach
+            </div>
         </div>
-      </div>
-      
-                  <div class="col-lg-3 col-sm-6 mt-sm-0 mt-4">
-        <div class="team-block-single">
-          <div class="team-grids">
-            <a href="#team-single">
-              <img
-                src="https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/images/team2.jpg"
-                class="img-fluid" alt="">
-              <div class="team-info">
-                <div class="social-icons-section">
-                                                      <a class="fac" href="https://www.facebook.com/w3layouts/">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  
-                                                      <a class="twitter mx-2" href="https://twitter.com/W3layouts">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                  
-                                                      <a class="google"
-                    href="https://w3layouts.com/tag/email-templates/">
-                    <i class="fab fa-google-plus-g"></i>
-                  </a>
-                  
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="team-bottom-block p-4">
-            <h5 class="member mb-1 active"><a
-                href="#url">Aida Joe</a>
-            </h5>
-            <small>Orthodontist</small>
-          </div>
-        </div>
-      </div>
-      
-                  <div class="col-lg-3 col-sm-6 mt-lg-0 mt-4">
-        <div class="team-block-single">
-          <div class="team-grids">
-            <a href="#team-single">
-              <img
-                src="https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/images/team3.jpg"
-                class="img-fluid" alt="">
-              <div class="team-info">
-                <div class="social-icons-section">
-
-                                                      <a class="fac" href="https://www.facebook.com/w3layouts/">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  
-                                                      <a class="twitter mx-2" href="https://twitter.com/W3layouts">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                  
-                                                      <a class="google"
-                    href="https://w3layouts.com/tag/email-templates/">
-                    <i class="fab fa-google-plus-g"></i>
-                  </a>
-                  
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="team-bottom-block p-4">
-            <h5 class="member mb-1"><a
-                href="#url">Teri Dac</a>
-            </h5>
-            <small>Hygienist</small>
-          </div>
-        </div>
-      </div>
-      
-                  <div class="col-lg-3 col-sm-6 mt-lg-0 mt-4">
-        <div class="team-block-single">
-          <div class="team-grids">
-            <a href="#team-single">
-              <img
-                src="https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/images/team4.jpg"
-                class="img-fluid" alt="">
-              <div class="team-info">
-                <div class="social-icons-section">
-
-                                                      <a class="fac" href="https://www.facebook.com/w3layouts/">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  
-                                                      <a class="twitter mx-2" href="https://twitter.com/W3layouts">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                  
-                                                      <a class="google"
-                    href="https://w3layouts.com/tag/email-templates/">
-                    <i class="fab fa-google-plus-g"></i>
-                  </a>
-                                  </div>
-              </div>
-            </a>
-          </div>
-          <div class="team-bottom-block p-4">
-            <h5 class="member mb-1"><a
-                href="#url">Anton Bne</a>
-            </h5>
-            <small>Dentist</small>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>
-
-<section>
-  </section>
+    </section>
+    <!-- //team setion -->
 
 <!-- AboutPage team -->
 
@@ -429,7 +214,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
 <!-- AboutPage Testimonials -->
-
+<!-- 
 <section>
   </section>
 
@@ -508,7 +293,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 </section>
 
 <section>
-  </section>
+  </section> -->
 
 <!-- //AboutPage Testimonials -->
 
@@ -520,32 +305,6 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <section>
   </section>
 
-<!-- call section -->
-<section class="w3l-call-to-action-6">
-  <div class="container py-md-5 py-sm-4 py-5 AboutPageBookingNumber">
-    <div class="d-sm-flex align-items-center justify-content-between">
-      <div class="left-content-call">
-        <h3 class="title-big">
-          Visit Now!</h3>
-        <p class="text-white mt-1">
-          Begin the change today        </p>
-      </div>
-      <div class="right-content-call mt-sm-0 mt-4">
-        <ul class="buttons">
-          <li class="phone-sec me-lg-4"><i
-              class="fas fa-phone-volume"></i>
-            <a class="call-style-w3"
-              href="tel:+1(23) 456 789 0000">+1(23) 456 789 0000</a>
-          </li>
-          <li><a href="appointment"
-              class="btn btn-style btn-style-2 mt-lg-0 mt-3">Book Now</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- //call section -->
 
 <section>
   </section>

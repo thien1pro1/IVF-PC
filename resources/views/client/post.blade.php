@@ -232,7 +232,7 @@ RIGHT SIDEBAR TOGGLE SECTION
         <!-- block -->
         <div class="most-recent">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-8">
                     <div class="blog-single-post">
                         <div class="blo-singl mb-4">
                             <ul class="blog-single-author-date  d-flex align-items-center">
@@ -387,27 +387,29 @@ RIGHT SIDEBAR TOGGLE SECTION
                             </div>
                         </form>
                     </div>
+
                 </div>
+
                 <div class="col-lg-4 item mt-lg-0 mt-4">
                     <div class="sticky">
-                       <!--  <div class="sidebar-widget sidebar-blog-category">
+                        <div class="sidebar-widget sidebar-blog-category">
                             <div class="author">
                                 <div class="sidebar-title mb-4">
-                                    <h3 class="title-left">Thông tin về tác giả</h3>
+                                    <h3 class="title-left">Về chúng tôi</h3>
                                 </div>
                                 <div class="author-detalis">
-                                    <a href="#author" class="author-image"><img src="{{asset('images/hoc.jpg')}}"
+                                    <a href="#author" class="author-image"><img src="{{asset('frontend/images/about4.png')}}"
                                             alt="author image" class="img-fluid"></a>
                                     <div class="author-info">
-                                        <a href="#author-name" class="author-name">Hoàng Học</a>
-                                        <a href="#follow" class="btn btn-outline-primary">Theo dõi </a>
+                                        <a href="#author-name" class="author-name">Tập Đoàn Y Tế Phương Châu</a>
+                                        <a href="http://www.facebook.com/bvqtphuongchau" target="_blank" class="btn btn-outline-primary">Truy cập Fanpage </a>
                                     </div>
                                 </div>
-                                <p class="mt-2">Tôi là một người đa tài, giỏi về mọi lĩnh vực, lại còn đẹp trai dễ thương, còn chần chừ gì mà không follow tôi</p>
+                                <p class="mt-2">Tập Đoàn Y Tế Phương Châu gồm 3 bệnh viện tại Cần Thơ, Sa Đéc (Đồng Tháp), Sóc Trăng và không ngừng hoàn thiện “sứ mệnh chăm sóc sức khỏe sinh sản toàn diện” cùng các gia đình. Hệ thống y tế Phương Châu hoạt động đầy đủ và kết nối chặt chẽ các chuyên khoa trong tầm soát sớm, chẩn đoán, điều trị bệnh: Sản-Phụ khoa, Nhi-Sơ sinh, Hiếm muộn, Nam khoa, Đa khoa, Thẩm mỹ…</p>
                                 <div class="social text-center mt-3">
                                     <ul class="d-flex">
                                         <li class="mr-2">
-                                            <a href="#" class="facebook"><span class="fab fa-facebook-f"
+                                            <a href="http://www.facebook.com/bvqtphuongchau" target="_blank" class="facebook"><span class="fab fa-facebook-f"
                                                     aria-hidden="true"></span></a>
                                         </li>
                                         <li class="mr-2">
@@ -425,7 +427,7 @@ RIGHT SIDEBAR TOGGLE SECTION
                                     </ul>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
 
                      
 
@@ -451,6 +453,36 @@ RIGHT SIDEBAR TOGGLE SECTION
                             </ul>
                         </div> -->
 
+                        <div class="sidebar-widget popular-posts">
+                            <div class="sidebar-title mb-4">
+                                <h3 class="title-left">Có thể bạn quan tâm</h3>
+                            </div>
+                             @foreach($post_related as $key => $new)
+
+                            <article class="post">
+                                <figure class="post-thumb"><img src="{{asset('uploads/'.$new->image)}}" class="img-fluid" alt="">
+                                </figure>
+                                <div class="text"><a href="{{route('page.post',[$new->id])}}"> {{$new->title}} </a>
+                                    <div class="post-info">{{$new->updated_at}}</div>
+                                </div>
+                            </article>
+
+                            @endforeach
+
+                        </div>
+                        
+                        <div class="sidebar-widget sidebar-blog-category">
+                            <div class="sidebar-title">
+                                <h3 class="title-left mb-4">Chủ đề</h3>
+                            </div>
+                              @foreach($show_cate as $key => $showcate)
+                            <ul class="blog-cat">
+                                <li><a href="{{route('page.category',[$showcate->id])}}">{{$showcate->categogyName}}</a></li>
+                                
+                            </ul>
+                            @endforeach
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -458,6 +490,8 @@ RIGHT SIDEBAR TOGGLE SECTION
         </div>
     </div>
 </div>
+
+
 
   <!-- footer -->
   
