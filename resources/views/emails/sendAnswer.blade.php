@@ -695,7 +695,7 @@ table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: under
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 60px;font-family:'Open Sans',sans-serif;" align="left">
         
   <div class="v-line-height" style="line-height: 160%; text-align: center; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 160%;">Tư vấn từ bác sĩ {{$data['user']}}</p>
+    <p style="font-size: 14px; line-height: 160%;">Tư vấn từ bác sĩ {{$data['user']}} cho câu hỏi: {{$data['askContent']}}</p>
   </div>
 
       </td>

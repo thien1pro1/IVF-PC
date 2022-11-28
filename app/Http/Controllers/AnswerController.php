@@ -109,7 +109,7 @@ class AnswerController extends Controller
         
         $askContent = $ask->content;
 
-        $answers = Answer::where('ask_id',$id)->first()->get();
+        $answers = Answer::where('ask_id',$id)->latest()->get();
         
         foreach($answers as $answer){
             
