@@ -100,7 +100,7 @@ $time = BookingTime::$bookingTime ;
   
               <td>
                 @if($book->status==0 || $book->status==1)
-                <a href="{{route('bookStaff.edit',[$book->id])}}" class="btn btn-primary" style="float:right">Duyệt</a>
+                <a href="{{route('bookStaff.edit',[$book->id])}}" class="btn btn-secondary" style="float:right">Khám</a>
                 @else
 
                 @endif
