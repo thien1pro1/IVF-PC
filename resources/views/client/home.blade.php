@@ -37,15 +37,15 @@
                 </div>
                 <div class="col-md-5 text-md-center mt-md-0 mt-5">
                     <div class="counter">
-                        <div class="timer count-title count-number" data-to="31500" data-speed="1500">31500</div>
+                        <div class="timer count-title count-number" data-to="31500" data-speed="500">31500</div>
                         <p class="count-text mt-sm-2">CẶP GIA ĐÌNH ĐƯỢC TƯ VẤN</p>
                     </div>
                     <div class="counter mt-sm-5 mt-4">
-                        <div class="timer count-title count-number" data-to="54" data-speed="1500">54%</div>
+                        <div class="timer count-title count-number" data-to="74" data-speed="500">54%</div>
                         <p class="count-text mt-sm-2">TỈ LỆ THỤ THAI THÀNH CÔNG</p>
                     </div>
                     <div class="counter mt-sm-5 mt-4">
-                        <div class="timer count-title count-number" data-to="3000" data-speed="1500">3000</div>
+                        <div class="timer count-title count-number" data-to="3000" data-speed="500">3000</div>
                         <p class="count-text mt-sm-2">EM BÉ ĐƯỢC CHÀO ĐỜI</p>
                     </div>
                 </div>

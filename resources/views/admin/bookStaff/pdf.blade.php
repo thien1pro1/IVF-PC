@@ -1,5 +1,26 @@
-{{-- @extends('layouts.admin')
-@section('content') --}}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IVF</title>
+    <!-- google font -->
+    <link href="//fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Template CSS Style link -->
+    
+    <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
+    <link href="//fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+</head>
+<body>
 <style>
   th,td{
     padding: 5px;
@@ -41,8 +62,8 @@
         <td>{{$medicine->name}}</td>
 
         <th scope="col">{{$medicine->pivot->amount}}</th>
-        <td>{{$medicine->price}}</td>
-        <td>{{$medicine->pivot->amount*$medicine->price}}</td>
+        <td  scope="col">{{$medicine->price}}</td>
+        <td scope="col">{{$medicine->pivot->amount*$medicine->price}}</td>
       </tr>
       @php
           $total+=$medicine->pivot->amount*$medicine->price;
@@ -53,3 +74,5 @@
 </table>
 
 <div>tong tien: {{$total}}</div>
+</body>
+</html>

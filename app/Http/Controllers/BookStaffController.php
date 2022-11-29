@@ -43,7 +43,6 @@ class BookStaffController extends Controller
         // $boo = Book::where('register_date',$a);
         $books = Book::orderBy('status','ASC')->where('status','>=',0)->where('register_date',$a)->orderBy('register_date','ASC')->orderBy('register_time','ASC')->get();
 
-        // dd(!empty($boo));
 
         return view('admin.bookStaff.index')->with(compact('books'));
     }

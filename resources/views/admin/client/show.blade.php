@@ -37,59 +37,67 @@
     @endif
 
 
-    <form method="POST" action="{{route('book.update',[$edit->id])}}">
-        @method('PUT')
-        @csrf
+
         <div class="form-group col-6" style="float: right">
           <label for="c1">Tên Chồng</label>
-          <input type="text" class="form-control" id="c1" name="hus_name" value="{{$edit->hus_name}}" >
+          <input type="text" readonly class="form-control" id="c1" name="hus_name" value="{{$edit->hus_name}}" >
           
         </div>
         <div class="form-group col-6">
           <label for="c2">Tên vợ</label>
-          <input type="text" class="form-control" id="c2" name="wife_name" value="{{$edit->wife_name}}" >
+          <input type="text" readonly class="form-control" id="c2" name="wife_name" value="{{$edit->wife_name}}" >
         </div>
         <div class="form-group col-6" style="float: right">
             <label for="c3">Ngày sinh chồng</label>
-            <input type="date" class="form-control" id="c3" name="hus_birthday" value="{{$edit->hus_birthday}}"  >
+            <input type="date" readonly class="form-control" id="c3" name="hus_birthday" value="{{$edit->hus_birthday}}"  >
         </div>
         <div class="form-group col-6">
             <label for="c4">Ngày sinh vợ</label>
-            <input type="date" class="form-control" id="c4" value="{{$edit->wife_birthday}}"  name="wife_birthday" >
+            <input type="date" readonly class="form-control" id="c4" value="{{$edit->wife_birthday}}"  name="wife_birthday" >
         </div>
         <div class="form-group col-6" style="float: right">
             <label for="c5">Email</label>
-            <input type="email" class="form-control" id="c5" value="{{$edit->email}}"  name="email" >
+            <input type="email" readonly class="form-control" id="c5" value="{{$edit->email}}"  name="email" >
         </div>
         <div class="form-group col-6">
             <label for="c6">Số điện thoại</label>
-            <input type="text" class="form-control" id="c6" value="{{$edit->phone}}"  name="phone" >
+            <input type="text" readonly class="form-control" id="c6" value="{{$edit->phone}}"  name="phone" >
         </div>
         <div class="form-group col-6" style="float: right">
             <label for="c7">Ngày Khám</label>
-            <input type="date" class="form-control" id="c7" value="{{$edit->register_date}}"  name="register_date" >
+            <input type="text" readonly class="form-control" id="c7" value="{{$edit->register_date}}"  name="register_date" >
         </div>
         <div class="form-group col-6">
             <label for="c8">Giờ khám</label>
-            <input type="time" class="form-control" id="c8" value="{{$edit->register_time}}"  name="register_time" >
+            <input type="text" readonly class="form-control" id="c8" value="{{$edit->register_time}}"  name="register_time" >
         </div>
         <div class="form-group ">
             <label for="c9">Ghi chú</label>
-            <textarea rows="5" resize="none" type="date" class="form-control" id="c9" value="{{$edit->message}}"  name="message" >{{$edit->message}}</textarea>
+            <textarea rows="5" readonly resize="none" type="date" class="form-control" id="c9" value="{{$edit->message}}"  name="message" >{{$edit->message}}</textarea>
+        </div>
+        <div class="form-group">
+            <label  for="c11">Trạng thái</label>
+            
+                @if($edit->status = 1)
+                <input type="text" readonly class="form-control" id="c8" value="Đã duyệt"   >
+
+                @elseif($edit->status = 2)
+                <input type="text" readonly class="form-control" id="c8" value="Đã Khám"  >
+
+                @elseif($edit->status = 2)
+                <input type="text" readonly class="form-control" id="c8" value="Đã Hủy"   >
+
+                @endif
+            
+        </div>
+        <div class="form-group">
+            <label for="c12">Kết quả</label>
+            <input type="text" readonly class="form-control" id="c12" value="{{$edit->result}}"  name="result" >
         </div>
 
      <button style="float:left margin-right:10px" type="submit" name="addbook" class="btn btn-success">Lưu</button>
-     {{-- <form  method="POST" action="{{route('book.cancel',[$edit->id])}}">
-        @method('PUT')
-        @csrf
-        <button type="submit" name="cancelbook" class="btn btn-danger">Hủy</button>
-    </form> --}}
-    </form>
-    <form style="float:left margin-right:10px" method="POST" action="{{route('book.cancel',[$edit->id])}}">
-        @method('PUT')
-        @csrf
-        <button  type="submit" name="cancelbook" class="btn btn-danger">Hủy</button>
-    </form>
+
+
 
     
     

@@ -47,7 +47,7 @@
         </div>
         <div class="form-group">
             <label for="cc">Lương</label>
-            <input type="text" class="form-control" id="cc" name="salary" value="{{$edit-salary}}" >
+            <input type="text" class="form-control" id="cc" name="salary" value="{{$edit->salary}}" >
             
           </div>
 

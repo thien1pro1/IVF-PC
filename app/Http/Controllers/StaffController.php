@@ -51,7 +51,7 @@ class StaffController extends Controller
         $staff->name = $request->name;
         $staff->email = $request->email;
         $staff->position_id = $request->position_id;
-
+        
         if($request['image']){
             $image = $request['image'];
             $ext = $image->getClientOriginalExtension();
@@ -59,12 +59,11 @@ class StaffController extends Controller
             $name = time().'_'.$image->getClientOriginalName();
             Storage::disk('public')->put($name,File::get($image));
             $staff->image = $name;
- 
+            $staff->save();
         }
         
-      
-        $staff->save();
-        return redirect('/admin/staff')->back()->with('status','Thêm Nhân viên thành công');
+        return redirect('/admin/staff')->with('status','Thêm nhân viên thành công');
+
     }
 
     /**
