@@ -97,4 +97,8 @@ class PositionController extends Controller
         Position::find($id)->delete();
         return redirect()->back()->with('status','Xoá chức vụ thành công');
     }
+    public function comeback(){
+        return redirect('/admin/position');
+
+    }
 }

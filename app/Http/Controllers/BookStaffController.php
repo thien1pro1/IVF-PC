@@ -132,7 +132,8 @@ class BookStaffController extends Controller
         $this->SendFinishEmail($id);
         $books = Book::orderBy('status','ASC')->where('register_date',$a)->orderBy('register_date','ASC')->orderBy('register_time','ASC')->get();
 
-        return view('admin.bookStaff.index')->with('status','Hoàn tất khám!')->with(compact('books'));
+        return redirect('/admin/bookStaff')->with('status','Hoàn tất khám!'); 
+        // ->with(compact('books'));
     }
 
     /**
@@ -151,18 +152,14 @@ class BookStaffController extends Controller
             $book = Book::find($id);
             $email = $book->email;
             
-            $body = 'Anh '.$book->hus_name.' Và chị '.$book->wife_name.
-                    '  khám vào '.$book->register_time.
-    
-    
-                    ' Ngày' .$book->register_date.
-    
-                    ' tại Phòng '.$book->room_id;
+            $body = 'Anh '.$book->hus_name.' Và chị '.$book->wife_name;
             $data = [
                 'subject' => 'Mail kết quả khám vào ngày '.$book->register_date,
                 'body'    => $body,
                 'id'      => $id,
                 'result'  => $book->result,
+                'register_date' => $book->register_date,
+
                 'notify'  => 'Kết quả xét nghiệm được lưu trữ tại bệnh viện',
                 'email'   => $email
             ];
@@ -294,4 +291,9 @@ class BookStaffController extends Controller
         return $pdf->download('book'.$id.'.pdf');
         
     }
+    public function comeback(){
+        return redirect('/admin/bookStaff');
+
+    }
+
 }

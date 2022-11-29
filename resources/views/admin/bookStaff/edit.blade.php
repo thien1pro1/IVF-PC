@@ -93,22 +93,18 @@
             <label for="c12">Kết quả</label>
             <textarea class="form-control" id="c12" value="{{$edit->result}}"  name="result" ></textarea>
         </div>
-     <button style="float: left; margin:5px;" type="submit" name="addbook" class="btn btn-primary">Lưu</button>
+     <button style="float: left; margin:5px; min-width: 100px; " type="submit" name="addbook" class="btn btn-success">Lưu</button>
     </form>
     <form method="POST" action="{{route('book.cancel',[$edit->id])}}">
         @method('PUT')
         @csrf
-        <button style="float: left; margin:5px;" type="submit" name="cancelbook" class="btn btn-primary">Hủy</button>
+        <button style="float: left; min-width: 100px; margin:5px;" type="submit" name="cancelbook" class="btn btn-danger">Hủy lịch</button>
     </form>
 
-    <form method="POST" >
-        @method('PUT')
-        @csrf
-        <button style="float: left; margin:5px;" type="submit" name="cancelbook" class="btn btn-primary">Hủy</button>
-    </form>
-    {{-- <a href="{{route('book.barcodeEmail',[$edit->id])}}"> 
-        <button style="float: left; margin:5px;" href="{{route('book.barcodeEmail',[$edit->id])}}" type="submit" name="cccccc" class="btn btn-primary">Mail</button>
-     </a> --}}
+    <a style="float: left;   min-width: 100px;    margin:5px;" class="btn btn-secondary" href="{{route('comebackBookStaff')}}"> 
+        Hủy
+     </a>
     
 </div>
+<div style="min-height: 70"></div>
 @endsection

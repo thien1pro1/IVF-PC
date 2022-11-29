@@ -95,7 +95,9 @@
             <input type="text" readonly class="form-control" id="c12" value="{{$edit->result}}"  name="result" >
         </div>
 
-     <button style="float:left margin-right:10px" type="submit" name="addbook" class="btn btn-success">Lưu</button>
+        <a style="float: left;   min-width: 100px;    margin:5px;" class="btn btn-secondary" href="{{route('comebackBook')}}"> 
+            Quay lại
+         </a>
 
 
 

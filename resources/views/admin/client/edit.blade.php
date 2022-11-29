@@ -78,18 +78,21 @@
             <textarea rows="5" resize="none" type="date" class="form-control" id="c9" value="{{$edit->message}}"  name="message" >{{$edit->message}}</textarea>
         </div>
 
-     <button style="float:left margin-right:10px" type="submit" name="addbook" class="btn btn-success">Lưu</button>
+     <button style="float:left; margin-right:10px; min-width: 100px;" type="submit" name="addbook" class="btn btn-primary">Lưu</button>
      {{-- <form  method="POST" action="{{route('book.cancel',[$edit->id])}}">
         @method('PUT')
         @csrf
         <button type="submit" name="cancelbook" class="btn btn-danger">Hủy</button>
     </form> --}}
     </form>
-    <form style="float:left margin-right:10px" method="POST" action="{{route('book.cancel',[$edit->id])}}">
+    <form method="POST" action="{{route('book.cancel',[$edit->id])}}">
         @method('PUT')
         @csrf
-        <button  type="submit" name="cancelbook" class="btn btn-danger">Hủy</button>
+        <button  style="float:left;  margin-right:10px;  min-width: 100px;" type="submit" name="cancelbook" class="btn btn-danger">Hủy</button>
     </form>
+    <a style="float: left;   min-width: 100px;    margin-right:5px;" class="btn btn-secondary" href="{{route('comebackBook')}}"> 
+        Hủy
+     </a>
 
     
     

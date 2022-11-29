@@ -125,4 +125,8 @@ class CategogyController extends Controller
 
 
     }
+    public function comeback(){
+        return redirect('/admin/categogy');
+
+    }
 }

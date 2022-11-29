@@ -106,4 +106,8 @@ class RoomController extends Controller
         Room::find($id)->delete();
         return redirect()->back()->with('status','Xoá lượt khám thành công');
     }
+    public function comeback(){
+        return redirect('/admin/room');
+
+    }
 }

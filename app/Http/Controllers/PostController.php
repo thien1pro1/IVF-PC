@@ -142,4 +142,8 @@ class PostController extends Controller
 
 
     }
+    public function comeback(){
+        return redirect('/admin/post');
+
+    }
 }

@@ -218,6 +218,12 @@ class BookController extends Controller
         ];
         
             Mail::to($book->email)->send(new ConfirmEmail($data));
+            if (Mail::failures()) {
+                $book->delete();
+                return redirect()->back()->with('status','Địa chỉ mail bạn nhập không thuộc bất kỳ tài khoản nào');
+                
+            }
+        
             // return response()->json(['Great check your mail box!']);
             
 
@@ -237,7 +243,7 @@ class BookController extends Controller
             ];
             Mail::to($email)->send(new SendHistory($data));
             return redirect()->back()->with('status','Kết quả đã được gửi đến mail của bạn');
-
+            
         }
         else{
             return redirect()->back()->with('status','Không có kết quả ứng với thông tin bạn nhập');
@@ -311,6 +317,10 @@ class BookController extends Controller
                                             
                                             ->orderBy('register_date','ASC')->orderBy('register_time','ASC')->get();
         return view('admin.client.index')->with(compact('books'));
+
+    }
+    public function comeback(){
+        return redirect('/admin/client');
 
     }
 }

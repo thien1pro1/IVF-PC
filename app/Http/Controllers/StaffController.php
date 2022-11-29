@@ -133,4 +133,8 @@ class StaffController extends Controller
         User::find($id)->delete();
         return redirect()->back()->with('status','Xoá nhân viên thành công');
     }
+    public function comeback(){
+        return redirect('/admin/staff');
+
+    }
  }

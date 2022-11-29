@@ -132,4 +132,8 @@ class AnswerController extends Controller
         
 
     }
+    public function comeback(){
+        return redirect('/admin/ask_answer');
+
+    }
 }

@@ -51,7 +51,11 @@
             
           </div>
 
-        <button type="submit" name="addCategogy" class="btn btn-primary">Lưu</button>
+        <button  style="float: left;   min-width: 100px;    margin-right:5px;" type="submit" name="addCategogy" class="btn btn-primary">Lưu</button>
       </form>
+      <a style="float: left;   min-width: 100px;    margin-right:5px;" class="btn btn-secondary" href="{{route('comebackPosition')}}"> 
+        Hủy
+     </a>
+
 </div>
 @endsection

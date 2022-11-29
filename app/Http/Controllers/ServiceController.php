@@ -95,4 +95,8 @@ class ServiceController extends Controller
         Service::find($id)->delete();
         return redirect()->back()->with('status','Xoá dịch vụ thành công');
     }
+    public function comeback(){
+        return redirect('/admin/service');
+
+    }
 }

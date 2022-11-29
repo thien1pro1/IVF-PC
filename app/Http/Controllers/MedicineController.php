@@ -131,4 +131,8 @@ class MedicineController extends Controller
     public function exportPDF(){
 
     }
+    public function comeback(){
+        return redirect('/admin/medicine');
+
+    }
 }

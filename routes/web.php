@@ -60,6 +60,20 @@ Route::get('/admin/profile',function(){
     return view('admin.profile')->with(compact('position'));
 })->name('profile');
 
+Route::get('/comeback-book',[BookController::class,'comeback'])->name('comebackBook');
+Route::get('/comeback-bookstaff',[BookStaffController::class,'comeback'])->name('comebackBookStaff');
+Route::get('/comeback-staff',[StaffController::class,'comeback'])->name('comebackStaff');
+Route::get('/comeback-medicine',[MedicineController::class,'comeback'])->name('comebackMedicine');
+Route::get('/comeback-categogy',[CategogyController::class,'comeback'])->name('comebackCategogy');
+Route::get('/comeback-post',[PostController::class,'comeback'])->name('comebackBook');
+Route::get('/comeback-service',[ServiceController::class,'comeback'])->name('comebackService');
+Route::get('/comeback-position',[PositionController::class,'comeback'])->name('comebackPosition');
+
+
+
+
+
+
 Route::get('admin/bookStaff/bill/{id}',[BillController::class, 'viewBillPDF'])->name('viewBillPDF');
 
 Route::get('client/send-history/',[BookController::class, 'sendHistory'])->name('sendHistory');
