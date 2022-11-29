@@ -17,7 +17,7 @@
         <table class="table align-items-center mb-0">
           <thead>
             <tr>
-              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">#</th>
+              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">STT</th>
               <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tên danh mục</th>
               <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Mô tả</th>
 
@@ -28,7 +28,7 @@
           </thead>
         
           <tbody>
-               @foreach($alldanhmuc as $danhmuc)
+               @foreach($alldanhmuc as $key => $danhmuc)
 
 
          
@@ -37,7 +37,7 @@
                 <div class="d-flex px-2 py-1">
                 
                   <div class="d-flex flex-column justify-content-center">
-                    <h6 class="mb-0 text-xs">{{$danhmuc->id}}</h6>
+                    <h6 class="mb-0 text-xs">{{$key+1}}</h6>
                     <!-- <p class="text-xs text-secondary mb-0">john@creative-tim.com</p> -->
                   </div>
                 </div>

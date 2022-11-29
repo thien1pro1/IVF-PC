@@ -11,7 +11,7 @@ use App\Http\Constants\TypeMedicine;
 
               <div class="col-md-4 mb-4">
             <label for="inputtextnumber"
-              class="form-label">Thêm đơn thuốc</label>
+              class="form-label">Sửa đơn thuốc</label>
             <select style="padding: 10px; margin-top: 10px;" class="form-select" aria-label="Default select example"
               name="w3lServices" id="typeMedicine" onchange="getMedicines()">
               <option selected>Chọn loại thuốc</option>
@@ -31,7 +31,7 @@ use App\Http\Constants\TypeMedicine;
               class="form-label">Thêm thuốc</label>
 
             <select style="padding: 10px; margin-top: 10px;" class="form-select" aria-label="Default select example"
-              name="w3lServices" id="nameMedicine" >
+              name="w3lServices" id="nameMedicine" onchange="getMedicines()">
               <option selected>Chọn thuốc</option>
               
             </select>
@@ -55,7 +55,7 @@ use App\Http\Constants\TypeMedicine;
 
 
 <div class="container">
-    <form method= "POST" action="{{route('addBill',['user'=>$user_id,'book'=>$book->id])}}">
+    <form method= "POST" action="{{route('saveBill',['user'=>$user_id,'book'=>$book->id,'bill'=>$bill->id])}}">
         @csrf
 
     <table id="medicineTable" class="table align-items-center justify-content-center mb-0">
@@ -77,14 +77,22 @@ use App\Http\Constants\TypeMedicine;
                     Xóa</th>
             </tr>
         </thead>
-        
+        @foreach ($bill->medicines()->get() as $key => $medicine)
+            <tr>
+                <td><span class='text-xs font-weight-bold' >{{$key}}</span><input type='hidden' name='id[]' class='text-xs font-weight-bold' value='"+idMedicine+"''></td>
+                <td><span class='text-xs font-weight-bold' >{{$medicine->name}}</span></td>
+                <td><input style='border: 2px solid gray ;   min="0" border-radius: 4px; ' type='number' name='amount[]' id='inputtextnumber' value='{{$medicine->pivot->amount}}'></td>
+                <td><button type='button' class='btn btn-style mt-sm-3' onclick=' deleteMedicine()'>Xóa</button></td>
+            </tr>
+            
+        @endforeach
     </table>
     
 
     <div class="col-md-4 mb-4">
                             <label for="inputtextnumber"
               class="form-label"></label><br>
-          <button type="submit" class="btn btn-style mt-sm-3">Xuất đơn thuốc</button>
+          <button type="submit" class="btn btn-style mt-sm-3">Lưu</button>
         </div>
 
 </form>
@@ -95,7 +103,7 @@ use App\Http\Constants\TypeMedicine;
 
 </div>
 <script>
-    var index = 0;
+    var index = document.getElementById("medicineTable").rows.length-1;
     async function getMedicines(){
         
         var typeMedicine = document.getElementById("typeMedicine").value;

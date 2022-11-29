@@ -34,6 +34,9 @@ use App\Models\Position;
 |
 */
 Route::get('admin/bill/{id}',[BillController::class, 'index'])->name('bill');
+Route::get('admin/edit-bill/{id}',[BillController::class, 'edit'])->name('editBill');
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -74,7 +77,7 @@ Route::get('/comeback-position',[PositionController::class,'comeback'])->name('c
 
 
 
-Route::get('admin/bookStaff/bill/{id}',[BillController::class, 'viewBillPDF'])->name('viewBillPDF');
+Route::get('admin/bookStaff/billPDF/{id}',[BillController::class, 'viewBillPDF'])->name('viewBillPDF');
 
 Route::get('client/send-history/',[BookController::class, 'sendHistory'])->name('sendHistory');
 
@@ -83,6 +86,8 @@ Route::get('/client/home', [PageController::class,'home'])->name('page.home');
 Route::get('/client/category/{id}',[PageController::class,'categoryPage'])->name('page.category');
 Route::get('/client/post/{id}',[PageController::class,'postPage'])->name('page.post');
 Route::post('admin/add-bill/',[BillController::class, 'addBill'])->name('addBill');
+Route::post('admin/save-bill/',[BillController::class, 'saveBill'])->name('saveBill');
+
 
 Route::get('/client/search', [PageController::class,'timkiem'])->name('page.search');
 
@@ -130,6 +135,10 @@ Route::resource('admin/room',RoomController::class);
 
 Route::put('/admin/client/edit/cancel/{id}', [App\Http\Controllers\BookController::class, 'cancel'])->name('book.cancel');
 Route::get('/client/history', [BookController::class, 'history'])->name('book.history');
+
+Route::get('/admin/book-Staff/history/check', [BookStaffController::class, 'history'])->name('bookStaff.history');
+Route::get('/admin/book-Staff/detailHistory', [BookStaffController::class, 'detailHistory'])->name('bookStaff.detailHistory');
+
 Route::get('/book/confirm', [BookController::class, 'confirm'])->name('book.confirm');
 
 Route::get('/client/detailHistory', [BookController::class, 'detailHistory'])->name('book.detailHistory');

@@ -13,8 +13,7 @@ use App\Mail\BarcodeEmail;
 use App\Mail\ConfirmEmail;
 use App\Mail\FinishEmail;
 use App\Mail\sendHistory;
-
-
+use App\Models\File;
 use Exception;
 use Illuminate\Mail\Mailer;
 use Illuminate\Support\Facades\Mail as FacadesMail;
@@ -128,10 +127,10 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {   $files = File::where('book_id',$id)->get();
         $edit = Book::find($id);
         $room = Room::all();
-        return view('admin.client.edit')->with(compact('edit','room'));
+        return view('admin.client.edit')->with(compact('edit','room','files'));
     }
 
     /**
@@ -286,6 +285,7 @@ class BookController extends Controller
 
     }
 
+
     public function detailHistory(Request $request){
         $id = $request->query('id');
         $email = $request->query('email');
@@ -299,6 +299,9 @@ class BookController extends Controller
     public function searchBook(Request $request){
         $search = $request->query('search');
         $status = $request->query('status');
+        if(empty($status) && empty($search)){
+            $this->comeback();
+        }
         $books = Book::when($request->has('status'), function ($query) use ($status) {
                 if($status == 9) {
                     return $query;

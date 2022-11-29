@@ -1,22 +1,7 @@
 
-@extends('layouts.client')
+@extends('layouts.admin')
 @section('content')
-<section class="inner-banner py-5">
-  <style>
-    .inner-banner {
-      background-image: url(https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/images/banner4.jpg);
-    }
-  </style>
-  <div class="w3l-breadcrumb py-lg-5">
-    <div class="container pt-4 pb-sm-4 AboutPageBanner">
-                  <h4 class="inner-text-title font-weight-bold pt-sm-5 pt-4">
-        Detail history</h4>
-      
-                  <ul class="breadcrumbs-custom-path AllBreadcrumbs">
-        <a href="https://wp.w3layouts.com/dentition" rel="nofollow">Home</a>&nbsp;&nbsp;&#187;&nbsp;&nbsp;History      </ul>
-          </div>
-  </div>
-</section>
+
 
 
 <style>
@@ -38,7 +23,7 @@
 }
 </style>
 <div class="container">
-    <h2>Chi tiết ngày {{$book->register_date}}</h2>
+    <h2 >Chi tiết ngày {{$book->register_date}}</h2>
 
 
 

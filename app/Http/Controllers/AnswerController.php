@@ -47,7 +47,7 @@ class AnswerController extends Controller
         $answer->save();
         $this->answerEmail($request->ask_id);
 
-        return redirect()->back()->with('status','Cám ơn bạn đặt câu hỏi. Bác sĩ sẽ trả lời qua mail của bạn');
+        return redirect('/client/ask')->with('status','Đã tư vấn thành công');
 
 
 

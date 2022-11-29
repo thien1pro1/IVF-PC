@@ -661,7 +661,7 @@ table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: under
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 30px;font-family:'Open Sans',sans-serif;" align="left">
         
   <h1 class="v-line-height v-font-size" style="margin: 0px; color: #ba372a; line-height: 100%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: 'Playfair Display',serif; font-size: 45px;">
-    <p><strong>Kết quả khám vào ngày {{$data['register_date']}} của {{$data['body']}}</strong></p>
+    <p><strong>Kết quả khám vào ngày {{$data['register_date']}}</strong></p>
   </h1>
 
       </td>
@@ -695,7 +695,7 @@ table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: under
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 60px;font-family:'Open Sans',sans-serif;" align="left">
         
   <div class="v-line-height" style="line-height: 160%; text-align: center; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 160%;">{{$data['result']}}</p>
+    <p style="font-size: 14px; line-height: 160%;">Bệnh viện Quốc tế Phương Châu kính gửi  của {{$data['body']}}: {{$data['result']}}</p>
   </div>
 
       </td>
@@ -899,23 +899,3 @@ table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: under
 </html>
 
 
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
-<link rel="stylesheet" type="text/css" >
-</head>
-<body>
-    <h3>{{$data['subject']}}</h3><br>
-    <p>{{$data['body']}}</p>
-    <br>
-    <a href="{{route('book.detailHistory',['id'=>$data['id']])}}" style="background-color: lightyellow" style="float:right">Tra cứu</a>
-
-
-
-  
- 
-    
-</body>
-</html>

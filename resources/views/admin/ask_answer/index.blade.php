@@ -21,7 +21,10 @@
               <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tên</th>
               <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Email</th>
 
+
+
               <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Câu hỏi</th>
+              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Trạng thái</th>
               <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Quản lí</th>
               <th class="text-secondary opacity-7"></th>
             </tr>
@@ -33,17 +36,14 @@
             <tr>
 
               <td>
-                <p class="text-xs font-weight-bold mb-0">{{$key}}</p>
+                <p class="text-xs font-weight-bold mb-0">{{$key+1}}</p>
                   
               </td>
                <td>
                
                 <p class="text-xs text-secondary mb-0">{{$ask->name}}</p>
               </td>
-              <td>
-               
-                <p class="text-xs text-secondary mb-0">{{$ask->email}}</p>
-              </td>
+
               {{-- <td class="align-middle text-center text-sm">
                 <div>
                     <img  width="100px" src="{{asset('uploads/'.$ask->image)}}" class="avatar avatar-sm me-3">
@@ -52,15 +52,27 @@
               <td >
                 <span class="text-secondary text-xs font-weight-bold">{{$ask->content}}</span>
               </td>
+              <td>
+               
+                <p class="text-xs text-secondary mb-0">{{$ask->email}}</p>
+              </td>
+              <td>
+                @if ($ask->status==0)
+                <p class="text-xs text-warning mb-0">Chưa trả lời</p>
+                @else
+                <p class="text-xs text-success mb-0">Đã trả lời</p>
+                    
+                @endif
+                
+              </td>
 
               <td class="align-middle">
-
+                @if ($ask->status ==0)
                 <a href="{{route('ask_answer.edit',[$ask->id])}}" class="btn btn-light">Trả lời</a>
-
-
-  
-
-
+                @else
+                <a href="{{route('ask_answer.edit',[$ask->id])}}" class="btn btn-light">Trả lời lại</a>
+                @endif
+                
               </td>
             </tr>
 

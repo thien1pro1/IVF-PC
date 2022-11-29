@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2022 at 12:16 PM
+-- Generation Time: Nov 29, 2022 at 06:06 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -36,6 +36,19 @@ CREATE TABLE `answers` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `answers`
+--
+
+INSERT INTO `answers` (`id`, `user`, `ask_id`, `content`, `created_at`, `updated_at`) VALUES
+(11, 'Nguyễn Đăng Thiên', '6', '<p>Chào anh. Tình trạng của anh có thể là do rối loạn testocteron. Anh có thể đến bệnh viện để kiểm tra&nbsp;</p>', '2022-11-29 09:06:05', '2022-11-29 09:06:05'),
+(12, 'Nguyễn Đăng Thiên', '6', '<p>Chào anh. Tình trạng của anh có thể là do rối loạn testocteron. Anh có thể đến bệnh viện để kiểm tra&nbsp;</p>', '2022-11-29 09:06:11', '2022-11-29 09:06:11'),
+(13, 'Nguyễn Đăng Thiên', '6', '<p>Chào anh. Tình trạng của anh có thể là do rối loạn testocteron. Anh có thể đến bệnh viện để kiểm tra&nbsp;</p>', '2022-11-29 09:06:15', '2022-11-29 09:06:15'),
+(14, 'Nguyễn Đăng Thiên', '6', '<p>đ</p>', '2022-11-29 09:09:32', '2022-11-29 09:09:32'),
+(15, 'Nguyễn Đăng Thiên', '6', '<p>ss</p>', '2022-11-29 09:11:08', '2022-11-29 09:11:08'),
+(16, 'Nguyễn Đăng Thiên', '6', '<p>dd</p>', '2022-11-29 09:11:58', '2022-11-29 09:11:58'),
+(17, 'Nguyễn Đăng Thiên', '6', '<p>s</p>', '2022-11-29 09:14:39', '2022-11-29 09:14:39');
+
 -- --------------------------------------------------------
 
 --
@@ -56,6 +69,13 @@ CREATE TABLE `asks` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `asks`
+--
+
+INSERT INTO `asks` (`id`, `name`, `email`, `phone`, `years`, `gender`, `type`, `content`, `status`, `created_at`, `updated_at`) VALUES
+(6, 'Nguyễn Đăng Thiên', 'thien1pro1@gmail.com', '0585253470', 2000, 0, 'IVF', 'Chào bác sĩ. Tôi khi đi ngoài đau buốt, lúc quan hệ thì lâu ra. Tôi bị sao ạ', 1, '2022-11-29 09:04:59', '2022-11-29 09:06:05');
+
 -- --------------------------------------------------------
 
 --
@@ -71,6 +91,14 @@ CREATE TABLE `bills` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `bills`
+--
+
+INSERT INTO `bills` (`id`, `book_id`, `user_id`, `total`, `created_at`, `updated_at`) VALUES
+(54, 49, 1, 0, '2022-11-29 08:59:44', '2022-11-29 08:59:44'),
+(55, 50, 1, 26000, '2022-11-29 09:48:05', '2022-11-29 09:48:05');
+
 -- --------------------------------------------------------
 
 --
@@ -82,6 +110,15 @@ CREATE TABLE `bill_medicines` (
   `medicine_id` int(11) NOT NULL,
   `amount` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bill_medicines`
+--
+
+INSERT INTO `bill_medicines` (`bill_id`, `medicine_id`, `amount`) VALUES
+(54, 12, 1),
+(55, 3, 1),
+(55, 8, 1);
 
 -- --------------------------------------------------------
 
@@ -123,7 +160,8 @@ INSERT INTO `books` (`id`, `wife_name`, `hus_name`, `phone`, `email`, `wife_birt
 (46, 'Nguyễn Kim Yến', 'Phạm Hoàng Học', '0345689654', 'hochochc@gmail.com', '1993-09-21', '1990-06-15', '2022-11-11', '07:00:00', 2, 2, 'Tối muốn sử dụng dịch vu IVF Phương Châu', 'Kết quả Hoàn thành quá trình thụ tinh nhân tạo, Hen 2 tuần kiểm tra', '2022-11-28 09:02:22', '2022-11-28 09:03:13', 3),
 (47, 'Phạm Thúy Hằng', 'Dương Tấn Lực', '0896777567', 'luc@gmail.com', '2000-03-26', '1997-05-19', '2022-11-29', '07:00:00', NULL, -1, 'ko có gì', NULL, '2022-11-28 10:37:24', '2022-11-28 10:37:24', NULL),
 (48, 'Dương Tố Như', 'Từ Văn Tài', '0543567890', 'thien1pro1@gmail.com', '1999-02-02', '1980-03-12', '2022-11-29', '07:00:00', NULL, -1, 'no', NULL, '2022-11-28 10:40:53', '2022-11-28 10:40:53', NULL),
-(49, 'Dương Tố Như', 'Từ Văn Tài', '0543567890', 'thien1pro1@gmail.com', '1999-02-02', '1980-03-12', '2022-11-29', '07:00:00', NULL, 0, 'no', NULL, '2022-11-28 10:40:58', '2022-11-28 10:41:12', NULL);
+(49, 'Dương Tố Như', 'Từ Văn Tài', '0543567890', 'thien1pro1@gmail.com', '1999-02-02', '1980-03-12', '2022-11-29', '07:00:00', NULL, 0, 'no', NULL, '2022-11-28 10:40:58', '2022-11-28 10:41:12', NULL),
+(50, 'Trần Yến Nhi', 'Trần Hạo Thiên', '0585253470', 'thien1pro1@gmail.com', '1993-09-21', '1990-06-15', '2022-11-29', '08:00:00', 1, 2, 'Tôi muốn kiểm tra sức khỏe cho vợ sau khi dùng gói IVF', 'Kết quả xét nghiệm bình thường', '2022-11-28 09:02:22', '2022-11-29 10:02:19', NULL);
 
 -- --------------------------------------------------------
 
@@ -187,17 +225,13 @@ CREATE TABLE `feedbacks` (
 --
 
 INSERT INTO `feedbacks` (`id`, `name`, `email`, `content`, `status`, `post_id`, `created_at`, `updated_at`) VALUES
-(1, 'Nguyễn Đăng Thiên', 'thien@gmail.com', 'heloku', 0, 2, '2022-11-25 19:49:36', '2022-11-25 19:49:36'),
-(2, 'Nguyễn Đăng Thiên', 'thien@gmail.com', 'heloku', 0, 2, '2022-11-25 19:50:50', '2022-11-25 19:50:50'),
-(3, 'Nguyễn Đăng Thiên', 'thien@gmail.com', 'heloku', 0, 2, '2022-11-25 19:50:58', '2022-11-25 19:50:58'),
-(4, 'Nguyễn Đăng Thiên', 'thien@gmail.com', 'heloku', 0, 2, '2022-11-25 19:51:17', '2022-11-25 19:51:17'),
 (5, 'Nguyễn Đăng Thiên', 'thien1pro1@gmail.com', 'Bài viết rất bổ ich', 0, 2, '2022-11-25 20:19:29', '2022-11-25 20:19:29'),
 (6, 'Thiên', 'thien1pro1@gmail.com', 'bai viet tao lao', 0, 6, '2022-11-26 03:01:43', '2022-11-26 03:01:43'),
-(7, 'Thiên', 'thien1pro1@gmail.com', 'bai viet tao lao', 0, 6, '2022-11-26 03:03:21', '2022-11-26 03:03:21'),
+(7, 'Thiên', 'thien1pro1@gmail.com', 'Bài viết rất hay', 0, 6, '2022-11-26 03:03:21', '2022-11-26 03:03:21'),
 (8, 'thien', 'thien@gmail.com', 'ok', 0, 6, '2022-11-26 03:03:34', '2022-11-26 03:03:34'),
 (9, 'thien', 'thien@gmail.com', 'bai viet rat bo ich, cam on benh vien', 0, 6, '2022-11-26 03:05:36', '2022-11-26 03:05:36'),
-(10, 'Pham Hoang Hoc', 'hochochc@gmail.com', 'hehee', 0, 6, '2022-11-26 03:06:49', '2022-11-26 03:06:49'),
-(11, 'Nguyễn Đăng Thiên', 'thien1pro1@gmail.com', 'hello', 0, 10, '2022-11-27 23:14:21', '2022-11-27 23:14:21');
+(10, 'Pham Hoang Hoc', 'hochochc@gmail.com', 'oke. Cám ơn đội ngũ bác sĩ của BVQT PC', 0, 6, '2022-11-26 03:06:49', '2022-11-26 03:06:49'),
+(11, 'Nguyễn Đăng Thiên', 'thien1pro1@gmail.com', 'oke lắm ạ :)', 0, 10, '2022-11-27 23:14:21', '2022-11-27 23:14:21');
 
 -- --------------------------------------------------------
 
@@ -535,7 +569,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `image`, `email_verified_at`, `position_id`, `password`, `remember_token`, `created_at`, `updated_at`, `avatar`) VALUES
-(1, 'Nguyễn Đăng Thiên', 'thien1pro1@gmail.com', '1669447502_thien.jpg', NULL, 0, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', 'kkhZ0K1sP6JwswTUOlkITff72iZuOCpqMko6VkLHjdIrziUUHKHGoa60a62J', '2022-10-06 09:51:23', '2022-11-26 00:25:02', ''),
+(1, 'Nguyễn Đăng Thiên', 'thien1pro1@gmail.com', '1669447502_thien.jpg', NULL, 0, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', 'XpRqzMxTOJb1To6jVmUGNWqZHgdP4GRYdgheuwqrBMqOoiAhC9o1y2e8n8X3', '2022-10-06 09:51:23', '2022-11-26 00:25:02', ''),
 (2, 'Phạm Hoàng Học', 'hoc@gmail.com', '1669654804_hoc.jpg', NULL, 1, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', NULL, '2022-10-07 09:33:54', '2022-11-28 10:00:04', ''),
 (3, 'Lê Phú Cường', 'thien1pr@gmail.com', '1669655387_bscuong.jpg', NULL, 2, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', NULL, '2022-11-25 22:16:05', '2022-11-28 10:09:47', NULL),
 (4, 'Hoàng Xuân Hải', 'Hai123@gmail.com', '1669654346_BS_hai.jpg', NULL, 2, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', NULL, '2022-11-28 09:52:26', '2022-11-28 09:52:26', NULL),
@@ -695,25 +729,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `answers`
 --
 ALTER TABLE `answers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `asks`
 --
 ALTER TABLE `asks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `bills`
 --
 ALTER TABLE `bills`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `categogies`
