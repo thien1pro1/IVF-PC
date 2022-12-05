@@ -17,6 +17,7 @@ use App\Http\Controllers\PositionController;
 use App\Http\Controllers\MedicineController;
 
 use App\Http\Controllers\BillController;
+use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\FeedBackController;
 use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Auth;
@@ -55,9 +56,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::get('/admin/management_post',function(){
 //     return view('admin.management_post');
 // });
-// Route::get('/admin/management_customer',function(){
-//     return view('admin.management_customer');
-// });
+
+Route::resource('admin/calendar',CalendarController::class);
+
 Route::get('/admin/profile',function(){
     $position = Position::all();
     return view('admin.profile')->with(compact('position'));

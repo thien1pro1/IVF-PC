@@ -39,6 +39,8 @@
 </style>
 <div class="container">
     <h2>Chi tiết ngày {{$book->register_date}}</h2>
+    <h2>Bác sĩ phụ trách: {{$user}}</h2>
+
 
 
 
@@ -72,12 +74,12 @@
 
         <div class="form-group ">
             <label for="c9">Ghi chú</label>
-            <textarea rows="5" resize="none" type="date" readonly class="form-control" id="c9" value="{{$book->message}}"  name="message" ></textarea>
+            <textarea rows="5" resize="none" type="date" readonly class="form-control" id="c9" value="{{$book->message}}"  name="message" >{{$book->message}}</textarea>
         </div>
 
         <div class="form-group">
             <label for="c12">Kết quả</label>
-            <textarea class="form-control" id="c12" readonly value="{{$book->result}}"  name="result" ></textarea>
+            <textarea class="form-control" id="c12" readonly value="{{$book->result}}"  name="result" >{{$book->result}}</textarea>
         </div>
 
  

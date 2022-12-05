@@ -14,6 +14,7 @@ use App\Mail\ConfirmEmail;
 use App\Mail\FinishEmail;
 use App\Mail\sendHistory;
 use App\Models\File;
+use App\Models\User;
 use Exception;
 use Illuminate\Mail\Mailer;
 use Illuminate\Support\Facades\Mail as FacadesMail;
@@ -289,11 +290,12 @@ class BookController extends Controller
     public function detailHistory(Request $request){
         $id = $request->query('id');
         $email = $request->query('email');
-        $book = Book::where('id',$id)->first();
+        $book = Book::find($id);
+        $user = User::find($book->user_id)->name;
 
         return view('client.detailHistory',[
             'id'=>$id
-        ])->with(compact('book'));
+        ])->with(compact('book','user'));
 
     }
     public function searchBook(Request $request){

@@ -11,6 +11,7 @@ class Ask extends Model
         'name',
         'email',
         'phone',
+        'content',
         'status'
     ];
     use HasFactory;

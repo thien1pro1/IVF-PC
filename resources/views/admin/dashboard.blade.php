@@ -98,74 +98,7 @@
                             </div>
                         </li>
                         @endforeach
-                        {{-- <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
-                            <div class="w-100">
-                                <div class="d-flex align-items-center mb-2">
-                                    <a class="btn btn-twitter btn-simple mb-0 p-0" href="javascript:;">
-                                        <i class="fab fa-twitter fa-lg"></i>
-                                    </a>
-                                    <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">Twitter</span>
-                                    <span class="ms-auto text-sm font-weight-bold">40%</span>
-                                </div>
-                                <div>
-                                    <div class="progress progress-md">
-                                        <div class="progress-bar bg-gradient-dark w-40" role="progressbar"
-                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
-                            <div class="w-100">
-                                <div class="d-flex align-items-center mb-2">
-                                    <a class="btn btn-reddit btn-simple mb-0 p-0" href="javascript:;">
-                                        <i class="fab fa-reddit fa-lg"></i>
-                                    </a>
-                                    <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">Reddit</span>
-                                    <span class="ms-auto text-sm font-weight-bold">30%</span>
-                                </div>
-                                <div>
-                                    <div class="progress progress-md">
-                                        <div class="progress-bar bg-gradient-dark w-30" role="progressbar"
-                                            aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
-                            <div class="w-100">
-                                <div class="d-flex align-items-center mb-2">
-                                    <a class="btn btn-youtube btn-simple mb-0 p-0" href="javascript:;">
-                                        <i class="fab fa-youtube fa-lg"></i>
-                                    </a>
-                                    <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">Youtube</span>
-                                    <span class="ms-auto text-sm font-weight-bold">25%</span>
-                                </div>
-                                <div>
-                                    <div class="progress progress-md">
-                                        <div class="progress-bar bg-gradient-dark w-25" role="progressbar"
-                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
-                            <div class="w-100">
-                                <div class="d-flex align-items-center mb-2">
-                                    <a class="btn btn-slack btn-simple mb-0 p-0" href="javascript:;">
-                                        <i class="fab fa-slack fa-lg"></i>
-                                    </a>
-                                    <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">Slack</span>
-                                    <span class="ms-auto text-sm font-weight-bold">15%</span>
-                                </div>
-                                <div>
-                                    <div class="progress progress-md">
-                                        <div class="progress-bar bg-gradient-dark w-15" role="progressbar"
-                                            aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li> --}}
+
                     </ul>
                 </div>
             </div>

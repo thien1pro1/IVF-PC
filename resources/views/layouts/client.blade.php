@@ -7,16 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>IVF</title>
     <!-- google font -->
-    <link href="//fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    <link href="{{asset('frontend/css/css1.css')}}"
         rel="stylesheet">
     <!-- Template CSS Style link -->
     
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
-    <link href="//fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="{{asset('frontend/css/css2.css')}}" rel="stylesheet">
+    <link href="{{asset('frontend/css/css3.css')}}" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{asset('frontend/css/css5.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
 </head>
@@ -545,5 +545,6 @@
     <!-- //bootstrap -->
     <!-- //Js scripts -->
 </body>
+
 
 </html>

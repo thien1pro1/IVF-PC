@@ -109,8 +109,15 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
           </div>
           <div class="col-md-6 mb-4">
             <label for="inputtextnumber" class="form-label">Ngày tháng năm sinh vợ</label>
-            <input type="date" name="wife_birthday" id="dateofbirth" required="">
+            <input type="date" id="wife_birthday" name="wife_birthday"  required >
           </div>
+          <script>
+            var newdate = new Date();
+            newdate.setYear(newdate.getFullYear() - 18);
+            var wife_birthday = document.getElementById("wife_birthday");
+            wife_birthday.max = new Date(newdate).toISOString().split("T")[0];
+
+          </script>
 
           <div class="col-md-6 mb-4">
             <label for="inputtextnumber"
@@ -120,8 +127,15 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
           </div>
           <div class="col-md-6 mb-4">
             <label for="inputtextnumber" class="form-label">Ngày tháng năm sinh chồng</label>
-            <input type="date" name="hus_birthday" id="dateofbirth" required="">
+            <input type="date" name="hus_birthday" id="hus_birthday" required="">
           </div>
+          <script>
+            var newdate = new Date();
+            newdate.setYear(newdate.getFullYear() - 18);
+            var wife_birthday = document.getElementById("hus_birthday");
+            wife_birthday.max = new Date(newdate).toISOString().split("T")[0];
+
+          </script>
 
           <div class="col-md-6 mb-4">
             <label for="inputtextnumber"
@@ -142,12 +156,17 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
           <div class="col-md-6 mb-4">
             <label for="inputtextnumber" class="form-label">Tôi muốn đăng kí đến khám vào ngày</label>
-            <input type="date" name="register_date" id="dateofbirth" required="">
+            <input type="date"  id="register_date" name="register_date" id="dateofbirth" required="">
           </div>
+          <script>
+            register_date = document.getElementById("register_date").min = new Date().toISOString().split("T")[0];
+            
+
+          </script>
 
           <div class="col-md-6 mb-4">
             <label for="inputtextnumber" class="form-label">Vào lúc mấy giờ?</label>
-            <select name="register_time">
+            <select name="register_time" id="register_time" onchange="checkRegisterTime()">
             
               @foreach ($time as $t){
                 <option value="{{$t}}" >{{$t}}</option>
@@ -155,7 +174,36 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                   
               @endforeach
             </select>
-          </div>
+          </div>          
+          <script>
+            var register_date = document.getElementById("register_date").min = new Date().toISOString().split("T")[0];
+            var ccday = document.getElementById("register_date");
+
+            function checkRegisterTime(){
+            var newdate = new Date();
+            hour = newdate.getHours();
+            minute = newdate.getMinutes();
+            day = newdate.getDate();
+            console.log(document.getElementById("register_time").value);
+            var register_time = document.getElementById("register_time").value;
+            
+            register_time_hour = parseInt(register_time.split(":")[0]);
+            register_time_minute = parseInt(register_time.split(":")[1]);
+            console.log(day);
+            console.log(ccday);
+            
+              if(register_time_hour<hour){
+                alert("Giờ bạn chọn ko hợp lệ");
+              }
+              else if(register_time_hour==hour){
+                if(register_time_minute<minute){
+                    alert("Giờ bạn chọn ko hợp lệ cc");
+                }
+            
+          }
+        }
+          </script>
+
 
           <div  class="col-md-12 mb-12">
             <label for="inputtextname" class="form-label">Thông tin thêm cho nhân viên</label>

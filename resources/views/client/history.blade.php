@@ -4,7 +4,7 @@
 <section class="inner-banner py-5">
   <style>
     .inner-banner {
-      background-image: url(https://wp.w3layouts.com/dentition/wp-content/themes/dentition/assets/images/banner4.jpg);
+      background-image: url("/frontend/images/banner5.jpg");
     }
   </style>
   <div class="w3l-breadcrumb py-lg-5">
@@ -13,7 +13,7 @@
         History</h4>
       
                   <ul class="breadcrumbs-custom-path AllBreadcrumbs">
-        <a href="https://wp.w3layouts.com/dentition" rel="nofollow">Home</a>&nbsp;&nbsp;&#187;&nbsp;&nbsp;History      </ul>
+        <a href="" rel="nofollow">Home</a>&nbsp;&nbsp;&#187;&nbsp;&nbsp;History      </ul>
           </div>
   </div>
 </section>

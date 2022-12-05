@@ -19,8 +19,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $medicines = Medicine::orderBy('register_time','ASC')->get();
-        dd($medicines);
+        $medicines = Medicine::orderBy('type','ASC')->get();
+
         $categogy = Categogy::all();
         $noActive_categogy = Categogy::where('status',1);
         $books = Book::orderBy('email','ASC')->count();
