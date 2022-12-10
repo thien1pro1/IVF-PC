@@ -27,8 +27,8 @@
   --bs-light: #e9ecef;
   --bs-dark: #344767;
   --bs-white: #fff;
-  --bs-font-sans-serif: Open Sans;
-  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-font-sans-serif: "SVN-Gilroy";
+  --bs-font-monospace: "SVN-Gilroy";
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }
 
@@ -46,7 +46,7 @@
 
 body {
   margin: 0;
-  font-family: var(--bs-font-sans-serif);
+  font-family: "SVN-Gilroy";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -19386,7 +19386,7 @@ fieldset:disabled .btn {
 }
 
 .card .card-body {
-  font-family: "Open Sans";
+  font-family: "SVN-Gilroy";
   padding: 1.5rem;
 }
 
