@@ -1,6 +1,11 @@
 @extends('layouts.admin')
 @section('content')
-    <div id="page-wrapper">
+@php
+use App\Http\Constants\BookingStatus;
+use App\Http\Constants\TypeMedicine;
+
+@endphp
+    <div id="col-12">
         <!DOCTYPE html>
         <html>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
@@ -54,7 +59,8 @@
     </div>
  --}}
 
-    <div class="row mt-4">
+<div class="col-12">
+    <div class="row mt-4 col-12">
         <div class="col-sm-6">
             <div class="card h-100">
                 <div class="card-header pb-0 p-3">
@@ -70,7 +76,7 @@
                 </div>
                 <div class="card-body p-3">
                     <ul class="list-group">
-                        @foreach($medicines as $key => $medicine)
+                        @foreach($medicines_1 as $key => $medicine)
                         <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
                             <div class="w-100">
                                 <div class="d-flex align-items-center mb-2">
@@ -104,139 +110,263 @@
             </div>
         </div>
         <div class="col-sm-6">
-            <div class="card h-100 mt-4 mt-md-0">
+            <div class="card h-100">
                 <div class="card-header pb-0 p-3">
                     <div class="d-flex align-items-center">
-                        <h6>Pages</h6>
+                        <h6 class="mb-0">Thuoc</h6>
                         <button type="button"
-                            class="btn btn-icon-only btn-rounded btn-outline-success mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
+                            class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
                             data-bs-toggle="tooltip" data-bs-placement="bottom"
-                            title="Data is based from sessions and is 100% accurate">
-                            <i class="fas fa-check"></i>
+                            title="See how much traffic do you get from social media">
+                            <i class="fas fa-info"></i>
                         </button>
                     </div>
                 </div>
-                <div class="card-body px-3 pt-0 pb-2">
-                    <div class="table-responsive p-0">
-                        <table class="table align-items-center justify-content-center mb-0">
-                            <thead>
-                                <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Page</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Page Views</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Avg. Time</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Bounce Rate</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">1. /bits</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">345</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">00:17:07</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">40.91%</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">2. /pages/argon-dashboard</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">520</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">00:23:13</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">30.14%</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">3. /pages/soft-ui-dashboard</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">122</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">00:3:10</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">54.10%</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">4. /bootstrap-themes</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">1,900</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">00:30:42</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">20.93%</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">5. /react-themes</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">1,442</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">00:31:50</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">34.98%</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">6. /product/argon-dashboard-angular</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">201</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">00:12:42</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">21.4%</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">7. /product/material-dashboard-pro</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">2,115</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">00:50:11</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">34.98%</p>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="card-body p-3">
+                    <ul class="list-group">
+                        @foreach($medicines_2 as $key => $medicine)
+                        <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                            <div class="w-100">
+                                <div class="d-flex align-items-center mb-2">
+                                    <a class="btn btn-facebook btn-simple mb-0 p-0" href="javascript:;">
+                                        <i class="fab fa-facebook fa-lg"></i>
+                                    </a>
+                                    <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">{{$medicine->name}}</span>
+                                    <span class="ms-auto text-sm font-weight-bold">{{$medicine->amount/100}}%</span>
+                                </div>
+                                <div>
+                                    <div class="progress progress-md">  
+                                        @if ($medicine->amount/100 >= 70)
+                                        <div class="progress-bar bg-gradient-success w-{{$medicine->amount/100}}" role="progressbar"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @elseif($medicine->amount/100 >= 40)
+                                        <div class="progress-bar bg-gradient-info w-{{$medicine->amount/100}}" role="progressbar"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @else
+                                        <div class="progress-bar bg-gradient-danger w-{{$medicine->amount/100}}" role="progressbar"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @endif
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        @endforeach
+
+                    </ul>
                 </div>
             </div>
         </div>
+        
+
     </div>
+
+    <div class="row mt-4 col-12">
+        <div class="col-sm-6">
+            <div class="card h-100">
+                <div class="card-header pb-0 p-3">
+                    <div class="d-flex align-items-center">
+                        <h6 class="mb-0">Thuoc</h6>
+                        <button type="button"
+                            class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            title="See how much traffic do you get from social media">
+                            <i class="fas fa-info"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body p-3">
+                    <ul class="list-group">
+                        @foreach($medicines_3 as $key => $medicine)
+                        <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                            <div class="w-100">
+                                <div class="d-flex align-items-center mb-2">
+                                    <a class="btn btn-facebook btn-simple mb-0 p-0" href="javascript:;">
+                                        <i class="fab fa-facebook fa-lg"></i>
+                                    </a>
+                                    <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">{{$medicine->name}}</span>
+                                    <span class="ms-auto text-sm font-weight-bold">{{$medicine->amount/100}}%</span>
+                                </div>
+                                <div>
+                                    <div class="progress progress-md">  
+                                        @if ($medicine->amount/100 >= 70)
+                                        <div class="progress-bar bg-gradient-success w-{{$medicine->amount/100}}" role="progressbar"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @elseif($medicine->amount/100 >= 40)
+                                        <div class="progress-bar bg-gradient-info w-{{$medicine->amount/100}}" role="progressbar"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @else
+                                        <div class="progress-bar bg-gradient-danger w-{{$medicine->amount/100}}" role="progressbar"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @endif
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        @endforeach
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card h-100">
+                <div class="card-header pb-0 p-3">
+                    <div class="d-flex align-items-center">
+                        <h6 class="mb-0">Thuoc</h6>
+                        <button type="button"
+                            class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            title="See how much traffic do you get from social media">
+                            <i class="fas fa-info"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body p-3">
+                    <ul class="list-group">
+                        @foreach($medicines_4 as $key => $medicine)
+                        <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                            <div class="w-100">
+                                <div class="d-flex align-items-center mb-2">
+                                    <a class="btn btn-facebook btn-simple mb-0 p-0" href="javascript:;">
+                                        <i class="fab fa-facebook fa-lg"></i>
+                                    </a>
+                                    <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">{{$medicine->name}}</span>
+                                    <span class="ms-auto text-sm font-weight-bold">{{$medicine->amount/100}}%</span>
+                                </div>
+                                <div>
+                                    <div class="progress progress-md">  
+                                        @if ($medicine->amount/100 >= 70)
+                                        <div class="progress-bar bg-gradient-success w-{{$medicine->amount/100}}" role="progressbar"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @elseif($medicine->amount/100 >= 40)
+                                        <div class="progress-bar bg-gradient-info w-{{$medicine->amount/100}}" role="progressbar"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @else
+                                        <div class="progress-bar bg-gradient-danger w-{{$medicine->amount/100}}" role="progressbar"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @endif
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        @endforeach
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row mt-4 col-12">
+        <div class="col-sm-6">
+            <div class="card h-100">
+                <div class="card-header pb-0 p-3">
+                    <div class="d-flex align-items-center">
+                        <h6 class="mb-0">Thuoc</h6>
+                        <button type="button"
+                            class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            title="See how much traffic do you get from social media">
+                            <i class="fas fa-info"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body p-3">
+                    <ul class="list-group">
+                        @foreach($medicines_4 as $key => $medicine)
+                        <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                            <div class="w-100">
+                                <div class="d-flex align-items-center mb-2">
+                                    <a class="btn btn-facebook btn-simple mb-0 p-0" href="javascript:;">
+                                        <i class="fab fa-facebook fa-lg"></i>
+                                    </a>
+                                    <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">{{$medicine->name}}</span>
+                                    <span class="ms-auto text-sm font-weight-bold">{{$medicine->amount/100}}%</span>
+                                </div>
+                                <div>
+                                    <div class="progress progress-md">  
+                                        @if ($medicine->amount/100 >= 70)
+                                        <div class="progress-bar bg-gradient-success w-{{$medicine->amount/100}}" role="progressbar"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @elseif($medicine->amount/100 >= 40)
+                                        <div class="progress-bar bg-gradient-info w-{{$medicine->amount/100}}" role="progressbar"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @else
+                                        <div class="progress-bar bg-gradient-danger w-{{$medicine->amount/100}}" role="progressbar"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @endif
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        @endforeach
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row mt-4 col-12">
+        <div class="col-sm-6">
+            <div class="card h-100">
+                <div class="card-header pb-0 p-3">
+                    <div class="d-flex align-items-center">
+                        <h6 class="mb-0">Thuoc</h6>
+                        <button type="button"
+                            class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            title="See how much traffic do you get from social media">
+                            <i class="fas fa-info"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body p-3">
+                    <ul class="list-group">
+                        @foreach($medicines_5 as $key => $medicine)
+                        <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                            <div class="w-100">
+                                <div class="d-flex align-items-center mb-2">
+                                    <a class="btn btn-facebook btn-simple mb-0 p-0" href="javascript:;">
+                                        <i class="fab fa-facebook fa-lg"></i>
+                                    </a>
+                                    <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">{{$medicine->name}}</span>
+                                    <span class="ms-auto text-sm font-weight-bold">{{$medicine->amount/100}}%</span>
+                                </div>
+                                <div>
+                                    <div class="progress progress-md">  
+                                        @if ($medicine->amount/100 >= 70)
+                                        <div class="progress-bar bg-gradient-success w-{{$medicine->amount/100}}" role="progressbar"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @elseif($medicine->amount/100 >= 40)
+                                        <div class="progress-bar bg-gradient-info w-{{$medicine->amount/100}}" role="progressbar"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @else
+                                        <div class="progress-bar bg-gradient-danger w-{{$medicine->amount/100}}" role="progressbar"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @endif
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        @endforeach
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
     <footer class="footer pt-3  ">
         <div class="container-fluid">
             <div class="row align-items-center justify-content-lg-between">

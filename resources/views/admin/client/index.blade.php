@@ -2,6 +2,7 @@
 @section('content')
     @php
         use App\Http\Constants\BookingStatus;
+        use App\Http\Constants\TypeMedicine;
         
     @endphp
     <div class="container">
@@ -31,18 +32,18 @@
 
 
 
-                        <form action="{{ route('searchBook') }}" method="GET" class="d-flex search-header">
+                        <form action="{{ route('book.index') }}" method="GET" class="d-flex search-header">
 
 
 
-                            <input style="height: 50px ;width: 400px; margin-right: 10px; margin-left: 10px;" name="search"
+                            <input style="height: 50px ;width: 300px; margin-right: 10px; margin-left: 10px;" name="search"
                         
                                 class="form-control" type="search" placeholder="Bạn muốn tìm..." aria-label="Search"
-                                required>
+                                >
 
 
 
-                            <select style="height: 50px ;width: 200px; margin-right: 10px;" class="form-select"
+                            <select style="height: 50px ;width: 150px; margin-right: 10px;" class="form-select"
                                 name="status" aria-label="Default select example">
                                 <option value="9">Tất cả</option>
                                 <option value="{{ BookingStatus::$CONFIRMED_EMAIL }}">Chờ duyệt</option>
@@ -52,6 +53,16 @@
 
                                 <option value="{{ BookingStatus::$CANCELED }}">Đã hủy</option>
                             </select>
+                            
+                            <input style="height: 50px ;width: 200px; margin-right: 10px; margin-left: 10px;" 
+                            name="date_from" value="{{$date_from}}"
+                                class="form-control" type="date"  aria-label="Search"
+                                > 
+                               <label style="height: 50px ;width: 45px; border:none;" class="form-control"> đến</label> 
+                            <input style="height: 50px ;width: 200px; margin-right: 10px; margin-left: 10px;" value="{{$date_to}}" 
+                            name="date_to"
+                            class="form-control" type="date"  aria-label="Search"
+                            >
                             <button style="height: 50px ;width: 100px; margin-right: 10px;" class="form-control"
                                 type="submit" aria-label="Search" required> Tìm kiếm
                             </button>

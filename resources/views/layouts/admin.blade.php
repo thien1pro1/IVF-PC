@@ -395,7 +395,7 @@ filebrowserWindowHeight : 500
                                 <div class="dropdown-menu dropdown-menu-end d-sm-inline d-none" aria-labelledby="navbarDropdown">
                                   <form method="POST" action="{{route('logout')}}">
                                     @csrf
-                                      <input type="submit" value="Logout">
+                                      <button style="border:none" type="submit" value="Logout">Logout</button>
                                   </form>  
 
 

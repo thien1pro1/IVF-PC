@@ -156,7 +156,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
           <div class="col-md-6 mb-4">
             <label for="inputtextnumber" class="form-label">Tôi muốn đăng kí đến khám vào ngày</label>
-            <input type="date"  id="register_date" name="register_date" id="dateofbirth" required="">
+            <input type="date"  id="register_date" name="register_date"  required>
           </div>
           <script>
             register_date = document.getElementById("register_date").min = new Date().toISOString().split("T")[0];
@@ -177,29 +177,27 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
           </div>          
           <script>
             var register_date = document.getElementById("register_date").min = new Date().toISOString().split("T")[0];
-            var ccday = document.getElementById("register_date");
+            var ccday =         document.getElementById("register_date").valueAsDate.getDate();
 
             function checkRegisterTime(){
             var newdate = new Date();
             hour = newdate.getHours();
             minute = newdate.getMinutes();
             day = newdate.getDate();
-            console.log(document.getElementById("register_time").value);
             var register_time = document.getElementById("register_time").value;
             
             register_time_hour = parseInt(register_time.split(":")[0]);
             register_time_minute = parseInt(register_time.split(":")[1]);
-            console.log(day);
-            console.log(ccday);
-            
+
+              if(document.getElementById("register_date").value.split("-")[2] == day){
               if(register_time_hour<hour){
                 alert("Giờ bạn chọn ko hợp lệ");
               }
               else if(register_time_hour==hour){
                 if(register_time_minute<minute){
-                    alert("Giờ bạn chọn ko hợp lệ cc");
+                    alert("Giờ bạn chọn ko hợp lệ!");
                 }
-            
+            }
           }
         }
           </script>

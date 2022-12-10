@@ -91,7 +91,7 @@
         <button  style="float:left;  margin-right:10px;  min-width: 100px;" type="submit" name="cancelbook" class="btn btn-danger">Hủy</button>
     </form>
     <a style="float: left;   min-width: 100px;    margin-right:5px;" class="btn btn-secondary" href="{{route('comebackBook')}}"> 
-        Hủy
+        Quay lại
      </a>
 
     

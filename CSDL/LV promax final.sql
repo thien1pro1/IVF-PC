@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2022 at 07:46 AM
+-- Generation Time: Dec 10, 2022 at 10:26 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -97,7 +97,9 @@ CREATE TABLE `bills` (
 
 INSERT INTO `bills` (`id`, `book_id`, `user_id`, `total`, `created_at`, `updated_at`) VALUES
 (54, 49, 1, 0, '2022-11-29 08:59:44', '2022-11-29 08:59:44'),
-(55, 50, 1, 26000, '2022-11-29 09:48:05', '2022-11-29 09:48:05');
+(55, 50, 1, 26000, '2022-11-29 09:48:05', '2022-11-29 09:48:05'),
+(56, 51, 1, 336000, '2022-12-07 22:25:13', '2022-12-07 22:25:13'),
+(57, 52, 1, 96000, '2022-12-07 22:39:27', '2022-12-07 22:39:27');
 
 -- --------------------------------------------------------
 
@@ -118,7 +120,12 @@ CREATE TABLE `bill_medicines` (
 INSERT INTO `bill_medicines` (`bill_id`, `medicine_id`, `amount`) VALUES
 (54, 12, 1),
 (55, 3, 1),
-(55, 8, 1);
+(55, 8, 1),
+(56, 8, 7),
+(56, 13, 14),
+(57, 1, 1),
+(57, 2, 1),
+(57, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -161,7 +168,9 @@ INSERT INTO `books` (`id`, `wife_name`, `hus_name`, `phone`, `email`, `wife_birt
 (47, 'Phạm Thúy Hằng', 'Dương Tấn Lực', '0896777567', 'luc@gmail.com', '2000-03-26', '1997-05-19', '2022-11-29', '07:00:00', NULL, -1, 'ko có gì', NULL, '2022-11-28 10:37:24', '2022-11-28 10:37:24', NULL),
 (48, 'Dương Tố Như', 'Từ Văn Tài', '0543567890', 'thien1pro1@gmail.com', '1999-02-02', '1980-03-12', '2022-11-29', '07:00:00', NULL, -1, 'no', NULL, '2022-11-28 10:40:53', '2022-11-28 10:40:53', NULL),
 (49, 'Dương Tố Như', 'Từ Văn Tài', '0543567890', 'thien1pro1@gmail.com', '1999-02-02', '1980-03-12', '2022-11-29', '07:00:00', NULL, 0, 'no', NULL, '2022-11-28 10:40:58', '2022-11-28 10:41:12', NULL),
-(50, 'Trần Yến Nhi', 'Trần Hạo Thiên', '0585253470', 'thien1pro1@gmail.com', '1993-09-21', '1990-06-15', '2022-11-29', '08:00:00', 1, 2, 'Tôi muốn kiểm tra sức khỏe cho vợ sau khi dùng gói IVF', 'Kết quả xét nghiệm bình thường', '2022-11-28 09:02:22', '2022-11-29 10:02:19', NULL);
+(50, 'Trần Yến Nhi', 'Trần Hạo Thiên', '0585253470', 'thien1pro1@gmail.com', '1993-09-21', '1990-06-15', '2022-11-29', '08:00:00', 1, 2, 'Tôi muốn kiểm tra sức khỏe cho vợ sau khi dùng gói IVF', 'Kết quả xét nghiệm bình thường', '2022-11-28 09:02:22', '2022-11-29 10:02:19', NULL),
+(51, 'Trần Yến Nhi', 'Trần Hạo Thiên', '0585253470', 'thien1pro1@gmail.com', '1993-09-21', '1990-06-15', '2022-12-08', '07:00:00', 1, 1, 'Tôi muốn kiểm tra sức khỏe cho vợ sau khi dùng gói IVF', NULL, '2022-11-28 09:02:22', '2022-11-28 10:50:48', NULL),
+(52, 'Trần Yến Nhi', 'Trần Hạo Thiên', '0585253470', 'thien1pro1@gmail.com', '1993-09-21', '1990-06-15', '2022-12-08', '07:00:00', 1, 1, 'Tôi muốn kiểm tra sức khỏe cho vợ sau khi dùng gói IVF', NULL, '2022-11-28 09:02:22', '2022-11-28 10:50:48', NULL);
 
 -- --------------------------------------------------------
 
@@ -607,7 +616,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `image`, `email_verified_at`, `position_id`, `password`, `remember_token`, `created_at`, `updated_at`, `avatar`) VALUES
-(1, 'Nguyễn Đăng Thiên', 'thien1pro1@gmail.com', '1669447502_thien.jpg', NULL, 0, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', 'XpRqzMxTOJb1To6jVmUGNWqZHgdP4GRYdgheuwqrBMqOoiAhC9o1y2e8n8X3', '2022-10-06 09:51:23', '2022-11-26 00:25:02', ''),
+(1, 'Nguyễn Đăng Thiên', 'thien1pro1@gmail.com', '1669447502_thien.jpg', NULL, 0, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', 'DsiQkJ9CuQrNuRj7LWPSd1TIcCfGhyBI0doyyWlcDGIUgLCCVjOugukNcLPz', '2022-10-06 09:51:23', '2022-11-26 00:25:02', ''),
 (2, 'Phạm Hoàng Học', 'hoc@gmail.com', '1669654804_hoc.jpg', NULL, 1, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', NULL, '2022-10-07 09:33:54', '2022-11-28 10:00:04', ''),
 (3, 'Lê Phú Cường', 'thien1pr@gmail.com', '1669655387_bscuong.jpg', NULL, 2, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', NULL, '2022-11-25 22:16:05', '2022-11-28 10:09:47', NULL),
 (4, 'Hoàng Xuân Hải', 'Hai123@gmail.com', '1669654346_BS_hai.jpg', NULL, 2, '$2y$10$1Im0YEvwb1vXDEuP10gjG.XTEgQmcNUe/XwfYgnizytgRKBp62UOi', NULL, '2022-11-28 09:52:26', '2022-11-28 09:52:26', NULL),
@@ -785,13 +794,13 @@ ALTER TABLE `asks`
 -- AUTO_INCREMENT for table `bills`
 --
 ALTER TABLE `bills`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `calendars`

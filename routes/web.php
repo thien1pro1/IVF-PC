@@ -42,7 +42,7 @@ Route::get('admin/edit-bill/{id}',[BillController::class, 'edit'])->name('editBi
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('admin/searchBook',[BookController::class, 'searchBook'])->name('searchBook');
+// Route::get('admin/client',[BookController::class, 'searchBook'])->name('searchBook');
 
 Auth::routes();
 Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

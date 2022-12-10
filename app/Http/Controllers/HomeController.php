@@ -30,7 +30,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $medicines = Medicine::orderBy('type','ASC')->get();
+        $medicines_1 = Medicine::orderBy('type','ASC')->where('type','1')->get();
+        $medicines_2 = Medicine::orderBy('type','ASC')->where('type','2')->get();
+        $medicines_3 = Medicine::orderBy('type','ASC')->where('type','3')->get();
+        $medicines_4 = Medicine::orderBy('type','ASC')->where('type','4')->get();
+        $medicines_5 = Medicine::orderBy('type','ASC')->where('type','5')->get();
         $categogy = Categogy::all();
         $noActive_categogy = Categogy::where('status',1);
         $books = Book::orderBy('email','ASC')->count();
@@ -41,7 +45,7 @@ class HomeController extends Controller
 
         $cancel_book = Book::orderBy('email','ASC')->where('status',3)->count();
 
-        return view('admin.dashboard')->with(compact('waiting_book','books','accept_book','finish_book','cancel_book','medicines'));
+        return view('admin.dashboard')->with(compact('waiting_book','books','accept_book','finish_book','cancel_book','medicines_1','medicines_2','medicines_3','medicines_4','medicines_5'));
     }
 
 

@@ -30,7 +30,7 @@
 </div>
 <br>
 <div>Don Thuoc</div><br>
-<div>Bac si: {{Auth::user()->name}}</div>
+<div>Bac si: Nguyen Dang Thien</div>
 <table class="table">
   <thead>
     <tr>
@@ -49,12 +49,12 @@
 
     @foreach ($bill->medicines()->get() as $key => $medicine)
     <tr>
-        <th scope="row">{{$key}}</th>
+        <th scope="row">{{$key+1}}</th>
         <td>{{$medicine->name}}</td>
 
         <th scope="col">{{$medicine->pivot->amount}}</th>
-        <td  scope="col">{{$medicine->price}}</td>
-        <td scope="col">{{$medicine->pivot->amount*$medicine->price}}</td>
+        <th  scope="col">{{$medicine->price}}</th>
+        <th scope="col">{{$medicine->pivot->amount*$medicine->price}}</th>
       </tr>
       @php
           $total+=$medicine->pivot->amount*$medicine->price;

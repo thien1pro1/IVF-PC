@@ -15,6 +15,7 @@ use App\Mail\FinishEmail;
 use App\Mail\sendHistory;
 use App\Models\File;
 use App\Models\User;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Mail\Mailer;
 use Illuminate\Support\Facades\Mail as FacadesMail;
@@ -30,10 +31,59 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-    public function index()
+    public function index(Request $request)
     {
+        if($request->query('search')==null && $request->query('status')==null && $request->query('date_from')==null &&$request->query('date_to')==null){
+        $date_from = "2000-1-1";
+        $today = Carbon::today();
+
+        $date_to = $today->toDateString();
         $books = Book::orderBy('status','ASC')->where('status','>=',0)->orderBy('register_date','ASC')->orderBy('register_time','ASC')->get();
-        return view('admin.client.index')->with(compact('books'));
+        return view('admin.client.index')->with(compact('books','date_from','date_to'));
+        }
+        else{
+            $search = $request->query('search');
+            $status = $request->query('status');
+            $date_from = $request->query('date_from');
+            $date_to = $request->query('date_to');
+    
+            if(empty($status) && empty($search)){
+                $this->comeback();
+            }
+            $books = Book::when($request->has('status'), function ($query) use ($status) {
+                    if($status == 9) {
+                        return $query;
+                    }
+                    else                 
+                return $query->where('status', $status);
+              })
+              ->when($request->has('date_from'), function ($query) use ($date_from) {
+                if($date_from == "") {
+                    return $query;
+                }
+                else                 
+            return $query->where('register_date','>=', $date_from);
+          })
+          ->when($request->has('date_to'), function ($query) use ($date_to) {
+            if($date_to == "") {
+                return $query;
+            }
+            else                 
+        return $query->where('register_date','<=', $date_to);
+      })
+              ->where(function ($query) use ($search) {
+                $query->where('email',$search)
+                        ->orWhere('hus_name', 'LIKE', '%' . $search . '%')
+                        ->orWhere('wife_name', 'LIKE', '%' . $search . '%');
+            })
+                                
+                                                 
+                                                
+                                                
+                                                ->orderBy('register_date','ASC')->orderBy('register_time','ASC')->get();
+            return view('admin.client.index')->with(compact('books','date_from','date_to'));
+    
+        }
     }
 
     /**
@@ -301,6 +351,9 @@ class BookController extends Controller
     public function searchBook(Request $request){
         $search = $request->query('search');
         $status = $request->query('status');
+        $date_from = $request->query('date_from');
+        $date_to = $request->query('date_to');
+
         if(empty($status) && empty($search)){
             $this->comeback();
         }
@@ -311,6 +364,20 @@ class BookController extends Controller
                 else                 
             return $query->where('status', $status);
           })
+          ->when($request->has('date_from'), function ($query) use ($date_from) {
+            if($date_from == "") {
+                return $query;
+            }
+            else                 
+        return $query->where('register_date','>=', $date_from);
+      })
+      ->when($request->has('date_to'), function ($query) use ($date_to) {
+        if($date_to == "") {
+            return $query;
+        }
+        else                 
+    return $query->where('register_date','<=', $date_to);
+  })
           ->where(function ($query) use ($search) {
             $query->where('email',$search)
                     ->orWhere('hus_name', 'LIKE', '%' . $search . '%')
@@ -321,7 +388,7 @@ class BookController extends Controller
                                             
                                             
                                             ->orderBy('register_date','ASC')->orderBy('register_time','ASC')->get();
-        return view('admin.client.index')->with(compact('books'));
+        return view('admin.client.index')->with(compact('books','date_from','date_to'));
 
     }
     public function comeback(){
