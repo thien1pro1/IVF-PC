@@ -89,6 +89,7 @@ filebrowserWindowHeight : 500
           <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Quản lý khách hàng </h6>
         </li>
+        @if(Auth::user()->position_id!=2)
         <li class="nav-item">
           <a class="nav-link  " href="{{route('client.index')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -109,10 +110,10 @@ filebrowserWindowHeight : 500
             <span class="nav-link-text ms-1">Bệnh nhân</span>
           </a>
         </li>
-
+        @endif
       
         
-        @if(Auth::user()->position_id==0)
+        @if(Auth::user()->position_id==2 || (Auth::user()->position_id==0))
                 <li class="nav-item">
           <a class="nav-link  " href="{{route('bookStaff.index')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -135,7 +136,7 @@ filebrowserWindowHeight : 500
         </li>
         @endif
        
-       
+        @if(Auth::user()->position_id==2)
         <li class="nav-item">
           <a class="nav-link  " href="{{route('ask.index')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -156,7 +157,8 @@ filebrowserWindowHeight : 500
             <span class="nav-link-text ms-1">Tư vấn</span>
           </a>
         </li>
-
+        @endif
+        @if(Auth::user()->position_id!=2)
         <li class="nav-item">
           <a class="nav-link  " href="{{route('admin-feedback.index')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -177,6 +179,9 @@ filebrowserWindowHeight : 500
             <span class="nav-link-text ms-1">Phản hồi</span>
           </a>
         </li>
+        @endif
+        @if(Auth::user()->position_id!=2)
+
         <li class="nav-item">
           <a class="nav-link  " href="{{route('calendar.index')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -197,7 +202,33 @@ filebrowserWindowHeight : 500
             <span class="nav-link-text ms-1">Lịch trực</span>
           </a>
         </li>
+        @endif
+
+        @if(Auth::user()->position_id==2)
+
+        <li class="nav-item">
+          <a class="nav-link  " href="{{route('calendar.show',['1'])}}">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+               <img width="20px" height="20px" src="{{asset('images/icon/medicine.png')}}">
+                <title>credit-card</title>
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <g transform="translate(1716.000000, 291.000000)">
+                      <g transform="translate(453.000000, 454.000000)">
+                        <path class="color-background opacity-6" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"></path>
+                        <path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <span class="nav-link-text ms-1">xem lịch trực</span>
+          </a>
+        </li>
+        @endif
         
+        @if(Auth::user()->position_id==2 || Auth::user()->position_id==0)
         <li class="nav-item">
           <a class="nav-link  " href="{{route('medicine.index')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -218,11 +249,11 @@ filebrowserWindowHeight : 500
             <span class="nav-link-text ms-1">Dược phẩm</span>
           </a>
         </li>
-
+        @endif
+        @if(Auth::user()->position_id!=2)
          <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Quản lý dịch vụ </h6>
         </li>
-             
                 <li class="nav-item">
           <a class="nav-link  " href="{{route('service.index')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -244,6 +275,7 @@ filebrowserWindowHeight : 500
             <span class="nav-link-text ms-1">Dịch vụ</span>
           </a>
         </li>
+        @endif
 
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Quản lý nhân viên </h6>
@@ -269,7 +301,8 @@ filebrowserWindowHeight : 500
             <span class="nav-link-text ms-1">Thông tin cá nhân</span>
           </a>
         </li>
-                <li class="nav-item">
+        @if(Auth::user()->position_id!=2)
+        <li class="nav-item">
           <a class="nav-link  " href="{{route('position.index')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <img width="20px" height="20px" src="{{asset('images/icon/duty.png')}}">
@@ -291,6 +324,7 @@ filebrowserWindowHeight : 500
             <span class="nav-link-text ms-1">Chức vụ</span>
           </a>
         </li>
+        
          <li class="nav-item">
           <a class="nav-link  " href="{{route('staff.index')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -311,8 +345,10 @@ filebrowserWindowHeight : 500
             <span class="nav-link-text ms-1">Nhân Viên</span>
           </a>
         </li>
+        @endif
+        @if(Auth::user()->position_id!=2)
         <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Quản lý bài viết truyền thông </h6>
+          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Quản lý truyền thông </h6>
         </li>
         <li class="nav-item">
           <a class="nav-link  " href="{{route('categogy.index')}}">
@@ -355,7 +391,7 @@ filebrowserWindowHeight : 500
             <span class="nav-link-text ms-1">Bài viêt</span>
           </a>
         </li>
-  
+        @endif
       </ul>
     </div>
     

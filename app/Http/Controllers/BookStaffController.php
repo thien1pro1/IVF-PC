@@ -12,7 +12,9 @@ use App\Mail\SendFinishEmail;
 use App\Mail\BarcodeEmail;
 use App\Mail\ConfirmEmail;
 use App\Models\Bill;
+use App\Models\Bill_Medicine;
 use App\Models\File;
+use App\Models\Medicine;
 use Carbon\Carbon;
 // use PDF;
 use Exception;
@@ -106,7 +108,24 @@ class BookStaffController extends Controller
     public function update(Request $request, $id)
     {
         $today = Carbon::today();
-
+        $bill = Bill::where('book_id',$id)->first;
+        $bill_id = $bill->id;
+        $bill_medicines = Bill_Medicine::where('bill_id',$bill_id)->get();
+        $medicines = Medicine::all();
+        try {
+            foreach($medicines as $medicine){
+                foreach($bill_medicines as $bill_medicine){
+                    if($medicine->id == $bill_medicine->medicine_id){
+                        $medicine->amount -= $bill_medicine->amount;
+                        $medicine->save();
+                    }
+    
+                }
+            }
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+        
         $a = $today->toDateString();
         $book = Book::find($id);
         $book->status = BookingStatus::$FINISHED;

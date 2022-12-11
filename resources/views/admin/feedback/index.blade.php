@@ -34,7 +34,7 @@
             <tr>
 
               <td>
-                <p class="text-xs font-weight-bold mb-0">{{$key}}</p>
+                <p class="text-xs font-weight-bold mb-0">{{$key+1}}</p>
                   
               </td>
                <td>

@@ -65,7 +65,7 @@ use App\Http\Constants\TypeMedicine;
             <div class="card h-100">
                 <div class="card-header pb-0 p-3">
                     <div class="d-flex align-items-center">
-                        <h6 class="mb-0">Thuoc</h6>
+                        <h6 class="mb-0">Thuốc đặc trị</h6>
                         <button type="button"
                             class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
                             data-bs-toggle="tooltip" data-bs-placement="bottom"
@@ -113,7 +113,7 @@ use App\Http\Constants\TypeMedicine;
             <div class="card h-100">
                 <div class="card-header pb-0 p-3">
                     <div class="d-flex align-items-center">
-                        <h6 class="mb-0">Thuoc</h6>
+                        <h6 class="mb-0">Thuốc hiệu trị</h6>
                         <button type="button"
                             class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
                             data-bs-toggle="tooltip" data-bs-placement="bottom"
@@ -166,7 +166,7 @@ use App\Http\Constants\TypeMedicine;
             <div class="card h-100">
                 <div class="card-header pb-0 p-3">
                     <div class="d-flex align-items-center">
-                        <h6 class="mb-0">Thuoc</h6>
+                        <h6 class="mb-0">Kháng sinh</h6>
                         <button type="button"
                             class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
                             data-bs-toggle="tooltip" data-bs-placement="bottom"
@@ -214,7 +214,7 @@ use App\Http\Constants\TypeMedicine;
             <div class="card h-100">
                 <div class="card-header pb-0 p-3">
                     <div class="d-flex align-items-center">
-                        <h6 class="mb-0">Thuoc</h6>
+                        <h6 class="mb-0">Vitamin</h6>
                         <button type="button"
                             class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
                             data-bs-toggle="tooltip" data-bs-placement="bottom"
@@ -265,7 +265,7 @@ use App\Http\Constants\TypeMedicine;
             <div class="card h-100">
                 <div class="card-header pb-0 p-3">
                     <div class="d-flex align-items-center">
-                        <h6 class="mb-0">Thuoc</h6>
+                        <h6 class="mb-0">Dụng cụ y tế</h6>
                         <button type="button"
                             class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
                             data-bs-toggle="tooltip" data-bs-placement="bottom"

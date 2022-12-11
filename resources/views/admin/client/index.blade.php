@@ -58,7 +58,7 @@
                             name="date_from" value="{{$date_from}}"
                                 class="form-control" type="date"  aria-label="Search"
                                 > 
-                               <label style="height: 50px ;width: 45px; border:none;" class="form-control"> đến</label> 
+                               <label style="height: 50px ;width: 50px; border:none;" class="form-control"> đến</label> 
                             <input style="height: 50px ;width: 200px; margin-right: 10px; margin-left: 10px;" value="{{$date_to}}" 
                             name="date_to"
                             class="form-control" type="date"  aria-label="Search"

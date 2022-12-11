@@ -100,10 +100,15 @@
           <div class="form-group">
             <label for="exampleInputPassword1">Số lượng</label>
 
-            <input type="number" class="form-control" id="exampleInputPassword1" value="{{$edit->amount}}"  name="amount" >
+            <input readonly type="number" class="form-control" id="exampleInputPassword1" value="{{$edit->amount}}"   >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Thêm thuốc</label>
+
+            <input type="number" class="form-control" id="exampleInputPassword1" min = "0"  name="amount" >
           </div>
          
-        <button type="submit" name="addmedicine" class="btn btn-primary">Thêm</button>
+        <button type="submit" name="addmedicine" class="btn btn-primary">Cập nhật</button>
       </form>
 </div>
 @endsection

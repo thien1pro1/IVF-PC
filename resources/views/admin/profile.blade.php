@@ -57,18 +57,9 @@
             
           </div>
           <div class="form-group">
-            <select class="custom-select" name="position_id">
-                @foreach($position as $p)
+            <input readonly type="text" class="form-control" id="exampleInputEmail1" name="name" value="{{Auth::user()->position->name
+            }}" >
 
-                    @if(Auth::user()->position_id == $p->id)
-                    <option selected value="{{$p->id}}">{{$p->name}}</option>
-                    @else
-                    <option value="{{$p->id}}">{{$p->name}}</option>
-                    @endif
-                @endforeach
-
-            </select>
-              
           </div>
 
         <button type="submit" name="addStaff" class="btn btn-success">Lưu</button>

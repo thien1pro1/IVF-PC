@@ -3,20 +3,47 @@
 namespace App\Http\Controllers;
 
 use App\Models\Medicine;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class MedicineController extends Controller
 {
-   /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-            
-        $medicines = Medicine::orderBy('id','ASC')->get();
-        return view('admin.medicine.index')->with(compact('medicines'));
+
+        if ($request->query('search') == null && $request->query('type') == null) {
+            $medicines = Medicine::orderBy('id', 'ASC')->get();
+            return view('admin.medicine.index')->with(compact('medicines'));
+        } else {
+            $search = $request->query('search');
+            $type = $request->query('type');
+
+
+            if (empty($status) && empty($search)) {
+                $this->comeback();
+            }
+            $medicines = Medicine::when($request->has('type'), function ($query) use ($type) {
+                if ($type == 9) {
+                    return $query;
+                } else
+                    return $query->where('type', $type);
+            })
+                ->when($request->has('search'), function ($query) use ($search) {
+                    if ($search == "") {
+                        return $query;
+                    } else
+                        return $query->Where('name', 'LIKE', '%' . $search . '%');
+                })->get();
+            return view('admin.medicine.index')->with(compact('medicines', 'search', 'type'));
+        }
+
+        // $medicines = Medicine::orderBy('id', 'ASC')->get();
+        // return view('admin.medicine.index')->with(compact('medicines'));
     }
 
     /**
@@ -26,8 +53,8 @@ class MedicineController extends Controller
      */
     public function create()
     {
-           
-        
+
+
         return view('admin.medicine.create');
     }
 
@@ -57,9 +84,7 @@ class MedicineController extends Controller
         $medicine->amount = $request->amount;
         $medicine->status = 0;
         $medicine->save();
-        return redirect()->back()->with('status','Thêm danh mục thành công');
-
-
+        return redirect()->back()->with('status', 'Thêm danh mục thành công');
     }
 
     /**
@@ -80,7 +105,7 @@ class MedicineController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {   
+    {
         $edit = Medicine::find($id);
         return view('admin.medicine.edit')->with(compact('edit'));
     }
@@ -112,7 +137,7 @@ class MedicineController extends Controller
         $medicine->status = $request->status;
 
         $medicine->save();
-        return redirect('/admin/Medicine')->with('status','Cập nhập danh mục thành công');
+        return redirect('/admin/Medicine')->with('status', 'Cập nhập danh mục thành công');
     }
 
     /**
@@ -124,15 +149,13 @@ class MedicineController extends Controller
     public function destroy($id)
     {
         Medicine::find($id)->delete();
-        return redirect()->back()->with('status','Xoá danh mục thành công');
-
-
+        return redirect()->back()->with('status', 'Xoá danh mục thành công');
     }
-    public function exportPDF(){
-
+    public function exportPDF()
+    {
     }
-    public function comeback(){
+    public function comeback()
+    {
         return redirect('/admin/medicine');
-
     }
 }
