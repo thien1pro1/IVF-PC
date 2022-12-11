@@ -30,7 +30,7 @@
 </div>
 <br>
 <div>Don Thuoc</div><br>
-<div>Bac si: Le Phu CUong</div>
+<div>Bac si: Le Phu Cuong</div>
 <table class="table">
   <thead>
     <tr>

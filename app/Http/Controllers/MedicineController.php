@@ -41,9 +41,6 @@ class MedicineController extends Controller
                 })->get();
             return view('admin.medicine.index')->with(compact('medicines', 'search', 'type'));
         }
-
-        // $medicines = Medicine::orderBy('id', 'ASC')->get();
-        // return view('admin.medicine.index')->with(compact('medicines'));
     }
 
     /**
@@ -132,12 +129,10 @@ class MedicineController extends Controller
         // );
         $medicine = Medicine::find($id);
         $medicine->name = $request->name;
-        $medicine->type = $request->type;
-        $medicine->amount = $request->amount;
-        $medicine->status = $request->status;
+        $medicine->amount += $request->amount;
 
         $medicine->save();
-        return redirect('/admin/Medicine')->with('status', 'Cập nhập danh mục thành công');
+        return redirect('/admin/medicine')->with('status', 'Cập nhập danh mục thành công');
     }
 
     /**

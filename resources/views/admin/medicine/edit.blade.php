@@ -105,7 +105,7 @@
           <div class="form-group">
             <label for="exampleInputPassword1">Thêm thuốc</label>
 
-            <input type="number" class="form-control" id="exampleInputPassword1" min = "0"  name="amount" >
+            <input type="number" class="form-control" id="exampleInputPassword1" min = "0" step="100" name="amount" >
           </div>
          
         <button type="submit" name="addmedicine" class="btn btn-primary">Cập nhật</button>

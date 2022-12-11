@@ -78,7 +78,7 @@
             <textarea rows="5" resize="none" type="date" class="form-control" id="c9" value="{{$edit->message}}"  name="message" >{{$edit->message}}</textarea>
         </div>
 
-     <button style="float:left; margin-right:10px; min-width: 100px;" type="submit" name="addbook" class="btn btn-primary">Lưu</button>
+     <button style="float:left; margin-right:10px; min-width: 100px;" type="submit" name="addbook" class="btn btn-primary">Duyệt</button>
      {{-- <form  method="POST" action="{{route('book.cancel',[$edit->id])}}">
         @method('PUT')
         @csrf

@@ -136,7 +136,7 @@ filebrowserWindowHeight : 500
         </li>
         @endif
        
-        @if(Auth::user()->position_id==2)
+        
         <li class="nav-item">
           <a class="nav-link  " href="{{route('ask.index')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -157,7 +157,7 @@ filebrowserWindowHeight : 500
             <span class="nav-link-text ms-1">Tư vấn</span>
           </a>
         </li>
-        @endif
+     
         @if(Auth::user()->position_id!=2)
         <li class="nav-item">
           <a class="nav-link  " href="{{route('admin-feedback.index')}}">

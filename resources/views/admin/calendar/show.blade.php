@@ -15,7 +15,7 @@
                         <h4>Danh sách lịch trực</h4>
                     </div>
                     @foreach ($calendars as $calendar)
-                        <table class="table table-striped">
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <th scope="col">Phòng {{ $calendar->room_id }}</th>
@@ -33,8 +33,8 @@
                                 <tbody>
                                     <tr>
                                         <th scope="row">Sáng</th>
-
-                                        <td>
+                                        
+                                        <td class= "col-2">
                                             @if ($calendar->shift1 == null)
                                                      Trống ca 
                                             @else
@@ -46,7 +46,7 @@
                                             @endif
                                         </td>
                                         {{-- ca1 --}}
-                                        <td>
+                                        <td class= "col-2">
                                             @if ($calendar->shift3 == null)
                                                      Trống ca 
                                             @else
@@ -59,7 +59,7 @@
                                         </td>
                                         {{-- ca3 --}}
 
-                                        <td>
+                                        <td class= "col-2">
                                             @if ($calendar->shift5 == null)
                                                      Trống ca 
                                             @else
@@ -71,7 +71,7 @@
                                             @endif
                                         </td>
                                         {{-- ca5 --}}
-                                        <td>
+                                        <td class= "col-2">
                                             @if ($calendar->shift7 == null)
                                                      Trống ca 
                                             @else
@@ -83,7 +83,7 @@
                                             @endif
                                         </td>
                                         {{-- ca7 --}}
-                                        <td>
+                                        <td class= "col-2">
                                             @if ($calendar->shift9 == null)
                                                      Trống ca 
                                             @else
@@ -95,7 +95,7 @@
                                             @endif
                                         </td>
                                         {{-- ca9 --}}
-                                        <td>
+                                        <td class= "col-2">
                                             @if ($calendar->shift11 == null)
                                                      Trống ca 
                                             @else
@@ -112,7 +112,7 @@
                                     </tr>
                                     <tr>
                                         <th scope="row">Chiều</th>
-                                        <td>
+                                        <td class= "col-2">
                                             @if ($calendar->shift2 == null)
                                                      Trống ca 
                                             @else
@@ -128,7 +128,7 @@
 
                                       
                                         {{-- ca2 --}}
-                                        <td>
+                                        <td class= "col-2">
                                             @if ($calendar->shift4 == null)
                                                      Trống ca 
                                             @else
@@ -140,7 +140,7 @@
                                             @endif
                                         </td>
                                         {{-- ca4 --}}
-                                        <td>
+                                        <td class= "col-2">
                                             @if ($calendar->shift6 == null)
                                                      Trống ca 
                                             @else
@@ -152,7 +152,7 @@
                                             @endif
                                         </td>
                                         {{-- ca6 --}}
-                                        <td>
+                                        <td class= "col-2">
                                             @if ($calendar->shift8 == null)
                                                      Trống ca 
                                             @else
@@ -164,7 +164,7 @@
                                             @endif
                                         </td>
                                         {{-- ca8 --}}
-                                        <td>
+                                        <td class= "col-2">
                                             @if ($calendar->shift10 == null)
                                                      Trống ca 
                                             @else
@@ -176,7 +176,7 @@
                                             @endif
                                         </td>
                                         {{-- ca10 --}}
-                                        <td>
+                                        <td class= "col-2">
                                             @if ($calendar->shift12 == null)
                                                      Trống ca 
                                             @else

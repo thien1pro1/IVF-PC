@@ -20,7 +20,7 @@ $time = BookingTime::$bookingTime ;
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0">
-                        <h4>Lịch khám</h4>
+                        <h4>Lịch khám ngày {{$today}}</h4>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
@@ -100,7 +100,7 @@ $time = BookingTime::$bookingTime ;
   
               <td>
                 @if($book->status==0 || $book->status==1)
-                <a href="{{route('bookStaff.edit',[$book->id])}}" class="btn btn-secondary" style="float:right">Khám</a>
+                <a href="{{route('bookStaff.edit',[$book->id])}}" class="btn btn-secondary" style="float:right margin-left: 0px">Khám</a>
                 @else
 
                 @endif

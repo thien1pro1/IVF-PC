@@ -15,7 +15,7 @@
                         <h4>Danh sách lịch trực</h4>
                     </div>
                     @foreach ($calendars as $calendar)
-                        <table class="table table-striped">
+                        <table class="table ">
                             <thead>
                                 <tr>
                                     <th scope="col">Phòng {{ $calendar->room_id }}</th>

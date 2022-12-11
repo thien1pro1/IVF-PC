@@ -118,7 +118,7 @@
                 <textarea class="form-control" id="c12" value="{{ $edit->result }}" name="result"></textarea>
             </div>
             <button style="float: left; margin:5px; min-width: 100px; " type="submit" name="addbook"
-                class="btn btn-success">Lưu</button>
+                class="btn btn-success">Hoàn thành</button>
         </form>
         <form method="POST" action="{{ route('book.cancel', [$edit->id]) }}">
             @method('PUT')

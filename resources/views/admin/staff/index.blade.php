@@ -17,6 +17,29 @@
 <div class="card-header pb-0">
 <h6>Danh sách nhân viên</h6>
 </div>
+<div class="form-group col-12">
+  <form action="{{ route('staff.index') }}" method="GET" class="d-flex search-header">
+      <input style="height: 50px ;width: 300px; margin-right: 10px; margin-left: 10px;" name="search"
+          class="form-control" type="search" placeholder="Bạn muốn tìm..." aria-label="Search">
+      <select style="height: 50px ;width: 150px; margin-right: 10px;" class="form-select"
+          name="position_s" aria-label="Default select example">
+          <option value="9">Tất cả</option>
+          @foreach($position as $p)
+          
+          <option value="{{$p->id}}">{{$p->name}}</option>
+          @endforeach
+
+      </select>
+
+      <button style="height: 50px ;width: 100px; margin-right: 10px;" class="form-control"
+          type="submit" aria-label="Search" required> Tìm kiếm
+      </button>
+
+
+
+
+</div>
+</form>
 <div class="card-body px-0 pt-0 pb-2">
 <div class="table-responsive p-0">
 <table class="table align-items-center mb-0">
@@ -35,10 +58,10 @@
 </tr>
 </thead>
 <tbody>
-  @foreach($allStaff as $staff)
+  @foreach($allStaff as $key => $staff)
 <tr>
  <td class="align-middle text-center">
-<span class="text-secondary text-xs font-weight-bold">{{$staff->id}}</span>
+<span class="text-secondary text-xs font-weight-bold">{{$key+1}}</span>
 </td>
 <td>
 <div class="d-flex px-2 py-1">

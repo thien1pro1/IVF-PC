@@ -19,8 +19,41 @@ class StaffController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function index()
+    public function index(Request $request)
     {
+        
+        if ($request->query('search') == null && $request->query('position_s') == null) {
+            $allStaff = User::orderBy('id', 'ASC')->get();
+            $position = Position::all();
+
+            return view('admin.staff.index')->with(compact('allStaff','position'));
+        } else {
+            $search = $request->query('search');
+            $position_s = $request->query('position_s');
+
+
+            if (empty($position_s) && empty($search)) {
+                $this->comeback();
+            }
+            $allStaff = User::when($request->has('position_s'), function ($query) use ($position_s) {
+                if ($position_s == 9) {
+                    return $query;
+                } else
+                    return $query->where('position_id', $position_s);
+            })
+                ->when($request->has('search'), function ($query) use ($search) {
+                    if ($search == "") {
+                        return $query;
+                    } else
+                        return                 $query->where('email',$search)
+                        ->orWhere('name', 'LIKE', '%' . $search . '%');
+                })->get();
+                $position = Position::all();
+
+            return view('admin.staff.index')->with(compact('allStaff', 'search','position'));
+        }
+
+
         $position = Position::all();
         $staff = User::all();
         $allStaff = User::orderBy('id','ASC')->get();

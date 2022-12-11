@@ -81,7 +81,7 @@ use App\Http\Constants\TypeMedicine;
                             <div class="w-100">
                                 <div class="d-flex align-items-center mb-2">
                                     <a class="btn btn-facebook btn-simple mb-0 p-0" href="javascript:;">
-                                        <i class="fab fa-facebook fa-lg"></i>
+                                        <i class="fab fa-arow fa-lg"></i>
                                     </a>
                                     <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">{{$medicine->name}}</span>
                                     <span class="ms-auto text-sm font-weight-bold">{{$medicine->amount/100}}%</span>
@@ -129,7 +129,7 @@ use App\Http\Constants\TypeMedicine;
                             <div class="w-100">
                                 <div class="d-flex align-items-center mb-2">
                                     <a class="btn btn-facebook btn-simple mb-0 p-0" href="javascript:;">
-                                        <i class="fab fa-facebook fa-lg"></i>
+                                        <i class="fab fa-arow fa-lg"></i>
                                     </a>
                                     <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">{{$medicine->name}}</span>
                                     <span class="ms-auto text-sm font-weight-bold">{{$medicine->amount/100}}%</span>
@@ -182,7 +182,7 @@ use App\Http\Constants\TypeMedicine;
                             <div class="w-100">
                                 <div class="d-flex align-items-center mb-2">
                                     <a class="btn btn-facebook btn-simple mb-0 p-0" href="javascript:;">
-                                        <i class="fab fa-facebook fa-lg"></i>
+                                        <i class="fab fa-arow fa-lg"></i>
                                     </a>
                                     <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">{{$medicine->name}}</span>
                                     <span class="ms-auto text-sm font-weight-bold">{{$medicine->amount/100}}%</span>
@@ -230,7 +230,7 @@ use App\Http\Constants\TypeMedicine;
                             <div class="w-100">
                                 <div class="d-flex align-items-center mb-2">
                                     <a class="btn btn-facebook btn-simple mb-0 p-0" href="javascript:;">
-                                        <i class="fab fa-facebook fa-lg"></i>
+                                        <i class="fab fa-arow fa-lg"></i>
                                     </a>
                                     <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">{{$medicine->name}}</span>
                                     <span class="ms-auto text-sm font-weight-bold">{{$medicine->amount/100}}%</span>
@@ -260,6 +260,7 @@ use App\Http\Constants\TypeMedicine;
         </div>
 
     </div>
+
     <div class="row mt-4 col-12">
         <div class="col-sm-6">
             <div class="card h-100">
@@ -276,63 +277,12 @@ use App\Http\Constants\TypeMedicine;
                 </div>
                 <div class="card-body p-3">
                     <ul class="list-group">
-                        @foreach($medicines_4 as $key => $medicine)
-                        <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
-                            <div class="w-100">
-                                <div class="d-flex align-items-center mb-2">
-                                    <a class="btn btn-facebook btn-simple mb-0 p-0" href="javascript:;">
-                                        <i class="fab fa-facebook fa-lg"></i>
-                                    </a>
-                                    <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">{{$medicine->name}}</span>
-                                    <span class="ms-auto text-sm font-weight-bold">{{$medicine->amount/100}}%</span>
-                                </div>
-                                <div>
-                                    <div class="progress progress-md">  
-                                        @if ($medicine->amount/100 >= 70)
-                                        <div class="progress-bar bg-gradient-success w-{{$medicine->amount/100}}" role="progressbar"
-                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                        @elseif($medicine->amount/100 >= 40)
-                                        <div class="progress-bar bg-gradient-info w-{{$medicine->amount/100}}" role="progressbar"
-                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                        @else
-                                        <div class="progress-bar bg-gradient-danger w-{{$medicine->amount/100}}" role="progressbar"
-                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                        @endif
-
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        @endforeach
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="row mt-4 col-12">
-        <div class="col-sm-6">
-            <div class="card h-100">
-                <div class="card-header pb-0 p-3">
-                    <div class="d-flex align-items-center">
-                        <h6 class="mb-0">Thuoc</h6>
-                        <button type="button"
-                            class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
-                            data-bs-toggle="tooltip" data-bs-placement="bottom"
-                            title="See how much traffic do you get from social media">
-                            <i class="fas fa-info"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="card-body p-3">
-                    <ul class="list-group">
                         @foreach($medicines_5 as $key => $medicine)
                         <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
                             <div class="w-100">
                                 <div class="d-flex align-items-center mb-2">
                                     <a class="btn btn-facebook btn-simple mb-0 p-0" href="javascript:;">
-                                        <i class="fab fa-facebook fa-lg"></i>
+                                        <i class="fab fa-arow fa-lg"></i>
                                     </a>
                                     <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">{{$medicine->name}}</span>
                                     <span class="ms-auto text-sm font-weight-bold">{{$medicine->amount/100}}%</span>

@@ -21,8 +21,7 @@ use Exception;
 use Illuminate\Mail\Mailer;
 use Illuminate\Support\Facades\App;
 use Barryvdh\DomPDF\Facade\Pdf;
-
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail as FacadesMail;
 use PhpParser\Node\Stmt\TryCatch;
 
@@ -43,11 +42,13 @@ class BookStaffController extends Controller
 
 
         $a = $today->toDateString();
+        
         // $boo = Book::where('register_date',$a);
         $books = Book::orderBy('status', 'ASC')->where('status', '>=', 1)->where('register_date', $a)->orderBy('register_date', 'ASC')->orderBy('register_time', 'ASC')->get();
+        $today = Carbon::today()->toDateString('d-m-Y');
 
 
-        return view('admin.bookStaff.index')->with(compact('books'));
+        return view('admin.bookStaff.index')->with(compact('books','today'));
     }
 
     /**
@@ -108,7 +109,7 @@ class BookStaffController extends Controller
     public function update(Request $request, $id)
     {
         $today = Carbon::today();
-        $bill = Bill::where('book_id',$id)->first;
+        $bill = Bill::where('book_id',$id)->first();
         $bill_id = $bill->id;
         $bill_medicines = Bill_Medicine::where('bill_id',$bill_id)->get();
         $medicines = Medicine::all();
@@ -155,8 +156,10 @@ class BookStaffController extends Controller
         }
         
         $book->result = $request->result;
+        $book->user_id = Auth::user()->id;
         $book->save();
         $this->SendFinishEmail($id);
+        
         $books = Book::orderBy('status', 'ASC')->where('register_date', $a)->orderBy('register_date', 'ASC')->orderBy('register_time', 'ASC')->get();
 
         return redirect('/admin/bookStaff')->with('status', 'Hoàn tất khám!');

@@ -23,8 +23,8 @@
 <table class="table align-items-center mb-0">
 <thead>
 <tr>
-<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Mã CV</th>
-<th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chức vụ</th>
+  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Mã Chức vụ</th>
+  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chức vụ</th>
 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Quản lý</th>
 <th class="text-secondary opacity-7"></th>
 </tr>
@@ -34,7 +34,7 @@
 <tr>
 
   <td class="align-middle text-center">
-<span class="text-secondary text-xs font-weight-bold">{{$position->id}}</span>
+<span class="text-secondary text-xs font-weight-bold">{{$position->id+1}}</span>
 </td>
 
 
@@ -44,15 +44,15 @@
 
 
 
- <td class="align-middle">
+ <td class="align-middle text-center">
 
-                <a  href="{{route('position.edit',[$position->id])}}" class="btn btn-light">Sửa</a>
+                <a style=" " href="{{route('position.edit',[$position->id])}}" class="btn btn-light">Sửa</a>
 
 
                 <form action="{{route('position.destroy',[$position->id])}}" method="POST">
                 @method('DELETE')
                 @csrf
-                <button onclick="return confirm('Bạn muốn xóa chức vụ {{$position->name}}?')" class="btn btn-danger">Xóa</button>
+                <button style="margin-left = -50px " onclick="return confirm('Bạn muốn xóa chức vụ {{$position->name}}?')" class="btn btn-danger">Xóa</button>
                 
               </form>
 
