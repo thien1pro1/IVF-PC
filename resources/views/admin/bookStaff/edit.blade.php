@@ -19,7 +19,7 @@
         }
     </style>
     <div class="container">
-        <h2>Cập nhập lịch hẹn khám</h2>
+        <h2>Cập nhập kết quả khám</h2>
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>

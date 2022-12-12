@@ -84,18 +84,18 @@ use App\Http\Constants\TypeMedicine;
                                         <i class="fab fa-arow fa-lg"></i>
                                     </a>
                                     <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">{{$medicine->name}}</span>
-                                    <span class="ms-auto text-sm font-weight-bold">{{$medicine->amount/100}}%</span>
+                                    <span class="ms-auto text-sm font-weight-bold">{{ceil($medicine->amount/1000)*10}}%</span>
                                 </div>
                                 <div>
                                     <div class="progress progress-md">  
                                         @if ($medicine->amount/100 >= 70)
-                                        <div class="progress-bar bg-gradient-success w-{{$medicine->amount/100}}" role="progressbar"
+                                        <div class="progress-bar bg-gradient-success w-{{ceil($medicine->amount/1000)*10}}" role="progressbar"
                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         @elseif($medicine->amount/100 >= 40)
-                                        <div class="progress-bar bg-gradient-info w-{{$medicine->amount/100}}" role="progressbar"
+                                        <div class="progress-bar bg-gradient-info w-{{ceil($medicine->amount/1000)*10}}" role="progressbar"
                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         @else
-                                        <div class="progress-bar bg-gradient-danger w-{{$medicine->amount/100}}" role="progressbar"
+                                        <div class="progress-bar bg-gradient-danger w-{{ceil($medicine->amount/1000)*10}}" role="progressbar"
                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         @endif
 
@@ -132,18 +132,18 @@ use App\Http\Constants\TypeMedicine;
                                         <i class="fab fa-arow fa-lg"></i>
                                     </a>
                                     <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">{{$medicine->name}}</span>
-                                    <span class="ms-auto text-sm font-weight-bold">{{$medicine->amount/100}}%</span>
+                                    <span class="ms-auto text-sm font-weight-bold">{{ceil($medicine->amount/1000)*10}}%</span>
                                 </div>
                                 <div>
                                     <div class="progress progress-md">  
                                         @if ($medicine->amount/100 >= 70)
-                                        <div class="progress-bar bg-gradient-success w-{{$medicine->amount/100}}" role="progressbar"
+                                        <div class="progress-bar bg-gradient-success w-{{ceil($medicine->amount/1000)*10}}" role="progressbar"
                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         @elseif($medicine->amount/100 >= 40)
-                                        <div class="progress-bar bg-gradient-info w-{{$medicine->amount/100}}" role="progressbar"
+                                        <div class="progress-bar bg-gradient-info w-{{ceil($medicine->amount/1000)*10}}" role="progressbar"
                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         @else
-                                        <div class="progress-bar bg-gradient-danger w-{{$medicine->amount/100}}" role="progressbar"
+                                        <div class="progress-bar bg-gradient-danger w-{{ceil($medicine->amount/1000)*10}}" role="progressbar"
                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         @endif
 
@@ -185,18 +185,18 @@ use App\Http\Constants\TypeMedicine;
                                         <i class="fab fa-arow fa-lg"></i>
                                     </a>
                                     <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">{{$medicine->name}}</span>
-                                    <span class="ms-auto text-sm font-weight-bold">{{$medicine->amount/100}}%</span>
+                                    <span class="ms-auto text-sm font-weight-bold">{{ceil($medicine->amount/1000)*10}}%</span>
                                 </div>
                                 <div>
                                     <div class="progress progress-md">  
                                         @if ($medicine->amount/100 >= 70)
-                                        <div class="progress-bar bg-gradient-success w-{{$medicine->amount/100}}" role="progressbar"
+                                        <div class="progress-bar bg-gradient-success w-{{ceil($medicine->amount/1000)*10}}" role="progressbar"
                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         @elseif($medicine->amount/100 >= 40)
-                                        <div class="progress-bar bg-gradient-info w-{{$medicine->amount/100}}" role="progressbar"
+                                        <div class="progress-bar bg-gradient-info w-{{ceil($medicine->amount/1000)*10}}" role="progressbar"
                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         @else
-                                        <div class="progress-bar bg-gradient-danger w-{{$medicine->amount/100}}" role="progressbar"
+                                        <div class="progress-bar bg-gradient-danger w-{{ceil($medicine->amount/1000)*10}}" role="progressbar"
                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         @endif
 
@@ -233,18 +233,18 @@ use App\Http\Constants\TypeMedicine;
                                         <i class="fab fa-arow fa-lg"></i>
                                     </a>
                                     <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">{{$medicine->name}}</span>
-                                    <span class="ms-auto text-sm font-weight-bold">{{$medicine->amount/100}}%</span>
+                                    <span class="ms-auto text-sm font-weight-bold">{{ceil($medicine->amount/1000)*10}}%</span>
                                 </div>
                                 <div>
                                     <div class="progress progress-md">  
                                         @if ($medicine->amount/100 >= 70)
-                                        <div class="progress-bar bg-gradient-success w-{{$medicine->amount/100}}" role="progressbar"
+                                        <div class="progress-bar bg-gradient-success w-{{ceil($medicine->amount/1000)*10}}" role="progressbar"
                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         @elseif($medicine->amount/100 >= 40)
-                                        <div class="progress-bar bg-gradient-info w-{{$medicine->amount/100}}" role="progressbar"
+                                        <div class="progress-bar bg-gradient-info w-{{ceil($medicine->amount/1000)*10}}" role="progressbar"
                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         @else
-                                        <div class="progress-bar bg-gradient-danger w-{{$medicine->amount/100}}" role="progressbar"
+                                        <div class="progress-bar bg-gradient-danger w-{{ceil($medicine->amount/1000)*10}}" role="progressbar"
                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         @endif
 
@@ -285,18 +285,18 @@ use App\Http\Constants\TypeMedicine;
                                         <i class="fab fa-arow fa-lg"></i>
                                     </a>
                                     <span class="me-2 text-sm font-weight-bold text-capitalize ms-2">{{$medicine->name}}</span>
-                                    <span class="ms-auto text-sm font-weight-bold">{{$medicine->amount/100}}%</span>
+                                    <span class="ms-auto text-sm font-weight-bold">{{ceil($medicine->amount/1000)*10}}%</span>
                                 </div>
                                 <div>
                                     <div class="progress progress-md">  
                                         @if ($medicine->amount/100 >= 70)
-                                        <div class="progress-bar bg-gradient-success w-{{$medicine->amount/100}}" role="progressbar"
+                                        <div class="progress-bar bg-gradient-success w-{{($medicine->amount/100)}}" role="progressbar"
                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         @elseif($medicine->amount/100 >= 40)
-                                        <div class="progress-bar bg-gradient-info w-{{$medicine->amount/100}}" role="progressbar"
+                                        <div class="progress-bar bg-gradient-info w-{{ceil($medicine->amount/1000)*10}}" role="progressbar"
                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         @else
-                                        <div class="progress-bar bg-gradient-danger w-{{$medicine->amount/100}}" role="progressbar"
+                                        <div class="progress-bar bg-gradient-danger w-{{ceil($medicine->amount/1000)*10}}" role="progressbar"
                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         @endif
 
@@ -357,9 +357,7 @@ use App\Http\Constants\TypeMedicine;
     </div>
     </main>
     <div class="fixed-plugin">
-        <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
-            <i class="fa fa-cog py-2"> </i>
-        </a>
+    
         <div class="card shadow-lg blur">
             <div class="card-header pb-0 pt-3  bg-transparent ">
                 <div class="float-start">
