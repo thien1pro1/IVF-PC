@@ -13,6 +13,7 @@ use App\Mail\BarcodeEmail;
 use App\Mail\ConfirmEmail;
 use App\Models\Bill;
 use App\Models\Bill_Medicine;
+use App\Models\Calendar;
 use App\Models\File;
 use App\Models\Medicine;
 use Carbon\Carbon;
@@ -40,15 +41,27 @@ class BookStaffController extends Controller
     {
         $today = Carbon::today();
 
-
+        $room = "admin";
         $a = $today->toDateString();
+        try {
+            $room = Calendar::where('shift3',Auth::user()->id)->first()->room_id;
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+
         
-        // $boo = Book::where('register_date',$a);
-        $books = Book::orderBy('status', 'ASC')->where('status', '>=', 1)->where('register_date', $a)->orderBy('register_date', 'ASC')->orderBy('register_time', 'ASC')->get();
+        if($room != 'admin'){
+            $books = Book::orderBy('status', 'ASC')->where('room_id',$room)->where('status', '>=', 1)->where('register_date', $a)->orderBy('register_date', 'ASC')->orderBy('register_time', 'ASC')->get();
+
+        }
+        else{
+            $books = Book::orderBy('status', 'ASC')->where('status', '>=', 1)->where('register_date', $a)->orderBy('register_date', 'ASC')->orderBy('register_time', 'ASC')->get();
+
+        }
         $today = Carbon::today()->toDateString('d-m-Y');
 
 
-        return view('admin.bookStaff.index')->with(compact('books','today'));
+        return view('admin.bookStaff.index')->with(compact('books','today','room'));
     }
 
     /**
@@ -109,11 +122,12 @@ class BookStaffController extends Controller
     public function update(Request $request, $id)
     {
         $today = Carbon::today();
-        $bill = Bill::where('book_id',$id)->first();
+        
+        try {
+            $bill = Bill::where('book_id',$id)->first();
         $bill_id = $bill->id;
         $bill_medicines = Bill_Medicine::where('bill_id',$bill_id)->get();
         $medicines = Medicine::all();
-        try {
             foreach($medicines as $medicine){
                 foreach($bill_medicines as $bill_medicine){
                     if($medicine->id == $bill_medicine->medicine_id){

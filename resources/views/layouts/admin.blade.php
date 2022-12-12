@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <script src="{{asset('backend/js/js1.js')}}" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script type="text/javascript" src="{{asset('ckeditor/ckeditor.js')}}"></script>
   <script type="text/javascript">
     CKEDITOR.replace('content', {
@@ -19,7 +19,7 @@ filebrowserWindowHeight : 500
  });
 
  </script>
- <script type="text/javascript" src="{{asset('backend/js/js2.js')}}"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <head>
   <meta charset="utf-8" />
@@ -301,7 +301,7 @@ filebrowserWindowHeight : 500
             <span class="nav-link-text ms-1">Thông tin cá nhân</span>
           </a>
         </li>
-        @if(Auth::user()->position_id!=2)
+        @if(Auth::user()->position_id==0)
         <li class="nav-item">
           <a class="nav-link  " href="{{route('position.index')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -346,6 +346,7 @@ filebrowserWindowHeight : 500
           </a>
         </li>
         @endif
+
         @if(Auth::user()->position_id!=2)
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Quản lý truyền thông </h6>
@@ -538,7 +539,9 @@ filebrowserWindowHeight : 500
     </div>
   </main>
   <div class="fixed-plugin">
-
+    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+      <i class="fa fa-cog py-2"> </i>
+    </a>
     <div class="card shadow-lg ">
       <div class="card-header pb-0 pt-3 ">
       

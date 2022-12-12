@@ -19,6 +19,12 @@ $time = BookingTime::$bookingTime ;
         <div class="row">
             <div class="col-12">
                 <div class="card mb-4">
+                  @if($room == 'admin')
+                  @else
+                  <div class="card-header pb-0">
+                    <h4>Phòng {{$room}}</h4>
+                </div>
+                @endif
                     <div class="card-header pb-0">
                         <h4>Lịch khám ngày {{$today}}</h4>
                     </div>

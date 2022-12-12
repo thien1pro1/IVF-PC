@@ -33,77 +33,103 @@
                                 <tbody>
                                     <tr>
                                         <th scope="row">Sáng</th>
-                                        
-                                        <td class= "col-2">
+
+                                        <td class="col-2">
                                             @if ($calendar->shift1 == null)
-                                                     Trống ca 
+                                                Trống ca
                                             @else
-                                                    @foreach ($users as $user)
-                                                        @if ($user->id == $calendar->shift1)
-                                                                {{ $user->name }} 
+                                                @foreach ($users as $user)
+                                                    @if ($user->id == $calendar->shift1)
+                                                        @if (Auth::user()->id == $user->id)
+                                                            <span class="text-success">{{ $user->name }}</span>
+                                                        @else
+                                                            
+                                                                {{ $user->name }}
+                                                            
                                                         @endif
-                                                    @endforeach
+                                                    @endif
+                                                @endforeach
                                             @endif
                                         </td>
                                         {{-- ca1 --}}
-                                        <td class= "col-2">
+                                        <td class="col-2">
                                             @if ($calendar->shift3 == null)
-                                                     Trống ca 
+                                                Trống ca
                                             @else
-                                                    @foreach ($users as $user)
-                                                        @if ($user->id == $calendar->shift3)
-                                                                {{ $user->name }} 
+                                                @foreach ($users as $user)
+                                                    @if ($user->id == $calendar->shift3)
+                                                        @if (Auth::user()->id == $user->id)
+                                                            <span class="text-success">{{ $user->name }}</span>
+                                                        @else
+                                                            {{ $user->name }}
                                                         @endif
-                                                    @endforeach
+                                                    @endif
+                                                @endforeach
                                             @endif
                                         </td>
                                         {{-- ca3 --}}
 
-                                        <td class= "col-2">
+                                        <td class="col-2">
                                             @if ($calendar->shift5 == null)
-                                                     Trống ca 
+                                                Trống ca
                                             @else
-                                                    @foreach ($users as $user)
-                                                        @if ($user->id == $calendar->shift5)
-                                                                {{ $user->name }} 
+                                                @foreach ($users as $user)
+                                                    @if ($user->id == $calendar->shift5)
+                                                        @if (Auth::user()->id == $user->id)
+                                                            <span class="text-success">{{ $user->name }}</span>
+                                                        @else
+                                                            {{ $user->name }}
                                                         @endif
-                                                    @endforeach
+                                                    @endif
+                                                @endforeach
                                             @endif
                                         </td>
                                         {{-- ca5 --}}
-                                        <td class= "col-2">
+                                        <td class="col-2">
                                             @if ($calendar->shift7 == null)
-                                                     Trống ca 
+                                                Trống ca
                                             @else
-                                                    @foreach ($users as $user)
-                                                        @if ($user->id == $calendar->shift7)
-                                                                {{ $user->name }} 
+                                                @foreach ($users as $user)
+                                                    @if ($user->id == $calendar->shift7)
+                                                        @if (Auth::user()->id == $user->id)
+                                                            <span class="text-success">{{ $user->name }}</span>
+                                                        @else
+                                                            {{ $user->name }}
                                                         @endif
-                                                    @endforeach
+                                                    @endif
+                                                @endforeach
                                             @endif
                                         </td>
                                         {{-- ca7 --}}
-                                        <td class= "col-2">
+                                        <td class="col-2">
                                             @if ($calendar->shift9 == null)
-                                                     Trống ca 
+                                                Trống ca
                                             @else
-                                                    @foreach ($users as $user)
-                                                        @if ($user->id == $calendar->shift9)
-                                                                {{ $user->name }} 
+                                                @foreach ($users as $user)
+                                                    @if ($user->id == $calendar->shift9)
+                                                        @if (Auth::user()->id == $user->id)
+                                                            <span class="text-success">{{ $user->name }}</span>
+                                                        @else
+                                                            {{ $user->name }}
                                                         @endif
-                                                    @endforeach
+                                                    @endif
+                                                @endforeach
                                             @endif
                                         </td>
                                         {{-- ca9 --}}
-                                        <td class= "col-2">
+                                        <td class="col-2">
                                             @if ($calendar->shift11 == null)
-                                                     Trống ca 
+                                                Trống ca
                                             @else
-                                                    @foreach ($users as $user)
-                                                        @if ($user->id == $calendar->shift11)
-                                                                {{ $user->name }} 
+                                                @foreach ($users as $user)
+                                                    @if ($user->id == $calendar->shift11)
+                                                        @if (Auth::user()->id == $user->id)
+                                                            <span class="text-success">{{ $user->name }}</span>
+                                                        @else
+                                                            {{ $user->name }}
                                                         @endif
-                                                    @endforeach
+                                                    @endif
+                                                @endforeach
                                             @endif
                                         </td>
                                         {{-- ca11 --}}
@@ -112,79 +138,103 @@
                                     </tr>
                                     <tr>
                                         <th scope="row">Chiều</th>
-                                        <td class= "col-2">
+                                        <td class="col-2">
                                             @if ($calendar->shift2 == null)
-                                                     Trống ca 
+                                                Trống ca
                                             @else
-                                                    @foreach ($users as $user)
-                                                        @if ($user->id == $calendar->shift2)
-                                                                {{ $user->name }} 
+                                                @foreach ($users as $user)
+                                                    @if ($user->id == $calendar->shift2)
+                                                        @if (Auth::user()->id == $user->id)
+                                                            <span class="text-success">{{ $user->name }}</span>
+                                                        @else
+                                                            {{ $user->name }}
                                                         @endif
-                                                    @endforeach
+                                                    @endif
+                                                @endforeach
                                             @endif
                                         </td>
 
 
 
-                                      
+
                                         {{-- ca2 --}}
-                                        <td class= "col-2">
+                                        <td class="col-2">
                                             @if ($calendar->shift4 == null)
-                                                     Trống ca 
+                                                Trống ca
                                             @else
-                                                    @foreach ($users as $user)
-                                                        @if ($user->id == $calendar->shift4)
-                                                                {{ $user->name }} 
+                                                @foreach ($users as $user)
+                                                    @if ($user->id == $calendar->shift4)
+                                                        @if (Auth::user()->id == $user->id)
+                                                            <span class="text-success">{{ $user->name }}</span>
+                                                        @else
+                                                            {{ $user->name }}
                                                         @endif
-                                                    @endforeach
+                                                    @endif
+                                                @endforeach
                                             @endif
                                         </td>
                                         {{-- ca4 --}}
-                                        <td class= "col-2">
+                                        <td class="col-2">
                                             @if ($calendar->shift6 == null)
-                                                     Trống ca 
+                                                Trống ca
                                             @else
-                                                    @foreach ($users as $user)
-                                                        @if ($user->id == $calendar->shift6)
-                                                                {{ $user->name }} 
+                                                @foreach ($users as $user)
+                                                    @if ($user->id == $calendar->shift6)
+                                                        @if (Auth::user()->id == $user->id)
+                                                            <span class="text-success">{{ $user->name }}</span>
+                                                        @else
+                                                            {{ $user->name }}
                                                         @endif
-                                                    @endforeach
+                                                    @endif
+                                                @endforeach
                                             @endif
                                         </td>
                                         {{-- ca6 --}}
-                                        <td class= "col-2">
+                                        <td class="col-2">
                                             @if ($calendar->shift8 == null)
-                                                     Trống ca 
+                                                Trống ca
                                             @else
-                                                    @foreach ($users as $user)
-                                                        @if ($user->id == $calendar->shift8)
-                                                                {{ $user->name }} 
+                                                @foreach ($users as $user)
+                                                    @if ($user->id == $calendar->shift8)
+                                                        @if (Auth::user()->id == $user->id)
+                                                            <span class="text-success">{{ $user->name }}</span>
+                                                        @else
+                                                            {{ $user->name }}
                                                         @endif
-                                                    @endforeach
+                                                    @endif
+                                                @endforeach
                                             @endif
                                         </td>
                                         {{-- ca8 --}}
-                                        <td class= "col-2">
+                                        <td class="col-2">
                                             @if ($calendar->shift10 == null)
-                                                     Trống ca 
+                                                Trống ca
                                             @else
-                                                    @foreach ($users as $user)
-                                                        @if ($user->id == $calendar->shift10)
-                                                                {{ $user->name }} 
+                                                @foreach ($users as $user)
+                                                    @if ($user->id == $calendar->shift10)
+                                                        @if (Auth::user()->id == $user->id)
+                                                            <span class="text-success">{{ $user->name }}</span>
+                                                        @else
+                                                            {{ $user->name }}
                                                         @endif
-                                                    @endforeach
+                                                    @endif
+                                                @endforeach
                                             @endif
                                         </td>
                                         {{-- ca10 --}}
-                                        <td class= "col-2">
+                                        <td class="col-2">
                                             @if ($calendar->shift12 == null)
-                                                     Trống ca 
+                                                Trống ca
                                             @else
-                                                    @foreach ($users as $user)
-                                                        @if ($user->id == $calendar->shift12)
-                                                                {{ $user->name }} 
+                                                @foreach ($users as $user)
+                                                    @if ($user->id == $calendar->shift12)
+                                                        @if (Auth::user()->id == $user->id)
+                                                            <span class="text-success">{{ $user->name }}</span>
+                                                        @else
+                                                            {{ $user->name }}
                                                         @endif
-                                                    @endforeach
+                                                    @endif
+                                                @endforeach
                                             @endif
                                         </td>
                                         {{-- ca12 --}}
