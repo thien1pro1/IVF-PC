@@ -22,7 +22,7 @@ class PostController extends Controller
         // $all_post = Post::all();
 
  
-        $allPost = Post::get();
+        $allPost = Post::with('category')->orderBy('id','DESC')->get();
         $category = Categogy::all();
         return view('admin.post.index')->with(compact('allPost','category'));
     }
